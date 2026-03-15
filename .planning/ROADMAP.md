@@ -154,12 +154,12 @@ Plans:
   3. Each plan includes feasibility scoring (compute requirements, data availability, expected improvement, difficulty)
   4. User can choose data strategy (open-source first, own data, hybrid) and see recommended datasets with download links
   5. User can view and modify generated plans before execution, with plans generated from three entry points (direction, paper improvement, AI-discovered gap)
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 07-01: SOTA identification and improvement opportunity analysis
-- [ ] 07-02: Experiment plan generation with feasibility scoring
-- [ ] 07-03: Dataset recommendation and plan editing UI
+- [ ] 07-01-PLAN.md -- ExperimentPlan model, schemas, SOTA identifier, and improvement analyzer
+- [ ] 07-02-PLAN.md -- Plan generator with reflection, feasibility scoring, dataset recommendation, Temporal workflow, and REST API
+- [ ] 07-03-PLAN.md -- Code skeleton generation and Next.js plan list/editor UI
 
 ### Phase 8: Experiment Execution Engine
 **Goal**: Users can run autonomous experiment loops on their local GPU via a desktop agent that modifies code, trains models, evaluates results, and iterates

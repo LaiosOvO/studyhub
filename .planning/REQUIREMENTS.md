@@ -42,19 +42,19 @@
 
 ### Citation Network (CITE)
 
-- [ ] **CITE-01**: System recursively expands citation network from seed papers (configurable depth 1-3)
-- [ ] **CITE-02**: System retrieves both citing papers (who cited this) and referenced papers (what this cites)
-- [ ] **CITE-03**: System discovers semantically related papers beyond direct citation links
-- [ ] **CITE-04**: Citation graph stored in Neo4j with paper nodes and citation/relation edges
-- [ ] **CITE-05**: System applies citation budget to prevent graph explosion (cap at configurable max papers)
-- [ ] **CITE-06**: User can manually expand a specific node's citations from the graph view
+- [x] **CITE-01**: System recursively expands citation network from seed papers (configurable depth 1-3)
+- [x] **CITE-02**: System retrieves both citing papers (who cited this) and referenced papers (what this cites)
+- [x] **CITE-03**: System discovers semantically related papers beyond direct citation links
+- [x] **CITE-04**: Citation graph stored in Neo4j with paper nodes and citation/relation edges
+- [x] **CITE-05**: System applies citation budget to prevent graph explosion (cap at configurable max papers)
+- [x] **CITE-06**: User can manually expand a specific node's citations from the graph view
 
 ### Paper Quality (QUAL)
 
-- [ ] **QUAL-01**: System computes composite quality score per paper (citations + annual citation velocity + impact factor + author H-index)
-- [ ] **QUAL-02**: User can see quality score breakdown for each paper
-- [ ] **QUAL-03**: Papers ranked by quality score within search results and graph views
-- [ ] **QUAL-04**: System identifies top-N key papers in a research direction
+- [x] **QUAL-01**: System computes composite quality score per paper (citations + annual citation velocity + impact factor + author H-index)
+- [x] **QUAL-02**: User can see quality score breakdown for each paper
+- [x] **QUAL-03**: Papers ranked by quality score within search results and graph views
+- [x] **QUAL-04**: System identifies top-N key papers in a research direction
 
 ### Deep Research (DEEP)
 
@@ -254,16 +254,16 @@ Updated during roadmap creation.
 | CNKI-03 | Phase 3 | Complete |
 | CNKI-04 | Phase 3 | Complete |
 | CNKI-05 | Phase 3 | Complete |
-| CITE-01 | Phase 4 | Pending |
-| CITE-02 | Phase 4 | Pending |
-| CITE-03 | Phase 4 | Pending |
-| CITE-04 | Phase 4 | Pending |
-| CITE-05 | Phase 4 | Pending |
-| CITE-06 | Phase 4 | Pending |
-| QUAL-01 | Phase 4 | Pending |
-| QUAL-02 | Phase 4 | Pending |
-| QUAL-03 | Phase 4 | Pending |
-| QUAL-04 | Phase 4 | Pending |
+| CITE-01 | Phase 4 | Complete |
+| CITE-02 | Phase 4 | Complete |
+| CITE-03 | Phase 4 | Complete |
+| CITE-04 | Phase 4 | Complete |
+| CITE-05 | Phase 4 | Complete |
+| CITE-06 | Phase 4 | Complete |
+| QUAL-01 | Phase 4 | Complete |
+| QUAL-02 | Phase 4 | Complete |
+| QUAL-03 | Phase 4 | Complete |
+| QUAL-04 | Phase 4 | Complete |
 | DEEP-01 | Phase 5 | Pending |
 | DEEP-02 | Phase 5 | Pending |
 | DEEP-03 | Phase 5 | Pending |

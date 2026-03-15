@@ -14,8 +14,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Infrastructure & Auth Foundation** - Docker Compose services, API gateway, auth, and web app shell
 - [x] **Phase 2: Paper Search & Ingestion** - Multi-source paper search with PDF parsing and full-text indexing
-- [ ] **Phase 3: Chinese Academic Sources** - CNKI and Wanfang integration with anti-scraping resilience
-- [ ] **Phase 4: Citation Network & Quality Scoring** - Recursive citation graph construction and paper quality ranking
+- [x] **Phase 3: Chinese Academic Sources** - CNKI and Wanfang integration with anti-scraping resilience
+- [x] **Phase 4: Citation Network & Quality Scoring** - Recursive citation graph construction and paper quality ranking
 - [ ] **Phase 5: Deep Research Engine** - End-to-end research pipeline with AI analysis and literature review generation
 - [ ] **Phase 6: Paper Map Visualization** - Interactive citation graph, topic map, and timeline views
 - [ ] **Phase 7: Plan Generation & SOTA Analysis** - AI-powered experiment plan generation from research gaps
@@ -72,8 +72,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 03-01-PLAN.md -- BrowserPool, schema extensions, and CNKI scraper client
-- [ ] 03-02-PLAN.md -- Wanfang scraper and aggregator integration with graceful degradation
+- [x] 03-01-PLAN.md -- BrowserPool, schema extensions, and CNKI scraper client
+- [x] 03-02-PLAN.md -- Wanfang scraper and aggregator integration with graceful degradation
 
 ### Phase 03.1: Scholar Profile Harvesting (INSERTED)
 
@@ -104,9 +104,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 04-01-PLAN.md -- Neo4j client, BFS citation expansion engine with budget control
-- [ ] 04-02-PLAN.md -- Semantic similarity discovery, manual expansion, and citation REST endpoints
-- [ ] 04-03-PLAN.md -- Composite quality scoring algorithm with ranking and top-N identification
+- [x] 04-01-PLAN.md -- Neo4j client, BFS citation expansion engine with budget control
+- [x] 04-02-PLAN.md -- Semantic similarity discovery, manual expansion, and citation REST endpoints
+- [x] 04-03-PLAN.md -- Composite quality scoring algorithm with ranking and top-N identification
 
 ### Phase 5: Deep Research Engine
 **Goal**: Users can launch an end-to-end research task that automatically discovers papers, builds the citation graph, scores quality, and produces AI-powered analysis with a literature review
@@ -224,8 +224,8 @@ Note: Phase 3 and Phase 4 can execute in parallel (both depend on Phase 2). Phas
 |-------|----------------|--------|-----------|
 | 1. Infrastructure & Auth Foundation | 4/4 | Complete | 2026-03-15 |
 | 2. Paper Search & Ingestion | 3/3 | Complete | 2026-03-15 |
-| 3. Chinese Academic Sources | 0/2 | Not started | - |
-| 4. Citation Network & Quality Scoring | 0/3 | Not started | - |
+| 3. Chinese Academic Sources | 2/2 | Complete | 2026-03-15 |
+| 4. Citation Network & Quality Scoring | 3/3 | Complete | 2026-03-15 |
 | 5. Deep Research Engine | 0/4 | Not started | - |
 | 6. Paper Map Visualization | 0/3 | Not started | - |
 | 7. Plan Generation & SOTA Analysis | 0/3 | Not started | - |

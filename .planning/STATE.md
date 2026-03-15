@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-15T23:08:00.000Z"
+last_updated: "2026-03-15T23:30:00.000Z"
 progress:
-  total_phases: 3
-  completed_phases: 3
-  total_plans: 9
-  completed_plans: 9
+  total_phases: 4
+  completed_phases: 4
+  total_plans: 12
+  completed_plans: 12
 ---
 
 # Project State
@@ -18,23 +18,23 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-15)
 
 **Core value:** Input a research direction -> get a complete paper landscape with AI-identified gaps -> generate and auto-execute experiment plans that improve on existing work.
-**Current focus:** Phase 3: Chinese Academic Sources (completed)
+**Current focus:** Phase 4: Citation Network & Quality Scoring (completed)
 
 ## Current Position
 
-Phase: 3 of 10 (Chinese Academic Sources)
-Plan: 2 of 2 in current phase (all completed)
-Status: Phase 3 Complete
-Last activity: 2026-03-15 -- Completed all 2 plans in Phase 3
+Phase: 4 of 10 (Citation Network & Quality Scoring)
+Plan: 3 of 3 in current phase (all completed)
+Status: Phase 4 Complete
+Last activity: 2026-03-15 -- Completed all 3 plans in Phase 4
 
-Progress: [███░░░░░░░] 30%
+Progress: [████░░░░░░] 40%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 9
-- Average duration: 12min
-- Total execution time: 1.7 hours
+- Total plans completed: 12
+- Average duration: 11min
+- Total execution time: 2.3 hours
 
 **By Phase:**
 
@@ -43,9 +43,10 @@ Progress: [███░░░░░░░] 30%
 | 01 | 4 | 45min | 11min |
 | 02 | 3 | 40min | 13min |
 | 03 | 2 | 16min | 8min |
+| 04 | 3 | 37min | 12min |
 
 **Recent Trend:**
-- Last 3 plans: 02-03 (25min), 03-01 (8min), 03-02 (8min)
+- Last 3 plans: 04-01 (15min), 04-02 (10min), 04-03 (12min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -87,10 +88,20 @@ Recent decisions affecting current work:
 - [03-02]: Per-source timeouts: 30s for browser-based (CNKI/Wanfang), 10s for API sources
 - [03-02]: browser_pool parameter optional in aggregator -- None means API-only (backward compatible)
 - [03-02]: Error classification maps exceptions to SourceStatus (CAPTCHA_BLOCKED, RATE_LIMITED, UNAVAILABLE, ERROR)
+- [04-01]: Neo4j async driver with transaction functions for all queries
+- [04-01]: BFS with priority selection by citation count at each level
+- [04-01]: asyncio.Semaphore(1) for S2 rate limiting within expansion
+- [04-01]: Neo4j startup non-fatal (same pattern as Meilisearch)
+- [04-02]: RELATED_TO edges separate from CITES in Neo4j (different relationship types)
+- [04-02]: Similarity discovery non-fatal in expand endpoints
+- [04-03]: Log-scaled normalization for citations (log10/4.0) for power-law distribution
+- [04-03]: Citation velocity = citations / (current_year - pub_year + 1)
+- [04-03]: Pure compute_quality_score function with no side effects
+- [04-03]: OpenAlex lookups via asyncio.to_thread (pyalex is sync)
 
 ### Roadmap Evolution
 
-- Phase 03.1 inserted after Phase 3: Scholar Profile Harvesting (INSERTED) — build scholar profile DB from Baidu Baike + Google Scholar with ECG domain seed data
+- Phase 03.1 inserted after Phase 3: Scholar Profile Harvesting (INSERTED) -- build scholar profile DB from Baidu Baike + Google Scholar with ECG domain seed data
 
 ### Pending Todos
 
@@ -99,11 +110,12 @@ None yet.
 ### Blockers/Concerns
 
 - CNKI/Wanfang scrapers implemented but need live testing with `uv sync` + `python -m patchright install chromium` (sandbox blocked during Phase 3 execution)
+- Neo4j package needs `uv sync` to install (added to pyproject.toml but not installed in env during Phase 4 execution)
 - Tauri-to-web sync protocol needs design research (Phase 8)
 - Researcher matching has no benchmark -- will need user feedback loops (Phase 10)
 
 ## Session Continuity
 
 Last session: 2026-03-15
-Stopped at: Completed Phase 3 (Chinese Academic Sources)
+Stopped at: Completed Phase 4 (Citation Network & Quality Scoring)
 Resume file: None

@@ -12,7 +12,7 @@
 - [x] **INFRA-03**: Temporal server orchestrates long-running workflows with retry and timeout management
 - [x] **INFRA-04**: Valkey Streams provides event-driven inter-service communication
 - [x] **INFRA-05**: SeaweedFS stores PDFs, model checkpoints, and experiment logs (S3-compatible)
-- [ ] **INFRA-06**: LLM Gateway provides unified interface to Claude/GPT with cost tracking and model fallback
+- [x] **INFRA-06**: LLM Gateway provides unified interface to Claude/GPT with cost tracking and model fallback
 
 ### Paper Search (SRCH)
 
@@ -222,7 +222,7 @@ Updated during roadmap creation.
 | INFRA-03 | Phase 1 | Complete |
 | INFRA-04 | Phase 1 | Complete |
 | INFRA-05 | Phase 1 | Complete |
-| INFRA-06 | Phase 1 | Pending |
+| INFRA-06 | Phase 1 | Complete |
 | AUTH-01 | Phase 1 | Pending |
 | AUTH-02 | Phase 1 | Pending |
 | AUTH-03 | Phase 1 | Pending |

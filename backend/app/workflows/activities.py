@@ -468,23 +468,171 @@ async def classify_relationships_activity(input_json: str) -> str:
 
 @activity.defn
 async def detect_gaps_activity(input_json: str) -> str:
-    """Placeholder for Plan 03: Gap detection and trend analysis.
+    """Detect research gaps and method trends from analyzed corpus.
 
     Input JSON: {task_id, user_id, direction}
     Output JSON: {gap_count, trend_summary}
+
+    Loads paper analyses from task config, runs gap and trend detection,
+    stores results in DeepResearchTask.gaps and .trends.
     """
+    from datetime import datetime
+
+    from sqlalchemy import select
+    from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
+
+    from app.database import get_db_engine
+    from app.models.deep_research import DeepResearchTask
+    from app.models.paper import Paper
+    from app.services.deep_research.analyzer import PaperAnalysis
+    from app.services.deep_research.gap_detector import detect_gaps, detect_trends
+
     params = json.loads(input_json)
-    logger.info("detect_gaps_activity: placeholder for task %s", params.get("task_id"))
-    return json.dumps({"gap_count": 0, "trend_summary": ""})
+    task_id = params["task_id"]
+    user_id = params["user_id"]
+    direction = params["direction"]
+
+    engine = get_db_engine()
+    session_factory = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
+
+    gap_count = 0
+    trend_summary = ""
+
+    async with session_factory() as session:
+        # Load task and paper analyses
+        task_result = await session.execute(
+            select(DeepResearchTask).where(DeepResearchTask.id == task_id)
+        )
+        task = task_result.scalar_one_or_none()
+
+        if not task or not task.config.get("paper_analyses"):
+            await engine.dispose()
+            return json.dumps({"gap_count": 0, "trend_summary": ""})
+
+        # Reconstruct PaperAnalysis objects from stored JSON
+        analyses = [
+            PaperAnalysis(**data)
+            for data in task.config["paper_analyses"].values()
+        ]
+
+        # Load Paper objects from DB
+        paper_ids = list(task.config["paper_analyses"].keys())
+        paper_result = await session.execute(
+            select(Paper).where(Paper.id.in_(paper_ids))
+        )
+        papers = list(paper_result.scalars().all())
+
+        # Detect gaps
+        gap_result = await detect_gaps(analyses, papers, direction, session, user_id)
+
+        # Detect trends
+        trend_result = await detect_trends(analyses, papers, direction, session, user_id)
+
+        # Store in task
+        task.gaps = gap_result.model_dump()
+        task.trends = trend_result.model_dump()
+        await session.commit()
+
+        gap_count = len(gap_result.gaps)
+        ascending = len(trend_result.ascending_methods)
+        declining = len(trend_result.declining_methods)
+        trend_summary = f"{ascending} ascending, {declining} declining methods"
+
+    await engine.dispose()
+
+    logger.info(
+        "detect_gaps_activity: %d gaps, %s",
+        gap_count,
+        trend_summary,
+    )
+    return json.dumps({"gap_count": gap_count, "trend_summary": trend_summary})
 
 
 @activity.defn
 async def generate_report_activity(input_json: str) -> str:
-    """Placeholder for Plan 03: Generate literature review report.
+    """Generate Markdown literature review report.
 
     Input JSON: {task_id, user_id, language}
     Output JSON: {report_length, status}
+
+    Loads all analysis data from task, renders Jinja2 template,
+    stores report in DeepResearchTask.report_markdown.
     """
+    from datetime import datetime, timezone
+
+    from sqlalchemy import select
+    from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
+
+    from app.database import get_db_engine
+    from app.models.deep_research import DeepResearchTask
+    from app.models.paper import Paper
+    from app.services.deep_research.analyzer import PaperAnalysis
+    from app.services.deep_research.gap_detector import GapResult, TrendResult
+    from app.services.deep_research.report_generator import generate_literature_review
+
     params = json.loads(input_json)
-    logger.info("generate_report_activity: placeholder for task %s", params.get("task_id"))
-    return json.dumps({"report_length": 0, "status": "completed"})
+    task_id = params["task_id"]
+    language = params.get("language", "zh")
+
+    engine = get_db_engine()
+    session_factory = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
+
+    report_length = 0
+
+    async with session_factory() as session:
+        # Load task
+        task_result = await session.execute(
+            select(DeepResearchTask).where(DeepResearchTask.id == task_id)
+        )
+        task = task_result.scalar_one_or_none()
+
+        if not task:
+            await engine.dispose()
+            return json.dumps({"report_length": 0, "status": "failed"})
+
+        # Reconstruct analysis data
+        analyses = []
+        if task.config.get("paper_analyses"):
+            analyses = [
+                PaperAnalysis(**data)
+                for data in task.config["paper_analyses"].values()
+            ]
+
+        gaps = GapResult(**task.gaps) if task.gaps else GapResult()
+        trends = TrendResult(**task.trends) if task.trends else TrendResult()
+
+        # Load papers
+        paper_ids = list(task.config.get("paper_analyses", {}).keys())
+        if paper_ids:
+            paper_result = await session.execute(
+                select(Paper).where(Paper.id.in_(paper_ids))
+            )
+            papers = list(paper_result.scalars().all())
+        else:
+            papers = []
+
+        # Generate report
+        markdown = await generate_literature_review(
+            task=task,
+            analyses=analyses,
+            gaps=gaps,
+            trends=trends,
+            papers=papers,
+            language=language,
+        )
+
+        # Store report and mark completed
+        task.report_markdown = markdown
+        task.status = "completed"
+        task.completed_at = datetime.now(timezone.utc)
+        await session.commit()
+
+        report_length = len(markdown)
+
+    await engine.dispose()
+
+    logger.info(
+        "generate_report_activity: report %d chars, status=completed",
+        report_length,
+    )
+    return json.dumps({"report_length": report_length, "status": "completed"})

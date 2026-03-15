@@ -1,0 +1,43 @@
+# Development overrides
+# Usage: docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+
+services:
+  postgres:
+    restart: unless-stopped
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+
+  neo4j:
+    restart: unless-stopped
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+
+  meilisearch:
+    restart: unless-stopped
+    ports:
+      - "7700:7700"
+
+  valkey:
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+  seaweedfs:
+    restart: unless-stopped
+    ports:
+      - "8333:8333"
+      - "8888:8888"
+      - "9333:9333"
+      - "8081:8080"
+
+  temporal-db:
+    restart: unless-stopped
+
+  temporal:
+    restart: unless-stopped
+
+  temporal-ui:
+    restart: unless-stopped
+    ports:
+      - "8080:8080"

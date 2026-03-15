@@ -38,24 +38,34 @@ export interface PaperNodeData {
   [key: string]: unknown;
 }
 
-// --- Deck.gl point stub (Plan 02) ---
+// --- Deck.gl point types ---
 
-export interface DeckGlPoint {
-  readonly paperId: string;
-  readonly title: string;
+export interface EmbeddingPoint {
+  readonly paper_id: string;
   readonly x: number;
   readonly y: number;
+  readonly cluster_id: number;
+  readonly cluster_label: string;
+}
+
+export interface DeckGlPoint {
+  readonly id: string;
+  readonly position: readonly [number, number];
   readonly citationCount: number;
+  readonly clusterId: number;
+  readonly clusterLabel: string;
+  readonly title: string;
   readonly year: number;
 }
 
-// --- Timeline item stub (Plan 02) ---
+// --- Timeline item types ---
 
 export interface TimelineItem {
   readonly id: string;
   readonly content: string;
-  readonly start: string;
-  readonly group?: string;
+  readonly start: Date;
+  readonly group?: number;
+  readonly className?: string;
 }
 
 /**
@@ -102,27 +112,51 @@ export function toReactFlowGraph(apiResponse: GraphApiResponse): {
 }
 
 /**
- * Stub for Deck.gl point transform (Plan 02).
+ * Transform embedding API response into Deck.gl scatter points.
+ * Maps backend 2D coordinates to position arrays for ScatterplotLayer.
  */
-export function toDeckGlPoints(apiResponse: GraphApiResponse): readonly DeckGlPoint[] {
-  return apiResponse.nodes.map((node) => ({
-    paperId: node.paper_id,
-    title: node.title,
-    x: 0,
-    y: 0,
-    citationCount: node.citation_count,
-    year: node.year,
-  }));
+export function toDeckGlPoints(
+  embeddings: readonly EmbeddingPoint[],
+  nodes: readonly Node<PaperNodeData>[],
+): readonly DeckGlPoint[] {
+  const nodeMap = new Map(nodes.map((n) => [n.id, n.data]));
+
+  return embeddings.map((emb) => {
+    const nodeData = nodeMap.get(emb.paper_id);
+    return {
+      id: emb.paper_id,
+      position: [emb.x, emb.y] as const,
+      citationCount: nodeData?.citationCount ?? 1,
+      clusterId: emb.cluster_id,
+      clusterLabel: emb.cluster_label,
+      title: nodeData?.title ?? emb.paper_id,
+      year: nodeData?.year ?? 0,
+    };
+  });
 }
 
 /**
- * Stub for vis-timeline item transform (Plan 02).
+ * Transform React Flow nodes into vis-timeline items.
+ * Papers without a year are excluded (cannot place on timeline).
  */
-export function toTimelineItems(apiResponse: GraphApiResponse): readonly TimelineItem[] {
-  return apiResponse.nodes.map((node) => ({
-    id: node.paper_id,
-    content: node.title,
-    start: `${node.year}-01-01`,
-    group: node.cluster_id ?? 'default',
-  }));
+export function toTimelineItems(
+  nodes: readonly Node<PaperNodeData>[],
+): readonly TimelineItem[] {
+  return nodes
+    .filter((n) => n.data.year > 0)
+    .map((n) => {
+      const title = n.data.title;
+      const truncated = title.length > 60 ? `${title.slice(0, 57)}...` : title;
+      const qs = n.data.qualityScore;
+      const className =
+        qs >= 0.7 ? 'quality-high' : qs >= 0.4 ? 'quality-med' : 'quality-low';
+
+      return {
+        id: n.id,
+        content: truncated,
+        start: new Date(n.data.year, 0, 1),
+        group: n.data.clusterId ? parseInt(n.data.clusterId, 10) || 0 : 0,
+        className,
+      };
+    });
 }

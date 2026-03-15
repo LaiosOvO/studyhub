@@ -350,6 +350,61 @@ async def expand_deep_research_area(
     )
 
 
+@router.get(
+    "/tasks/{task_id}/embeddings",
+    response_model=ApiResponse[list[dict]],
+)
+async def get_task_embeddings(
+    task_id: str,
+    user: Annotated[User, Depends(get_current_user)],
+    session: Annotated[AsyncSession, Depends(get_db)],
+) -> ApiResponse[list[dict]]:
+    """Compute or return cached 2D embeddings for the task's papers.
+
+    Uses TF-IDF + UMAP to project papers into a 2D scatter plot
+    with cluster assignments for the topic map visualization.
+    """
+    result = await session.execute(
+        select(DeepResearchTask).where(DeepResearchTask.id == task_id)
+    )
+    task = result.scalar_one_or_none()
+
+    if task is None:
+        raise HTTPException(status_code=404, detail="Task not found")
+    if task.user_id != user.id:
+        raise HTTPException(status_code=403, detail="Not authorized")
+
+    # Return cached embeddings if available
+    cached = (task.config or {}).get("embeddings")
+    if cached:
+        return ApiResponse(success=True, data=cached)
+
+    # Extract papers from config
+    paper_analyses = (task.config or {}).get("paper_analyses", {})
+    if not paper_analyses:
+        return ApiResponse(success=True, data=[])
+
+    papers = [
+        {
+            "paper_id": pid,
+            "title": analysis.get("title", pid),
+            "abstract": analysis.get("abstract", ""),
+        }
+        for pid, analysis in paper_analyses.items()
+    ]
+
+    from app.services.deep_research.embedding_service import compute_2d_positions
+
+    embeddings = compute_2d_positions(papers)
+
+    # Cache in task config (immutable update)
+    updated_config = {**(task.config or {}), "embeddings": embeddings}
+    task.config = updated_config
+    await session.commit()
+
+    return ApiResponse(success=True, data=embeddings)
+
+
 @router.get("/tasks/{task_id}/report")
 async def get_deep_research_report(
     task_id: str,

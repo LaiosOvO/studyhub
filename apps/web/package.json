@@ -9,15 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@deck.gl/core": "^9.2.11",
+    "@deck.gl/layers": "^9.2.11",
+    "@deck.gl/react": "^9.2.11",
+    "@loaders.gl/core": "^4.3.4",
     "@xyflow/react": "^12.10.1",
     "d3-force": "^3.0.0",
     "d3-scale": "^4.0.2",
     "d3-scale-chromatic": "^3.1.0",
+    "deck.gl": "^9.2.11",
     "html-to-image": "^1.11.13",
     "next": "^15.3.3",
     "next-intl": "^4.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "vis-data": "^8.0.3",
+    "vis-timeline": "^8.5.0",
     "zustand": "^5.0.5"
   },
   "devDependencies": {

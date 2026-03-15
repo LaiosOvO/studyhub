@@ -54,7 +54,7 @@ export function useGraphData(taskId: string): UseGraphDataResult {
       try {
         // Step 1: Fetch task detail to get seed paper IDs
         const taskResult = await apiFetch<DeepResearchTask>(
-          `/deep-research/tasks/${taskId}`,
+          `/api/v1/deep-research/tasks/${taskId}`,
         );
 
         if (cancelled) return;

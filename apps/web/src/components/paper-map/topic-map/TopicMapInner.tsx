@@ -49,7 +49,7 @@ export default function TopicMapInner({ taskId, nodes }: TopicMapInnerProps) {
 
       try {
         const result = await apiFetch<EmbeddingPoint[]>(
-          `/deep-research/tasks/${taskId}/embeddings`,
+          `/api/v1/deep-research/tasks/${taskId}/embeddings`,
         );
 
         if (cancelled) return;

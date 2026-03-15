@@ -8,7 +8,7 @@
 ### Infrastructure (INFRA)
 
 - [x] **INFRA-01**: System runs via Docker Compose with all services (PostgreSQL, Neo4j, Meilisearch, Valkey, SeaweedFS, Temporal)
-- [ ] **INFRA-02**: FastAPI gateway handles JWT authentication, rate limiting, and request routing
+- [x] **INFRA-02**: FastAPI gateway handles JWT authentication, rate limiting, and request routing
 - [x] **INFRA-03**: Temporal server orchestrates long-running workflows with retry and timeout management
 - [x] **INFRA-04**: Valkey Streams provides event-driven inter-service communication
 - [x] **INFRA-05**: SeaweedFS stores PDFs, model checkpoints, and experiment logs (S3-compatible)
@@ -159,10 +159,10 @@
 
 ### Authentication (AUTH)
 
-- [ ] **AUTH-01**: User can register with email and password
-- [ ] **AUTH-02**: User can log in and maintain session across browser refreshes
-- [ ] **AUTH-03**: User can log out from any page
-- [ ] **AUTH-04**: JWT-based authentication with refresh token rotation
+- [x] **AUTH-01**: User can register with email and password
+- [x] **AUTH-02**: User can log in and maintain session across browser refreshes
+- [x] **AUTH-03**: User can log out from any page
+- [x] **AUTH-04**: JWT-based authentication with refresh token rotation
 
 ### Web Application (WAPP)
 
@@ -218,15 +218,15 @@ Updated during roadmap creation.
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | INFRA-01 | Phase 1 | Complete |
-| INFRA-02 | Phase 1 | Pending |
+| INFRA-02 | Phase 1 | Complete |
 | INFRA-03 | Phase 1 | Complete |
 | INFRA-04 | Phase 1 | Complete |
 | INFRA-05 | Phase 1 | Complete |
 | INFRA-06 | Phase 1 | Complete |
-| AUTH-01 | Phase 1 | Pending |
-| AUTH-02 | Phase 1 | Pending |
-| AUTH-03 | Phase 1 | Pending |
-| AUTH-04 | Phase 1 | Pending |
+| AUTH-01 | Phase 1 | Complete |
+| AUTH-02 | Phase 1 | Complete |
+| AUTH-03 | Phase 1 | Complete |
+| AUTH-04 | Phase 1 | Complete |
 | WAPP-01 | Phase 1 | Pending |
 | WAPP-02 | Phase 1 | Pending |
 | WAPP-03 | Phase 1 | Pending |

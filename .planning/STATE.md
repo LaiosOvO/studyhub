@@ -12,25 +12,25 @@ See: .planning/PROJECT.md (updated 2026-03-15)
 Phase: 1 of 10 (Infrastructure & Auth Foundation)
 Plan: 4 of 4 in current phase
 Status: Executing
-Last activity: 2026-03-15 -- Completed 01-04 LLM Gateway & Temporal Workflows
+Last activity: 2026-03-15 -- Completed 01-02 FastAPI Auth Gateway
 
-Progress: [███░░░░░░░] 6%
+Progress: [████░░░░░░] 8%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
-- Average duration: 9min
-- Total execution time: 0.30 hours
+- Total plans completed: 3
+- Average duration: 10min
+- Total execution time: 0.52 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01 | 2 | 18min | 9min |
+| 01 | 3 | 31min | 10min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (9min), 01-04 (9min)
+- Last 5 plans: 01-01 (9min), 01-04 (9min), 01-02 (13min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -51,6 +51,11 @@ Recent decisions affecting current work:
 - [01-04]: Fallback chain pattern for LLM calls (primary fails -> try secondary)
 - [01-04]: Temporal client connection non-fatal at startup (app runs without Temporal)
 - [01-04]: Rate limiting at 10 req/min per IP on LLM completion endpoint
+- [01-02]: Argon2 via pwdlib for password hashing (more secure than bcrypt, FastAPI-recommended)
+- [01-02]: App factory pattern (create_app) for testability and clean initialization
+- [01-02]: Shared slowapi Limiter across all routers instead of per-router instances
+- [01-02]: In-memory SQLite via aiosqlite for test database (no PostgreSQL needed in CI)
+- [01-02]: Valkey client optional parameter -- auth works without Valkey running
 
 ### Pending Todos
 
@@ -65,5 +70,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-15
-Stopped at: Completed 01-04-PLAN.md (LLM Gateway & Temporal Workflows)
+Stopped at: Completed 01-02-PLAN.md (FastAPI Auth Gateway)
 Resume file: None

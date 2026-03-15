@@ -20,6 +20,7 @@ from app.routers.auth import router as auth_router
 from app.routers.health import router as health_router
 from app.routers.llm import router as llm_router
 from app.routers.citations import router as citations_router
+from app.routers.scholars import router as scholars_router
 from app.routers.papers import router as papers_router
 from app.routers.search import router as search_router
 from app.services.temporal_service import get_temporal_client, reset_client, start_workflow
@@ -112,6 +113,7 @@ def create_app() -> FastAPI:
     application.include_router(search_router, prefix="/search", tags=["search"])
     application.include_router(papers_router, prefix="/papers", tags=["papers"])
     application.include_router(citations_router, prefix="/citations", tags=["citations"])
+    application.include_router(scholars_router, prefix="/scholars", tags=["scholars"])
 
     # ─── Workflow endpoints ───────────────────────────────────────────
     _register_workflow_routes(application)

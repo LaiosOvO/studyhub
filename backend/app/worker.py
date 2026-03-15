@@ -14,6 +14,12 @@ from app.config import get_settings
 from app.services.temporal_service import TASK_QUEUE
 from app.workflows.activities import placeholder_search
 from app.workflows.deep_research import DeepResearchWorkflow
+from app.workflows.scholar_refresh import (
+    ScholarRefreshWorkflow,
+    enrich_scholar_activity,
+    get_all_scholar_ids,
+    link_scholar_papers_activity,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -39,8 +45,13 @@ async def run_worker() -> None:
     worker = Worker(
         client,
         task_queue=TASK_QUEUE,
-        workflows=[DeepResearchWorkflow],
-        activities=[placeholder_search],
+        workflows=[DeepResearchWorkflow, ScholarRefreshWorkflow],
+        activities=[
+            placeholder_search,
+            enrich_scholar_activity,
+            link_scholar_papers_activity,
+            get_all_scholar_ids,
+        ],
     )
 
     logger.info("Worker started, listening on task queue: %s", TASK_QUEUE)

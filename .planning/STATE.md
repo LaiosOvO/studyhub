@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-15T19:00:00.000Z"
+last_updated: "2026-03-15T23:08:00.000Z"
 progress:
-  total_phases: 2
-  completed_phases: 2
-  total_plans: 7
-  completed_plans: 7
+  total_phases: 3
+  completed_phases: 3
+  total_plans: 9
+  completed_plans: 9
 ---
 
 # Project State
@@ -18,23 +18,23 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-15)
 
 **Core value:** Input a research direction -> get a complete paper landscape with AI-identified gaps -> generate and auto-execute experiment plans that improve on existing work.
-**Current focus:** Phase 2: Paper Search & Ingestion (completed)
+**Current focus:** Phase 3: Chinese Academic Sources (completed)
 
 ## Current Position
 
-Phase: 2 of 10 (Paper Search & Ingestion)
-Plan: 3 of 3 in current phase (all completed)
-Status: Phase 2 Complete
-Last activity: 2026-03-15 -- Completed all 3 plans in Phase 2
+Phase: 3 of 10 (Chinese Academic Sources)
+Plan: 2 of 2 in current phase (all completed)
+Status: Phase 3 Complete
+Last activity: 2026-03-15 -- Completed all 2 plans in Phase 3
 
-Progress: [██░░░░░░░░] 20%
+Progress: [███░░░░░░░] 30%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
+- Total plans completed: 9
 - Average duration: 12min
-- Total execution time: 1.4 hours
+- Total execution time: 1.7 hours
 
 **By Phase:**
 
@@ -42,10 +42,10 @@ Progress: [██░░░░░░░░] 20%
 |-------|-------|-------|----------|
 | 01 | 4 | 45min | 11min |
 | 02 | 3 | 40min | 13min |
+| 03 | 2 | 16min | 8min |
 
 **Recent Trend:**
-- Last 3 plans: 02-01 (25min), 02-03 (25min), 02-02 (15min)
-- Wave 1 plans ran in parallel
+- Last 3 plans: 02-03 (25min), 03-01 (8min), 03-02 (8min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -80,6 +80,13 @@ Recent decisions affecting current work:
 - [02-03]: Section classification via keyword matching (not ML) -- sufficient for structured papers
 - [02-03]: SeaweedFS upload non-fatal -- logs warning if unavailable
 - [02-03]: Parsing synchronous in request (TODO: Temporal workflow in Phase 5)
+- [03-01]: Patchright over playwright-stealth for deeper CDP detection patching
+- [03-01]: CSS selectors as module-level constants with fallback dicts for CNKI/Wanfang DOM maintenance
+- [03-01]: In-memory cookie store for BrowserPool (Valkey persistence deferred)
+- [03-01]: CnkiCaptchaError as specific exception for aggregator error classification
+- [03-02]: Per-source timeouts: 30s for browser-based (CNKI/Wanfang), 10s for API sources
+- [03-02]: browser_pool parameter optional in aggregator -- None means API-only (backward compatible)
+- [03-02]: Error classification maps exceptions to SourceStatus (CAPTCHA_BLOCKED, RATE_LIMITED, UNAVAILABLE, ERROR)
 
 ### Roadmap Evolution
 
@@ -91,12 +98,12 @@ None yet.
 
 ### Blockers/Concerns
 
-- CNKI/Wanfang anti-scraping strategies need hands-on testing (Phase 3)
+- CNKI/Wanfang scrapers implemented but need live testing with `uv sync` + `python -m patchright install chromium` (sandbox blocked during Phase 3 execution)
 - Tauri-to-web sync protocol needs design research (Phase 8)
 - Researcher matching has no benchmark -- will need user feedback loops (Phase 10)
 
 ## Session Continuity
 
 Last session: 2026-03-15
-Stopped at: Completed Phase 2 (Paper Search & Ingestion)
+Stopped at: Completed Phase 3 (Chinese Academic Sources)
 Resume file: None

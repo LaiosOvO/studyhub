@@ -27,11 +27,11 @@
 
 ### Chinese Sources (CNKI)
 
-- [ ] **CNKI-01**: System searches CNKI for Chinese papers matching user query
-- [ ] **CNKI-02**: System searches Wanfang for Chinese papers matching user query
-- [ ] **CNKI-03**: Chinese paper metadata (title, authors, abstract, journal, citations) extracted and normalized
-- [ ] **CNKI-04**: System handles anti-scraping with rate limiting and session management
-- [ ] **CNKI-05**: System degrades gracefully when CNKI/Wanfang sources are unavailable
+- [x] **CNKI-01**: System searches CNKI for Chinese papers matching user query
+- [x] **CNKI-02**: System searches Wanfang for Chinese papers matching user query
+- [x] **CNKI-03**: Chinese paper metadata (title, authors, abstract, journal, citations) extracted and normalized
+- [x] **CNKI-04**: System handles anti-scraping with rate limiting and session management
+- [x] **CNKI-05**: System degrades gracefully when CNKI/Wanfang sources are unavailable
 
 ### Scholar Profiles (SCHOL)
 
@@ -249,11 +249,11 @@ Updated during roadmap creation.
 | PARS-02 | Phase 2 | Pending |
 | PARS-03 | Phase 2 | Pending |
 | PARS-04 | Phase 2 | Pending |
-| CNKI-01 | Phase 3 | Pending |
-| CNKI-02 | Phase 3 | Pending |
-| CNKI-03 | Phase 3 | Pending |
-| CNKI-04 | Phase 3 | Pending |
-| CNKI-05 | Phase 3 | Pending |
+| CNKI-01 | Phase 3 | Complete |
+| CNKI-02 | Phase 3 | Complete |
+| CNKI-03 | Phase 3 | Complete |
+| CNKI-04 | Phase 3 | Complete |
+| CNKI-05 | Phase 3 | Complete |
 | CITE-01 | Phase 4 | Pending |
 | CITE-02 | Phase 4 | Pending |
 | CITE-03 | Phase 4 | Pending |

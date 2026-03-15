@@ -13,6 +13,9 @@ from app.schemas.paper import PaperResult, PaperSource
 
 from .base_client import BasePaperClient
 
+# Lazy import to avoid circular dependency at module level
+# CitationEdge imported inside methods that need it
+
 logger = logging.getLogger(__name__)
 
 S2_BASE = "https://api.semanticscholar.org/graph/v1"
@@ -138,3 +141,95 @@ class SemanticScholarClient(BasePaperClient):
         papers_resp.raise_for_status()
         papers = papers_resp.json().get("data") or []
         return [_map_s2_to_paper(p) for p in papers]
+
+    @retry(
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(multiplier=1, min=2, max=10),
+        retry=retry_if_exception_type((httpx.HTTPStatusError, httpx.TimeoutException)),
+    )
+    async def get_citations(
+        self, paper_id: str, limit: int = 100, offset: int = 0
+    ) -> list:
+        """Fetch papers that cite the given paper.
+
+        Returns list of CitationEdge with citing paper and metadata.
+        """
+        from app.schemas.citation import CitationEdge
+
+        try:
+            response = await self._client.get(
+                f"{S2_BASE}/paper/{paper_id}/citations",
+                params={
+                    "fields": f"citingPaper.{S2_FIELDS},isInfluential,intents",
+                    "limit": min(limit, 1000),
+                    "offset": offset,
+                },
+                headers=self._headers,
+                timeout=30.0,
+            )
+            response.raise_for_status()
+        except httpx.HTTPStatusError as exc:
+            if exc.response.status_code == 404:
+                return []
+            raise
+
+        data = response.json().get("data") or []
+        edges: list[CitationEdge] = []
+        for item in data:
+            citing_paper_data = item.get("citingPaper")
+            if not citing_paper_data or not citing_paper_data.get("paperId"):
+                continue
+            edges.append(
+                CitationEdge(
+                    citing_paper=_map_s2_to_paper(citing_paper_data),
+                    is_influential=item.get("isInfluential", False),
+                    intents=item.get("intents") or [],
+                )
+            )
+        return edges
+
+    @retry(
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(multiplier=1, min=2, max=10),
+        retry=retry_if_exception_type((httpx.HTTPStatusError, httpx.TimeoutException)),
+    )
+    async def get_references(
+        self, paper_id: str, limit: int = 100, offset: int = 0
+    ) -> list:
+        """Fetch papers referenced by the given paper.
+
+        Returns list of CitationEdge with cited paper and metadata.
+        """
+        from app.schemas.citation import CitationEdge
+
+        try:
+            response = await self._client.get(
+                f"{S2_BASE}/paper/{paper_id}/references",
+                params={
+                    "fields": f"citedPaper.{S2_FIELDS},isInfluential,intents",
+                    "limit": min(limit, 1000),
+                    "offset": offset,
+                },
+                headers=self._headers,
+                timeout=30.0,
+            )
+            response.raise_for_status()
+        except httpx.HTTPStatusError as exc:
+            if exc.response.status_code == 404:
+                return []
+            raise
+
+        data = response.json().get("data") or []
+        edges: list[CitationEdge] = []
+        for item in data:
+            cited_paper_data = item.get("citedPaper")
+            if not cited_paper_data or not cited_paper_data.get("paperId"):
+                continue
+            edges.append(
+                CitationEdge(
+                    citing_paper=_map_s2_to_paper(cited_paper_data),
+                    is_influential=item.get("isInfluential", False),
+                    intents=item.get("intents") or [],
+                )
+            )
+        return edges

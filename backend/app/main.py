@@ -19,6 +19,7 @@ from app.middleware.rate_limit import limiter
 from app.routers.auth import router as auth_router
 from app.routers.health import router as health_router
 from app.routers.llm import router as llm_router
+from app.routers.citations import router as citations_router
 from app.routers.papers import router as papers_router
 from app.routers.search import router as search_router
 from app.services.temporal_service import get_temporal_client, reset_client, start_workflow
@@ -52,6 +53,23 @@ async def lifespan(app: FastAPI):
         logger.warning("Meilisearch not available at startup: %s", exc)
         app.state.meilisearch = None
 
+    # Startup: Neo4j for citation graph (non-fatal if unavailable)
+    try:
+        from app.config import get_settings as _get_neo4j_settings
+        from app.services.citation_network.neo4j_client import Neo4jClient
+
+        _settings = _get_neo4j_settings()
+        neo4j_client = Neo4jClient(
+            _settings.neo4j_uri, _settings.neo4j_user, _settings.neo4j_password
+        )
+        await neo4j_client.verify_connectivity()
+        await neo4j_client.setup_schema()
+        app.state.neo4j = neo4j_client
+        logger.info("Neo4j connected and schema configured")
+    except Exception as exc:
+        logger.warning("Neo4j not available at startup: %s", exc)
+        app.state.neo4j = None
+
     # Startup: attempt Temporal connection (non-fatal if unavailable)
     try:
         await get_temporal_client()
@@ -63,6 +81,10 @@ async def lifespan(app: FastAPI):
 
     # Shutdown: close shared HTTP client
     await app.state.http_client.aclose()
+
+    # Shutdown: close Neo4j connection
+    if getattr(app.state, "neo4j", None) is not None:
+        await app.state.neo4j.close()
 
     # Shutdown: reset Temporal client
     await reset_client()
@@ -89,6 +111,7 @@ def create_app() -> FastAPI:
     application.include_router(llm_router)
     application.include_router(search_router, prefix="/search", tags=["search"])
     application.include_router(papers_router, prefix="/papers", tags=["papers"])
+    application.include_router(citations_router, prefix="/citations", tags=["citations"])
 
     # ─── Workflow endpoints ───────────────────────────────────────────
     _register_workflow_routes(application)

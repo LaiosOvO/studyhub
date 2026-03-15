@@ -37,6 +37,21 @@ async def lifespan(app: FastAPI):
         limits=httpx.Limits(max_connections=100, max_keepalive_connections=20),
     )
 
+    # Startup: Meilisearch for paper search index (non-fatal if unavailable)
+    try:
+        from app.config import get_settings
+        from app.services.search_index.index_config import setup_papers_index
+        from app.services.search_index.meilisearch_service import MeilisearchService
+
+        settings = get_settings()
+        ms_service = MeilisearchService(settings.meilisearch_url, settings.meilisearch_api_key)
+        await setup_papers_index(ms_service.client)
+        app.state.meilisearch = ms_service
+        logger.info("Meilisearch connected and papers index configured")
+    except Exception as exc:
+        logger.warning("Meilisearch not available at startup: %s", exc)
+        app.state.meilisearch = None
+
     # Startup: attempt Temporal connection (non-fatal if unavailable)
     try:
         await get_temporal_client()

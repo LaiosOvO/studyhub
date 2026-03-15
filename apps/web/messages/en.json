@@ -1,0 +1,29 @@
+{
+  "common": {
+    "appName": "StudyHub Academic Research Platform",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "email": "Email",
+    "password": "Password",
+    "fullName": "Full Name",
+    "submit": "Submit",
+    "loading": "Loading...",
+    "error": "Something went wrong"
+  },
+  "auth": {
+    "loginTitle": "Login",
+    "registerTitle": "Register",
+    "loginPrompt": "Don't have an account?",
+    "registerPrompt": "Already have an account?",
+    "loginLink": "Login",
+    "registerLink": "Register",
+    "invalidCredentials": "Invalid email or password",
+    "emailTaken": "This email is already registered",
+    "passwordTooShort": "Password must be at least 8 characters"
+  },
+  "home": {
+    "welcome": "Welcome to StudyHub",
+    "description": "AI-powered academic research community platform"
+  }
+}

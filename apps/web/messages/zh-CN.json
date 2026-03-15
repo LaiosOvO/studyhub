@@ -1,0 +1,29 @@
+{
+  "common": {
+    "appName": "StudyHub 学术研究平台",
+    "login": "登录",
+    "register": "注册",
+    "logout": "退出登录",
+    "email": "邮箱",
+    "password": "密码",
+    "fullName": "姓名",
+    "submit": "提交",
+    "loading": "加载中...",
+    "error": "出错了"
+  },
+  "auth": {
+    "loginTitle": "登录",
+    "registerTitle": "注册",
+    "loginPrompt": "还没有账号？",
+    "registerPrompt": "已有账号？",
+    "loginLink": "去登录",
+    "registerLink": "去注册",
+    "invalidCredentials": "邮箱或密码错误",
+    "emailTaken": "该邮箱已注册",
+    "passwordTooShort": "密码至少8位"
+  },
+  "home": {
+    "welcome": "欢迎使用 StudyHub",
+    "description": "AI驱动的学术研究社区平台"
+  }
+}

@@ -76,6 +76,20 @@ services:
       retries: 5
       start_period: 15s
 
+  # ─── PDF Parsing Service ──────────────────────────────────────────
+  grobid:
+    image: lfoppiano/grobid:0.8.1
+    ports:
+      - "8070:8070"
+    environment:
+      JAVA_OPTS: "-Xmx2g"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8070/api/isalive"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
   # ─── Temporal Database (separate from app) ─────────────────────────
   temporal-db:
     image: postgres:17

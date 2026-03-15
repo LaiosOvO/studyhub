@@ -46,6 +46,14 @@ class Settings(BaseSettings):
     meilisearch_url: str = "http://localhost:7700"
     meilisearch_api_key: str = "meili_dev_key"
 
+    # ─── Academic Paper Sources ───────────────────────────────────────
+    openalex_api_key: str = ""
+    s2_api_key: str = ""
+    pubmed_api_key: str = ""
+
+    # ─── GROBID (PDF Parsing) ─────────────────────────────────────────
+    grobid_url: str = "http://localhost:8070"
+
     # ─── Server ──────────────────────────────────────────────────────
     cors_origins: list[str] = ["http://localhost:3000"]
     debug: bool = True

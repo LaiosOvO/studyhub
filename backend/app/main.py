@@ -8,6 +8,7 @@ import logging
 import uuid
 from contextlib import asynccontextmanager
 
+import httpx
 from fastapi import Depends, FastAPI, HTTPException, Request, status
 from pydantic import BaseModel, Field
 from slowapi import _rate_limit_exceeded_handler
@@ -18,6 +19,8 @@ from app.middleware.rate_limit import limiter
 from app.routers.auth import router as auth_router
 from app.routers.health import router as health_router
 from app.routers.llm import router as llm_router
+from app.routers.papers import router as papers_router
+from app.routers.search import router as search_router
 from app.services.temporal_service import get_temporal_client, reset_client, start_workflow
 from app.workflows.deep_research import DeepResearchInput, DeepResearchWorkflow
 
@@ -27,6 +30,13 @@ logger = logging.getLogger(__name__)
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Application lifespan: startup and shutdown hooks."""
+    # Startup: shared HTTP client for paper search
+    app.state.http_client = httpx.AsyncClient(
+        timeout=httpx.Timeout(30.0, connect=10.0),
+        follow_redirects=True,
+        limits=httpx.Limits(max_connections=100, max_keepalive_connections=20),
+    )
+
     # Startup: attempt Temporal connection (non-fatal if unavailable)
     try:
         await get_temporal_client()
@@ -35,6 +45,9 @@ async def lifespan(app: FastAPI):
         logger.warning("Temporal not available at startup: %s", exc)
 
     yield
+
+    # Shutdown: close shared HTTP client
+    await app.state.http_client.aclose()
 
     # Shutdown: reset Temporal client
     await reset_client()
@@ -59,6 +72,8 @@ def create_app() -> FastAPI:
     application.include_router(health_router)
     application.include_router(auth_router)
     application.include_router(llm_router)
+    application.include_router(search_router, prefix="/search", tags=["search"])
+    application.include_router(papers_router, prefix="/papers", tags=["papers"])
 
     # ─── Workflow endpoints ───────────────────────────────────────────
     _register_workflow_routes(application)

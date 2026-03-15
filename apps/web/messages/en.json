@@ -25,5 +25,25 @@
   "home": {
     "welcome": "Welcome to StudyHub",
     "description": "AI-powered academic research community platform"
+  },
+  "paperMap": {
+    "pageTitle": "Paper Map",
+    "tabs": {
+      "citationGraph": "Citation Graph",
+      "topicMap": "Topic Map",
+      "timeline": "Timeline"
+    },
+    "paperDetail": {
+      "title": "Paper Details",
+      "year": "Year",
+      "citations": "Citations",
+      "qualityScore": "Quality Score",
+      "methods": "Methods",
+      "close": "Close",
+      "breakdown": "Breakdown"
+    },
+    "comingSoon": "Coming Soon",
+    "loading": "Loading...",
+    "error": "Error loading data"
   }
 }

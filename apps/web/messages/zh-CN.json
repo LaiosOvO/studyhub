@@ -25,5 +25,25 @@
   "home": {
     "welcome": "欢迎使用 StudyHub",
     "description": "AI驱动的学术研究社区平台"
+  },
+  "paperMap": {
+    "pageTitle": "论文地图",
+    "tabs": {
+      "citationGraph": "引用图谱",
+      "topicMap": "主题地图",
+      "timeline": "时间线"
+    },
+    "paperDetail": {
+      "title": "论文详情",
+      "year": "年份",
+      "citations": "引用数",
+      "qualityScore": "质量评分",
+      "methods": "方法",
+      "close": "关闭",
+      "breakdown": "分项"
+    },
+    "comingSoon": "即将推出",
+    "loading": "加载中...",
+    "error": "加载出错"
   }
 }

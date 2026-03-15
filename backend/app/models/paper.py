@@ -7,7 +7,7 @@ for parsed PDF content and object storage references.
 import uuid
 from datetime import datetime
 
-from sqlalchemy import Boolean, DateTime, Integer, String, Text, func
+from sqlalchemy import Boolean, DateTime, Float, Integer, String, Text, func
 from sqlalchemy.dialects.postgresql import JSON
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -51,6 +51,9 @@ class Paper(Base):
 
     # ─── Metrics ───────────────────────────────────────────────────────
     citation_count: Mapped[int] = mapped_column(Integer, default=0)
+    quality_score: Mapped[float | None] = mapped_column(
+        Float, nullable=True, index=True
+    )
     pdf_url: Mapped[str | None] = mapped_column(Text, nullable=True)
     is_open_access: Mapped[bool] = mapped_column(Boolean, default=False)
 

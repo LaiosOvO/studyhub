@@ -140,9 +140,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 06-01-PLAN.md -- Citation graph view with React Flow, D3 force layout, Zustand store, and shared data layer
-- [ ] 06-02-PLAN.md -- Topic map (Deck.gl) and timeline (vis-timeline) views with backend embedding endpoint
-- [ ] 06-03-PLAN.md -- Filtering, export (JSON/CSV/PNG), and reading list backend + frontend
+- [x] 06-01-PLAN.md -- Citation graph view with React Flow, D3 force layout, Zustand store, and shared data layer
+- [x] 06-02-PLAN.md -- Topic map (Deck.gl) and timeline (vis-timeline) views with backend embedding endpoint
+- [x] 06-03-PLAN.md -- Filtering, export (JSON/CSV/PNG), and reading list backend + frontend
 
 ### Phase 7: Plan Generation & SOTA Analysis
 **Goal**: Users can generate actionable experiment plans from AI-identified research gaps, complete with hypotheses, baselines, datasets, and code skeletons
@@ -157,9 +157,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 07-01-PLAN.md -- ExperimentPlan model, schemas, SOTA identifier, and improvement analyzer
-- [ ] 07-02-PLAN.md -- Plan generator with reflection, feasibility scoring, dataset recommendation, Temporal workflow, and REST API
-- [ ] 07-03-PLAN.md -- Code skeleton generation and Next.js plan list/editor UI
+- [x] 07-01-PLAN.md -- ExperimentPlan model, schemas, SOTA identifier, and improvement analyzer
+- [x] 07-02-PLAN.md -- Plan generator with reflection, feasibility scoring, dataset recommendation, Temporal workflow, and REST API
+- [x] 07-03-PLAN.md -- Code skeleton generation and Next.js plan list/editor UI
 
 ### Phase 8: Experiment Execution Engine
 **Goal**: Users can run autonomous experiment loops on their local GPU via a desktop agent that modifies code, trains models, evaluates results, and iterates
@@ -229,8 +229,8 @@ Note: Phase 3 and Phase 4 can execute in parallel (both depend on Phase 2). Phas
 | 03.1. Scholar Profile Harvesting | 2/2 | Complete    | 2026-03-15 |
 | 4. Citation Network & Quality Scoring | 3/3 | Complete | 2026-03-15 |
 | 5. Deep Research Engine | 4/4 | Complete | 2026-03-16 |
-| 6. Paper Map Visualization | 0/3 | Not started | - |
-| 7. Plan Generation & SOTA Analysis | 0/3 | Not started | - |
+| 6. Paper Map Visualization | 3/3 | Complete | 2026-03-16 |
+| 7. Plan Generation & SOTA Analysis | 3/3 | Complete | 2026-03-16 |
 | 8. Experiment Execution Engine | 0/4 | Not started | - |
 | 9. Experiment Dashboard & Reports | 0/3 | Not started | - |
 | 10. Community & Collaboration | 0/4 | Not started | - |

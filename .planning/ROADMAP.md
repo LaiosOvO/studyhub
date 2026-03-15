@@ -226,7 +226,7 @@ Note: Phase 3 and Phase 4 can execute in parallel (both depend on Phase 2). Phas
 | 1. Infrastructure & Auth Foundation | 4/4 | Complete | 2026-03-15 |
 | 2. Paper Search & Ingestion | 3/3 | Complete | 2026-03-15 |
 | 3. Chinese Academic Sources | 2/2 | Complete | 2026-03-15 |
-| 03.1. Scholar Profile Harvesting | 2/2 | Complete | 2026-03-15 |
+| 03.1. Scholar Profile Harvesting | 2/2 | Complete    | 2026-03-15 |
 | 4. Citation Network & Quality Scoring | 3/3 | Complete | 2026-03-15 |
 | 5. Deep Research Engine | 0/4 | Not started | - |
 | 6. Paper Map Visualization | 0/3 | Not started | - |

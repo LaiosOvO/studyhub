@@ -10,27 +10,27 @@ See: .planning/PROJECT.md (updated 2026-03-15)
 ## Current Position
 
 Phase: 1 of 10 (Infrastructure & Auth Foundation)
-Plan: 4 of 4 in current phase
+Plan: 4 of 4 in current phase (01-03 just completed)
 Status: Executing
-Last activity: 2026-03-15 -- Completed 01-02 FastAPI Auth Gateway
+Last activity: 2026-03-15 -- Completed 01-03 Next.js Web Shell
 
-Progress: [████░░░░░░] 8%
+Progress: [████░░░░░░] 10%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
-- Average duration: 10min
-- Total execution time: 0.52 hours
+- Total plans completed: 4
+- Average duration: 11min
+- Total execution time: 0.75 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01 | 3 | 31min | 10min |
+| 01 | 4 | 45min | 11min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (9min), 01-04 (9min), 01-02 (13min)
+- Last 5 plans: 01-01 (9min), 01-04 (9min), 01-02 (13min), 01-03 (14min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -56,6 +56,10 @@ Recent decisions affecting current work:
 - [01-02]: Shared slowapi Limiter across all routers instead of per-router instances
 - [01-02]: In-memory SQLite via aiosqlite for test database (no PostgreSQL needed in CI)
 - [01-02]: Valkey client optional parameter -- auth works without Valkey running
+- [01-03]: Access token in memory (not localStorage) for XSS protection; refresh token in localStorage as MVP trade-off
+- [01-03]: Promise queue pattern for concurrent 401 refresh to prevent race conditions
+- [01-03]: AuthInitializer client component for session restore (keeps root layout as server component)
+- [01-03]: next-intl createNavigation for type-safe locale-aware Link, useRouter, usePathname
 
 ### Pending Todos
 
@@ -70,5 +74,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-15
-Stopped at: Completed 01-02-PLAN.md (FastAPI Auth Gateway)
+Stopped at: Completed 01-03-PLAN.md (Next.js Web Shell)
 Resume file: None

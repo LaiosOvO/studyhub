@@ -166,9 +166,9 @@
 
 ### Web Application (WAPP)
 
-- [ ] **WAPP-01**: Next.js web application with SSR for SEO-friendly paper pages
-- [ ] **WAPP-02**: Responsive layout supporting desktop and tablet screen sizes
-- [ ] **WAPP-03**: Chinese and English UI language support
+- [x] **WAPP-01**: Next.js web application with SSR for SEO-friendly paper pages
+- [x] **WAPP-02**: Responsive layout supporting desktop and tablet screen sizes
+- [x] **WAPP-03**: Chinese and English UI language support
 
 ## v2 Requirements
 
@@ -227,9 +227,9 @@ Updated during roadmap creation.
 | AUTH-02 | Phase 1 | Complete |
 | AUTH-03 | Phase 1 | Complete |
 | AUTH-04 | Phase 1 | Complete |
-| WAPP-01 | Phase 1 | Pending |
-| WAPP-02 | Phase 1 | Pending |
-| WAPP-03 | Phase 1 | Pending |
+| WAPP-01 | Phase 1 | Complete |
+| WAPP-02 | Phase 1 | Complete |
+| WAPP-03 | Phase 1 | Complete |
 | SRCH-01 | Phase 2 | Pending |
 | SRCH-02 | Phase 2 | Pending |
 | SRCH-03 | Phase 2 | Pending |

@@ -779,10 +779,20 @@ async def generate_plans_activity(input_json: str) -> str:
                 technical_roadmap=draft.get("technical_roadmap", []),
                 feasibility=feasibility,
                 data_strategy=data_strategy,
+                code_skeleton=None,
                 status="draft",
             )
             session.add(plan)
             await session.flush()
+
+            # Generate code skeleton for this plan
+            try:
+                from app.services.plan_generation.code_skeleton import generate_code_skeleton
+                skeleton = await generate_code_skeleton(plan)
+                plan.code_skeleton = skeleton
+            except Exception as skel_err:
+                logger.warning("Code skeleton generation failed for plan %s: %s", plan.id, skel_err)
+
             plan_ids = [*plan_ids, plan.id]
 
         await session.commit()

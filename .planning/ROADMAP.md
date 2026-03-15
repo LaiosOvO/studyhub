@@ -69,12 +69,11 @@ Plans:
   2. User's keyword search returns Chinese papers from Wanfang with normalized metadata
   3. When CNKI or Wanfang is unavailable or rate-limited, search still returns results from other sources with a clear status indicator
   4. Chinese paper results are deduplicated and merged with international results from Phase 2
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: CNKI scraper with session management and rate limiting
-- [ ] 03-02: Wanfang scraper with metadata normalization
-- [ ] 03-03: Graceful degradation and cross-source deduplication
+- [ ] 03-01-PLAN.md -- BrowserPool, schema extensions, and CNKI scraper client
+- [ ] 03-02-PLAN.md -- Wanfang scraper and aggregator integration with graceful degradation
 
 ### Phase 4: Citation Network & Quality Scoring
 **Goal**: Users can explore the citation landscape around any paper with quality-ranked results stored in a graph database
@@ -209,7 +208,7 @@ Note: Phase 3 and Phase 4 can execute in parallel (both depend on Phase 2). Phas
 |-------|----------------|--------|-----------|
 | 1. Infrastructure & Auth Foundation | 4/4 | Complete | 2026-03-15 |
 | 2. Paper Search & Ingestion | 3/3 | Complete | 2026-03-15 |
-| 3. Chinese Academic Sources | 0/3 | Not started | - |
+| 3. Chinese Academic Sources | 0/2 | Not started | - |
 | 4. Citation Network & Quality Scoring | 0/3 | Not started | - |
 | 5. Deep Research Engine | 0/4 | Not started | - |
 | 6. Paper Map Visualization | 0/3 | Not started | - |

@@ -129,3 +129,80 @@ Return JSON: {{"relationship": "<type>", "confidence": 0.0, "explanation": "brie
 Return ONLY valid JSON, no additional text."""
 
     return [{"role": "user", "content": content}]
+
+
+# ─── Gap Detection (Sonnet) ───────────────────────────────────────────────
+
+
+def build_gap_detection_prompt(
+    direction: str,
+    paper_count: int,
+    corpus_summary: str,
+    method_frequencies: str,
+) -> list[dict]:
+    """Build corpus-level gap identification prompt.
+
+    Analyzes the entire paper corpus for research gaps,
+    underexplored method combinations, and missing evaluations.
+    """
+    content = f"""You are analyzing a corpus of {paper_count} academic papers in the area of "{direction}".
+
+<corpus_summary>
+{corpus_summary}
+</corpus_summary>
+
+<method_frequencies>
+{method_frequencies}
+</method_frequencies>
+
+Identify:
+1. Research gaps: areas mentioned but not deeply explored
+2. Underexplored combinations: methods that haven't been combined
+3. Missing evaluations: datasets or metrics not yet applied to promising methods
+
+Return JSON:
+{{
+  "gaps": [{{"description": "...", "evidence": "...", "potential_impact": "high|medium|low"}}],
+  "underexplored": [{{"combination": "...", "why_promising": "..."}}],
+  "missing_evaluations": [{{"method": "...", "missing": "..."}}]
+}}
+
+Return ONLY valid JSON, no additional text."""
+
+    return [{"role": "user", "content": content}]
+
+
+# ─── Trend Interpretation (Haiku) ─────────────────────────────────────────
+
+
+def build_trend_interpretation_prompt(
+    direction: str,
+    method_year_counts: str,
+) -> list[dict]:
+    """Build trend detection prompt from year-grouped method frequencies.
+
+    Identifies ascending/declining methods and emerging topics.
+    """
+    content = f"""Analyze the temporal trends of research methods in "{direction}".
+
+<method_year_counts>
+{method_year_counts}
+</method_year_counts>
+
+Based on the year-by-year method frequencies above, identify:
+1. Ascending methods: gaining popularity over time
+2. Declining methods: losing popularity
+3. Emerging topics: appeared recently
+4. Stable methods: consistently used
+
+Return JSON:
+{{
+  "ascending_methods": [{{"method": "...", "evidence": "..."}}],
+  "declining_methods": [{{"method": "...", "evidence": "..."}}],
+  "emerging_topics": [{{"topic": "...", "evidence": "..."}}],
+  "stable_methods": [{{"method": "...", "evidence": "..."}}]
+}}
+
+Return ONLY valid JSON, no additional text."""
+
+    return [{"role": "user", "content": content}]

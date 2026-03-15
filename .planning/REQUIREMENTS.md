@@ -217,13 +217,120 @@ Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (populated by roadmapper) | | |
+| INFRA-01 | Phase 1 | Pending |
+| INFRA-02 | Phase 1 | Pending |
+| INFRA-03 | Phase 1 | Pending |
+| INFRA-04 | Phase 1 | Pending |
+| INFRA-05 | Phase 1 | Pending |
+| INFRA-06 | Phase 1 | Pending |
+| AUTH-01 | Phase 1 | Pending |
+| AUTH-02 | Phase 1 | Pending |
+| AUTH-03 | Phase 1 | Pending |
+| AUTH-04 | Phase 1 | Pending |
+| WAPP-01 | Phase 1 | Pending |
+| WAPP-02 | Phase 1 | Pending |
+| WAPP-03 | Phase 1 | Pending |
+| SRCH-01 | Phase 2 | Pending |
+| SRCH-02 | Phase 2 | Pending |
+| SRCH-03 | Phase 2 | Pending |
+| SRCH-04 | Phase 2 | Pending |
+| SRCH-05 | Phase 2 | Pending |
+| SRCH-06 | Phase 2 | Pending |
+| SRCH-07 | Phase 2 | Pending |
+| SRCH-08 | Phase 2 | Pending |
+| PARS-01 | Phase 2 | Pending |
+| PARS-02 | Phase 2 | Pending |
+| PARS-03 | Phase 2 | Pending |
+| PARS-04 | Phase 2 | Pending |
+| CNKI-01 | Phase 3 | Pending |
+| CNKI-02 | Phase 3 | Pending |
+| CNKI-03 | Phase 3 | Pending |
+| CNKI-04 | Phase 3 | Pending |
+| CNKI-05 | Phase 3 | Pending |
+| CITE-01 | Phase 4 | Pending |
+| CITE-02 | Phase 4 | Pending |
+| CITE-03 | Phase 4 | Pending |
+| CITE-04 | Phase 4 | Pending |
+| CITE-05 | Phase 4 | Pending |
+| CITE-06 | Phase 4 | Pending |
+| QUAL-01 | Phase 4 | Pending |
+| QUAL-02 | Phase 4 | Pending |
+| QUAL-03 | Phase 4 | Pending |
+| QUAL-04 | Phase 4 | Pending |
+| DEEP-01 | Phase 5 | Pending |
+| DEEP-02 | Phase 5 | Pending |
+| DEEP-03 | Phase 5 | Pending |
+| DEEP-04 | Phase 5 | Pending |
+| DEEP-05 | Phase 5 | Pending |
+| DEEP-06 | Phase 5 | Pending |
+| DEEP-07 | Phase 5 | Pending |
+| DEEP-08 | Phase 5 | Pending |
+| ANAL-01 | Phase 5 | Pending |
+| ANAL-02 | Phase 5 | Pending |
+| ANAL-03 | Phase 5 | Pending |
+| ANAL-04 | Phase 5 | Pending |
+| ANAL-05 | Phase 5 | Pending |
+| ANAL-06 | Phase 5 | Pending |
+| PMAP-01 | Phase 6 | Pending |
+| PMAP-02 | Phase 6 | Pending |
+| PMAP-03 | Phase 6 | Pending |
+| PMAP-04 | Phase 6 | Pending |
+| PMAP-05 | Phase 6 | Pending |
+| PMAP-06 | Phase 6 | Pending |
+| PMAP-07 | Phase 6 | Pending |
+| PMAP-08 | Phase 6 | Pending |
+| PMAP-09 | Phase 6 | Pending |
+| PMAP-10 | Phase 6 | Pending |
+| PLAN-01 | Phase 7 | Pending |
+| PLAN-02 | Phase 7 | Pending |
+| PLAN-03 | Phase 7 | Pending |
+| PLAN-04 | Phase 7 | Pending |
+| PLAN-05 | Phase 7 | Pending |
+| PLAN-06 | Phase 7 | Pending |
+| PLAN-07 | Phase 7 | Pending |
+| PLAN-08 | Phase 7 | Pending |
+| EXPR-01 | Phase 8 | Pending |
+| EXPR-02 | Phase 8 | Pending |
+| EXPR-03 | Phase 8 | Pending |
+| EXPR-04 | Phase 8 | Pending |
+| EXPR-05 | Phase 8 | Pending |
+| EXPR-06 | Phase 8 | Pending |
+| EXPR-07 | Phase 8 | Pending |
+| EXPR-08 | Phase 8 | Pending |
+| EXPR-09 | Phase 8 | Pending |
+| EXPR-10 | Phase 8 | Pending |
+| DASH-01 | Phase 9 | Pending |
+| DASH-02 | Phase 9 | Pending |
+| DASH-03 | Phase 9 | Pending |
+| DASH-04 | Phase 9 | Pending |
+| DASH-05 | Phase 9 | Pending |
+| REPT-01 | Phase 9 | Pending |
+| REPT-02 | Phase 9 | Pending |
+| REPT-03 | Phase 9 | Pending |
+| REPT-04 | Phase 9 | Pending |
+| PROF-01 | Phase 10 | Pending |
+| PROF-02 | Phase 10 | Pending |
+| PROF-03 | Phase 10 | Pending |
+| PROF-04 | Phase 10 | Pending |
+| PROF-05 | Phase 10 | Pending |
+| PROF-06 | Phase 10 | Pending |
+| MTCH-01 | Phase 10 | Pending |
+| MTCH-02 | Phase 10 | Pending |
+| MTCH-03 | Phase 10 | Pending |
+| MTCH-04 | Phase 10 | Pending |
+| NEED-01 | Phase 10 | Pending |
+| NEED-02 | Phase 10 | Pending |
+| NEED-03 | Phase 10 | Pending |
+| NEED-04 | Phase 10 | Pending |
+| MESG-01 | Phase 10 | Pending |
+| MESG-02 | Phase 10 | Pending |
+| MESG-03 | Phase 10 | Pending |
 
 **Coverage:**
-- v1 requirements: 82 total
-- Mapped to phases: 0
-- Unmapped: 82 ⚠️
+- v1 requirements: 108 total
+- Mapped to phases: 108
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-15*
-*Last updated: 2026-03-15 after initial definition*
+*Last updated: 2026-03-15 after roadmap creation*

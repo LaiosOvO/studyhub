@@ -9,7 +9,7 @@ from typing import Annotated
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.dependencies import get_current_user, get_db
+from app.dependencies import get_current_user, get_db, get_valkey
 from app.models.user import User
 from app.schemas.auth import (
     LoginRequest,
@@ -89,6 +89,7 @@ async def login(
 async def refresh(
     body: RefreshRequest,
     session: Annotated[AsyncSession, Depends(get_db)],
+    valkey_client: Annotated[object, Depends(get_valkey)],
 ) -> ApiResponse[TokenResponse]:
     """Refresh access token using a valid refresh token.
 
@@ -99,7 +100,7 @@ async def refresh(
         tokens = await refresh_access_token(
             refresh_token=body.refresh_token,
             session=session,
-            valkey_client=None,  # Valkey integration added when service is available
+            valkey_client=valkey_client,
         )
     except ValueError:
         raise HTTPException(
@@ -118,6 +119,7 @@ async def refresh(
 async def logout(
     body: RefreshRequest,
     _current_user: Annotated[User, Depends(get_current_user)],
+    valkey_client: Annotated[object, Depends(get_valkey)],
 ) -> ApiResponse:
     """Log out by invalidating the refresh token.
 
@@ -126,7 +128,7 @@ async def logout(
     """
     await logout_user(
         refresh_token=body.refresh_token,
-        valkey_client=None,  # Valkey integration added when service is available
+        valkey_client=valkey_client,
     )
     return ApiResponse(
         success=True,

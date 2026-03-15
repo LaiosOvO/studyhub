@@ -7,13 +7,27 @@ import jwt
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from sqlalchemy.ext.asyncio import AsyncSession
+from valkey.asyncio import Valkey
 
+from app.config import get_settings
 from app.database import get_db_session
 from app.models.user import User
 from app.services.auth_service import decode_token, get_user_by_id
 
 # HTTP Bearer scheme for JWT access tokens
 _bearer_scheme = HTTPBearer(auto_error=False)
+
+# Valkey client singleton (lazy-initialized)
+_valkey_client: Valkey | None = None
+
+
+async def get_valkey() -> Valkey:
+    """Return a shared async Valkey client for token blacklisting."""
+    global _valkey_client
+    if _valkey_client is None:
+        settings = get_settings()
+        _valkey_client = Valkey.from_url(settings.valkey_url, decode_responses=True)
+    return _valkey_client
 
 
 async def get_db() -> AsyncGenerator[AsyncSession, None]:

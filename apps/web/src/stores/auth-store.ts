@@ -133,7 +133,11 @@ export const useAuthStore = create<AuthState>()((set) => ({
     try {
       const token = getAccessToken();
       if (token) {
-        await apiFetch('/auth/logout', { method: 'POST' });
+        const refreshTok = getRefreshToken();
+        await apiFetch('/auth/logout', {
+          method: 'POST',
+          body: JSON.stringify({ refresh_token: refreshTok }),
+        });
       }
     } catch {
       // Best-effort logout call

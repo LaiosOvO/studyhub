@@ -15,19 +15,30 @@
 | **MLE-agent** | `/Users/admin/ai/ref/MLE-agent` | AI 工程助手、arXiv 集成 | `mle/` |
 | **khoj** | `/Users/admin/ai/ref/khoj` | 自托管 AI 平台、Docker Compose、多 LLM | `src/khoj/`, `docker-compose.yml` |
 
-### 参考项目索引
+### 参考项目索引（GitNexus）
 
-所有参考项目已通过 refindex-v2 索引，可用以下命令搜索：
+所有参考项目已通过 GitNexus 索引，可用以下命令分析和搜索：
 
 ```bash
-NODE="/Users/admin/Library/Application Support/easyclaw/ai/tool_cache/resources/tools/mac/node-24.13.0-arm64/bin/node"
-CLI="/Users/admin/ai/cli/gpt/prod/refindex-v2/src/cli.js"
-NEXUS_SKILL_DIR="/Users/admin/.config/opencode/skills/nexus-mapper" "$NODE" "$CLI" search --query "<搜索关键词>" --limit 5
+# 查看已索引的项目
+gitnexus list
+
+# 搜索代码模式（按概念分组的执行流）
+gitnexus query <repo-name> "<搜索关键词>"
+
+# 查看符号的 360 度视图（引用、所属流程）
+gitnexus context <repo-name> "<符号名>"
+
+# 影响分析（改动 X 会影响什么）
+gitnexus impact <repo-name> "<符号名>"
+
+# 原始图查询
+gitnexus cypher <repo-name> "<Cypher 查询>"
 ```
 
 ### 实现流程
 
-1. **搜索**：用 refindex 搜索与当前任务相关的模式
+1. **搜索**：用 `gitnexus query` 搜索与当前任务相关的模式
 2. **阅读**：读取参考项目中的相关源文件
 3. **参照**：基于参考项目的模式编写代码
 4. **标注**：在代码注释或 commit message 中标注参考来源

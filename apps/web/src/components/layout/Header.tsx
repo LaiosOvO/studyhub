@@ -2,17 +2,19 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/routing';
+import { Link, useRouter } from '@/i18n/routing';
 import { LanguageToggle } from './LanguageToggle';
 import { useAuthStore } from '@/stores/auth-store';
 
 export function Header() {
   const t = useTranslations('common');
+  const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { user, isAuthenticated, logout } = useAuthStore();
 
   async function handleLogout() {
     await logout();
+    router.replace('/login');
   }
 
   return (

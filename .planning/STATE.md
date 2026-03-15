@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-15T10:26:11.490Z"
+last_updated: "2026-03-15T19:00:00.000Z"
 progress:
-  total_phases: 1
-  completed_phases: 1
-  total_plans: 4
-  completed_plans: 4
+  total_phases: 2
+  completed_phases: 2
+  total_plans: 7
+  completed_plans: 7
 ---
 
 # Project State
@@ -18,32 +18,34 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-15)
 
 **Core value:** Input a research direction -> get a complete paper landscape with AI-identified gaps -> generate and auto-execute experiment plans that improve on existing work.
-**Current focus:** Phase 1: Infrastructure & Auth Foundation
+**Current focus:** Phase 2: Paper Search & Ingestion (completed)
 
 ## Current Position
 
-Phase: 1 of 10 (Infrastructure & Auth Foundation)
-Plan: 4 of 4 in current phase (01-03 just completed)
-Status: Executing
-Last activity: 2026-03-15 -- Completed 01-03 Next.js Web Shell
+Phase: 2 of 10 (Paper Search & Ingestion)
+Plan: 3 of 3 in current phase (all completed)
+Status: Phase 2 Complete
+Last activity: 2026-03-15 -- Completed all 3 plans in Phase 2
 
-Progress: [████░░░░░░] 10%
+Progress: [██░░░░░░░░] 20%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
-- Average duration: 11min
-- Total execution time: 0.75 hours
+- Total plans completed: 7
+- Average duration: 12min
+- Total execution time: 1.4 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01 | 4 | 45min | 11min |
+| 02 | 3 | 40min | 13min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (9min), 01-04 (9min), 01-02 (13min), 01-03 (14min)
+- Last 3 plans: 02-01 (25min), 02-03 (25min), 02-02 (15min)
+- Wave 1 plans ran in parallel
 - Trend: stable
 
 *Updated after each plan completion*
@@ -63,16 +65,21 @@ Recent decisions affecting current work:
 - [01-04]: LiteLLM as unified LLM provider abstraction (Anthropic, OpenAI, etc.)
 - [01-04]: Fallback chain pattern for LLM calls (primary fails -> try secondary)
 - [01-04]: Temporal client connection non-fatal at startup (app runs without Temporal)
-- [01-04]: Rate limiting at 10 req/min per IP on LLM completion endpoint
 - [01-02]: Argon2 via pwdlib for password hashing (more secure than bcrypt, FastAPI-recommended)
 - [01-02]: App factory pattern (create_app) for testability and clean initialization
-- [01-02]: Shared slowapi Limiter across all routers instead of per-router instances
-- [01-02]: In-memory SQLite via aiosqlite for test database (no PostgreSQL needed in CI)
-- [01-02]: Valkey client optional parameter -- auth works without Valkey running
-- [01-03]: Access token in memory (not localStorage) for XSS protection; refresh token in localStorage as MVP trade-off
-- [01-03]: Promise queue pattern for concurrent 401 refresh to prevent race conditions
-- [01-03]: AuthInitializer client component for session restore (keeps root layout as server component)
-- [01-03]: next-intl createNavigation for type-safe locale-aware Link, useRouter, usePathname
+- [01-02]: In-memory SQLite via aiosqlite for test database
+- [01-03]: Access token in memory (not localStorage) for XSS protection
+- [02-01]: pyalex (sync) with asyncio.to_thread for OpenAlex -- handles pagination and polite pool
+- [02-01]: arXiv rate limit via module-level Semaphore(1) + 3s sleep
+- [02-01]: Deduplicator returns new objects on merge (immutable pattern)
+- [02-01]: Paper model uses JSON columns for authors/sources (not normalized tables)
+- [02-02]: Index-on-search pattern for Meilisearch (fills gradually, no bulk import)
+- [02-02]: Abstract truncated to 500 chars in Meilisearch, full in PostgreSQL
+- [02-02]: Meilisearch failure graceful -- falls back to aggregator-only mode
+- [02-03]: Raw httpx to GROBID (not grobid-client-python) -- simpler, fewer deps
+- [02-03]: Section classification via keyword matching (not ML) -- sufficient for structured papers
+- [02-03]: SeaweedFS upload non-fatal -- logs warning if unavailable
+- [02-03]: Parsing synchronous in request (TODO: Temporal workflow in Phase 5)
 
 ### Pending Todos
 
@@ -87,5 +94,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-15
-Stopped at: Completed 01-03-PLAN.md (Next.js Web Shell)
+Stopped at: Completed Phase 2 (Paper Search & Ingestion)
 Resume file: None

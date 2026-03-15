@@ -12,8 +12,8 @@ StudyHub delivers an AI-powered academic research platform in 10 phases, progres
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Infrastructure & Auth Foundation** - Docker Compose services, API gateway, auth, and web app shell
-- [ ] **Phase 2: Paper Search & Ingestion** - Multi-source paper search with PDF parsing and full-text indexing
+- [x] **Phase 1: Infrastructure & Auth Foundation** - Docker Compose services, API gateway, auth, and web app shell
+- [x] **Phase 2: Paper Search & Ingestion** - Multi-source paper search with PDF parsing and full-text indexing
 - [ ] **Phase 3: Chinese Academic Sources** - CNKI and Wanfang integration with anti-scraping resilience
 - [ ] **Phase 4: Citation Network & Quality Scoring** - Recursive citation graph construction and paper quality ranking
 - [ ] **Phase 5: Deep Research Engine** - End-to-end research pipeline with AI analysis and literature review generation
@@ -38,10 +38,10 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: TBD
 
 Plans:
-- [ ] 01-01: Docker Compose infrastructure and service health
-- [ ] 01-02: FastAPI gateway with JWT auth and rate limiting
-- [ ] 01-03: Next.js web shell with i18n and auth flows
-- [ ] 01-04: LLM Gateway and Temporal workflow foundation
+- [x] 01-01: Docker Compose infrastructure and service health
+- [x] 01-02: FastAPI gateway with JWT auth and rate limiting
+- [x] 01-03: Next.js web shell with i18n and auth flows
+- [x] 01-04: LLM Gateway and Temporal workflow foundation
 
 ### Phase 2: Paper Search & Ingestion
 **Goal**: Users can search for papers across international sources and get deduplicated, indexed results with full-text extraction from PDFs
@@ -56,9 +56,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Multi-source paper search clients, dedup, and search API
-- [ ] 02-02-PLAN.md — Meilisearch indexing with filtering, sorting, and index-on-search
-- [ ] 02-03-PLAN.md — GROBID PDF parsing pipeline with structured section extraction
+- [x] 02-01-PLAN.md -- Multi-source paper search clients, dedup, and search API
+- [x] 02-02-PLAN.md -- Meilisearch indexing with filtering, sorting, and index-on-search
+- [x] 02-03-PLAN.md -- GROBID PDF parsing pipeline with structured section extraction
 
 ### Phase 3: Chinese Academic Sources
 **Goal**: Users can discover Chinese papers from CNKI and Wanfang alongside international results, with the system handling anti-scraping gracefully
@@ -207,8 +207,8 @@ Note: Phase 3 and Phase 4 can execute in parallel (both depend on Phase 2). Phas
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Infrastructure & Auth Foundation | 0/4 | Not started | - |
-| 2. Paper Search & Ingestion | 0/3 | Not started | - |
+| 1. Infrastructure & Auth Foundation | 4/4 | Complete | 2026-03-15 |
+| 2. Paper Search & Ingestion | 3/3 | Complete | 2026-03-15 |
 | 3. Chinese Academic Sources | 0/3 | Not started | - |
 | 4. Citation Network & Quality Scoring | 0/3 | Not started | - |
 | 5. Deep Research Engine | 0/4 | Not started | - |

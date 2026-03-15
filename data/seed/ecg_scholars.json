@@ -1,0 +1,164 @@
+{
+  "source": "百度百科",
+  "domain": "ECG/心电图/心血管电生理",
+  "scraped_at": "2026-03-15",
+  "scholars": [
+    {
+      "name": "葛均波",
+      "birth_year": 1962,
+      "institution": "复旦大学附属中山医院",
+      "title": ["中国科学院院士", "教授", "主任医师", "博士生导师"],
+      "rank": "院士",
+      "research_fields": ["心血管病学", "冠心病发病机制", "血管内超声技术", "心血管AI大模型(观心CardioMind)", "AI辅助心电图诊断"],
+      "honors": ["中国科学院院士(2011)", "全国五一劳动奖章(2012)", "国家科技进步二等奖(2006)", "国家技术发明奖二等奖(2011)", "何梁何利基金科学与技术进步奖(2023)"],
+      "education": {
+        "bachelor": "青岛医学院(1979-1984)",
+        "master": "山东医科大学(1984-1987)",
+        "phd": "德国美因兹大学(1990-1993)",
+        "postdoc": "德国埃森大学(1993-1994)"
+      },
+      "ecg_ai_relevance": "high",
+      "note": "发布中国首个心血管AI大模型'观心'CardioMind，AI辅助心电图诊断瓣膜疾病准确率>99.9%",
+      "baike_url": "https://baike.baidu.com/item/葛均波"
+    },
+    {
+      "name": "郭继鸿",
+      "birth_year": 1949,
+      "institution": "北京大学人民医院",
+      "title": ["主任医师", "教授", "博士生导师"],
+      "rank": "教授",
+      "research_fields": ["心脏电生理学", "心脏起搏", "导管射频消融术", "心律失常", "心电图学"],
+      "honors": ["中国生物医学工程学会心律分会主任委员", "中国医药生物技术协会心电学技术分会主任委员", "中国心脏健康教育联盟主席"],
+      "education": {
+        "bachelor": "同济医科大学(1978)",
+        "visiting": "美国斯坦福大学医学院(1989)"
+      },
+      "ecg_ai_relevance": "high",
+      "note": "中国心电学泰斗，心电图学领域最权威学者之一",
+      "baike_url": "https://baike.baidu.com/item/郭继鸿"
+    },
+    {
+      "name": "张澍",
+      "birth_year": 1959,
+      "institution": "中国医学科学院阜外医院",
+      "title": ["教授", "博士生导师", "心律失常中心主任"],
+      "rank": "教授",
+      "research_fields": ["心内科", "心律失常临床与科研", "心脏电生理", "心脏起搏"],
+      "honors": ["国家科技进步奖(3项)", "北京市科学技术奖(2项)", "中华医学奖(2项)", "第十四届全国人大代表"],
+      "education": {
+        "bachelor": "苏州医学院",
+        "phd": "北京协和医学院"
+      },
+      "ecg_ai_relevance": "medium",
+      "note": "中华医学会心电生理和起搏分会主任委员，亚太心律学会秘书长",
+      "baike_url": "https://baike.baidu.com/item/张澍/17720049"
+    },
+    {
+      "name": "黄从新",
+      "birth_year": 1951,
+      "institution": "武汉大学人民医院",
+      "title": ["名誉院长", "教授", "主任医师", "博士生导师"],
+      "rank": "教授",
+      "research_fields": ["心律失常", "介入心脏病学", "心脏起搏与电生理", "心房颤动"],
+      "honors": ["国家有突出贡献的中青年专家(1998)", "全国五一劳动奖章(2003)", "全国劳动模范(2005)", "国家科技进步二等奖(3项)", "省科技进步一等奖(7项)"],
+      "education": {
+        "phd": "同济医科大学"
+      },
+      "ecg_ai_relevance": "medium",
+      "note": "心房颤动基础与临床研究杰出贡献奖获得者",
+      "baike_url": "https://baike.baidu.com/item/黄从新"
+    },
+    {
+      "name": "黄德嘉",
+      "birth_year": null,
+      "institution": "四川大学华西医院",
+      "title": ["心血管内科一级专家"],
+      "rank": "教授",
+      "research_fields": ["心血管介入治疗", "射频消融", "心脏同步化治疗"],
+      "honors": [],
+      "education": {
+        "overseas": "加拿大留学(1988年前)"
+      },
+      "ecg_ai_relevance": "medium",
+      "note": "华西医院心血管内科权威",
+      "baike_url": "https://baike.baidu.com/item/黄德嘉"
+    },
+    {
+      "name": "洪葵",
+      "birth_year": 1964,
+      "institution": "南昌大学第二附属医院",
+      "title": ["主任医师", "二级教授"],
+      "rank": "教授",
+      "research_fields": ["心血管疾病遗传学基础研究", "分子诊断", "个体化治疗", "心律失常研究", "遗传性心脏病"],
+      "honors": ["国家万人计划领军人才", "教育部创新团队带头人", "国务院特殊津贴", "全国优秀科技工作者", "江西省自然科学一等奖(2项)"],
+      "education": {
+        "bachelor": "江西医学院(1988)",
+        "master": "心内科硕士(1995)",
+        "phd": "日本国立冈山大学(2000)",
+        "postdoc": "美国博士后"
+      },
+      "ecg_ai_relevance": "medium",
+      "note": "遗传性心脏病和心律失常研究领军人物",
+      "baike_url": "https://baike.baidu.com/item/洪葵"
+    },
+    {
+      "name": "唐闽",
+      "birth_year": null,
+      "institution": "中国医学科学院阜外医院",
+      "title": ["主任医师", "博士研究生导师"],
+      "rank": "主任医师",
+      "research_fields": ["心律失常", "心房颤动", "导管消融治疗", "起搏器技术", "晕厥诊疗"],
+      "honors": ["北京市科技进步二等奖(2019)", "亚太心律学会年会青年医师奖第一名", "德国心脏病学会优秀论文奖"],
+      "education": {
+        "bachelor": "山东医科大学(1995)",
+        "master": "福建医科大学(1999-2002)",
+        "phd": "中国协和医科大学(2002-2005)",
+        "postdoc": "武汉大学(2005-2008)"
+      },
+      "ecg_ai_relevance": "medium",
+      "note": "阜外医院心律失常中心核心成员",
+      "baike_url": "https://baike.baidu.com/item/唐闽"
+    },
+    {
+      "name": "孙英贤",
+      "birth_year": 1962,
+      "institution": "中国医科大学附属第一医院",
+      "title": ["教授", "主任医师", "博士生导师"],
+      "rank": "院士(国际欧亚科学院)",
+      "research_fields": ["高血压病防治", "介入心脏病学", "心电生理与起搏研究", "靶器官保护"],
+      "honors": ["国际欧亚科学院院士(2017)", "国家科技进步二等奖(2010)", "吴阶平-杨森奖(2016)", "国务院特殊津贴"],
+      "education": {
+        "phd": "中国医科大学"
+      },
+      "ecg_ai_relevance": "medium",
+      "note": "心电生理与起搏研究方向",
+      "baike_url": "https://baike.baidu.com/item/孙英贤/13983675"
+    },
+    {
+      "name": "刘澄玉",
+      "birth_year": null,
+      "institution": "东南大学仪器科学与工程学院",
+      "title": ["院长", "教授", "博士生导师"],
+      "rank": "教授",
+      "research_fields": ["可穿戴医疗智能监测", "医学大数据信息处理", "心脑血管疾病早期检测", "睡眠与情绪应激评估"],
+      "honors": [],
+      "education": {},
+      "ecg_ai_relevance": "high",
+      "note": "东南-联想可穿戴心-睡-情智能监测联合实验室创始人，ECG信号处理核心学者",
+      "baike_url": "https://baike.baidu.com/item/刘澄玉"
+    },
+    {
+      "name": "冯前进",
+      "birth_year": null,
+      "institution": "南方医科大学生物医学工程学院",
+      "title": ["教授", "博士生导师"],
+      "rank": "教授",
+      "research_fields": ["医学图像分析", "医学成像方法", "心电AI"],
+      "honors": ["广东省丁颖科技奖", "中国生物医学工程学会医学图像与控制专业分会主任委员"],
+      "education": {},
+      "ecg_ai_relevance": "high",
+      "note": "团队在Nature Communications发表心电AI研究成果",
+      "baike_url": "https://baike.baidu.com/item/冯前进"
+    }
+  ]
+}

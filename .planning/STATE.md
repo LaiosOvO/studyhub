@@ -81,6 +81,10 @@ Recent decisions affecting current work:
 - [02-03]: SeaweedFS upload non-fatal -- logs warning if unavailable
 - [02-03]: Parsing synchronous in request (TODO: Temporal workflow in Phase 5)
 
+### Roadmap Evolution
+
+- Phase 03.1 inserted after Phase 3: Scholar Profile Harvesting (INSERTED) — build scholar profile DB from Baidu Baike + Google Scholar with ECG domain seed data
+
 ### Pending Todos
 
 None yet.

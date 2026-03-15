@@ -33,6 +33,13 @@
 - [ ] **CNKI-04**: System handles anti-scraping with rate limiting and session management
 - [ ] **CNKI-05**: System degrades gracefully when CNKI/Wanfang sources are unavailable
 
+### Scholar Profiles (SCHOL)
+
+- [ ] **SCHOL-01**: Baidu Baike scraper extracts scholar profiles (name, institution, rank, birth_year, research_fields, honors)
+- [ ] **SCHOL-02**: Google Scholar enrichment adds h-index, total citations, and recent publication list
+- [ ] **SCHOL-03**: Scholar-Paper linking via author name matching with fuzzy CJK support and deduplication
+- [ ] **SCHOL-04**: Scholar data model with seed import pipeline, incremental update API, and scheduled refresh task
+
 ### Citation Network (CITE)
 
 - [ ] **CITE-01**: System recursively expands citation network from seed papers (configurable depth 1-3)

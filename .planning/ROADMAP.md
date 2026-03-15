@@ -75,6 +75,22 @@ Plans:
 - [ ] 03-01-PLAN.md -- BrowserPool, schema extensions, and CNKI scraper client
 - [ ] 03-02-PLAN.md -- Wanfang scraper and aggregator integration with graceful degradation
 
+### Phase 03.1: Scholar Profile Harvesting (INSERTED)
+
+**Goal**: Build a scholar profile database seeded from Baidu Baike and Google Scholar, storing researcher metadata (name, institution, rank, age, research fields, h-index) linked to papers
+**Depends on**: Phase 2
+**Requirements**: SCHOL-01, SCHOL-02, SCHOL-03, SCHOL-04
+**Success Criteria** (what must be TRUE):
+  1. Scholar model stores name, institution, title/rank, birth_year, research_fields, h_index, and source URLs
+  2. Baidu Baike scraper extracts scholar profiles with normalized metadata
+  3. Google Scholar enrichment adds h-index, citation count, and publication list
+  4. Scholars are linked to papers via author name matching with fuzzy CJK support
+  5. Seed data for ECG domain scholars is imported and verified
+**Plans**: 0 plans
+
+Plans:
+- [ ] TBD (run /gsd:plan-phase 03.1 to break down)
+
 ### Phase 4: Citation Network & Quality Scoring
 **Goal**: Users can explore the citation landscape around any paper with quality-ranked results stored in a graph database
 **Depends on**: Phase 2

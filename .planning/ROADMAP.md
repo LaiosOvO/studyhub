@@ -85,12 +85,12 @@ Plans:
   3. Each paper displays a composite quality score with breakdown (citations, velocity, impact factor, H-index)
   4. Papers are ranked by quality score in search results and graph views, with top-N key papers highlighted
   5. Citation graph is stored in Neo4j and respects configurable paper count budgets to prevent explosion
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: Citation expansion engine with budget control
-- [ ] 04-02: Semantic similarity discovery and Neo4j graph storage
-- [ ] 04-03: Quality scoring algorithm and ranking integration
+- [ ] 04-01-PLAN.md -- Neo4j client, BFS citation expansion engine with budget control
+- [ ] 04-02-PLAN.md -- Semantic similarity discovery, manual expansion, and citation REST endpoints
+- [ ] 04-03-PLAN.md -- Composite quality scoring algorithm with ranking and top-N identification
 
 ### Phase 5: Deep Research Engine
 **Goal**: Users can launch an end-to-end research task that automatically discovers papers, builds the citation graph, scores quality, and produces AI-powered analysis with a literature review

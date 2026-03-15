@@ -137,12 +137,12 @@ Plans:
   3. User can filter the graph by time range, method type, or quality threshold
   4. User can switch between citation graph, topic/discipline map (cluster regions), and chronological timeline views
   5. User can export graph data and save paper collections/reading lists from the map
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 06-01: Citation graph view (React Flow + D3 force layout)
-- [ ] 06-02: Topic map view (Deck.gl) and timeline view (vis-timeline)
-- [ ] 06-03: Filtering, export, and reading list management
+- [ ] 06-01-PLAN.md -- Citation graph view with React Flow, D3 force layout, Zustand store, and shared data layer
+- [ ] 06-02-PLAN.md -- Topic map (Deck.gl) and timeline (vis-timeline) views with backend embedding endpoint
+- [ ] 06-03-PLAN.md -- Filtering, export (JSON/CSV/PNG), and reading list backend + frontend
 
 ### Phase 7: Plan Generation & SOTA Analysis
 **Goal**: Users can generate actionable experiment plans from AI-identified research gaps, complete with hypotheses, baselines, datasets, and code skeletons

@@ -80,6 +80,8 @@ def _merge_papers(existing: PaperResult, new: PaperResult) -> PaperResult:
         s2_id=existing.s2_id or new.s2_id,
         pmid=existing.pmid or new.pmid,
         arxiv_id=existing.arxiv_id or new.arxiv_id,
+        cnki_id=existing.cnki_id or new.cnki_id,
+        wanfang_id=existing.wanfang_id or new.wanfang_id,
         title=existing.title if len(existing.title) >= len(new.title) else new.title,
         abstract=existing.abstract or new.abstract,
         authors=existing.authors if existing.authors else new.authors,

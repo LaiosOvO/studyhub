@@ -16,6 +16,8 @@ class PaperSource(str, Enum):
     SEMANTIC_SCHOLAR = "semantic_scholar"
     PUBMED = "pubmed"
     ARXIV = "arxiv"
+    CNKI = "cnki"
+    WANFANG = "wanfang"
 
 
 class PaperResult(BaseModel):
@@ -31,6 +33,8 @@ class PaperResult(BaseModel):
     s2_id: str | None = None
     pmid: str | None = None
     arxiv_id: str | None = None
+    cnki_id: str | None = None
+    wanfang_id: str | None = None
 
     # ─── Metadata ──────────────────────────────────────────────────────
     title: str

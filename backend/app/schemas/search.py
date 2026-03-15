@@ -16,6 +16,25 @@ class SearchType(str, Enum):
     AUTHOR = "author"
 
 
+class SourceStatus(str, Enum):
+    """Status of a paper source during a search operation."""
+
+    AVAILABLE = "available"
+    RATE_LIMITED = "rate_limited"
+    CAPTCHA_BLOCKED = "captcha_blocked"
+    UNAVAILABLE = "unavailable"
+    ERROR = "error"
+
+
+class SourceReport(BaseModel):
+    """Per-source status report for a search operation."""
+
+    source: PaperSource
+    status: SourceStatus
+    result_count: int = 0
+    message: str | None = None
+
+
 class SearchRequest(BaseModel):
     """Incoming search parameters."""
 
@@ -32,4 +51,5 @@ class SearchResponse(BaseModel):
     total: int = 0
     sources_queried: list[PaperSource] = Field(default_factory=list)
     sources_failed: list[PaperSource] = Field(default_factory=list)
+    source_reports: list[SourceReport] = Field(default_factory=list)
     from_cache: bool = False

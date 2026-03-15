@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-15T15:52:15.381Z"
+last_updated: "2026-03-16T12:00:00.000Z"
 progress:
-  total_phases: 5
-  completed_phases: 5
-  total_plans: 14
-  completed_plans: 14
+  total_phases: 6
+  completed_phases: 6
+  total_plans: 18
+  completed_plans: 18
 ---
 
 # Project State
@@ -18,23 +18,23 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-15)
 
 **Core value:** Input a research direction -> get a complete paper landscape with AI-identified gaps -> generate and auto-execute experiment plans that improve on existing work.
-**Current focus:** Phase 03.1: Scholar Profile Harvesting (completed)
+**Current focus:** Phase 05: Deep Research Engine (completed)
 
 ## Current Position
 
-Phase: 03.1 of 10 (Scholar Profile Harvesting)
-Plan: 2 of 2 in current phase (all completed)
-Status: Phase 03.1 Complete
-Last activity: 2026-03-15 -- Completed all 2 plans in Phase 03.1
+Phase: 05 of 10 (Deep Research Engine)
+Plan: 4 of 4 in current phase (all completed)
+Status: Phase 05 Complete
+Last activity: 2026-03-16 -- Completed all 4 plans in Phase 05
 
-Progress: [████░░░░░░] 45%
+Progress: [██████░░░░] 55%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 14
-- Average duration: 11min
-- Total execution time: 2.7 hours
+- Total plans completed: 18
+- Average duration: 10min
+- Total execution time: 3.3 hours
 
 **By Phase:**
 
@@ -45,10 +45,11 @@ Progress: [████░░░░░░] 45%
 | 03 | 2 | 16min | 8min |
 | 04 | 3 | 37min | 12min |
 | 03.1 | 2 | 22min | 11min |
+| 05 | 4 | 35min | 9min |
 
 **Recent Trend:**
-- Last 3 plans: 04-03 (12min), 03.1-01 (12min), 03.1-02 (10min)
-- Trend: stable
+- Last 3 plans: 05-02 (10min), 05-03 (8min), 05-04 (5min)
+- Trend: accelerating
 
 *Updated after each plan completion*
 
@@ -106,6 +107,17 @@ Recent decisions affecting current work:
 - [03.1-02]: scholarly via asyncio.to_thread (same pattern as pyalex)
 - [03.1-02]: CJK name matching: exact only (too short for fuzzy); English: rapidfuzz ratio >= 80
 - [03.1-02]: Temporal activities create own DB sessions (isolation pattern)
+- [05-01]: Temporal workflow query (not signal) for progress -- enables pull-based WebSocket polling
+- [05-01]: JSON string I/O for all activities -- Temporal payload serialization constraint
+- [05-01]: Activity isolation pattern -- each activity creates own DB session and HTTP client
+- [05-01]: WebSocket JWT auth via query parameter token
+- [05-02]: Haiku for screening and classification, Sonnet for deep analysis -- cost efficiency
+- [05-02]: Per-paper analyses stored in DeepResearchTask.config['paper_analyses'] -- avoids migration
+- [05-02]: Only classify citation-connected pairs (Neo4j CITES edges) -- O(edges) not O(n^2)
+- [05-03]: Sonnet for gap detection (corpus reasoning), Haiku for trend detection (pattern matching)
+- [05-03]: Jinja2 FileSystemLoader for bilingual Markdown report templates
+- [05-04]: Refinement stores filter settings in task.config for reproducibility
+- [05-04]: Manual expansion reuses expand_citations directly (no new activity needed)
 
 ### Roadmap Evolution
 
@@ -124,6 +136,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-15
-Stopped at: Completed Phase 03.1 (Scholar Profile Harvesting)
+Last session: 2026-03-16
+Stopped at: Completed Phase 05 (Deep Research Engine)
 Resume file: None

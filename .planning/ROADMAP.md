@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Paper Search & Ingestion** - Multi-source paper search with PDF parsing and full-text indexing
 - [x] **Phase 3: Chinese Academic Sources** - CNKI and Wanfang integration with anti-scraping resilience
 - [x] **Phase 4: Citation Network & Quality Scoring** - Recursive citation graph construction and paper quality ranking
-- [ ] **Phase 5: Deep Research Engine** - End-to-end research pipeline with AI analysis and literature review generation
+- [x] **Phase 5: Deep Research Engine** - End-to-end research pipeline with AI analysis and literature review generation
 - [ ] **Phase 6: Paper Map Visualization** - Interactive citation graph, topic map, and timeline views
 - [ ] **Phase 7: Plan Generation & SOTA Analysis** - AI-powered experiment plan generation from research gaps
 - [ ] **Phase 8: Experiment Execution Engine** - Tauri desktop agent with autonomous experiment loop and GPU management

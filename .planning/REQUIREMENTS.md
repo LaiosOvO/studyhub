@@ -7,11 +7,11 @@
 
 ### Infrastructure (INFRA)
 
-- [ ] **INFRA-01**: System runs via Docker Compose with all services (PostgreSQL, Neo4j, Meilisearch, Valkey, SeaweedFS, Temporal)
+- [x] **INFRA-01**: System runs via Docker Compose with all services (PostgreSQL, Neo4j, Meilisearch, Valkey, SeaweedFS, Temporal)
 - [ ] **INFRA-02**: FastAPI gateway handles JWT authentication, rate limiting, and request routing
-- [ ] **INFRA-03**: Temporal server orchestrates long-running workflows with retry and timeout management
-- [ ] **INFRA-04**: Valkey Streams provides event-driven inter-service communication
-- [ ] **INFRA-05**: SeaweedFS stores PDFs, model checkpoints, and experiment logs (S3-compatible)
+- [x] **INFRA-03**: Temporal server orchestrates long-running workflows with retry and timeout management
+- [x] **INFRA-04**: Valkey Streams provides event-driven inter-service communication
+- [x] **INFRA-05**: SeaweedFS stores PDFs, model checkpoints, and experiment logs (S3-compatible)
 - [ ] **INFRA-06**: LLM Gateway provides unified interface to Claude/GPT with cost tracking and model fallback
 
 ### Paper Search (SRCH)
@@ -217,11 +217,11 @@ Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INFRA-01 | Phase 1 | Pending |
+| INFRA-01 | Phase 1 | Complete |
 | INFRA-02 | Phase 1 | Pending |
-| INFRA-03 | Phase 1 | Pending |
-| INFRA-04 | Phase 1 | Pending |
-| INFRA-05 | Phase 1 | Pending |
+| INFRA-03 | Phase 1 | Complete |
+| INFRA-04 | Phase 1 | Complete |
+| INFRA-05 | Phase 1 | Complete |
 | INFRA-06 | Phase 1 | Pending |
 | AUTH-01 | Phase 1 | Pending |
 | AUTH-02 | Phase 1 | Pending |

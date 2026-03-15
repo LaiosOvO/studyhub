@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-15T23:30:00.000Z"
+last_updated: "2026-03-15T23:45:00.000Z"
 progress:
-  total_phases: 4
-  completed_phases: 4
-  total_plans: 12
-  completed_plans: 12
+  total_phases: 5
+  completed_phases: 5
+  total_plans: 14
+  completed_plans: 14
 ---
 
 # Project State
@@ -18,23 +18,23 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-15)
 
 **Core value:** Input a research direction -> get a complete paper landscape with AI-identified gaps -> generate and auto-execute experiment plans that improve on existing work.
-**Current focus:** Phase 4: Citation Network & Quality Scoring (completed)
+**Current focus:** Phase 03.1: Scholar Profile Harvesting (completed)
 
 ## Current Position
 
-Phase: 4 of 10 (Citation Network & Quality Scoring)
-Plan: 3 of 3 in current phase (all completed)
-Status: Phase 4 Complete
-Last activity: 2026-03-15 -- Completed all 3 plans in Phase 4
+Phase: 03.1 of 10 (Scholar Profile Harvesting)
+Plan: 2 of 2 in current phase (all completed)
+Status: Phase 03.1 Complete
+Last activity: 2026-03-15 -- Completed all 2 plans in Phase 03.1
 
-Progress: [████░░░░░░] 40%
+Progress: [████░░░░░░] 45%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 12
+- Total plans completed: 14
 - Average duration: 11min
-- Total execution time: 2.3 hours
+- Total execution time: 2.7 hours
 
 **By Phase:**
 
@@ -44,9 +44,10 @@ Progress: [████░░░░░░] 40%
 | 02 | 3 | 40min | 13min |
 | 03 | 2 | 16min | 8min |
 | 04 | 3 | 37min | 12min |
+| 03.1 | 2 | 22min | 11min |
 
 **Recent Trend:**
-- Last 3 plans: 04-01 (15min), 04-02 (10min), 04-03 (12min)
+- Last 3 plans: 04-03 (12min), 03.1-01 (12min), 03.1-02 (10min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -98,6 +99,13 @@ Recent decisions affecting current work:
 - [04-03]: Citation velocity = citations / (current_year - pub_year + 1)
 - [04-03]: Pure compute_quality_score function with no side effects
 - [04-03]: OpenAlex lookups via asyncio.to_thread (pyalex is sync)
+- [03.1-01]: CSS selector fallback pattern reused from CNKI/Wanfang for Baike scraper
+- [03.1-01]: PostgreSQL ON CONFLICT for idempotent scholar upserts
+- [03.1-01]: ecg_ai_relevance stored in note field (not separate column)
+- [03.1-02]: Inlined _has_cjk in paper_linker to avoid patchright import chain
+- [03.1-02]: scholarly via asyncio.to_thread (same pattern as pyalex)
+- [03.1-02]: CJK name matching: exact only (too short for fuzzy); English: rapidfuzz ratio >= 80
+- [03.1-02]: Temporal activities create own DB sessions (isolation pattern)
 
 ### Roadmap Evolution
 
@@ -117,5 +125,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-15
-Stopped at: Completed Phase 4 (Citation Network & Quality Scoring)
+Stopped at: Completed Phase 03.1 (Scholar Profile Harvesting)
 Resume file: None

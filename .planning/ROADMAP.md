@@ -89,8 +89,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 03.1-01-PLAN.md -- Scholar model, Baidu Baike scraper, seed import, and CRUD endpoints
-- [ ] 03.1-02-PLAN.md -- Google Scholar enrichment, scholar-paper linking, and Temporal refresh workflow
+- [x] 03.1-01-PLAN.md -- Scholar model, Baidu Baike scraper, seed import, and CRUD endpoints
+- [x] 03.1-02-PLAN.md -- Google Scholar enrichment, scholar-paper linking, and Temporal refresh workflow
 
 ### Phase 4: Citation Network & Quality Scoring
 **Goal**: Users can explore the citation landscape around any paper with quality-ranked results stored in a graph database
@@ -226,7 +226,7 @@ Note: Phase 3 and Phase 4 can execute in parallel (both depend on Phase 2). Phas
 | 1. Infrastructure & Auth Foundation | 4/4 | Complete | 2026-03-15 |
 | 2. Paper Search & Ingestion | 3/3 | Complete | 2026-03-15 |
 | 3. Chinese Academic Sources | 2/2 | Complete | 2026-03-15 |
-| 03.1. Scholar Profile Harvesting | 0/2 | Not started | - |
+| 03.1. Scholar Profile Harvesting | 2/2 | Complete | 2026-03-15 |
 | 4. Citation Network & Quality Scoring | 3/3 | Complete | 2026-03-15 |
 | 5. Deep Research Engine | 0/4 | Not started | - |
 | 6. Paper Map Visualization | 0/3 | Not started | - |

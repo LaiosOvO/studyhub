@@ -5,6 +5,7 @@ from app.models.deep_research import DeepResearchTask
 from app.models.experiment_plan import ExperimentPlan
 from app.models.llm_usage import LLMUsage
 from app.models.paper import Paper
+from app.models.reading_list import ReadingList
 from app.models.scholar import Scholar
 from app.models.user import User
 
@@ -14,6 +15,7 @@ __all__ = [
     "ExperimentPlan",
     "LLMUsage",
     "Paper",
+    "ReadingList",
     "Scholar",
     "User",
 ]

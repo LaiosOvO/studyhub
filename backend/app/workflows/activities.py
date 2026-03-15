@@ -636,3 +636,172 @@ async def generate_report_activity(input_json: str) -> str:
         report_length,
     )
     return json.dumps({"report_length": report_length, "status": "completed"})
+
+
+@activity.defn
+async def generate_plans_activity(input_json: str) -> str:
+    """Generate experiment plans with SOTA analysis, reflection, and scoring.
+
+    Input JSON: {task_id, user_id, entry_type, source_paper_id,
+                 source_gap_index, data_strategy, num_plans}
+    Output JSON: {plan_ids, count, total_cost}
+
+    Internally orchestrates:
+    1. Load DeepResearchTask from DB
+    2. Build PlanGenerationContext (SOTA + improvements)
+    3. Generate plans with reflection (AI-Scientist pattern)
+    4. Score feasibility (Haiku for cost efficiency)
+    5. Recommend datasets from HF Hub
+    6. Persist ExperimentPlan records
+
+    Reference: AI-Scientist generate_ideas.py pipeline.
+    """
+    from datetime import datetime, timezone
+
+    from sqlalchemy import select
+    from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
+
+    from app.database import get_db_engine
+    from app.models.deep_research import DeepResearchTask
+    from app.models.experiment_plan import ExperimentPlan
+    from app.services.plan_generation.dataset_recommender import recommend_datasets
+    from app.services.plan_generation.feasibility_scorer import score_plans_batch
+    from app.services.plan_generation.improvement_analyzer import create_plan_context
+    from app.services.plan_generation.plan_generator import generate_experiment_plans
+
+    params = json.loads(input_json)
+    task_id = params["task_id"]
+    user_id = params["user_id"]
+    entry_type = params.get("entry_type", "direction")
+    source_paper_id = params.get("source_paper_id")
+    source_gap_index = params.get("source_gap_index")
+    data_strategy = params.get("data_strategy", "open_source")
+    num_plans = params.get("num_plans", 3)
+
+    engine = get_db_engine()
+    session_factory = async_sessionmaker(
+        engine, class_=AsyncSession, expire_on_commit=False
+    )
+
+    plan_ids: list[str] = []
+    total_cost = 0.0
+
+    async with session_factory() as session:
+        # Step 1: Load DeepResearchTask
+        task_result = await session.execute(
+            select(DeepResearchTask).where(DeepResearchTask.id == task_id)
+        )
+        task = task_result.scalar_one_or_none()
+
+        if not task:
+            await engine.dispose()
+            return json.dumps({"plan_ids": [], "count": 0, "total_cost": 0.0})
+
+        # Step 2: Build PlanGenerationContext
+        context = await create_plan_context(
+            entry_type=entry_type,
+            task=task,
+            session=session,
+            paper_id=source_paper_id,
+            gap_index=source_gap_index,
+        )
+
+        # Step 3: Generate plans with reflection
+        plan_drafts = await generate_experiment_plans(
+            context=context,
+            session=session,
+            user_id=user_id,
+            num_plans=num_plans,
+            num_reflections=3,
+        )
+
+        if not plan_drafts:
+            await engine.dispose()
+            return json.dumps({"plan_ids": [], "count": 0, "total_cost": 0.0})
+
+        # Step 4: Score feasibility for all plans
+        feasibility_scores = await score_plans_batch(
+            plan_drafts=plan_drafts,
+            direction=context.direction,
+            session=session,
+            user_id=user_id,
+        )
+
+        # Step 5 & 6: Recommend datasets and persist each plan
+        for i, draft in enumerate(plan_drafts):
+            # Dataset recommendation per plan
+            plan_dataset_names = [
+                d.get("name", "") for d in draft.get("datasets", [])
+            ]
+            dataset_recs = await recommend_datasets(
+                direction=context.direction,
+                plan_datasets=plan_dataset_names,
+                data_strategy=data_strategy,
+            )
+
+            # Merge HF recommendations into plan datasets
+            merged_datasets = list(draft.get("datasets", []))
+            for rec in dataset_recs:
+                # Avoid duplicating datasets already in the plan
+                existing_names = {d.get("name", "").lower() for d in merged_datasets}
+                if rec.name.lower() not in existing_names:
+                    merged_datasets = [
+                        *merged_datasets,
+                        {
+                            "name": rec.name,
+                            "url": rec.url,
+                            "downloads": rec.downloads,
+                            "license": rec.license,
+                            "source": "huggingface_hub",
+                        },
+                    ]
+
+            # Get feasibility score for this plan
+            feasibility = (
+                feasibility_scores[i].model_dump()
+                if i < len(feasibility_scores)
+                else None
+            )
+
+            # Create ExperimentPlan record
+            plan = ExperimentPlan(
+                user_id=user_id,
+                task_id=task_id,
+                entry_type=entry_type,
+                source_paper_id=source_paper_id,
+                source_gap_index=source_gap_index,
+                title=draft.get("title", f"Plan {i + 1}"),
+                hypothesis=draft.get("hypothesis", ""),
+                method_description=draft.get("method_description", ""),
+                baselines=draft.get("baselines", []),
+                metrics=draft.get("metrics", []),
+                datasets=merged_datasets,
+                technical_roadmap=draft.get("technical_roadmap", []),
+                feasibility=feasibility,
+                data_strategy=data_strategy,
+                status="draft",
+            )
+            session.add(plan)
+            await session.flush()
+            plan_ids = [*plan_ids, plan.id]
+
+        await session.commit()
+
+    await engine.dispose()
+
+    # Rough cost estimate
+    # Sonnet: ~$0.05 per plan generation + ~$0.05 per reflection * 2 rounds
+    # Haiku: ~$0.005 per feasibility scoring
+    total_cost = len(plan_drafts) * (0.05 + 0.05 * 2 + 0.005)
+
+    logger.info(
+        "generate_plans_activity: created %d plans for task %s, est. cost $%.3f",
+        len(plan_ids),
+        task_id,
+        total_cost,
+    )
+    return json.dumps({
+        "plan_ids": plan_ids,
+        "count": len(plan_ids),
+        "total_cost": total_cost,
+    })

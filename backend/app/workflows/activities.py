@@ -265,29 +265,205 @@ async def score_papers_activity(input_json: str) -> str:
 
 @activity.defn
 async def analyze_papers_activity(input_json: str) -> str:
-    """Placeholder for Plan 02: AI analysis of papers.
+    """Run tiered LLM analysis on papers (Haiku screening + Sonnet deep analysis).
 
     Input JSON: {paper_ids, user_id, task_id, top_n, cost_ceiling}
-    Output JSON: {analyzed_count, total_cost}
+    Output JSON: {analyzed_count, total_cost, paper_analyses}
+
+    Stores per-paper analysis in DeepResearchTask.config["paper_analyses"].
     """
+    from sqlalchemy import select
+    from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
+
+    from app.database import get_db_engine
+    from app.models.deep_research import DeepResearchTask
+    from app.models.paper import Paper
+    from app.services.deep_research.analyzer import analyze_papers_tiered
+
     params = json.loads(input_json)
+    paper_ids = params.get("paper_ids", [])
+    user_id = params["user_id"]
+    task_id = params["task_id"]
+    top_n = params.get("top_n", 20)
+    cost_ceiling = params.get("cost_ceiling", 10.0)
+
+    if not paper_ids:
+        return json.dumps({"analyzed_count": 0, "total_cost": 0.0})
+
+    engine = get_db_engine()
+    session_factory = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
+
+    async with session_factory() as session:
+        # Load papers from DB
+        result = await session.execute(
+            select(Paper).where(Paper.id.in_(paper_ids))
+        )
+        papers = list(result.scalars().all())
+
+        # Run tiered analysis
+        analyses = await analyze_papers_tiered(
+            papers=papers,
+            session=session,
+            user_id=user_id,
+            top_n=top_n,
+            cost_ceiling=cost_ceiling,
+        )
+
+        # Store analyses in DeepResearchTask.config["paper_analyses"]
+        task_result = await session.execute(
+            select(DeepResearchTask).where(DeepResearchTask.id == task_id)
+        )
+        task = task_result.scalar_one_or_none()
+
+        if task:
+            paper_analyses = {
+                a.paper_id: a.model_dump() for a in analyses
+            }
+            updated_config = {**task.config, "paper_analyses": paper_analyses}
+            task.config = updated_config
+            task.papers_analyzed = len(analyses)
+            await session.commit()
+
+    await engine.dispose()
+
+    analyzed_count = len(analyses)
+    # Rough cost estimate: $0.01 per screening + $0.10 per deep
+    total_cost = analyzed_count * 0.01 + min(top_n, analyzed_count) * 0.10
+
     logger.info(
-        "analyze_papers_activity: placeholder for %d papers",
-        len(params.get("paper_ids", [])),
+        "analyze_papers_activity: analyzed %d papers, est. cost $%.2f",
+        analyzed_count,
+        total_cost,
     )
-    return json.dumps({"analyzed_count": 0, "total_cost": 0.0})
+    return json.dumps({
+        "analyzed_count": analyzed_count,
+        "total_cost": total_cost,
+    })
 
 
 @activity.defn
 async def classify_relationships_activity(input_json: str) -> str:
-    """Placeholder for Plan 02: Classify citation relationships.
+    """Classify relationships for citation-connected paper pairs.
 
     Input JSON: {task_id, user_id}
     Output JSON: {classified_count}
+
+    Queries Neo4j for CITES edges, classifies each pair, updates edge properties.
     """
+    from sqlalchemy import select
+    from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
+
+    from app.database import get_db_engine
+    from app.models.deep_research import DeepResearchTask
+    from app.models.paper import Paper
+    from app.services.deep_research.analyzer import classify_relationships
+
     params = json.loads(input_json)
-    logger.info("classify_relationships_activity: placeholder for task %s", params.get("task_id"))
-    return json.dumps({"classified_count": 0})
+    task_id = params["task_id"]
+    user_id = params["user_id"]
+
+    settings = get_settings()
+    engine = get_db_engine()
+    session_factory = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
+
+    classified_count = 0
+
+    async with session_factory() as session:
+        # Load task to get paper IDs from config
+        task_result = await session.execute(
+            select(DeepResearchTask).where(DeepResearchTask.id == task_id)
+        )
+        task = task_result.scalar_one_or_none()
+
+        if not task or not task.config.get("paper_analyses"):
+            await engine.dispose()
+            return json.dumps({"classified_count": 0})
+
+        paper_ids = list(task.config["paper_analyses"].keys())
+
+        # Query Neo4j for citation edges between these papers
+        try:
+            from app.services.citation_network.neo4j_client import Neo4jClient
+
+            neo4j_client = Neo4jClient(
+                settings.neo4j_uri, settings.neo4j_user, settings.neo4j_password
+            )
+
+            try:
+                # Find CITES edges where both papers are in our corpus
+                edge_query = """
+                MATCH (a:Paper)-[r:CITES]->(b:Paper)
+                WHERE a.paper_id IN $paper_ids AND b.paper_id IN $paper_ids
+                RETURN a.paper_id AS citing, b.paper_id AS cited
+                LIMIT 500
+                """
+                edges = await neo4j_client.execute_read(
+                    edge_query, paper_ids=paper_ids
+                )
+
+                if edges:
+                    # Load Paper objects for classification
+                    all_paper_ids_in_edges = set()
+                    for edge in edges:
+                        all_paper_ids_in_edges.add(edge["citing"])
+                        all_paper_ids_in_edges.add(edge["cited"])
+
+                    # Map s2_id/paper_id to DB papers
+                    result = await session.execute(
+                        select(Paper).where(
+                            Paper.id.in_(list(all_paper_ids_in_edges))
+                            | Paper.s2_id.in_(list(all_paper_ids_in_edges))
+                        )
+                    )
+                    db_papers = list(result.scalars().all())
+                    paper_map = {}
+                    for p in db_papers:
+                        paper_map[p.id] = p
+                        if p.s2_id:
+                            paper_map[p.s2_id] = p
+
+                    # Build paper pairs
+                    pairs = []
+                    for edge in edges:
+                        paper_a = paper_map.get(edge["citing"])
+                        paper_b = paper_map.get(edge["cited"])
+                        if paper_a and paper_b:
+                            pairs.append((paper_a, paper_b))
+
+                    # Classify relationships
+                    if pairs:
+                        results = await classify_relationships(
+                            paper_pairs=pairs,
+                            session=session,
+                            user_id=user_id,
+                        )
+
+                        # Update Neo4j edges with classification
+                        for rel_result in results:
+                            if rel_result.relationship != "unrelated":
+                                update_query = """
+                                MATCH (a:Paper {paper_id: $citing})-[r:CITES]->(b:Paper {paper_id: $cited})
+                                SET r.relationship_type = $rel_type, r.confidence = $confidence
+                                """
+                                await neo4j_client.execute_write(
+                                    update_query,
+                                    citing=rel_result.paper_a_id,
+                                    cited=rel_result.paper_b_id,
+                                    rel_type=rel_result.relationship,
+                                    confidence=rel_result.confidence,
+                                )
+
+                        classified_count = len(results)
+            finally:
+                await neo4j_client.close()
+
+        except Exception as exc:
+            logger.warning("Relationship classification failed (non-fatal): %s", exc)
+
+    await engine.dispose()
+
+    logger.info("classify_relationships_activity: classified %d pairs", classified_count)
+    return json.dumps({"classified_count": classified_count})
 
 
 @activity.defn

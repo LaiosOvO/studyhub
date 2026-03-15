@@ -53,12 +53,12 @@ Plans:
   3. User can filter by year, citations, venue, language and sort by relevance, citations, recency, or quality
   4. Search works for both Chinese and English queries with sub-second response times from Meilisearch
   5. PDF papers are parsed into structured sections (title, abstract, methodology, experiments, results, references) and stored for downstream analysis
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: Multi-source paper search clients (OpenAlex, S2, PubMed, arXiv)
-- [ ] 02-02: Deduplication, filtering, sorting, and Meilisearch indexing
-- [ ] 02-03: PDF parsing pipeline (MinerU/GROBID) with structured storage
+- [ ] 02-01-PLAN.md — Multi-source paper search clients, dedup, and search API
+- [ ] 02-02-PLAN.md — Meilisearch indexing with filtering, sorting, and index-on-search
+- [ ] 02-03-PLAN.md — GROBID PDF parsing pipeline with structured section extraction
 
 ### Phase 3: Chinese Academic Sources
 **Goal**: Users can discover Chinese papers from CNKI and Wanfang alongside international results, with the system handling anti-scraping gracefully

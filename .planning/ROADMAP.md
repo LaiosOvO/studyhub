@@ -119,13 +119,13 @@ Plans:
   3. Each paper has bilingual TLDR summaries, extracted methodology, and classified relationships to other papers
   4. System identifies research gaps, underexplored areas, and trend detection (ascending/declining methods) across the paper corpus
   5. User receives a Markdown literature review report and can refine results by adjusting filters or expanding specific graph areas
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 05-01: Deep Research Temporal workflow orchestration with WebSocket progress
-- [ ] 05-02: AI analysis pipeline (TLDR, methodology extraction, relationship classification)
-- [ ] 05-03: Gap identification, trend detection, and literature review generation
-- [ ] 05-04: Result refinement, manual expansion, and cost-controlled tiered analysis
+- [ ] 05-01-PLAN.md -- Deep Research Temporal workflow orchestration with WebSocket progress
+- [ ] 05-02-PLAN.md -- AI analysis pipeline (TLDR, methodology extraction, relationship classification)
+- [ ] 05-03-PLAN.md -- Gap identification, trend detection, and literature review generation
+- [ ] 05-04-PLAN.md -- Result refinement, manual expansion, and report retrieval endpoints
 
 ### Phase 6: Paper Map Visualization
 **Goal**: Users can visually explore the research landscape through interactive citation graphs, topic maps, and timelines

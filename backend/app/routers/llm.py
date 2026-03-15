@@ -5,17 +5,14 @@ All endpoints require authentication.
 """
 
 from fastapi import APIRouter, Depends, Request
-from slowapi import Limiter
-from slowapi.util import get_remote_address
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db_session
+from app.middleware.rate_limit import limiter
 from app.schemas.llm import LLMRequest, LLMResponse, UserUsageResponse
 from app.services.llm_service import get_user_usage, llm_completion
 
 router = APIRouter(prefix="/llm", tags=["llm"])
-
-limiter = Limiter(key_func=get_remote_address)
 
 
 def _get_current_user_id(request: Request) -> str:

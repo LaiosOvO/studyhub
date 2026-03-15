@@ -1,0 +1,143 @@
+{
+  "analysis_period_days": 90,
+  "stats": {
+    "total_commits": 31,
+    "total_authors": 7
+  },
+  "hotspots": [
+    {
+      "path": "README.md",
+      "changes": 13,
+      "risk": "medium"
+    },
+    {
+      "path": "program.md",
+      "changes": 9,
+      "risk": "medium"
+    },
+    {
+      "path": "train.py",
+      "changes": 5,
+      "risk": "medium"
+    },
+    {
+      "path": "prepare.py",
+      "changes": 5,
+      "risk": "medium"
+    },
+    {
+      "path": ".gitignore",
+      "changes": 2,
+      "risk": "low"
+    },
+    {
+      "path": "analysis.ipynb",
+      "changes": 2,
+      "risk": "low"
+    },
+    {
+      "path": "constants.py",
+      "changes": 2,
+      "risk": "low"
+    },
+    {
+      "path": "pyproject.toml",
+      "changes": 2,
+      "risk": "low"
+    },
+    {
+      "path": "uv.lock",
+      "changes": 2,
+      "risk": "low"
+    },
+    {
+      "path": "spawn.sh",
+      "changes": 2,
+      "risk": "low"
+    },
+    {
+      "path": "progress.png",
+      "changes": 1,
+      "risk": "low"
+    },
+    {
+      "path": ".python-version",
+      "changes": 1,
+      "risk": "low"
+    }
+  ],
+  "coupling_pairs": [
+    {
+      "file_a": "README.md",
+      "file_b": "prepare.py",
+      "co_changes": 3,
+      "coupling_score": 0.6
+    },
+    {
+      "file_a": "README.md",
+      "file_b": "program.md",
+      "co_changes": 3,
+      "coupling_score": 0.333
+    },
+    {
+      "file_a": ".gitignore",
+      "file_b": "program.md",
+      "co_changes": 2,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "README.md",
+      "file_b": "constants.py",
+      "co_changes": 2,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "README.md",
+      "file_b": "train.py",
+      "co_changes": 2,
+      "coupling_score": 0.4
+    },
+    {
+      "file_a": "constants.py",
+      "file_b": "prepare.py",
+      "co_changes": 2,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "constants.py",
+      "file_b": "program.md",
+      "co_changes": 2,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "constants.py",
+      "file_b": "train.py",
+      "co_changes": 2,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "prepare.py",
+      "file_b": "program.md",
+      "co_changes": 2,
+      "coupling_score": 0.4
+    },
+    {
+      "file_a": "prepare.py",
+      "file_b": "train.py",
+      "co_changes": 2,
+      "coupling_score": 0.4
+    },
+    {
+      "file_a": "program.md",
+      "file_b": "train.py",
+      "co_changes": 2,
+      "coupling_score": 0.4
+    },
+    {
+      "file_a": "pyproject.toml",
+      "file_b": "uv.lock",
+      "co_changes": 2,
+      "coupling_score": 1
+    }
+  ]
+}

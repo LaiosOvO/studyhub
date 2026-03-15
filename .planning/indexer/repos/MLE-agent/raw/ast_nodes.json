@@ -1,0 +1,5915 @@
+{
+  "languages": [
+    "javascript",
+    "python",
+    "tsx",
+    "typescript"
+  ],
+  "stats": {
+    "total_files": 57,
+    "total_lines": 8624,
+    "parse_errors": 0,
+    "truncated": false,
+    "truncated_nodes": 0,
+    "supported_file_counts": {
+      "javascript": 2,
+      "typescript": 1,
+      "python": 52,
+      "tsx": 2
+    },
+    "languages_with_structural_queries": [
+      "c",
+      "cpp",
+      "csharp",
+      "elixir",
+      "gdscript",
+      "go",
+      "java",
+      "javascript",
+      "kotlin",
+      "lua",
+      "php",
+      "python",
+      "ruby",
+      "rust",
+      "scala",
+      "swift",
+      "tsx",
+      "typescript"
+    ],
+    "languages_with_custom_queries": [],
+    "module_only_file_counts": {},
+    "known_unsupported_file_counts": {},
+    "configured_but_unavailable_file_counts": {},
+    "custom_language_config_paths": []
+  },
+  "nodes": [
+    {
+      "id": "exp",
+      "type": "Module",
+      "label": "exp",
+      "path": "exp/__init__.py",
+      "lines": 1,
+      "lang": "python"
+    },
+    {
+      "id": "exp.cli",
+      "type": "Module",
+      "label": "cli",
+      "path": "exp/cli.py",
+      "lines": 295,
+      "lang": "python"
+    },
+    {
+      "id": "exp.cli.require_init",
+      "type": "Function",
+      "label": "require_init",
+      "path": "exp/cli.py",
+      "parent": "exp.cli",
+      "start_line": 47,
+      "end_line": 54
+    },
+    {
+      "id": "exp.cli.wrapper",
+      "type": "Function",
+      "label": "wrapper",
+      "path": "exp/cli.py",
+      "parent": "exp.cli",
+      "start_line": 49,
+      "end_line": 53
+    },
+    {
+      "id": "exp.cli.bench",
+      "type": "Function",
+      "label": "bench",
+      "path": "exp/cli.py",
+      "parent": "exp.cli",
+      "start_line": 63,
+      "end_line": 67
+    },
+    {
+      "id": "exp.cli.init",
+      "type": "Function",
+      "label": "init",
+      "path": "exp/cli.py",
+      "parent": "exp.cli",
+      "start_line": 79,
+      "end_line": 86
+    },
+    {
+      "id": "exp.cli.prepare",
+      "type": "Function",
+      "label": "prepare",
+      "path": "exp/cli.py",
+      "parent": "exp.cli",
+      "start_line": 138,
+      "end_line": 182
+    },
+    {
+      "id": "exp.cli._read_text_utf8",
+      "type": "Function",
+      "label": "_read_text_utf8",
+      "path": "exp/cli.py",
+      "parent": "exp.cli",
+      "start_line": 157,
+      "end_line": 159
+    },
+    {
+      "id": "exp.cli.grade",
+      "type": "Function",
+      "label": "grade",
+      "path": "exp/cli.py",
+      "parent": "exp.cli",
+      "start_line": 211,
+      "end_line": 256
+    },
+    {
+      "id": "exp.cli.grade_sample",
+      "type": "Function",
+      "label": "grade_sample",
+      "path": "exp/cli.py",
+      "parent": "exp.cli",
+      "start_line": 275,
+      "end_line": 295
+    },
+    {
+      "id": "exp.init",
+      "type": "Module",
+      "label": "init",
+      "path": "exp/init.py",
+      "lines": 171,
+      "lang": "python"
+    },
+    {
+      "id": "exp.init.is_init",
+      "type": "Function",
+      "label": "is_init",
+      "path": "exp/init.py",
+      "parent": "exp.init",
+      "start_line": 37,
+      "end_line": 64
+    },
+    {
+      "id": "exp.init.find_git_lfs",
+      "type": "Function",
+      "label": "find_git_lfs",
+      "path": "exp/init.py",
+      "parent": "exp.init",
+      "start_line": 67,
+      "end_line": 91
+    },
+    {
+      "id": "exp.init.init",
+      "type": "Function",
+      "label": "init",
+      "path": "exp/init.py",
+      "parent": "exp.init",
+      "start_line": 94,
+      "end_line": 170
+    },
+    {
+      "id": "exp.mlebench_api",
+      "type": "Module",
+      "label": "mlebench_api",
+      "path": "exp/mlebench_api.py",
+      "lines": 89,
+      "lang": "python"
+    },
+    {
+      "id": "exp.mlebench_api.prepare",
+      "type": "Function",
+      "label": "prepare",
+      "path": "exp/mlebench_api.py",
+      "parent": "exp.mlebench_api",
+      "start_line": 23,
+      "end_line": 73
+    },
+    {
+      "id": "exp.mlebench_api._read_text_utf8",
+      "type": "Function",
+      "label": "_read_text_utf8",
+      "path": "exp/mlebench_api.py",
+      "parent": "exp.mlebench_api",
+      "start_line": 40,
+      "end_line": 42
+    },
+    {
+      "id": "exp.mlebench_api.grade",
+      "type": "Function",
+      "label": "grade",
+      "path": "exp/mlebench_api.py",
+      "parent": "exp.mlebench_api",
+      "start_line": 76,
+      "end_line": 80
+    },
+    {
+      "id": "exp.mlebench_api.grade_sample",
+      "type": "Function",
+      "label": "grade_sample",
+      "path": "exp/mlebench_api.py",
+      "parent": "exp.mlebench_api",
+      "start_line": 83,
+      "end_line": 88
+    },
+    {
+      "id": "exp.utils",
+      "type": "Module",
+      "label": "utils",
+      "path": "exp/utils.py",
+      "lines": 38,
+      "lang": "python"
+    },
+    {
+      "id": "exp.utils.get_logger",
+      "type": "Function",
+      "label": "get_logger",
+      "path": "exp/utils.py",
+      "parent": "exp.utils",
+      "start_line": 10,
+      "end_line": 37
+    },
+    {
+      "id": "mle",
+      "type": "Module",
+      "label": "mle",
+      "path": "mle/__init__.py",
+      "lines": 2,
+      "lang": "python"
+    },
+    {
+      "id": "mle.agents",
+      "type": "Module",
+      "label": "agents",
+      "path": "mle/agents/__init__.py",
+      "lines": 8,
+      "lang": "python"
+    },
+    {
+      "id": "mle.agents.advisor",
+      "type": "Module",
+      "label": "advisor",
+      "path": "mle/agents/advisor.py",
+      "lines": 255,
+      "lang": "python"
+    },
+    {
+      "id": "mle.agents.advisor.process_report",
+      "type": "Function",
+      "label": "process_report",
+      "path": "mle/agents/advisor.py",
+      "parent": "mle.agents.advisor",
+      "start_line": 10,
+      "end_line": 28
+    },
+    {
+      "id": "mle.agents.advisor.AdviseAgent",
+      "type": "Class",
+      "label": "AdviseAgent",
+      "path": "mle/agents/advisor.py",
+      "parent": "mle.agents.advisor",
+      "start_line": 31,
+      "end_line": 254
+    },
+    {
+      "id": "mle.agents.advisor.AdviseAgent.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/agents/advisor.py",
+      "parent": "mle.agents.advisor.AdviseAgent",
+      "start_line": 33,
+      "end_line": 137
+    },
+    {
+      "id": "mle.agents.advisor.AdviseAgent.suggest",
+      "type": "Function",
+      "label": "suggest",
+      "path": "mle/agents/advisor.py",
+      "parent": "mle.agents.advisor.AdviseAgent",
+      "start_line": 140,
+      "end_line": 165
+    },
+    {
+      "id": "mle.agents.advisor.AdviseAgent.interact",
+      "type": "Function",
+      "label": "interact",
+      "path": "mle/agents/advisor.py",
+      "parent": "mle.agents.advisor.AdviseAgent",
+      "start_line": 168,
+      "end_line": 199
+    },
+    {
+      "id": "mle.agents.advisor.AdviseAgent.clarify_dataset",
+      "type": "Function",
+      "label": "clarify_dataset",
+      "path": "mle/agents/advisor.py",
+      "parent": "mle.agents.advisor.AdviseAgent",
+      "start_line": 201,
+      "end_line": 254
+    },
+    {
+      "id": "mle.agents.chat",
+      "type": "Module",
+      "label": "chat",
+      "path": "mle/agents/chat.py",
+      "lines": 143,
+      "lang": "python"
+    },
+    {
+      "id": "mle.agents.chat.ChatAgent",
+      "type": "Class",
+      "label": "ChatAgent",
+      "path": "mle/agents/chat.py",
+      "parent": "mle.agents.chat",
+      "start_line": 7,
+      "end_line": 142
+    },
+    {
+      "id": "mle.agents.chat.ChatAgent.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/agents/chat.py",
+      "parent": "mle.agents.chat.ChatAgent",
+      "start_line": 9,
+      "end_line": 80
+    },
+    {
+      "id": "mle.agents.chat.ChatAgent.greet",
+      "type": "Function",
+      "label": "greet",
+      "path": "mle/agents/chat.py",
+      "parent": "mle.agents.chat.ChatAgent",
+      "start_line": 82,
+      "end_line": 109
+    },
+    {
+      "id": "mle.agents.chat.ChatAgent.chat",
+      "type": "Function",
+      "label": "chat",
+      "path": "mle/agents/chat.py",
+      "parent": "mle.agents.chat.ChatAgent",
+      "start_line": 111,
+      "end_line": 142
+    },
+    {
+      "id": "mle.agents.coder",
+      "type": "Module",
+      "label": "coder",
+      "path": "mle/agents/coder.py",
+      "lines": 254,
+      "lang": "python"
+    },
+    {
+      "id": "mle.agents.coder.process_summary",
+      "type": "Function",
+      "label": "process_summary",
+      "path": "mle/agents/coder.py",
+      "parent": "mle.agents.coder",
+      "start_line": 9,
+      "end_line": 21
+    },
+    {
+      "id": "mle.agents.coder.CodeAgent",
+      "type": "Class",
+      "label": "CodeAgent",
+      "path": "mle/agents/coder.py",
+      "parent": "mle.agents.coder",
+      "start_line": 24,
+      "end_line": 253
+    },
+    {
+      "id": "mle.agents.coder.CodeAgent.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/agents/coder.py",
+      "parent": "mle.agents.coder.CodeAgent",
+      "start_line": 26,
+      "end_line": 150
+    },
+    {
+      "id": "mle.agents.coder.CodeAgent.read_requirement",
+      "type": "Function",
+      "label": "read_requirement",
+      "path": "mle/agents/coder.py",
+      "parent": "mle.agents.coder.CodeAgent",
+      "start_line": 153,
+      "end_line": 159
+    },
+    {
+      "id": "mle.agents.coder.CodeAgent.code",
+      "type": "Function",
+      "label": "code",
+      "path": "mle/agents/coder.py",
+      "parent": "mle.agents.coder.CodeAgent",
+      "start_line": 162,
+      "end_line": 185
+    },
+    {
+      "id": "mle.agents.coder.CodeAgent.debug",
+      "type": "Function",
+      "label": "debug",
+      "path": "mle/agents/coder.py",
+      "parent": "mle.agents.coder.CodeAgent",
+      "start_line": 188,
+      "end_line": 214
+    },
+    {
+      "id": "mle.agents.coder.CodeAgent.interact",
+      "type": "Function",
+      "label": "interact",
+      "path": "mle/agents/coder.py",
+      "parent": "mle.agents.coder.CodeAgent",
+      "start_line": 216,
+      "end_line": 253
+    },
+    {
+      "id": "mle.agents.debugger",
+      "type": "Module",
+      "label": "debugger",
+      "path": "mle/agents/debugger.py",
+      "lines": 180,
+      "lang": "python"
+    },
+    {
+      "id": "mle.agents.debugger.process_debug_report",
+      "type": "Function",
+      "label": "process_debug_report",
+      "path": "mle/agents/debugger.py",
+      "parent": "mle.agents.debugger",
+      "start_line": 9,
+      "end_line": 25
+    },
+    {
+      "id": "mle.agents.debugger.DebugAgent",
+      "type": "Class",
+      "label": "DebugAgent",
+      "path": "mle/agents/debugger.py",
+      "parent": "mle.agents.debugger",
+      "start_line": 28,
+      "end_line": 180
+    },
+    {
+      "id": "mle.agents.debugger.DebugAgent.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/agents/debugger.py",
+      "parent": "mle.agents.debugger.DebugAgent",
+      "start_line": 30,
+      "end_line": 116
+    },
+    {
+      "id": "mle.agents.debugger.DebugAgent.analyze_with_log",
+      "type": "Function",
+      "label": "analyze_with_log",
+      "path": "mle/agents/debugger.py",
+      "parent": "mle.agents.debugger.DebugAgent",
+      "start_line": 118,
+      "end_line": 145
+    },
+    {
+      "id": "mle.agents.debugger.DebugAgent.analyze",
+      "type": "Function",
+      "label": "analyze",
+      "path": "mle/agents/debugger.py",
+      "parent": "mle.agents.debugger.DebugAgent",
+      "start_line": 147,
+      "end_line": 180
+    },
+    {
+      "id": "mle.agents.planner",
+      "type": "Module",
+      "label": "planner",
+      "path": "mle/agents/planner.py",
+      "lines": 131,
+      "lang": "python"
+    },
+    {
+      "id": "mle.agents.planner.process_plan",
+      "type": "Function",
+      "label": "process_plan",
+      "path": "mle/agents/planner.py",
+      "parent": "mle.agents.planner",
+      "start_line": 10,
+      "end_line": 15
+    },
+    {
+      "id": "mle.agents.planner.PlanAgent",
+      "type": "Class",
+      "label": "PlanAgent",
+      "path": "mle/agents/planner.py",
+      "parent": "mle.agents.planner",
+      "start_line": 18,
+      "end_line": 131
+    },
+    {
+      "id": "mle.agents.planner.PlanAgent.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/agents/planner.py",
+      "parent": "mle.agents.planner.PlanAgent",
+      "start_line": 20,
+      "end_line": 84
+    },
+    {
+      "id": "mle.agents.planner.PlanAgent.plan",
+      "type": "Function",
+      "label": "plan",
+      "path": "mle/agents/planner.py",
+      "parent": "mle.agents.planner.PlanAgent",
+      "start_line": 87,
+      "end_line": 105
+    },
+    {
+      "id": "mle.agents.planner.PlanAgent.interact",
+      "type": "Function",
+      "label": "interact",
+      "path": "mle/agents/planner.py",
+      "parent": "mle.agents.planner.PlanAgent",
+      "start_line": 108,
+      "end_line": 131
+    },
+    {
+      "id": "mle.agents.reporter",
+      "type": "Module",
+      "label": "reporter",
+      "path": "mle/agents/reporter.py",
+      "lines": 169,
+      "lang": "python"
+    },
+    {
+      "id": "mle.agents.reporter.ReportAgent",
+      "type": "Class",
+      "label": "ReportAgent",
+      "path": "mle/agents/reporter.py",
+      "parent": "mle.agents.reporter",
+      "start_line": 6,
+      "end_line": 169
+    },
+    {
+      "id": "mle.agents.reporter.ReportAgent.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/agents/reporter.py",
+      "parent": "mle.agents.reporter.ReportAgent",
+      "start_line": 8,
+      "end_line": 62
+    },
+    {
+      "id": "mle.agents.reporter.ReportAgent.process_knowledge",
+      "type": "Function",
+      "label": "process_knowledge",
+      "path": "mle/agents/reporter.py",
+      "parent": "mle.agents.reporter.ReportAgent",
+      "start_line": 64,
+      "end_line": 140
+    },
+    {
+      "id": "mle.agents.reporter.ReportAgent.gen_report",
+      "type": "Function",
+      "label": "gen_report",
+      "path": "mle/agents/reporter.py",
+      "parent": "mle.agents.reporter.ReportAgent",
+      "start_line": 143,
+      "end_line": 169
+    },
+    {
+      "id": "mle.agents.summarizer",
+      "type": "Module",
+      "label": "summarizer",
+      "path": "mle/agents/summarizer.py",
+      "lines": 293,
+      "lang": "python"
+    },
+    {
+      "id": "mle.agents.summarizer.GitHubSummaryAgent",
+      "type": "Class",
+      "label": "GitHubSummaryAgent",
+      "path": "mle/agents/summarizer.py",
+      "parent": "mle.agents.summarizer",
+      "start_line": 8,
+      "end_line": 174
+    },
+    {
+      "id": "mle.agents.summarizer.GitHubSummaryAgent.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/agents/summarizer.py",
+      "parent": "mle.agents.summarizer.GitHubSummaryAgent",
+      "start_line": 10,
+      "end_line": 71
+    },
+    {
+      "id": "mle.agents.summarizer.GitHubSummaryAgent.process_knowledge",
+      "type": "Function",
+      "label": "process_knowledge",
+      "path": "mle/agents/summarizer.py",
+      "parent": "mle.agents.summarizer.GitHubSummaryAgent",
+      "start_line": 73,
+      "end_line": 112
+    },
+    {
+      "id": "mle.agents.summarizer.GitHubSummaryAgent.summarize",
+      "type": "Function",
+      "label": "summarize",
+      "path": "mle/agents/summarizer.py",
+      "parent": "mle.agents.summarizer.GitHubSummaryAgent",
+      "start_line": 114,
+      "end_line": 135
+    },
+    {
+      "id": "mle.agents.summarizer.GitHubSummaryAgent.kaggle_request_summarize",
+      "type": "Function",
+      "label": "kaggle_request_summarize",
+      "path": "mle/agents/summarizer.py",
+      "parent": "mle.agents.summarizer.GitHubSummaryAgent",
+      "start_line": 137,
+      "end_line": 174
+    },
+    {
+      "id": "mle.agents.summarizer.GitSummaryAgent",
+      "type": "Class",
+      "label": "GitSummaryAgent",
+      "path": "mle/agents/summarizer.py",
+      "parent": "mle.agents.summarizer",
+      "start_line": 177,
+      "end_line": 292
+    },
+    {
+      "id": "mle.agents.summarizer.GitSummaryAgent.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/agents/summarizer.py",
+      "parent": "mle.agents.summarizer.GitSummaryAgent",
+      "start_line": 179,
+      "end_line": 236
+    },
+    {
+      "id": "mle.agents.summarizer.GitSummaryAgent.process_knowledge",
+      "type": "Function",
+      "label": "process_knowledge",
+      "path": "mle/agents/summarizer.py",
+      "parent": "mle.agents.summarizer.GitSummaryAgent",
+      "start_line": 238,
+      "end_line": 266
+    },
+    {
+      "id": "mle.agents.summarizer.GitSummaryAgent.summarize",
+      "type": "Function",
+      "label": "summarize",
+      "path": "mle/agents/summarizer.py",
+      "parent": "mle.agents.summarizer.GitSummaryAgent",
+      "start_line": 268,
+      "end_line": 292
+    },
+    {
+      "id": "mle.cli",
+      "type": "Module",
+      "label": "cli",
+      "path": "mle/cli.py",
+      "lines": 565,
+      "lang": "python"
+    },
+    {
+      "id": "mle.cli.cli",
+      "type": "Function",
+      "label": "cli",
+      "path": "mle/cli.py",
+      "parent": "mle.cli",
+      "start_line": 32,
+      "end_line": 36
+    },
+    {
+      "id": "mle.cli.start",
+      "type": "Function",
+      "label": "start",
+      "path": "mle/cli.py",
+      "parent": "mle.cli",
+      "start_line": 43,
+      "end_line": 63
+    },
+    {
+      "id": "mle.cli.report",
+      "type": "Function",
+      "label": "report",
+      "path": "mle/cli.py",
+      "parent": "mle.cli",
+      "start_line": 72,
+      "end_line": 113
+    },
+    {
+      "id": "mle.cli.report_local",
+      "type": "Function",
+      "label": "report_local",
+      "path": "mle/cli.py",
+      "parent": "mle.cli",
+      "start_line": 122,
+      "end_line": 134
+    },
+    {
+      "id": "mle.cli.kaggle",
+      "type": "Function",
+      "label": "kaggle",
+      "path": "mle/cli.py",
+      "parent": "mle.cli",
+      "start_line": 146,
+      "end_line": 190
+    },
+    {
+      "id": "mle.cli.chat",
+      "type": "Function",
+      "label": "chat",
+      "path": "mle/cli.py",
+      "parent": "mle.cli",
+      "start_line": 196,
+      "end_line": 235
+    },
+    {
+      "id": "mle.cli.serve",
+      "type": "Function",
+      "label": "serve",
+      "path": "mle/cli.py",
+      "parent": "mle.cli",
+      "start_line": 241,
+      "end_line": 244
+    },
+    {
+      "id": "mle.cli.web",
+      "type": "Function",
+      "label": "web",
+      "path": "mle/cli.py",
+      "parent": "mle.cli",
+      "start_line": 250,
+      "end_line": 253
+    },
+    {
+      "id": "mle.cli.new",
+      "type": "Function",
+      "label": "new",
+      "path": "mle/cli.py",
+      "parent": "mle.cli",
+      "start_line": 258,
+      "end_line": 371
+    },
+    {
+      "id": "mle.cli.integrate",
+      "type": "Function",
+      "label": "integrate",
+      "path": "mle/cli.py",
+      "parent": "mle.cli",
+      "start_line": 376,
+      "end_line": 412
+    },
+    {
+      "id": "mle.cli.memory",
+      "type": "Function",
+      "label": "memory",
+      "path": "mle/cli.py",
+      "parent": "mle.cli",
+      "start_line": 419,
+      "end_line": 479
+    },
+    {
+      "id": "mle.cli.traces",
+      "type": "Function",
+      "label": "traces",
+      "path": "mle/cli.py",
+      "parent": "mle.cli",
+      "start_line": 489,
+      "end_line": 555
+    },
+    {
+      "id": "mle.function",
+      "type": "Module",
+      "label": "function",
+      "path": "mle/function/__init__.py",
+      "lines": 393,
+      "lang": "python"
+    },
+    {
+      "id": "mle.function.get_function",
+      "type": "Function",
+      "label": "get_function",
+      "path": "mle/function/__init__.py",
+      "parent": "mle.function",
+      "start_line": 369,
+      "end_line": 379
+    },
+    {
+      "id": "mle.function.process_function_name",
+      "type": "Function",
+      "label": "process_function_name",
+      "path": "mle/function/__init__.py",
+      "parent": "mle.function",
+      "start_line": 382,
+      "end_line": 392
+    },
+    {
+      "id": "mle.function.data",
+      "type": "Module",
+      "label": "data",
+      "path": "mle/function/data.py",
+      "lines": 184,
+      "lang": "python"
+    },
+    {
+      "id": "mle.function.data.unzip_data",
+      "type": "Function",
+      "label": "unzip_data",
+      "path": "mle/function/data.py",
+      "parent": "mle.function.data",
+      "start_line": 15,
+      "end_line": 80
+    },
+    {
+      "id": "mle.function.data.preview_zip_structure",
+      "type": "Function",
+      "label": "preview_zip_structure",
+      "path": "mle/function/data.py",
+      "parent": "mle.function.data",
+      "start_line": 83,
+      "end_line": 139
+    },
+    {
+      "id": "mle.function.data.preview_csv_data",
+      "type": "Function",
+      "label": "preview_csv_data",
+      "path": "mle/function/data.py",
+      "parent": "mle.function.data",
+      "start_line": 142,
+      "end_line": 183
+    },
+    {
+      "id": "mle.function.execution",
+      "type": "Module",
+      "label": "execution",
+      "path": "mle/function/execution.py",
+      "lines": 41,
+      "lang": "python"
+    },
+    {
+      "id": "mle.function.execution.execute_command",
+      "type": "Function",
+      "label": "execute_command",
+      "path": "mle/function/execution.py",
+      "parent": "mle.function.execution",
+      "start_line": 9,
+      "end_line": 40
+    },
+    {
+      "id": "mle.function.files",
+      "type": "Module",
+      "label": "files",
+      "path": "mle/function/files.py",
+      "lines": 108,
+      "lang": "python"
+    },
+    {
+      "id": "mle.function.files.read_file",
+      "type": "Function",
+      "label": "read_file",
+      "path": "mle/function/files.py",
+      "parent": "mle.function.files",
+      "start_line": 4,
+      "end_line": 26
+    },
+    {
+      "id": "mle.function.files.create_file",
+      "type": "Function",
+      "label": "create_file",
+      "path": "mle/function/files.py",
+      "parent": "mle.function.files",
+      "start_line": 29,
+      "end_line": 41
+    },
+    {
+      "id": "mle.function.files.write_file",
+      "type": "Function",
+      "label": "write_file",
+      "path": "mle/function/files.py",
+      "parent": "mle.function.files",
+      "start_line": 44,
+      "end_line": 56
+    },
+    {
+      "id": "mle.function.files.list_files",
+      "type": "Function",
+      "label": "list_files",
+      "path": "mle/function/files.py",
+      "parent": "mle.function.files",
+      "start_line": 59,
+      "end_line": 94
+    },
+    {
+      "id": "mle.function.files.create_directory",
+      "type": "Function",
+      "label": "create_directory",
+      "path": "mle/function/files.py",
+      "parent": "mle.function.files",
+      "start_line": 97,
+      "end_line": 107
+    },
+    {
+      "id": "mle.function.interaction",
+      "type": "Module",
+      "label": "interaction",
+      "path": "mle/function/interaction.py",
+      "lines": 24,
+      "lang": "python"
+    },
+    {
+      "id": "mle.function.interaction.ask_question",
+      "type": "Function",
+      "label": "ask_question",
+      "path": "mle/function/interaction.py",
+      "parent": "mle.function.interaction",
+      "start_line": 4,
+      "end_line": 9
+    },
+    {
+      "id": "mle.function.interaction.ask_yes_no",
+      "type": "Function",
+      "label": "ask_yes_no",
+      "path": "mle/function/interaction.py",
+      "parent": "mle.function.interaction",
+      "start_line": 12,
+      "end_line": 16
+    },
+    {
+      "id": "mle.function.interaction.ask_choices",
+      "type": "Function",
+      "label": "ask_choices",
+      "path": "mle/function/interaction.py",
+      "parent": "mle.function.interaction",
+      "start_line": 19,
+      "end_line": 23
+    },
+    {
+      "id": "mle.function.search",
+      "type": "Module",
+      "label": "search",
+      "path": "mle/function/search.py",
+      "lines": 133,
+      "lang": "python"
+    },
+    {
+      "id": "mle.function.search.search_github_repos",
+      "type": "Function",
+      "label": "search_github_repos",
+      "path": "mle/function/search.py",
+      "parent": "mle.function.search",
+      "start_line": 10,
+      "end_line": 56
+    },
+    {
+      "id": "mle.function.search.web_search",
+      "type": "Function",
+      "label": "web_search",
+      "path": "mle/function/search.py",
+      "parent": "mle.function.search",
+      "start_line": 59,
+      "end_line": 70
+    },
+    {
+      "id": "mle.function.search.search_arxiv",
+      "type": "Function",
+      "label": "search_arxiv",
+      "path": "mle/function/search.py",
+      "parent": "mle.function.search",
+      "start_line": 73,
+      "end_line": 102
+    },
+    {
+      "id": "mle.function.search.search_papers_with_code",
+      "type": "Function",
+      "label": "search_papers_with_code",
+      "path": "mle/function/search.py",
+      "parent": "mle.function.search",
+      "start_line": 105,
+      "end_line": 132
+    },
+    {
+      "id": "mle.integration",
+      "type": "Module",
+      "label": "integration",
+      "path": "mle/integration/__init__.py",
+      "lines": 5,
+      "lang": "python"
+    },
+    {
+      "id": "mle.integration.github",
+      "type": "Module",
+      "label": "github",
+      "path": "mle/integration/github.py",
+      "lines": 589,
+      "lang": "python"
+    },
+    {
+      "id": "mle.integration.github.github_login",
+      "type": "Function",
+      "label": "github_login",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github",
+      "start_line": 9,
+      "end_line": 16
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration",
+      "type": "Class",
+      "label": "GitHubIntegration",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github",
+      "start_line": 19,
+      "end_line": 588
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 22,
+      "end_line": 34
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration._make_request",
+      "type": "Function",
+      "label": "_make_request",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 36,
+      "end_line": 46
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration._process_items",
+      "type": "Function",
+      "label": "_process_items",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 48,
+      "end_line": 101
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration.get_user_info",
+      "type": "Function",
+      "label": "get_user_info",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 103,
+      "end_line": 110
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration.get_readme",
+      "type": "Function",
+      "label": "get_readme",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 112,
+      "end_line": 120
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration.get_license",
+      "type": "Function",
+      "label": "get_license",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 122,
+      "end_line": 131
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration.get_contributors",
+      "type": "Function",
+      "label": "get_contributors",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 133,
+      "end_line": 145
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration.get_source_code",
+      "type": "Function",
+      "label": "get_source_code",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 147,
+      "end_line": 183
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration.get_contents",
+      "type": "Function",
+      "label": "get_contents",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 154,
+      "end_line": 163
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration.get_commit_history",
+      "type": "Function",
+      "label": "get_commit_history",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 185,
+      "end_line": 233
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration.get_issues",
+      "type": "Function",
+      "label": "get_issues",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 235,
+      "end_line": 313
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration.get_metadata",
+      "type": "Function",
+      "label": "get_metadata",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 315,
+      "end_line": 329
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration.get_pull_requests",
+      "type": "Function",
+      "label": "get_pull_requests",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 331,
+      "end_line": 399
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration.get_pull_request_commits",
+      "type": "Function",
+      "label": "get_pull_request_commits",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 401,
+      "end_line": 407
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration.get_pull_request_diff",
+      "type": "Function",
+      "label": "get_pull_request_diff",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 409,
+      "end_line": 423
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration.get_releases",
+      "type": "Function",
+      "label": "get_releases",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 425,
+      "end_line": 441
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration.get_structure",
+      "type": "Function",
+      "label": "get_structure",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 443,
+      "end_line": 492
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration.traverse_tree",
+      "type": "Function",
+      "label": "traverse_tree",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 452,
+      "end_line": 463
+    },
+    {
+      "id": "mle.integration.github.GitHubIntegration.get_user_activity",
+      "type": "Function",
+      "label": "get_user_activity",
+      "path": "mle/integration/github.py",
+      "parent": "mle.integration.github.GitHubIntegration",
+      "start_line": 494,
+      "end_line": 588
+    },
+    {
+      "id": "mle.integration.google_calendar",
+      "type": "Module",
+      "label": "google_calendar",
+      "path": "mle/integration/google_calendar.py",
+      "lines": 121,
+      "lang": "python"
+    },
+    {
+      "id": "mle.integration.google_calendar.google_calendar_login",
+      "type": "Function",
+      "label": "google_calendar_login",
+      "path": "mle/integration/google_calendar.py",
+      "parent": "mle.integration.google_calendar",
+      "start_line": 9,
+      "end_line": 33
+    },
+    {
+      "id": "mle.integration.google_calendar.GoogleCalendarIntegration",
+      "type": "Class",
+      "label": "GoogleCalendarIntegration",
+      "path": "mle/integration/google_calendar.py",
+      "parent": "mle.integration.google_calendar",
+      "start_line": 36,
+      "end_line": 120
+    },
+    {
+      "id": "mle.integration.google_calendar.GoogleCalendarIntegration.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/integration/google_calendar.py",
+      "parent": "mle.integration.google_calendar.GoogleCalendarIntegration",
+      "start_line": 43,
+      "end_line": 46
+    },
+    {
+      "id": "mle.integration.google_calendar.GoogleCalendarIntegration.get_events",
+      "type": "Function",
+      "label": "get_events",
+      "path": "mle/integration/google_calendar.py",
+      "parent": "mle.integration.google_calendar.GoogleCalendarIntegration",
+      "start_line": 48,
+      "end_line": 120
+    },
+    {
+      "id": "mle.integration.kaggle",
+      "type": "Module",
+      "label": "kaggle",
+      "path": "mle/integration/kaggle.py",
+      "lines": 79,
+      "lang": "python"
+    },
+    {
+      "id": "mle.integration.kaggle.KaggleIntegration",
+      "type": "Class",
+      "label": "KaggleIntegration",
+      "path": "mle/integration/kaggle.py",
+      "parent": "mle.integration.kaggle",
+      "start_line": 8,
+      "end_line": 78
+    },
+    {
+      "id": "mle.integration.kaggle.KaggleIntegration.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/integration/kaggle.py",
+      "parent": "mle.integration.kaggle.KaggleIntegration",
+      "start_line": 10,
+      "end_line": 27
+    },
+    {
+      "id": "mle.integration.kaggle.KaggleIntegration.list_competition",
+      "type": "Function",
+      "label": "list_competition",
+      "path": "mle/integration/kaggle.py",
+      "parent": "mle.integration.kaggle.KaggleIntegration",
+      "start_line": 29,
+      "end_line": 35
+    },
+    {
+      "id": "mle.integration.kaggle.KaggleIntegration.download_competition_dataset",
+      "type": "Function",
+      "label": "download_competition_dataset",
+      "path": "mle/integration/kaggle.py",
+      "parent": "mle.integration.kaggle.KaggleIntegration",
+      "start_line": 37,
+      "end_line": 57
+    },
+    {
+      "id": "mle.integration.kaggle.KaggleIntegration.fetch_competition_overview",
+      "type": "Function",
+      "label": "fetch_competition_overview",
+      "path": "mle/integration/kaggle.py",
+      "parent": "mle.integration.kaggle.KaggleIntegration",
+      "start_line": 59,
+      "end_line": 78
+    },
+    {
+      "id": "mle.integration.local_git",
+      "type": "Module",
+      "label": "local_git",
+      "path": "mle/integration/local_git.py",
+      "lines": 238,
+      "lang": "python"
+    },
+    {
+      "id": "mle.integration.local_git.GitIntegration",
+      "type": "Class",
+      "label": "GitIntegration",
+      "path": "mle/integration/local_git.py",
+      "parent": "mle.integration.local_git",
+      "start_line": 8,
+      "end_line": 237
+    },
+    {
+      "id": "mle.integration.local_git.GitIntegration.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/integration/local_git.py",
+      "parent": "mle.integration.local_git.GitIntegration",
+      "start_line": 9,
+      "end_line": 13
+    },
+    {
+      "id": "mle.integration.local_git.GitIntegration.get_repo_status",
+      "type": "Function",
+      "label": "get_repo_status",
+      "path": "mle/integration/local_git.py",
+      "parent": "mle.integration.local_git.GitIntegration",
+      "start_line": 15,
+      "end_line": 33
+    },
+    {
+      "id": "mle.integration.local_git.GitIntegration.get_commit_history",
+      "type": "Function",
+      "label": "get_commit_history",
+      "path": "mle/integration/local_git.py",
+      "parent": "mle.integration.local_git.GitIntegration",
+      "start_line": 35,
+      "end_line": 77
+    },
+    {
+      "id": "mle.integration.local_git.GitIntegration.get_commit_diff",
+      "type": "Function",
+      "label": "get_commit_diff",
+      "path": "mle/integration/local_git.py",
+      "parent": "mle.integration.local_git.GitIntegration",
+      "start_line": 79,
+      "end_line": 135
+    },
+    {
+      "id": "mle.integration.local_git.GitIntegration.get_source_code",
+      "type": "Function",
+      "label": "get_source_code",
+      "path": "mle/integration/local_git.py",
+      "parent": "mle.integration.local_git.GitIntegration",
+      "start_line": 137,
+      "end_line": 155
+    },
+    {
+      "id": "mle.integration.local_git.GitIntegration.get_contents",
+      "type": "Function",
+      "label": "get_contents",
+      "path": "mle/integration/local_git.py",
+      "parent": "mle.integration.local_git.GitIntegration",
+      "start_line": 144,
+      "end_line": 153
+    },
+    {
+      "id": "mle.integration.local_git.GitIntegration.get_readme",
+      "type": "Function",
+      "label": "get_readme",
+      "path": "mle/integration/local_git.py",
+      "parent": "mle.integration.local_git.GitIntegration",
+      "start_line": 157,
+      "end_line": 165
+    },
+    {
+      "id": "mle.integration.local_git.GitIntegration.get_structure",
+      "type": "Function",
+      "label": "get_structure",
+      "path": "mle/integration/local_git.py",
+      "parent": "mle.integration.local_git.GitIntegration",
+      "start_line": 167,
+      "end_line": 182
+    },
+    {
+      "id": "mle.integration.local_git.GitIntegration.get_user_activity",
+      "type": "Function",
+      "label": "get_user_activity",
+      "path": "mle/integration/local_git.py",
+      "parent": "mle.integration.local_git.GitIntegration",
+      "start_line": 184,
+      "end_line": 237
+    },
+    {
+      "id": "mle.model",
+      "type": "Module",
+      "label": "model",
+      "path": "mle/model/__init__.py",
+      "lines": 81,
+      "lang": "python"
+    },
+    {
+      "id": "mle.model.ObservableModel",
+      "type": "Class",
+      "label": "ObservableModel",
+      "path": "mle/model/__init__.py",
+      "parent": "mle.model",
+      "start_line": 21,
+      "end_line": 47
+    },
+    {
+      "id": "mle.model.ObservableModel.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/model/__init__.py",
+      "parent": "mle.model.ObservableModel",
+      "start_line": 33,
+      "end_line": 39
+    },
+    {
+      "id": "mle.model.ObservableModel.query",
+      "type": "Function",
+      "label": "query",
+      "path": "mle/model/__init__.py",
+      "parent": "mle.model.ObservableModel",
+      "start_line": 42,
+      "end_line": 43
+    },
+    {
+      "id": "mle.model.ObservableModel.stream",
+      "type": "Function",
+      "label": "stream",
+      "path": "mle/model/__init__.py",
+      "parent": "mle.model.ObservableModel",
+      "start_line": 46,
+      "end_line": 47
+    },
+    {
+      "id": "mle.model.load_model",
+      "type": "Function",
+      "label": "load_model",
+      "path": "mle/model/__init__.py",
+      "parent": "mle.model",
+      "start_line": 50,
+      "end_line": 80
+    },
+    {
+      "id": "mle.model.anthropic",
+      "type": "Module",
+      "label": "anthropic",
+      "path": "mle/model/anthropic.py",
+      "lines": 145,
+      "lang": "python"
+    },
+    {
+      "id": "mle.model.anthropic.ClaudeModel",
+      "type": "Class",
+      "label": "ClaudeModel",
+      "path": "mle/model/anthropic.py",
+      "parent": "mle.model.anthropic",
+      "start_line": 7,
+      "end_line": 144
+    },
+    {
+      "id": "mle.model.anthropic.ClaudeModel.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/model/anthropic.py",
+      "parent": "mle.model.anthropic.ClaudeModel",
+      "start_line": 8,
+      "end_line": 33
+    },
+    {
+      "id": "mle.model.anthropic.ClaudeModel._add_tool_result_into_chat_history",
+      "type": "Function",
+      "label": "_add_tool_result_into_chat_history",
+      "path": "mle/model/anthropic.py",
+      "parent": "mle.model.anthropic.ClaudeModel",
+      "start_line": 36,
+      "end_line": 62
+    },
+    {
+      "id": "mle.model.anthropic.ClaudeModel.query",
+      "type": "Function",
+      "label": "query",
+      "path": "mle/model/anthropic.py",
+      "parent": "mle.model.anthropic.ClaudeModel",
+      "start_line": 64,
+      "end_line": 116
+    },
+    {
+      "id": "mle.model.anthropic.ClaudeModel.stream",
+      "type": "Function",
+      "label": "stream",
+      "path": "mle/model/anthropic.py",
+      "parent": "mle.model.anthropic.ClaudeModel",
+      "start_line": 118,
+      "end_line": 144
+    },
+    {
+      "id": "mle.model.common",
+      "type": "Module",
+      "label": "common",
+      "path": "mle/model/common.py",
+      "lines": 19,
+      "lang": "python"
+    },
+    {
+      "id": "mle.model.common.Model",
+      "type": "Class",
+      "label": "Model",
+      "path": "mle/model/common.py",
+      "parent": "mle.model.common",
+      "start_line": 4,
+      "end_line": 18
+    },
+    {
+      "id": "mle.model.common.Model.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/model/common.py",
+      "parent": "mle.model.common.Model",
+      "start_line": 6,
+      "end_line": 10
+    },
+    {
+      "id": "mle.model.common.Model.query",
+      "type": "Function",
+      "label": "query",
+      "path": "mle/model/common.py",
+      "parent": "mle.model.common.Model",
+      "start_line": 13,
+      "end_line": 14
+    },
+    {
+      "id": "mle.model.common.Model.stream",
+      "type": "Function",
+      "label": "stream",
+      "path": "mle/model/common.py",
+      "parent": "mle.model.common.Model",
+      "start_line": 17,
+      "end_line": 18
+    },
+    {
+      "id": "mle.model.deepseek",
+      "type": "Module",
+      "label": "deepseek",
+      "path": "mle/model/deepseek.py",
+      "lines": 117,
+      "lang": "python"
+    },
+    {
+      "id": "mle.model.deepseek.DeepSeekModel",
+      "type": "Class",
+      "label": "DeepSeekModel",
+      "path": "mle/model/deepseek.py",
+      "parent": "mle.model.deepseek",
+      "start_line": 8,
+      "end_line": 116
+    },
+    {
+      "id": "mle.model.deepseek.DeepSeekModel.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/model/deepseek.py",
+      "parent": "mle.model.deepseek.DeepSeekModel",
+      "start_line": 9,
+      "end_line": 35
+    },
+    {
+      "id": "mle.model.deepseek.DeepSeekModel._convert_functions_to_tools",
+      "type": "Function",
+      "label": "_convert_functions_to_tools",
+      "path": "mle/model/deepseek.py",
+      "parent": "mle.model.deepseek.DeepSeekModel",
+      "start_line": 37,
+      "end_line": 52
+    },
+    {
+      "id": "mle.model.deepseek.DeepSeekModel.query",
+      "type": "Function",
+      "label": "query",
+      "path": "mle/model/deepseek.py",
+      "parent": "mle.model.deepseek.DeepSeekModel",
+      "start_line": 54,
+      "end_line": 89
+    },
+    {
+      "id": "mle.model.deepseek.DeepSeekModel.stream",
+      "type": "Function",
+      "label": "stream",
+      "path": "mle/model/deepseek.py",
+      "parent": "mle.model.deepseek.DeepSeekModel",
+      "start_line": 91,
+      "end_line": 116
+    },
+    {
+      "id": "mle.model.gemini",
+      "type": "Module",
+      "label": "gemini",
+      "path": "mle/model/gemini.py",
+      "lines": 188,
+      "lang": "python"
+    },
+    {
+      "id": "mle.model.gemini.GeminiModel",
+      "type": "Class",
+      "label": "GeminiModel",
+      "path": "mle/model/gemini.py",
+      "parent": "mle.model.gemini",
+      "start_line": 15,
+      "end_line": 187
+    },
+    {
+      "id": "mle.model.gemini.GeminiModel.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/model/gemini.py",
+      "parent": "mle.model.gemini.GeminiModel",
+      "start_line": 17,
+      "end_line": 32
+    },
+    {
+      "id": "mle.model.gemini.GeminiModel._create_gemini_tools",
+      "type": "Function",
+      "label": "_create_gemini_tools",
+      "path": "mle/model/gemini.py",
+      "parent": "mle.model.gemini.GeminiModel",
+      "start_line": 34,
+      "end_line": 60
+    },
+    {
+      "id": "mle.model.gemini.GeminiModel._adapt_history_for_gemini",
+      "type": "Function",
+      "label": "_adapt_history_for_gemini",
+      "path": "mle/model/gemini.py",
+      "parent": "mle.model.gemini.GeminiModel",
+      "start_line": 62,
+      "end_line": 87
+    },
+    {
+      "id": "mle.model.gemini.GeminiModel.query",
+      "type": "Function",
+      "label": "query",
+      "path": "mle/model/gemini.py",
+      "parent": "mle.model.gemini.GeminiModel",
+      "start_line": 89,
+      "end_line": 166
+    },
+    {
+      "id": "mle.model.gemini.GeminiModel.stream",
+      "type": "Function",
+      "label": "stream",
+      "path": "mle/model/gemini.py",
+      "parent": "mle.model.gemini.GeminiModel",
+      "start_line": 168,
+      "end_line": 187
+    },
+    {
+      "id": "mle.model.mistral",
+      "type": "Module",
+      "label": "mistral",
+      "path": "mle/model/mistral.py",
+      "lines": 118,
+      "lang": "python"
+    },
+    {
+      "id": "mle.model.mistral.MistralModel",
+      "type": "Class",
+      "label": "MistralModel",
+      "path": "mle/model/mistral.py",
+      "parent": "mle.model.mistral",
+      "start_line": 8,
+      "end_line": 117
+    },
+    {
+      "id": "mle.model.mistral.MistralModel.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/model/mistral.py",
+      "parent": "mle.model.mistral.MistralModel",
+      "start_line": 9,
+      "end_line": 34
+    },
+    {
+      "id": "mle.model.mistral.MistralModel._convert_functions_to_tools",
+      "type": "Function",
+      "label": "_convert_functions_to_tools",
+      "path": "mle/model/mistral.py",
+      "parent": "mle.model.mistral.MistralModel",
+      "start_line": 36,
+      "end_line": 51
+    },
+    {
+      "id": "mle.model.mistral.MistralModel.query",
+      "type": "Function",
+      "label": "query",
+      "path": "mle/model/mistral.py",
+      "parent": "mle.model.mistral.MistralModel",
+      "start_line": 53,
+      "end_line": 88
+    },
+    {
+      "id": "mle.model.mistral.MistralModel.stream",
+      "type": "Function",
+      "label": "stream",
+      "path": "mle/model/mistral.py",
+      "parent": "mle.model.mistral.MistralModel",
+      "start_line": 90,
+      "end_line": 117
+    },
+    {
+      "id": "mle.model.ollama",
+      "type": "Module",
+      "label": "ollama",
+      "path": "mle/model/ollama.py",
+      "lines": 92,
+      "lang": "python"
+    },
+    {
+      "id": "mle.model.ollama.OllamaModel",
+      "type": "Class",
+      "label": "OllamaModel",
+      "path": "mle/model/ollama.py",
+      "parent": "mle.model.ollama",
+      "start_line": 7,
+      "end_line": 91
+    },
+    {
+      "id": "mle.model.ollama.OllamaModel.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/model/ollama.py",
+      "parent": "mle.model.ollama.OllamaModel",
+      "start_line": 8,
+      "end_line": 29
+    },
+    {
+      "id": "mle.model.ollama.OllamaModel._clean_think_tags",
+      "type": "Function",
+      "label": "_clean_think_tags",
+      "path": "mle/model/ollama.py",
+      "parent": "mle.model.ollama.OllamaModel",
+      "start_line": 31,
+      "end_line": 43
+    },
+    {
+      "id": "mle.model.ollama.OllamaModel._process_message",
+      "type": "Function",
+      "label": "_process_message",
+      "path": "mle/model/ollama.py",
+      "parent": "mle.model.ollama.OllamaModel",
+      "start_line": 45,
+      "end_line": 56
+    },
+    {
+      "id": "mle.model.ollama.OllamaModel.query",
+      "type": "Function",
+      "label": "query",
+      "path": "mle/model/ollama.py",
+      "parent": "mle.model.ollama.OllamaModel",
+      "start_line": 58,
+      "end_line": 74
+    },
+    {
+      "id": "mle.model.ollama.OllamaModel.stream",
+      "type": "Function",
+      "label": "stream",
+      "path": "mle/model/ollama.py",
+      "parent": "mle.model.ollama.OllamaModel",
+      "start_line": 76,
+      "end_line": 91
+    },
+    {
+      "id": "mle.model.openai",
+      "type": "Module",
+      "label": "openai",
+      "path": "mle/model/openai.py",
+      "lines": 101,
+      "lang": "python"
+    },
+    {
+      "id": "mle.model.openai.OpenAIModel",
+      "type": "Class",
+      "label": "OpenAIModel",
+      "path": "mle/model/openai.py",
+      "parent": "mle.model.openai",
+      "start_line": 9,
+      "end_line": 100
+    },
+    {
+      "id": "mle.model.openai.OpenAIModel.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/model/openai.py",
+      "parent": "mle.model.openai.OpenAIModel",
+      "start_line": 10,
+      "end_line": 38
+    },
+    {
+      "id": "mle.model.openai.OpenAIModel.query",
+      "type": "Function",
+      "label": "query",
+      "path": "mle/model/openai.py",
+      "parent": "mle.model.openai.OpenAIModel",
+      "start_line": 40,
+      "end_line": 71
+    },
+    {
+      "id": "mle.model.openai.OpenAIModel.stream",
+      "type": "Function",
+      "label": "stream",
+      "path": "mle/model/openai.py",
+      "parent": "mle.model.openai.OpenAIModel",
+      "start_line": 73,
+      "end_line": 100
+    },
+    {
+      "id": "mle.model.vllm",
+      "type": "Module",
+      "label": "vllm",
+      "path": "mle/model/vllm.py",
+      "lines": 186,
+      "lang": "python"
+    },
+    {
+      "id": "mle.model.vllm.vLLMModel",
+      "type": "Class",
+      "label": "vLLMModel",
+      "path": "mle/model/vllm.py",
+      "parent": "mle.model.vllm",
+      "start_line": 10,
+      "end_line": 185
+    },
+    {
+      "id": "mle.model.vllm.vLLMModel.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/model/vllm.py",
+      "parent": "mle.model.vllm.vLLMModel",
+      "start_line": 13,
+      "end_line": 45
+    },
+    {
+      "id": "mle.model.vllm.vLLMModel.normalize_chat_history",
+      "type": "Function",
+      "label": "normalize_chat_history",
+      "path": "mle/model/vllm.py",
+      "parent": "mle.model.vllm.vLLMModel",
+      "start_line": 47,
+      "end_line": 71
+    },
+    {
+      "id": "mle.model.vllm.vLLMModel.query",
+      "type": "Function",
+      "label": "query",
+      "path": "mle/model/vllm.py",
+      "parent": "mle.model.vllm.vLLMModel",
+      "start_line": 73,
+      "end_line": 134
+    },
+    {
+      "id": "mle.model.vllm.vLLMModel.stream",
+      "type": "Function",
+      "label": "stream",
+      "path": "mle/model/vllm.py",
+      "parent": "mle.model.vllm.vLLMModel",
+      "start_line": 136,
+      "end_line": 185
+    },
+    {
+      "id": "mle.server",
+      "type": "Module",
+      "label": "server",
+      "path": "mle/server/__init__.py",
+      "lines": 2,
+      "lang": "python"
+    },
+    {
+      "id": "mle.server.app",
+      "type": "Module",
+      "label": "app",
+      "path": "mle/server/app.py",
+      "lines": 148,
+      "lang": "python"
+    },
+    {
+      "id": "mle.server.app.ReportRequest",
+      "type": "Class",
+      "label": "ReportRequest",
+      "path": "mle/server/app.py",
+      "parent": "mle.server.app",
+      "start_line": 25,
+      "end_line": 32
+    },
+    {
+      "id": "mle.server.app.root",
+      "type": "Function",
+      "label": "root",
+      "path": "mle/server/app.py",
+      "parent": "mle.server.app",
+      "start_line": 36,
+      "end_line": 41
+    },
+    {
+      "id": "mle.server.app.read_latest_report",
+      "type": "Function",
+      "label": "read_latest_report",
+      "path": "mle/server/app.py",
+      "parent": "mle.server.app",
+      "start_line": 45,
+      "end_line": 69
+    },
+    {
+      "id": "mle.server.app.gen_report",
+      "type": "Function",
+      "label": "gen_report",
+      "path": "mle/server/app.py",
+      "parent": "mle.server.app",
+      "start_line": 73,
+      "end_line": 108
+    },
+    {
+      "id": "mle.server.app.gen_report_async",
+      "type": "Function",
+      "label": "gen_report_async",
+      "path": "mle/server/app.py",
+      "parent": "mle.server.app",
+      "start_line": 112,
+      "end_line": 147
+    },
+    {
+      "id": "mle.utils",
+      "type": "Module",
+      "label": "utils",
+      "path": "mle/utils/__init__.py",
+      "lines": 6,
+      "lang": "python"
+    },
+    {
+      "id": "mle.utils.cache",
+      "type": "Module",
+      "label": "cache",
+      "path": "mle/utils/cache.py",
+      "lines": 187,
+      "lang": "python"
+    },
+    {
+      "id": "mle.utils.cache.WorkflowCacheOperator",
+      "type": "Class",
+      "label": "WorkflowCacheOperator",
+      "path": "mle/utils/cache.py",
+      "parent": "mle.utils.cache",
+      "start_line": 8,
+      "end_line": 65
+    },
+    {
+      "id": "mle.utils.cache.WorkflowCacheOperator.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/utils/cache.py",
+      "parent": "mle.utils.cache.WorkflowCacheOperator",
+      "start_line": 13,
+      "end_line": 20
+    },
+    {
+      "id": "mle.utils.cache.WorkflowCacheOperator.store",
+      "type": "Function",
+      "label": "store",
+      "path": "mle/utils/cache.py",
+      "parent": "mle.utils.cache.WorkflowCacheOperator",
+      "start_line": 22,
+      "end_line": 30
+    },
+    {
+      "id": "mle.utils.cache.WorkflowCacheOperator.resume",
+      "type": "Function",
+      "label": "resume",
+      "path": "mle/utils/cache.py",
+      "parent": "mle.utils.cache.WorkflowCacheOperator",
+      "start_line": 32,
+      "end_line": 44
+    },
+    {
+      "id": "mle.utils.cache.WorkflowCacheOperator.__enter__",
+      "type": "Function",
+      "label": "__enter__",
+      "path": "mle/utils/cache.py",
+      "parent": "mle.utils.cache.WorkflowCacheOperator",
+      "start_line": 46,
+      "end_line": 53
+    },
+    {
+      "id": "mle.utils.cache.WorkflowCacheOperator.__exit__",
+      "type": "Function",
+      "label": "__exit__",
+      "path": "mle/utils/cache.py",
+      "parent": "mle.utils.cache.WorkflowCacheOperator",
+      "start_line": 55,
+      "end_line": 65
+    },
+    {
+      "id": "mle.utils.cache.WorkflowCache",
+      "type": "Class",
+      "label": "WorkflowCache",
+      "path": "mle/utils/cache.py",
+      "parent": "mle.utils.cache",
+      "start_line": 68,
+      "end_line": 187
+    },
+    {
+      "id": "mle.utils.cache.WorkflowCache.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/utils/cache.py",
+      "parent": "mle.utils.cache.WorkflowCache",
+      "start_line": 74,
+      "end_line": 85
+    },
+    {
+      "id": "mle.utils.cache.WorkflowCache.is_empty",
+      "type": "Function",
+      "label": "is_empty",
+      "path": "mle/utils/cache.py",
+      "parent": "mle.utils.cache.WorkflowCache",
+      "start_line": 87,
+      "end_line": 94
+    },
+    {
+      "id": "mle.utils.cache.WorkflowCache.remove",
+      "type": "Function",
+      "label": "remove",
+      "path": "mle/utils/cache.py",
+      "parent": "mle.utils.cache.WorkflowCache",
+      "start_line": 96,
+      "end_line": 104
+    },
+    {
+      "id": "mle.utils.cache.WorkflowCache.current_step",
+      "type": "Function",
+      "label": "current_step",
+      "path": "mle/utils/cache.py",
+      "parent": "mle.utils.cache.WorkflowCache",
+      "start_line": 106,
+      "end_line": 113
+    },
+    {
+      "id": "mle.utils.cache.WorkflowCache.resume_variable",
+      "type": "Function",
+      "label": "resume_variable",
+      "path": "mle/utils/cache.py",
+      "parent": "mle.utils.cache.WorkflowCache",
+      "start_line": 115,
+      "end_line": 133
+    },
+    {
+      "id": "mle.utils.cache.WorkflowCache._load_cache_buffer",
+      "type": "Function",
+      "label": "_load_cache_buffer",
+      "path": "mle/utils/cache.py",
+      "parent": "mle.utils.cache.WorkflowCache",
+      "start_line": 135,
+      "end_line": 150
+    },
+    {
+      "id": "mle.utils.cache.WorkflowCache._store_cache_buffer",
+      "type": "Function",
+      "label": "_store_cache_buffer",
+      "path": "mle/utils/cache.py",
+      "parent": "mle.utils.cache.WorkflowCache",
+      "start_line": 152,
+      "end_line": 156
+    },
+    {
+      "id": "mle.utils.cache.WorkflowCache.__call__",
+      "type": "Function",
+      "label": "__call__",
+      "path": "mle/utils/cache.py",
+      "parent": "mle.utils.cache.WorkflowCache",
+      "start_line": 158,
+      "end_line": 178
+    },
+    {
+      "id": "mle.utils.cache.WorkflowCache.__str__",
+      "type": "Function",
+      "label": "__str__",
+      "path": "mle/utils/cache.py",
+      "parent": "mle.utils.cache.WorkflowCache",
+      "start_line": 180,
+      "end_line": 187
+    },
+    {
+      "id": "mle.utils.chunk",
+      "type": "Module",
+      "label": "chunk",
+      "path": "mle/utils/chunk.py",
+      "lines": 131,
+      "lang": "python"
+    },
+    {
+      "id": "mle.utils.chunk.count_tokens",
+      "type": "Function",
+      "label": "count_tokens",
+      "path": "mle/utils/chunk.py",
+      "parent": "mle.utils.chunk",
+      "start_line": 7,
+      "end_line": 10
+    },
+    {
+      "id": "mle.utils.chunk.Chunker",
+      "type": "Class",
+      "label": "Chunker",
+      "path": "mle/utils/chunk.py",
+      "parent": "mle.utils.chunk",
+      "start_line": 13,
+      "end_line": 40
+    },
+    {
+      "id": "mle.utils.chunk.Chunker.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/utils/chunk.py",
+      "parent": "mle.utils.chunk.Chunker",
+      "start_line": 14,
+      "end_line": 15
+    },
+    {
+      "id": "mle.utils.chunk.Chunker.chunk",
+      "type": "Function",
+      "label": "chunk",
+      "path": "mle/utils/chunk.py",
+      "parent": "mle.utils.chunk.Chunker",
+      "start_line": 18,
+      "end_line": 19
+    },
+    {
+      "id": "mle.utils.chunk.Chunker.get_chunk",
+      "type": "Function",
+      "label": "get_chunk",
+      "path": "mle/utils/chunk.py",
+      "parent": "mle.utils.chunk.Chunker",
+      "start_line": 22,
+      "end_line": 23
+    },
+    {
+      "id": "mle.utils.chunk.Chunker.print_chunks",
+      "type": "Function",
+      "label": "print_chunks",
+      "path": "mle/utils/chunk.py",
+      "parent": "mle.utils.chunk.Chunker",
+      "start_line": 26,
+      "end_line": 31
+    },
+    {
+      "id": "mle.utils.chunk.Chunker.consolidate_chunks_into_file",
+      "type": "Function",
+      "label": "consolidate_chunks_into_file",
+      "path": "mle/utils/chunk.py",
+      "parent": "mle.utils.chunk.Chunker",
+      "start_line": 34,
+      "end_line": 35
+    },
+    {
+      "id": "mle.utils.chunk.Chunker.count_lines",
+      "type": "Function",
+      "label": "count_lines",
+      "path": "mle/utils/chunk.py",
+      "parent": "mle.utils.chunk.Chunker",
+      "start_line": 38,
+      "end_line": 40
+    },
+    {
+      "id": "mle.utils.chunk.CodeChunker",
+      "type": "Class",
+      "label": "CodeChunker",
+      "path": "mle/utils/chunk.py",
+      "parent": "mle.utils.chunk",
+      "start_line": 43,
+      "end_line": 130
+    },
+    {
+      "id": "mle.utils.chunk.CodeChunker.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/utils/chunk.py",
+      "parent": "mle.utils.chunk.CodeChunker",
+      "start_line": 44,
+      "end_line": 47
+    },
+    {
+      "id": "mle.utils.chunk.CodeChunker.chunk",
+      "type": "Function",
+      "label": "chunk",
+      "path": "mle/utils/chunk.py",
+      "parent": "mle.utils.chunk.CodeChunker",
+      "start_line": 49,
+      "end_line": 127
+    },
+    {
+      "id": "mle.utils.chunk.CodeChunker.get_chunk",
+      "type": "Function",
+      "label": "get_chunk",
+      "path": "mle/utils/chunk.py",
+      "parent": "mle.utils.chunk.CodeChunker",
+      "start_line": 129,
+      "end_line": 130
+    },
+    {
+      "id": "mle.utils.component_memory",
+      "type": "Module",
+      "label": "component_memory",
+      "path": "mle/utils/component_memory.py",
+      "lines": 404,
+      "lang": "python"
+    },
+    {
+      "id": "mle.utils.component_memory.ComponentMemory",
+      "type": "Class",
+      "label": "ComponentMemory",
+      "path": "mle/utils/component_memory.py",
+      "parent": "mle.utils.component_memory",
+      "start_line": 20,
+      "end_line": 316
+    },
+    {
+      "id": "mle.utils.component_memory.ComponentMemory.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/utils/component_memory.py",
+      "parent": "mle.utils.component_memory.ComponentMemory",
+      "start_line": 28,
+      "end_line": 44
+    },
+    {
+      "id": "mle.utils.component_memory.ComponentMemory.store_trace",
+      "type": "Function",
+      "label": "store_trace",
+      "path": "mle/utils/component_memory.py",
+      "parent": "mle.utils.component_memory.ComponentMemory",
+      "start_line": 46,
+      "end_line": 102
+    },
+    {
+      "id": "mle.utils.component_memory.ComponentMemory.get_trace",
+      "type": "Function",
+      "label": "get_trace",
+      "path": "mle/utils/component_memory.py",
+      "parent": "mle.utils.component_memory.ComponentMemory",
+      "start_line": 104,
+      "end_line": 121
+    },
+    {
+      "id": "mle.utils.component_memory.ComponentMemory.get_recent_traces",
+      "type": "Function",
+      "label": "get_recent_traces",
+      "path": "mle/utils/component_memory.py",
+      "parent": "mle.utils.component_memory.ComponentMemory",
+      "start_line": 123,
+      "end_line": 156
+    },
+    {
+      "id": "mle.utils.component_memory.ComponentMemory.search_traces",
+      "type": "Function",
+      "label": "search_traces",
+      "path": "mle/utils/component_memory.py",
+      "parent": "mle.utils.component_memory.ComponentMemory",
+      "start_line": 158,
+      "end_line": 185
+    },
+    {
+      "id": "mle.utils.component_memory.ComponentMemory.add_relationship",
+      "type": "Function",
+      "label": "add_relationship",
+      "path": "mle/utils/component_memory.py",
+      "parent": "mle.utils.component_memory.ComponentMemory",
+      "start_line": 187,
+      "end_line": 224
+    },
+    {
+      "id": "mle.utils.component_memory.ComponentMemory.get_related_traces",
+      "type": "Function",
+      "label": "get_related_traces",
+      "path": "mle/utils/component_memory.py",
+      "parent": "mle.utils.component_memory.ComponentMemory",
+      "start_line": 226,
+      "end_line": 275
+    },
+    {
+      "id": "mle.utils.component_memory.ComponentMemory.close",
+      "type": "Function",
+      "label": "close",
+      "path": "mle/utils/component_memory.py",
+      "parent": "mle.utils.component_memory.ComponentMemory",
+      "start_line": 277,
+      "end_line": 279
+    },
+    {
+      "id": "mle.utils.component_memory.ComponentMemory._serialize_data",
+      "type": "Function",
+      "label": "_serialize_data",
+      "path": "mle/utils/component_memory.py",
+      "parent": "mle.utils.component_memory.ComponentMemory",
+      "start_line": 281,
+      "end_line": 287
+    },
+    {
+      "id": "mle.utils.component_memory.ComponentMemory._deserialize_data",
+      "type": "Function",
+      "label": "_deserialize_data",
+      "path": "mle/utils/component_memory.py",
+      "parent": "mle.utils.component_memory.ComponentMemory",
+      "start_line": 289,
+      "end_line": 294
+    },
+    {
+      "id": "mle.utils.component_memory.ComponentMemory._process_trace_result",
+      "type": "Function",
+      "label": "_process_trace_result",
+      "path": "mle/utils/component_memory.py",
+      "parent": "mle.utils.component_memory.ComponentMemory",
+      "start_line": 296,
+      "end_line": 316
+    },
+    {
+      "id": "mle.utils.component_memory.trace_component",
+      "type": "Function",
+      "label": "trace_component",
+      "path": "mle/utils/component_memory.py",
+      "parent": "mle.utils.component_memory",
+      "start_line": 320,
+      "end_line": 404
+    },
+    {
+      "id": "mle.utils.component_memory.decorator",
+      "type": "Function",
+      "label": "decorator",
+      "path": "mle/utils/component_memory.py",
+      "parent": "mle.utils.component_memory",
+      "start_line": 330,
+      "end_line": 403
+    },
+    {
+      "id": "mle.utils.component_memory.wrapper",
+      "type": "Function",
+      "label": "wrapper",
+      "path": "mle/utils/component_memory.py",
+      "parent": "mle.utils.component_memory",
+      "start_line": 332,
+      "end_line": 401
+    },
+    {
+      "id": "mle.utils.data",
+      "type": "Module",
+      "label": "data",
+      "path": "mle/utils/data.py",
+      "lines": 84,
+      "lang": "python"
+    },
+    {
+      "id": "mle.utils.data.dict_to_markdown",
+      "type": "Function",
+      "label": "dict_to_markdown",
+      "path": "mle/utils/data.py",
+      "parent": "mle.utils.data",
+      "start_line": 7,
+      "end_line": 31
+    },
+    {
+      "id": "mle.utils.data.write_item",
+      "type": "Function",
+      "label": "write_item",
+      "path": "mle/utils/data.py",
+      "parent": "mle.utils.data",
+      "start_line": 15,
+      "end_line": 26
+    },
+    {
+      "id": "mle.utils.data.is_markdown_file",
+      "type": "Function",
+      "label": "is_markdown_file",
+      "path": "mle/utils/data.py",
+      "parent": "mle.utils.data",
+      "start_line": 34,
+      "end_line": 46
+    },
+    {
+      "id": "mle.utils.data.read_markdown",
+      "type": "Function",
+      "label": "read_markdown",
+      "path": "mle/utils/data.py",
+      "parent": "mle.utils.data",
+      "start_line": 49,
+      "end_line": 71
+    },
+    {
+      "id": "mle.utils.data.clean_json_string",
+      "type": "Function",
+      "label": "clean_json_string",
+      "path": "mle/utils/data.py",
+      "parent": "mle.utils.data",
+      "start_line": 74,
+      "end_line": 83
+    },
+    {
+      "id": "mle.utils.memory",
+      "type": "Module",
+      "label": "memory",
+      "path": "mle/utils/memory.py",
+      "lines": 503,
+      "lang": "python"
+    },
+    {
+      "id": "mle.utils.memory.LanceDBMemory",
+      "type": "Class",
+      "label": "LanceDBMemory",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory",
+      "start_line": 12,
+      "end_line": 247
+    },
+    {
+      "id": "mle.utils.memory.LanceDBMemory.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.LanceDBMemory",
+      "start_line": 14,
+      "end_line": 30
+    },
+    {
+      "id": "mle.utils.memory.LanceDBMemory._open_table",
+      "type": "Function",
+      "label": "_open_table",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.LanceDBMemory",
+      "start_line": 32,
+      "end_line": 43
+    },
+    {
+      "id": "mle.utils.memory.LanceDBMemory.add",
+      "type": "Function",
+      "label": "add",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.LanceDBMemory",
+      "start_line": 45,
+      "end_line": 95
+    },
+    {
+      "id": "mle.utils.memory.LanceDBMemory.query",
+      "type": "Function",
+      "label": "query",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.LanceDBMemory",
+      "start_line": 97,
+      "end_line": 117
+    },
+    {
+      "id": "mle.utils.memory.LanceDBMemory.list_all_keys",
+      "type": "Function",
+      "label": "list_all_keys",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.LanceDBMemory",
+      "start_line": 119,
+      "end_line": 133
+    },
+    {
+      "id": "mle.utils.memory.LanceDBMemory.get",
+      "type": "Function",
+      "label": "get",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.LanceDBMemory",
+      "start_line": 135,
+      "end_line": 152
+    },
+    {
+      "id": "mle.utils.memory.LanceDBMemory.get_by_metadata",
+      "type": "Function",
+      "label": "get_by_metadata",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.LanceDBMemory",
+      "start_line": 154,
+      "end_line": 173
+    },
+    {
+      "id": "mle.utils.memory.LanceDBMemory.delete",
+      "type": "Function",
+      "label": "delete",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.LanceDBMemory",
+      "start_line": 175,
+      "end_line": 190
+    },
+    {
+      "id": "mle.utils.memory.LanceDBMemory.delete_by_metadata",
+      "type": "Function",
+      "label": "delete_by_metadata",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.LanceDBMemory",
+      "start_line": 192,
+      "end_line": 208
+    },
+    {
+      "id": "mle.utils.memory.LanceDBMemory.drop",
+      "type": "Function",
+      "label": "drop",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.LanceDBMemory",
+      "start_line": 210,
+      "end_line": 225
+    },
+    {
+      "id": "mle.utils.memory.LanceDBMemory.count",
+      "type": "Function",
+      "label": "count",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.LanceDBMemory",
+      "start_line": 227,
+      "end_line": 241
+    },
+    {
+      "id": "mle.utils.memory.LanceDBMemory.reset",
+      "type": "Function",
+      "label": "reset",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.LanceDBMemory",
+      "start_line": 243,
+      "end_line": 247
+    },
+    {
+      "id": "mle.utils.memory.Mem0",
+      "type": "Class",
+      "label": "Mem0",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory",
+      "start_line": 250,
+      "end_line": 344
+    },
+    {
+      "id": "mle.utils.memory.Mem0.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.Mem0",
+      "start_line": 252,
+      "end_line": 267
+    },
+    {
+      "id": "mle.utils.memory.Mem0.add",
+      "type": "Function",
+      "label": "add",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.Mem0",
+      "start_line": 269,
+      "end_line": 297
+    },
+    {
+      "id": "mle.utils.memory.Mem0.query",
+      "type": "Function",
+      "label": "query",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.Mem0",
+      "start_line": 299,
+      "end_line": 318
+    },
+    {
+      "id": "mle.utils.memory.Mem0.get_all",
+      "type": "Function",
+      "label": "get_all",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.Mem0",
+      "start_line": 320,
+      "end_line": 335
+    },
+    {
+      "id": "mle.utils.memory.Mem0.reset",
+      "type": "Function",
+      "label": "reset",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.Mem0",
+      "start_line": 337,
+      "end_line": 344
+    },
+    {
+      "id": "mle.utils.memory.HybridMemory",
+      "type": "Class",
+      "label": "HybridMemory",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory",
+      "start_line": 347,
+      "end_line": 502
+    },
+    {
+      "id": "mle.utils.memory.HybridMemory.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.HybridMemory",
+      "start_line": 358,
+      "end_line": 367
+    },
+    {
+      "id": "mle.utils.memory.HybridMemory.add",
+      "type": "Function",
+      "label": "add",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.HybridMemory",
+      "start_line": 369,
+      "end_line": 388
+    },
+    {
+      "id": "mle.utils.memory.HybridMemory.query",
+      "type": "Function",
+      "label": "query",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.HybridMemory",
+      "start_line": 390,
+      "end_line": 410
+    },
+    {
+      "id": "mle.utils.memory.HybridMemory.reset",
+      "type": "Function",
+      "label": "reset",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.HybridMemory",
+      "start_line": 412,
+      "end_line": 421
+    },
+    {
+      "id": "mle.utils.memory.HybridMemory.last_n_consolidate",
+      "type": "Function",
+      "label": "last_n_consolidate",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.HybridMemory",
+      "start_line": 423,
+      "end_line": 456
+    },
+    {
+      "id": "mle.utils.memory.HybridMemory.top_k_consolidate",
+      "type": "Function",
+      "label": "top_k_consolidate",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.HybridMemory",
+      "start_line": 458,
+      "end_line": 491
+    },
+    {
+      "id": "mle.utils.memory.HybridMemory.prompt_based_consolidate",
+      "type": "Function",
+      "label": "prompt_based_consolidate",
+      "path": "mle/utils/memory.py",
+      "parent": "mle.utils.memory.HybridMemory",
+      "start_line": 493,
+      "end_line": 502
+    },
+    {
+      "id": "mle.utils.parser",
+      "type": "Module",
+      "label": "parser",
+      "path": "mle/utils/parser.py",
+      "lines": 352,
+      "lang": "python"
+    },
+    {
+      "id": "mle.utils.parser.return_simple_line_numbers_with_code",
+      "type": "Function",
+      "label": "return_simple_line_numbers_with_code",
+      "path": "mle/utils/parser.py",
+      "parent": "mle.utils.parser",
+      "start_line": 12,
+      "end_line": 16
+    },
+    {
+      "id": "mle.utils.parser.CodeParser",
+      "type": "Class",
+      "label": "CodeParser",
+      "path": "mle/utils/parser.py",
+      "parent": "mle.utils.parser",
+      "start_line": 19,
+      "end_line": 351
+    },
+    {
+      "id": "mle.utils.parser.CodeParser.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "mle/utils/parser.py",
+      "parent": "mle.utils.parser.CodeParser",
+      "start_line": 20,
+      "end_line": 53
+    },
+    {
+      "id": "mle.utils.parser.CodeParser._install_parsers",
+      "type": "Function",
+      "label": "_install_parsers",
+      "path": "mle/utils/parser.py",
+      "parent": "mle.utils.parser.CodeParser",
+      "start_line": 55,
+      "end_line": 101
+    },
+    {
+      "id": "mle.utils.parser.CodeParser._is_repo_valid",
+      "type": "Function",
+      "label": "_is_repo_valid",
+      "path": "mle/utils/parser.py",
+      "parent": "mle.utils.parser.CodeParser",
+      "start_line": 103,
+      "end_line": 111
+    },
+    {
+      "id": "mle.utils.parser.CodeParser.parse_code",
+      "type": "Function",
+      "label": "parse_code",
+      "path": "mle/utils/parser.py",
+      "parent": "mle.utils.parser.CodeParser",
+      "start_line": 113,
+      "end_line": 132
+    },
+    {
+      "id": "mle.utils.parser.CodeParser.extract_points_of_interest",
+      "type": "Function",
+      "label": "extract_points_of_interest",
+      "path": "mle/utils/parser.py",
+      "parent": "mle.utils.parser.CodeParser",
+      "start_line": 134,
+      "end_line": 144
+    },
+    {
+      "id": "mle.utils.parser.CodeParser._get_node_types_of_interest",
+      "type": "Function",
+      "label": "_get_node_types_of_interest",
+      "path": "mle/utils/parser.py",
+      "parent": "mle.utils.parser.CodeParser",
+      "start_line": 146,
+      "end_line": 200
+    },
+    {
+      "id": "mle.utils.parser.CodeParser._get_nodes_for_comments",
+      "type": "Function",
+      "label": "_get_nodes_for_comments",
+      "path": "mle/utils/parser.py",
+      "parent": "mle.utils.parser.CodeParser",
+      "start_line": 202,
+      "end_line": 233
+    },
+    {
+      "id": "mle.utils.parser.CodeParser.extract_comments",
+      "type": "Function",
+      "label": "extract_comments",
+      "path": "mle/utils/parser.py",
+      "parent": "mle.utils.parser.CodeParser",
+      "start_line": 235,
+      "end_line": 245
+    },
+    {
+      "id": "mle.utils.parser.CodeParser.get_lines_for_points_of_interest",
+      "type": "Function",
+      "label": "get_lines_for_points_of_interest",
+      "path": "mle/utils/parser.py",
+      "parent": "mle.utils.parser.CodeParser",
+      "start_line": 247,
+      "end_line": 278
+    },
+    {
+      "id": "mle.utils.parser.CodeParser.get_lines_for_comments",
+      "type": "Function",
+      "label": "get_lines_for_comments",
+      "path": "mle/utils/parser.py",
+      "parent": "mle.utils.parser.CodeParser",
+      "start_line": 280,
+      "end_line": 311
+    },
+    {
+      "id": "mle.utils.parser.CodeParser.print_all_line_types",
+      "type": "Function",
+      "label": "print_all_line_types",
+      "path": "mle/utils/parser.py",
+      "parent": "mle.utils.parser.CodeParser",
+      "start_line": 313,
+      "end_line": 335
+    },
+    {
+      "id": "mle.utils.parser.CodeParser.map_line_to_node_type",
+      "type": "Function",
+      "label": "map_line_to_node_type",
+      "path": "mle/utils/parser.py",
+      "parent": "mle.utils.parser.CodeParser",
+      "start_line": 337,
+      "end_line": 351
+    },
+    {
+      "id": "mle.utils.system",
+      "type": "Module",
+      "label": "system",
+      "path": "mle/utils/system.py",
+      "lines": 426,
+      "lang": "python"
+    },
+    {
+      "id": "mle.utils.system.print_in_box",
+      "type": "Function",
+      "label": "print_in_box",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 18,
+      "end_line": 30
+    },
+    {
+      "id": "mle.utils.system.ask_text",
+      "type": "Function",
+      "label": "ask_text",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 33,
+      "end_line": 46
+    },
+    {
+      "id": "mle.utils.system.check_config",
+      "type": "Function",
+      "label": "check_config",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 49,
+      "end_line": 80
+    },
+    {
+      "id": "mle.utils.system.get_config",
+      "type": "Function",
+      "label": "get_config",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 83,
+      "end_line": 95
+    },
+    {
+      "id": "mle.utils.system.write_config",
+      "type": "Function",
+      "label": "write_config",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 98,
+      "end_line": 106
+    },
+    {
+      "id": "mle.utils.system.delete_directory",
+      "type": "Function",
+      "label": "delete_directory",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 109,
+      "end_line": 120
+    },
+    {
+      "id": "mle.utils.system.get_directory_name",
+      "type": "Function",
+      "label": "get_directory_name",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 123,
+      "end_line": 132
+    },
+    {
+      "id": "mle.utils.system.extract_file_name",
+      "type": "Function",
+      "label": "extract_file_name",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 135,
+      "end_line": 149
+    },
+    {
+      "id": "mle.utils.system.read_file",
+      "type": "Function",
+      "label": "read_file",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 152,
+      "end_line": 172
+    },
+    {
+      "id": "mle.utils.system.list_files",
+      "type": "Function",
+      "label": "list_files",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 175,
+      "end_line": 228
+    },
+    {
+      "id": "mle.utils.system.is_hidden_path",
+      "type": "Function",
+      "label": "is_hidden_path",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 201,
+      "end_line": 206
+    },
+    {
+      "id": "mle.utils.system.list_dir_structure",
+      "type": "Function",
+      "label": "list_dir_structure",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 231,
+      "end_line": 246
+    },
+    {
+      "id": "mle.utils.system.load_file",
+      "type": "Function",
+      "label": "load_file",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 249,
+      "end_line": 267
+    },
+    {
+      "id": "mle.utils.system.check_installed",
+      "type": "Function",
+      "label": "check_installed",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 270,
+      "end_line": 280
+    },
+    {
+      "id": "mle.utils.system.startup_web",
+      "type": "Function",
+      "label": "startup_web",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 283,
+      "end_line": 320
+    },
+    {
+      "id": "mle.utils.system.get_user_id",
+      "type": "Function",
+      "label": "get_user_id",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 323,
+      "end_line": 343
+    },
+    {
+      "id": "mle.utils.system.get_session_id",
+      "type": "Function",
+      "label": "get_session_id",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 346,
+      "end_line": 352
+    },
+    {
+      "id": "mle.utils.system.get_langfuse_observer",
+      "type": "Function",
+      "label": "get_langfuse_observer",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 355,
+      "end_line": 425
+    },
+    {
+      "id": "mle.utils.system._observe",
+      "type": "Function",
+      "label": "_observe",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 397,
+      "end_line": 423
+    },
+    {
+      "id": "mle.utils.system._fn",
+      "type": "Function",
+      "label": "_fn",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 399,
+      "end_line": 413
+    },
+    {
+      "id": "mle.utils.system.query",
+      "type": "Function",
+      "label": "query",
+      "path": "mle/utils/system.py",
+      "parent": "mle.utils.system",
+      "start_line": 416,
+      "end_line": 421
+    },
+    {
+      "id": "mle.version",
+      "type": "Module",
+      "label": "version",
+      "path": "mle/version.py",
+      "lines": 19,
+      "lang": "python"
+    },
+    {
+      "id": "mle.workflow",
+      "type": "Module",
+      "label": "workflow",
+      "path": "mle/workflow/__init__.py",
+      "lines": 5,
+      "lang": "python"
+    },
+    {
+      "id": "mle.workflow.baseline",
+      "type": "Module",
+      "label": "baseline",
+      "path": "mle/workflow/baseline.py",
+      "lines": 109,
+      "lang": "python"
+    },
+    {
+      "id": "mle.workflow.baseline.ask_data",
+      "type": "Function",
+      "label": "ask_data",
+      "path": "mle/workflow/baseline.py",
+      "parent": "mle.workflow.baseline",
+      "start_line": 12,
+      "end_line": 22
+    },
+    {
+      "id": "mle.workflow.baseline.baseline",
+      "type": "Function",
+      "label": "baseline",
+      "path": "mle/workflow/baseline.py",
+      "parent": "mle.workflow.baseline",
+      "start_line": 25,
+      "end_line": 108
+    },
+    {
+      "id": "mle.workflow.chat",
+      "type": "Module",
+      "label": "chat",
+      "path": "mle/workflow/chat.py",
+      "lines": 41,
+      "lang": "python"
+    },
+    {
+      "id": "mle.workflow.chat.chat",
+      "type": "Function",
+      "label": "chat",
+      "path": "mle/workflow/chat.py",
+      "parent": "mle.workflow.chat",
+      "start_line": 14,
+      "end_line": 40
+    },
+    {
+      "id": "mle.workflow.kaggle",
+      "type": "Module",
+      "label": "kaggle",
+      "path": "mle/workflow/kaggle.py",
+      "lines": 202,
+      "lang": "python"
+    },
+    {
+      "id": "mle.workflow.kaggle.auto_kaggle",
+      "type": "Function",
+      "label": "auto_kaggle",
+      "path": "mle/workflow/kaggle.py",
+      "parent": "mle.workflow.kaggle",
+      "start_line": 16,
+      "end_line": 109
+    },
+    {
+      "id": "mle.workflow.kaggle.kaggle",
+      "type": "Function",
+      "label": "kaggle",
+      "path": "mle/workflow/kaggle.py",
+      "parent": "mle.workflow.kaggle",
+      "start_line": 112,
+      "end_line": 201
+    },
+    {
+      "id": "mle.workflow.report",
+      "type": "Module",
+      "label": "report",
+      "path": "mle/workflow/report.py",
+      "lines": 110,
+      "lang": "python"
+    },
+    {
+      "id": "mle.workflow.report.ask_data",
+      "type": "Function",
+      "label": "ask_data",
+      "path": "mle/workflow/report.py",
+      "parent": "mle.workflow.report",
+      "start_line": 13,
+      "end_line": 23
+    },
+    {
+      "id": "mle.workflow.report.report",
+      "type": "Function",
+      "label": "report",
+      "path": "mle/workflow/report.py",
+      "parent": "mle.workflow.report",
+      "start_line": 26,
+      "end_line": 72
+    },
+    {
+      "id": "mle.workflow.report.report_local",
+      "type": "Function",
+      "label": "report_local",
+      "path": "mle/workflow/report.py",
+      "parent": "mle.workflow.report",
+      "start_line": 75,
+      "end_line": 109
+    },
+    {
+      "id": "tests",
+      "type": "Module",
+      "label": "tests",
+      "path": "tests/__init__.py",
+      "lines": 1,
+      "lang": "python"
+    },
+    {
+      "id": "web.app.layout",
+      "type": "Module",
+      "label": "layout",
+      "path": "web/app/layout.tsx",
+      "lines": 50,
+      "lang": "tsx"
+    },
+    {
+      "id": "web.app.layout.RootLayout",
+      "type": "Function",
+      "label": "RootLayout",
+      "path": "web/app/layout.tsx",
+      "parent": "web.app.layout",
+      "start_line": 18,
+      "end_line": 49
+    },
+    {
+      "id": "web.app.page",
+      "type": "Module",
+      "label": "page",
+      "path": "web/app/page.tsx",
+      "lines": 254,
+      "lang": "tsx"
+    },
+    {
+      "id": "web.app.page.Home",
+      "type": "Function",
+      "label": "Home",
+      "path": "web/app/page.tsx",
+      "parent": "web.app.page",
+      "start_line": 37,
+      "end_line": 254
+    },
+    {
+      "id": "web.next.config",
+      "type": "Module",
+      "label": "config",
+      "path": "web/next.config.mjs",
+      "lines": 5,
+      "lang": "javascript"
+    },
+    {
+      "id": "web.postcss.config",
+      "type": "Module",
+      "label": "config",
+      "path": "web/postcss.config.mjs",
+      "lines": 9,
+      "lang": "javascript"
+    },
+    {
+      "id": "web.tailwind.config",
+      "type": "Module",
+      "label": "config",
+      "path": "web/tailwind.config.ts",
+      "lines": 20,
+      "lang": "typescript"
+    }
+  ],
+  "edges": [
+    {
+      "source": "exp.cli",
+      "target": "exp.cli.require_init",
+      "type": "contains"
+    },
+    {
+      "source": "exp.cli",
+      "target": "exp.cli.wrapper",
+      "type": "contains"
+    },
+    {
+      "source": "exp.cli",
+      "target": "exp.cli.bench",
+      "type": "contains"
+    },
+    {
+      "source": "exp.cli",
+      "target": "exp.cli.init",
+      "type": "contains"
+    },
+    {
+      "source": "exp.cli",
+      "target": "exp.cli.prepare",
+      "type": "contains"
+    },
+    {
+      "source": "exp.cli",
+      "target": "exp.cli._read_text_utf8",
+      "type": "contains"
+    },
+    {
+      "source": "exp.cli",
+      "target": "exp.cli.grade",
+      "type": "contains"
+    },
+    {
+      "source": "exp.cli",
+      "target": "exp.cli.grade_sample",
+      "type": "contains"
+    },
+    {
+      "source": "exp.cli",
+      "target": "json",
+      "type": "imports"
+    },
+    {
+      "source": "exp.cli",
+      "target": "sys",
+      "type": "imports"
+    },
+    {
+      "source": "exp.cli",
+      "target": "pathlib",
+      "type": "imports"
+    },
+    {
+      "source": "exp.cli",
+      "target": "mle",
+      "type": "imports"
+    },
+    {
+      "source": "exp.cli",
+      "target": "exp.init",
+      "type": "imports"
+    },
+    {
+      "source": "exp.cli",
+      "target": "click",
+      "type": "imports"
+    },
+    {
+      "source": "exp.cli",
+      "target": "mlebench",
+      "type": "imports"
+    },
+    {
+      "source": "exp.cli",
+      "target": "mlebench.registry",
+      "type": "imports"
+    },
+    {
+      "source": "exp.cli",
+      "target": "exp.mlebench_api",
+      "type": "imports"
+    },
+    {
+      "source": "exp.cli",
+      "target": "pathlib",
+      "type": "imports"
+    },
+    {
+      "source": "exp.init",
+      "target": "exp.init.is_init",
+      "type": "contains"
+    },
+    {
+      "source": "exp.init",
+      "target": "exp.init.find_git_lfs",
+      "type": "contains"
+    },
+    {
+      "source": "exp.init",
+      "target": "exp.init.init",
+      "type": "contains"
+    },
+    {
+      "source": "exp.init",
+      "target": "importlib.util",
+      "type": "imports"
+    },
+    {
+      "source": "exp.init",
+      "target": "shutil",
+      "type": "imports"
+    },
+    {
+      "source": "exp.init",
+      "target": "subprocess",
+      "type": "imports"
+    },
+    {
+      "source": "exp.init",
+      "target": "tempfile",
+      "type": "imports"
+    },
+    {
+      "source": "exp.init",
+      "target": "pathlib",
+      "type": "imports"
+    },
+    {
+      "source": "exp.init",
+      "target": "git",
+      "type": "imports"
+    },
+    {
+      "source": "exp.init",
+      "target": "typing",
+      "type": "imports"
+    },
+    {
+      "source": "exp.init",
+      "target": "exp.utils",
+      "type": "imports"
+    },
+    {
+      "source": "exp.init",
+      "target": "typing",
+      "type": "imports"
+    },
+    {
+      "source": "exp.mlebench_api",
+      "target": "exp.mlebench_api.prepare",
+      "type": "contains"
+    },
+    {
+      "source": "exp.mlebench_api",
+      "target": "exp.mlebench_api._read_text_utf8",
+      "type": "contains"
+    },
+    {
+      "source": "exp.mlebench_api",
+      "target": "exp.mlebench_api.grade",
+      "type": "contains"
+    },
+    {
+      "source": "exp.mlebench_api",
+      "target": "exp.mlebench_api.grade_sample",
+      "type": "contains"
+    },
+    {
+      "source": "exp.mlebench_api",
+      "target": "sys",
+      "type": "imports"
+    },
+    {
+      "source": "exp.mlebench_api",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "exp.mlebench_api",
+      "target": "pathlib",
+      "type": "imports"
+    },
+    {
+      "source": "exp.mlebench_api",
+      "target": "typing",
+      "type": "imports"
+    },
+    {
+      "source": "exp.mlebench_api",
+      "target": "mlebench.data",
+      "type": "imports"
+    },
+    {
+      "source": "exp.mlebench_api",
+      "target": "mlebench.grade",
+      "type": "imports"
+    },
+    {
+      "source": "exp.mlebench_api",
+      "target": "mlebench.grade_helpers",
+      "type": "imports"
+    },
+    {
+      "source": "exp.mlebench_api",
+      "target": "mlebench.registry",
+      "type": "imports"
+    },
+    {
+      "source": "exp.mlebench_api",
+      "target": "typing",
+      "type": "imports"
+    },
+    {
+      "source": "exp.mlebench_api",
+      "target": "pathlib",
+      "type": "imports"
+    },
+    {
+      "source": "exp.utils",
+      "target": "exp.utils.get_logger",
+      "type": "contains"
+    },
+    {
+      "source": "exp.utils",
+      "target": "logging",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.advisor",
+      "target": "mle.agents.advisor.process_report",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.advisor",
+      "target": "mle.agents.advisor.AdviseAgent",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.advisor.AdviseAgent",
+      "target": "mle.agents.advisor.AdviseAgent.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.advisor.AdviseAgent",
+      "target": "mle.agents.advisor.AdviseAgent.suggest",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.advisor.AdviseAgent",
+      "target": "mle.agents.advisor.AdviseAgent.interact",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.advisor.AdviseAgent",
+      "target": "mle.agents.advisor.AdviseAgent.clarify_dataset",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.advisor",
+      "target": "sys",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.advisor",
+      "target": "json",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.advisor",
+      "target": "rich.console",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.advisor",
+      "target": "mle.function",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.advisor",
+      "target": "mle.utils",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.advisor",
+      "target": "mle.utils.component_memory",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.chat",
+      "target": "mle.agents.chat.ChatAgent",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.chat.ChatAgent",
+      "target": "mle.agents.chat.ChatAgent.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.chat.ChatAgent",
+      "target": "mle.agents.chat.ChatAgent.greet",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.chat.ChatAgent",
+      "target": "mle.agents.chat.ChatAgent.chat",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.chat",
+      "target": "rich.console",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.chat",
+      "target": "mle.function",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.chat",
+      "target": "mle.utils",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.chat",
+      "target": "mle.utils.component_memory",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.coder",
+      "target": "mle.agents.coder.process_summary",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.coder",
+      "target": "mle.agents.coder.CodeAgent",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.coder.CodeAgent",
+      "target": "mle.agents.coder.CodeAgent.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.coder.CodeAgent",
+      "target": "mle.agents.coder.CodeAgent.read_requirement",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.coder.CodeAgent",
+      "target": "mle.agents.coder.CodeAgent.code",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.coder.CodeAgent",
+      "target": "mle.agents.coder.CodeAgent.debug",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.coder.CodeAgent",
+      "target": "mle.agents.coder.CodeAgent.interact",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.coder",
+      "target": "sys",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.coder",
+      "target": "json",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.coder",
+      "target": "rich.console",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.coder",
+      "target": "mle.function",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.coder",
+      "target": "mle.utils",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.coder",
+      "target": "mle.utils.component_memory",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.debugger",
+      "target": "mle.agents.debugger.process_debug_report",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.debugger",
+      "target": "mle.agents.debugger.DebugAgent",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.debugger.DebugAgent",
+      "target": "mle.agents.debugger.DebugAgent.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.debugger.DebugAgent",
+      "target": "mle.agents.debugger.DebugAgent.analyze_with_log",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.debugger.DebugAgent",
+      "target": "mle.agents.debugger.DebugAgent.analyze",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.debugger",
+      "target": "json",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.debugger",
+      "target": "mle.function",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.debugger",
+      "target": "mle.utils",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.debugger",
+      "target": "rich.console",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.debugger",
+      "target": "mle.utils.component_memory",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.planner",
+      "target": "mle.agents.planner.process_plan",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.planner",
+      "target": "mle.agents.planner.PlanAgent",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.planner.PlanAgent",
+      "target": "mle.agents.planner.PlanAgent.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.planner.PlanAgent",
+      "target": "mle.agents.planner.PlanAgent.plan",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.planner.PlanAgent",
+      "target": "mle.agents.planner.PlanAgent.interact",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.planner",
+      "target": "sys",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.planner",
+      "target": "json",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.planner",
+      "target": "questionary",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.planner",
+      "target": "rich.console",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.planner",
+      "target": "mle.utils",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.planner",
+      "target": "mle.utils.component_memory",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.reporter",
+      "target": "mle.agents.reporter.ReportAgent",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.reporter.ReportAgent",
+      "target": "mle.agents.reporter.ReportAgent.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.reporter.ReportAgent",
+      "target": "mle.agents.reporter.ReportAgent.process_knowledge",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.reporter.ReportAgent",
+      "target": "mle.agents.reporter.ReportAgent.gen_report",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.reporter",
+      "target": "json",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.reporter",
+      "target": "rich.console",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.reporter",
+      "target": "time",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.reporter",
+      "target": "mle.utils.component_memory",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.summarizer",
+      "target": "mle.agents.summarizer.GitHubSummaryAgent",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.summarizer.GitHubSummaryAgent",
+      "target": "mle.agents.summarizer.GitHubSummaryAgent.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.summarizer.GitHubSummaryAgent",
+      "target": "mle.agents.summarizer.GitHubSummaryAgent.process_knowledge",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.summarizer.GitHubSummaryAgent",
+      "target": "mle.agents.summarizer.GitHubSummaryAgent.summarize",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.summarizer.GitHubSummaryAgent",
+      "target": "mle.agents.summarizer.GitHubSummaryAgent.kaggle_request_summarize",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.summarizer",
+      "target": "mle.agents.summarizer.GitSummaryAgent",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.summarizer.GitSummaryAgent",
+      "target": "mle.agents.summarizer.GitSummaryAgent.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.summarizer.GitSummaryAgent",
+      "target": "mle.agents.summarizer.GitSummaryAgent.process_knowledge",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.summarizer.GitSummaryAgent",
+      "target": "mle.agents.summarizer.GitSummaryAgent.summarize",
+      "type": "contains"
+    },
+    {
+      "source": "mle.agents.summarizer",
+      "target": "json",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.summarizer",
+      "target": "rich.console",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.summarizer",
+      "target": "mle.function",
+      "type": "imports"
+    },
+    {
+      "source": "mle.agents.summarizer",
+      "target": "mle.integration",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.cli.cli",
+      "type": "contains"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.cli.start",
+      "type": "contains"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.cli.report",
+      "type": "contains"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.cli.report_local",
+      "type": "contains"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.cli.kaggle",
+      "type": "contains"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.cli.chat",
+      "type": "contains"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.cli.serve",
+      "type": "contains"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.cli.web",
+      "type": "contains"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.cli.new",
+      "type": "contains"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.cli.integrate",
+      "type": "contains"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.cli.memory",
+      "type": "contains"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.cli.traces",
+      "type": "contains"
+    },
+    {
+      "source": "mle.cli",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "re",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "yaml",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "click",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "pickle",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "uvicorn",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "questionary",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "pathlib",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "rich.console",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "rich.progress",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "json",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.server",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.utils.system",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.utils",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.utils",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.utils.component_memory",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "concurrent.futures",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.integration.github",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "mle.integration.google_calendar",
+      "type": "imports"
+    },
+    {
+      "source": "mle.cli",
+      "target": "exp.cli",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function",
+      "target": "mle.function.get_function",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function",
+      "target": "mle.function.process_function_name",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function.data",
+      "target": "mle.function.data.unzip_data",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function.data",
+      "target": "mle.function.data.preview_zip_structure",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function.data",
+      "target": "mle.function.data.preview_csv_data",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function.data",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.data",
+      "target": "py7zr",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.data",
+      "target": "gzip",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.data",
+      "target": "bz2",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.data",
+      "target": "lzma",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.data",
+      "target": "shutil",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.data",
+      "target": "tarfile",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.data",
+      "target": "zipfile",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.data",
+      "target": "textwrap",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.data",
+      "target": "tempfile",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.data",
+      "target": "pandas.api.types",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.execution",
+      "target": "mle.function.execution.execute_command",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function.execution",
+      "target": "subprocess",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.execution",
+      "target": "collections",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.files",
+      "target": "mle.function.files.read_file",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function.files",
+      "target": "mle.function.files.create_file",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function.files",
+      "target": "mle.function.files.write_file",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function.files",
+      "target": "mle.function.files.list_files",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function.files",
+      "target": "mle.function.files.create_directory",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function.files",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.interaction",
+      "target": "mle.function.interaction.ask_question",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function.interaction",
+      "target": "mle.function.interaction.ask_yes_no",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function.interaction",
+      "target": "mle.function.interaction.ask_choices",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function.interaction",
+      "target": "questionary",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.search",
+      "target": "mle.function.search.search_github_repos",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function.search",
+      "target": "mle.function.search.web_search",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function.search",
+      "target": "mle.function.search.search_arxiv",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function.search",
+      "target": "mle.function.search.search_papers_with_code",
+      "type": "contains"
+    },
+    {
+      "source": "mle.function.search",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.search",
+      "target": "requests",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.search",
+      "target": "tavily",
+      "type": "imports"
+    },
+    {
+      "source": "mle.function.search",
+      "target": "xml.etree",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.github",
+      "target": "mle.integration.github.github_login",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github",
+      "target": "mle.integration.github.GitHubIntegration",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration._make_request",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration._process_items",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration.get_user_info",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration.get_readme",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration.get_license",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration.get_contributors",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration.get_source_code",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration.get_contents",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration.get_commit_history",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration.get_issues",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration.get_metadata",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration.get_pull_requests",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration.get_pull_request_commits",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration.get_pull_request_diff",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration.get_releases",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration.get_structure",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration.traverse_tree",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github.GitHubIntegration",
+      "target": "mle.integration.github.GitHubIntegration.get_user_activity",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.github",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.github",
+      "target": "base64",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.github",
+      "target": "requests",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.github",
+      "target": "questionary",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.github",
+      "target": "fnmatch",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.github",
+      "target": "datetime",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.google_calendar",
+      "target": "mle.integration.google_calendar.google_calendar_login",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.google_calendar",
+      "target": "mle.integration.google_calendar.GoogleCalendarIntegration",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.google_calendar.GoogleCalendarIntegration",
+      "target": "mle.integration.google_calendar.GoogleCalendarIntegration.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.google_calendar.GoogleCalendarIntegration",
+      "target": "mle.integration.google_calendar.GoogleCalendarIntegration.get_events",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.google_calendar",
+      "target": "json",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.google_calendar",
+      "target": "datetime",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.google_calendar",
+      "target": "mle.utils",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.google_calendar",
+      "target": "google.auth.transport.requests",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.google_calendar",
+      "target": "google_auth_oauthlib.flow",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.google_calendar",
+      "target": "googleapiclient.discovery",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.kaggle",
+      "target": "mle.integration.kaggle.KaggleIntegration",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.kaggle.KaggleIntegration",
+      "target": "mle.integration.kaggle.KaggleIntegration.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.kaggle.KaggleIntegration",
+      "target": "mle.integration.kaggle.KaggleIntegration.list_competition",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.kaggle.KaggleIntegration",
+      "target": "mle.integration.kaggle.KaggleIntegration.download_competition_dataset",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.kaggle.KaggleIntegration",
+      "target": "mle.integration.kaggle.KaggleIntegration.fetch_competition_overview",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.kaggle",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.kaggle",
+      "target": "json",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.kaggle",
+      "target": "requests",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.kaggle",
+      "target": "questionary",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.kaggle",
+      "target": "zipfile",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.kaggle",
+      "target": "kaggle.api.kaggle_api_extended",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.local_git",
+      "target": "mle.integration.local_git.GitIntegration",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.local_git.GitIntegration",
+      "target": "mle.integration.local_git.GitIntegration.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.local_git.GitIntegration",
+      "target": "mle.integration.local_git.GitIntegration.get_repo_status",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.local_git.GitIntegration",
+      "target": "mle.integration.local_git.GitIntegration.get_commit_history",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.local_git.GitIntegration",
+      "target": "mle.integration.local_git.GitIntegration.get_commit_diff",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.local_git.GitIntegration",
+      "target": "mle.integration.local_git.GitIntegration.get_source_code",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.local_git.GitIntegration",
+      "target": "mle.integration.local_git.GitIntegration.get_contents",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.local_git.GitIntegration",
+      "target": "mle.integration.local_git.GitIntegration.get_readme",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.local_git.GitIntegration",
+      "target": "mle.integration.local_git.GitIntegration.get_structure",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.local_git.GitIntegration",
+      "target": "mle.integration.local_git.GitIntegration.get_user_activity",
+      "type": "contains"
+    },
+    {
+      "source": "mle.integration.local_git",
+      "target": "git",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.local_git",
+      "target": "datetime",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.local_git",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.local_git",
+      "target": "fnmatch",
+      "type": "imports"
+    },
+    {
+      "source": "mle.integration.local_git",
+      "target": "subprocess",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model",
+      "target": "mle.model.ObservableModel",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.ObservableModel",
+      "target": "mle.model.ObservableModel.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.ObservableModel",
+      "target": "mle.model.ObservableModel.query",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.ObservableModel",
+      "target": "mle.model.ObservableModel.stream",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model",
+      "target": "mle.model.load_model",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model",
+      "target": "mle.utils",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model",
+      "target": "mle.utils",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.anthropic",
+      "target": "mle.model.anthropic.ClaudeModel",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.anthropic.ClaudeModel",
+      "target": "mle.model.anthropic.ClaudeModel.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.anthropic.ClaudeModel",
+      "target": "mle.model.anthropic.ClaudeModel._add_tool_result_into_chat_history",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.anthropic.ClaudeModel",
+      "target": "mle.model.anthropic.ClaudeModel.query",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.anthropic.ClaudeModel",
+      "target": "mle.model.anthropic.ClaudeModel.stream",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.anthropic",
+      "target": "importlib.util",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.anthropic",
+      "target": "mle.function",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.anthropic",
+      "target": "mle.model.common",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.common",
+      "target": "mle.model.common.Model",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.common.Model",
+      "target": "mle.model.common.Model.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.common.Model",
+      "target": "mle.model.common.Model.query",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.common.Model",
+      "target": "mle.model.common.Model.stream",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.common",
+      "target": "abc",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.deepseek",
+      "target": "mle.model.deepseek.DeepSeekModel",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.deepseek.DeepSeekModel",
+      "target": "mle.model.deepseek.DeepSeekModel.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.deepseek.DeepSeekModel",
+      "target": "mle.model.deepseek.DeepSeekModel._convert_functions_to_tools",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.deepseek.DeepSeekModel",
+      "target": "mle.model.deepseek.DeepSeekModel.query",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.deepseek.DeepSeekModel",
+      "target": "mle.model.deepseek.DeepSeekModel.stream",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.deepseek",
+      "target": "importlib.util",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.deepseek",
+      "target": "json",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.deepseek",
+      "target": "mle.function",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.deepseek",
+      "target": "mle.model.common",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.gemini",
+      "target": "mle.model.gemini.GeminiModel",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.gemini.GeminiModel",
+      "target": "mle.model.gemini.GeminiModel.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.gemini.GeminiModel",
+      "target": "mle.model.gemini.GeminiModel._create_gemini_tools",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.gemini.GeminiModel",
+      "target": "mle.model.gemini.GeminiModel._adapt_history_for_gemini",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.gemini.GeminiModel",
+      "target": "mle.model.gemini.GeminiModel.query",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.gemini.GeminiModel",
+      "target": "mle.model.gemini.GeminiModel.stream",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.gemini",
+      "target": "mle.function",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.gemini",
+      "target": "mle.model.common",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.gemini",
+      "target": "google.genai",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.gemini",
+      "target": "google.genai",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.mistral",
+      "target": "mle.model.mistral.MistralModel",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.mistral.MistralModel",
+      "target": "mle.model.mistral.MistralModel.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.mistral.MistralModel",
+      "target": "mle.model.mistral.MistralModel._convert_functions_to_tools",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.mistral.MistralModel",
+      "target": "mle.model.mistral.MistralModel.query",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.mistral.MistralModel",
+      "target": "mle.model.mistral.MistralModel.stream",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.mistral",
+      "target": "importlib.util",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.mistral",
+      "target": "json",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.mistral",
+      "target": "mle.function",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.mistral",
+      "target": "mle.model.common",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.ollama",
+      "target": "mle.model.ollama.OllamaModel",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.ollama.OllamaModel",
+      "target": "mle.model.ollama.OllamaModel.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.ollama.OllamaModel",
+      "target": "mle.model.ollama.OllamaModel._clean_think_tags",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.ollama.OllamaModel",
+      "target": "mle.model.ollama.OllamaModel._process_message",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.ollama.OllamaModel",
+      "target": "mle.model.ollama.OllamaModel.query",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.ollama.OllamaModel",
+      "target": "mle.model.ollama.OllamaModel.stream",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.ollama",
+      "target": "importlib.util",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.ollama",
+      "target": "re",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.openai",
+      "target": "mle.model.openai.OpenAIModel",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.openai.OpenAIModel",
+      "target": "mle.model.openai.OpenAIModel.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.openai.OpenAIModel",
+      "target": "mle.model.openai.OpenAIModel.query",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.openai.OpenAIModel",
+      "target": "mle.model.openai.OpenAIModel.stream",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.openai",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.openai",
+      "target": "importlib.util",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.openai",
+      "target": "json",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.openai",
+      "target": "mle.function",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.openai",
+      "target": "mle.model.common",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.vllm",
+      "target": "mle.model.vllm.vLLMModel",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.vllm.vLLMModel",
+      "target": "mle.model.vllm.vLLMModel.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.vllm.vLLMModel",
+      "target": "mle.model.vllm.vLLMModel.normalize_chat_history",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.vllm.vLLMModel",
+      "target": "mle.model.vllm.vLLMModel.query",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.vllm.vLLMModel",
+      "target": "mle.model.vllm.vLLMModel.stream",
+      "type": "contains"
+    },
+    {
+      "source": "mle.model.vllm",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.vllm",
+      "target": "json",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.vllm",
+      "target": "importlib.util",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.vllm",
+      "target": "typing",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.vllm",
+      "target": "mle.model.common",
+      "type": "imports"
+    },
+    {
+      "source": "mle.model.vllm",
+      "target": "mle.function",
+      "type": "imports"
+    },
+    {
+      "source": "mle.server.app",
+      "target": "mle.server.app.ReportRequest",
+      "type": "contains"
+    },
+    {
+      "source": "mle.server.app",
+      "target": "mle.server.app.root",
+      "type": "contains"
+    },
+    {
+      "source": "mle.server.app",
+      "target": "mle.server.app.read_latest_report",
+      "type": "contains"
+    },
+    {
+      "source": "mle.server.app",
+      "target": "mle.server.app.gen_report",
+      "type": "contains"
+    },
+    {
+      "source": "mle.server.app",
+      "target": "mle.server.app.gen_report_async",
+      "type": "contains"
+    },
+    {
+      "source": "mle.server.app",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "mle.server.app",
+      "target": "json",
+      "type": "imports"
+    },
+    {
+      "source": "mle.server.app",
+      "target": "typing",
+      "type": "imports"
+    },
+    {
+      "source": "mle.server.app",
+      "target": "datetime",
+      "type": "imports"
+    },
+    {
+      "source": "mle.server.app",
+      "target": "pydantic",
+      "type": "imports"
+    },
+    {
+      "source": "mle.server.app",
+      "target": "fastapi",
+      "type": "imports"
+    },
+    {
+      "source": "mle.server.app",
+      "target": "fastapi.responses",
+      "type": "imports"
+    },
+    {
+      "source": "mle.server.app",
+      "target": "fastapi.middleware.cors",
+      "type": "imports"
+    },
+    {
+      "source": "mle.server.app",
+      "target": "mle.workflow",
+      "type": "imports"
+    },
+    {
+      "source": "mle.server.app",
+      "target": "mle.utils",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.cache",
+      "target": "mle.utils.cache.WorkflowCacheOperator",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.cache.WorkflowCacheOperator",
+      "target": "mle.utils.cache.WorkflowCacheOperator.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.cache.WorkflowCacheOperator",
+      "target": "mle.utils.cache.WorkflowCacheOperator.store",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.cache.WorkflowCacheOperator",
+      "target": "mle.utils.cache.WorkflowCacheOperator.resume",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.cache.WorkflowCacheOperator",
+      "target": "mle.utils.cache.WorkflowCacheOperator.__enter__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.cache.WorkflowCacheOperator",
+      "target": "mle.utils.cache.WorkflowCacheOperator.__exit__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.cache",
+      "target": "mle.utils.cache.WorkflowCache",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.cache.WorkflowCache",
+      "target": "mle.utils.cache.WorkflowCache.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.cache.WorkflowCache",
+      "target": "mle.utils.cache.WorkflowCache.is_empty",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.cache.WorkflowCache",
+      "target": "mle.utils.cache.WorkflowCache.remove",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.cache.WorkflowCache",
+      "target": "mle.utils.cache.WorkflowCache.current_step",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.cache.WorkflowCache",
+      "target": "mle.utils.cache.WorkflowCache.resume_variable",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.cache.WorkflowCache",
+      "target": "mle.utils.cache.WorkflowCache._load_cache_buffer",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.cache.WorkflowCache",
+      "target": "mle.utils.cache.WorkflowCache._store_cache_buffer",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.cache.WorkflowCache",
+      "target": "mle.utils.cache.WorkflowCache.__call__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.cache.WorkflowCache",
+      "target": "mle.utils.cache.WorkflowCache.__str__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.cache",
+      "target": "pickle",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.cache",
+      "target": "typing",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.cache",
+      "target": "datetime",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.cache",
+      "target": "mle.utils.system",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.chunk",
+      "target": "mle.utils.chunk.count_tokens",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.chunk",
+      "target": "mle.utils.chunk.Chunker",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.chunk.Chunker",
+      "target": "mle.utils.chunk.Chunker.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.chunk.Chunker",
+      "target": "mle.utils.chunk.Chunker.chunk",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.chunk.Chunker",
+      "target": "mle.utils.chunk.Chunker.get_chunk",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.chunk.Chunker",
+      "target": "mle.utils.chunk.Chunker.print_chunks",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.chunk.Chunker",
+      "target": "mle.utils.chunk.Chunker.consolidate_chunks_into_file",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.chunk.Chunker",
+      "target": "mle.utils.chunk.Chunker.count_lines",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.chunk",
+      "target": "mle.utils.chunk.CodeChunker",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.chunk.CodeChunker",
+      "target": "mle.utils.chunk.CodeChunker.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.chunk.CodeChunker",
+      "target": "mle.utils.chunk.CodeChunker.chunk",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.chunk.CodeChunker",
+      "target": "mle.utils.chunk.CodeChunker.get_chunk",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.chunk",
+      "target": "tiktoken",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.chunk",
+      "target": "abc",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.component_memory",
+      "target": "mle.utils.component_memory.ComponentMemory",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.component_memory.ComponentMemory",
+      "target": "mle.utils.component_memory.ComponentMemory.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.component_memory.ComponentMemory",
+      "target": "mle.utils.component_memory.ComponentMemory.store_trace",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.component_memory.ComponentMemory",
+      "target": "mle.utils.component_memory.ComponentMemory.get_trace",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.component_memory.ComponentMemory",
+      "target": "mle.utils.component_memory.ComponentMemory.get_recent_traces",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.component_memory.ComponentMemory",
+      "target": "mle.utils.component_memory.ComponentMemory.search_traces",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.component_memory.ComponentMemory",
+      "target": "mle.utils.component_memory.ComponentMemory.add_relationship",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.component_memory.ComponentMemory",
+      "target": "mle.utils.component_memory.ComponentMemory.get_related_traces",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.component_memory.ComponentMemory",
+      "target": "mle.utils.component_memory.ComponentMemory.close",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.component_memory.ComponentMemory",
+      "target": "mle.utils.component_memory.ComponentMemory._serialize_data",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.component_memory.ComponentMemory",
+      "target": "mle.utils.component_memory.ComponentMemory._deserialize_data",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.component_memory.ComponentMemory",
+      "target": "mle.utils.component_memory.ComponentMemory._process_trace_result",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.component_memory",
+      "target": "mle.utils.component_memory.trace_component",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.component_memory",
+      "target": "mle.utils.component_memory.decorator",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.component_memory",
+      "target": "mle.utils.component_memory.wrapper",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.component_memory",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.component_memory",
+      "target": "json",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.component_memory",
+      "target": "uuid",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.component_memory",
+      "target": "time",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.component_memory",
+      "target": "traceback",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.component_memory",
+      "target": "functools",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.component_memory",
+      "target": "datetime",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.component_memory",
+      "target": "typing",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.data",
+      "target": "mle.utils.data.dict_to_markdown",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.data",
+      "target": "mle.utils.data.write_item",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.data",
+      "target": "mle.utils.data.is_markdown_file",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.data",
+      "target": "mle.utils.data.read_markdown",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.data",
+      "target": "mle.utils.data.clean_json_string",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.data",
+      "target": "re",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.data",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.data",
+      "target": "json",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.data",
+      "target": "typing",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.memory",
+      "target": "mle.utils.memory.LanceDBMemory",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.LanceDBMemory",
+      "target": "mle.utils.memory.LanceDBMemory.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.LanceDBMemory",
+      "target": "mle.utils.memory.LanceDBMemory._open_table",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.LanceDBMemory",
+      "target": "mle.utils.memory.LanceDBMemory.add",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.LanceDBMemory",
+      "target": "mle.utils.memory.LanceDBMemory.query",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.LanceDBMemory",
+      "target": "mle.utils.memory.LanceDBMemory.list_all_keys",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.LanceDBMemory",
+      "target": "mle.utils.memory.LanceDBMemory.get",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.LanceDBMemory",
+      "target": "mle.utils.memory.LanceDBMemory.get_by_metadata",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.LanceDBMemory",
+      "target": "mle.utils.memory.LanceDBMemory.delete",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.LanceDBMemory",
+      "target": "mle.utils.memory.LanceDBMemory.delete_by_metadata",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.LanceDBMemory",
+      "target": "mle.utils.memory.LanceDBMemory.drop",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.LanceDBMemory",
+      "target": "mle.utils.memory.LanceDBMemory.count",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.LanceDBMemory",
+      "target": "mle.utils.memory.LanceDBMemory.reset",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory",
+      "target": "mle.utils.memory.Mem0",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.Mem0",
+      "target": "mle.utils.memory.Mem0.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.Mem0",
+      "target": "mle.utils.memory.Mem0.add",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.Mem0",
+      "target": "mle.utils.memory.Mem0.query",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.Mem0",
+      "target": "mle.utils.memory.Mem0.get_all",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.Mem0",
+      "target": "mle.utils.memory.Mem0.reset",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory",
+      "target": "mle.utils.memory.HybridMemory",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.HybridMemory",
+      "target": "mle.utils.memory.HybridMemory.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.HybridMemory",
+      "target": "mle.utils.memory.HybridMemory.add",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.HybridMemory",
+      "target": "mle.utils.memory.HybridMemory.query",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.HybridMemory",
+      "target": "mle.utils.memory.HybridMemory.reset",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.HybridMemory",
+      "target": "mle.utils.memory.HybridMemory.last_n_consolidate",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.HybridMemory",
+      "target": "mle.utils.memory.HybridMemory.top_k_consolidate",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory.HybridMemory",
+      "target": "mle.utils.memory.HybridMemory.prompt_based_consolidate",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.memory",
+      "target": "datetime",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.memory",
+      "target": "uuid",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.memory",
+      "target": "typing",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.memory",
+      "target": "lancedb",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.memory",
+      "target": "lancedb.embeddings",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.memory",
+      "target": "mem0",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.memory",
+      "target": "mle.utils",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.parser",
+      "target": "mle.utils.parser.return_simple_line_numbers_with_code",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.parser",
+      "target": "mle.utils.parser.CodeParser",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.parser.CodeParser",
+      "target": "mle.utils.parser.CodeParser.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.parser.CodeParser",
+      "target": "mle.utils.parser.CodeParser._install_parsers",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.parser.CodeParser",
+      "target": "mle.utils.parser.CodeParser._is_repo_valid",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.parser.CodeParser",
+      "target": "mle.utils.parser.CodeParser.parse_code",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.parser.CodeParser",
+      "target": "mle.utils.parser.CodeParser.extract_points_of_interest",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.parser.CodeParser",
+      "target": "mle.utils.parser.CodeParser._get_node_types_of_interest",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.parser.CodeParser",
+      "target": "mle.utils.parser.CodeParser._get_nodes_for_comments",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.parser.CodeParser",
+      "target": "mle.utils.parser.CodeParser.extract_comments",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.parser.CodeParser",
+      "target": "mle.utils.parser.CodeParser.get_lines_for_points_of_interest",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.parser.CodeParser",
+      "target": "mle.utils.parser.CodeParser.get_lines_for_comments",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.parser.CodeParser",
+      "target": "mle.utils.parser.CodeParser.print_all_line_types",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.parser.CodeParser",
+      "target": "mle.utils.parser.CodeParser.map_line_to_node_type",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.parser",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.parser",
+      "target": "subprocess",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.parser",
+      "target": "typing",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.parser",
+      "target": "tree_sitter",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.parser",
+      "target": "warnings",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.print_in_box",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.ask_text",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.check_config",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.get_config",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.write_config",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.delete_directory",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.get_directory_name",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.extract_file_name",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.read_file",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.list_files",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.is_hidden_path",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.list_dir_structure",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.load_file",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.check_installed",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.startup_web",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.get_user_id",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.get_session_id",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.get_langfuse_observer",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system._observe",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system._fn",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "mle.utils.system.query",
+      "type": "contains"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "re",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "uuid",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "yaml",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "base64",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "shutil",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "fnmatch",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "requests",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "platform",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "subprocess",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "importlib.util",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "rich.panel",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "rich.prompt",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "rich.console",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "typing",
+      "type": "imports"
+    },
+    {
+      "source": "mle.utils.system",
+      "target": "socket",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.baseline",
+      "target": "mle.workflow.baseline.ask_data",
+      "type": "contains"
+    },
+    {
+      "source": "mle.workflow.baseline",
+      "target": "mle.workflow.baseline.baseline",
+      "type": "contains"
+    },
+    {
+      "source": "mle.workflow.baseline",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.baseline",
+      "target": "questionary",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.baseline",
+      "target": "rich.console",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.baseline",
+      "target": "mle.model",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.baseline",
+      "target": "mle.utils",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.baseline",
+      "target": "mle.agents",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.chat",
+      "target": "mle.workflow.chat.chat",
+      "type": "contains"
+    },
+    {
+      "source": "mle.workflow.chat",
+      "target": "questionary",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.chat",
+      "target": "rich.live",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.chat",
+      "target": "rich.panel",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.chat",
+      "target": "rich.console",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.chat",
+      "target": "rich.markdown",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.chat",
+      "target": "mle.model",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.chat",
+      "target": "mle.utils",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.chat",
+      "target": "mle.agents",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.kaggle",
+      "target": "mle.workflow.kaggle.auto_kaggle",
+      "type": "contains"
+    },
+    {
+      "source": "mle.workflow.kaggle",
+      "target": "mle.workflow.kaggle.kaggle",
+      "type": "contains"
+    },
+    {
+      "source": "mle.workflow.kaggle",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.kaggle",
+      "target": "questionary",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.kaggle",
+      "target": "typing",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.kaggle",
+      "target": "rich.console",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.kaggle",
+      "target": "mle.model",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.kaggle",
+      "target": "mle.function",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.kaggle",
+      "target": "mle.integration",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.kaggle",
+      "target": "mle.utils",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.kaggle",
+      "target": "mle.agents",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.report",
+      "target": "mle.workflow.report.ask_data",
+      "type": "contains"
+    },
+    {
+      "source": "mle.workflow.report",
+      "target": "mle.workflow.report.report",
+      "type": "contains"
+    },
+    {
+      "source": "mle.workflow.report",
+      "target": "mle.workflow.report.report_local",
+      "type": "contains"
+    },
+    {
+      "source": "mle.workflow.report",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.report",
+      "target": "pickle",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.report",
+      "target": "rich.console",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.report",
+      "target": "mle.model",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.report",
+      "target": "mle.utils.system",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.report",
+      "target": "mle.integration",
+      "type": "imports"
+    },
+    {
+      "source": "mle.workflow.report",
+      "target": "mle.agents",
+      "type": "imports"
+    },
+    {
+      "source": "web.app.layout",
+      "target": "web.app.layout.RootLayout",
+      "type": "contains"
+    },
+    {
+      "source": "web.app.layout",
+      "target": "react",
+      "type": "imports"
+    },
+    {
+      "source": "web.app.layout",
+      "target": "next/font/local",
+      "type": "imports"
+    },
+    {
+      "source": "web.app.layout",
+      "target": "./globals.css",
+      "type": "imports"
+    },
+    {
+      "source": "web.app.page",
+      "target": "web.app.page.Home",
+      "type": "contains"
+    },
+    {
+      "source": "web.app.page",
+      "target": "react",
+      "type": "imports"
+    },
+    {
+      "source": "web.app.page",
+      "target": "antd",
+      "type": "imports"
+    },
+    {
+      "source": "web.app.page",
+      "target": "@ant-design/icons",
+      "type": "imports"
+    },
+    {
+      "source": "web.app.page",
+      "target": "next/dynamic",
+      "type": "imports"
+    },
+    {
+      "source": "web.tailwind.config",
+      "target": "tailwindcss",
+      "type": "imports"
+    }
+  ]
+}

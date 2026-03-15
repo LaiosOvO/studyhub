@@ -1,0 +1,231 @@
+{
+  "analysis_period_days": 90,
+  "stats": {
+    "total_commits": 109,
+    "total_authors": 27
+  },
+  "hotspots": [
+    {
+      "path": "README.md",
+      "changes": 10,
+      "risk": "medium"
+    },
+    {
+      "path": "gpt_researcher/agent.py",
+      "changes": 5,
+      "risk": "medium"
+    },
+    {
+      "path": "backend/server/websocket_manager.py",
+      "changes": 4,
+      "risk": "low"
+    },
+    {
+      "path": "gpt_researcher/skills/writer.py",
+      "changes": 4,
+      "risk": "low"
+    },
+    {
+      "path": "backend/server/server_utils.py",
+      "changes": 4,
+      "risk": "low"
+    },
+    {
+      "path": "docs/docs/gpt-researcher/gptr/image_generation.md",
+      "changes": 4,
+      "risk": "low"
+    },
+    {
+      "path": "pyproject.toml",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "backend/report_type/basic_report/basic_report.py",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "backend/report_type/detailed_report/detailed_report.py",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "gpt_researcher/memory/embeddings.py",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "gpt_researcher/scraper/scraper.py",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "docs/docs/gpt-researcher/llms/llms.md",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "gpt_researcher/actions/report_generation.py",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "gpt_researcher/context/compression.py",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "gpt_researcher/config/config.py",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "docs/sidebars.js",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "gpt_researcher/prompts.py",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "gpt_researcher/utils/llm.py",
+      "changes": 2,
+      "risk": "low"
+    },
+    {
+      "path": "multi_agents_ag2/requirements.txt",
+      "changes": 2,
+      "risk": "low"
+    },
+    {
+      "path": "docs/docs/gpt-researcher/multi_agents/ag2.md",
+      "changes": 2,
+      "risk": "low"
+    }
+  ],
+  "coupling_pairs": [
+    {
+      "file_a": "backend/report_type/basic_report/basic_report.py",
+      "file_b": "backend/report_type/detailed_report/detailed_report.py",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "gpt_researcher/agent.py",
+      "file_b": "gpt_researcher/prompts.py",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "gpt_researcher/agent.py",
+      "file_b": "gpt_researcher/skills/writer.py",
+      "co_changes": 3,
+      "coupling_score": 0.75
+    },
+    {
+      "file_a": "backend/server/server_utils.py",
+      "file_b": "backend/server/websocket_manager.py",
+      "co_changes": 2,
+      "coupling_score": 0.5
+    },
+    {
+      "file_a": "pyproject.toml",
+      "file_b": "setup.py",
+      "co_changes": 2,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "docs/docs/gpt-researcher/llms/llms.md",
+      "file_b": "docs/docs/gpt-researcher/llms/supported-llms.md",
+      "co_changes": 2,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "docs/docs/gpt-researcher/llms/llms.md",
+      "file_b": "gpt_researcher/llm_provider/generic/base.py",
+      "co_changes": 2,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "docs/docs/gpt-researcher/llms/supported-llms.md",
+      "file_b": "gpt_researcher/llm_provider/generic/base.py",
+      "co_changes": 2,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "multi_agents_ag2/agents/orchestrator.py",
+      "file_b": "multi_agents_ag2/main.py",
+      "co_changes": 2,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "README.md",
+      "file_b": "docs/sidebars.js",
+      "co_changes": 2,
+      "coupling_score": 0.667
+    },
+    {
+      "file_a": "README.md",
+      "file_b": "docs/docs/gpt-researcher/gptr/claude-skill.md",
+      "co_changes": 2,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "README.md",
+      "file_b": "docs/docs/gpt-researcher/gptr/image_generation.md",
+      "co_changes": 2,
+      "coupling_score": 0.5
+    },
+    {
+      "file_a": "backend/report_type/basic_report/basic_report.py",
+      "file_b": "frontend/nextjs/styles/markdown.css",
+      "co_changes": 2,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "backend/report_type/basic_report/basic_report.py",
+      "file_b": "gpt_researcher/actions/report_generation.py",
+      "co_changes": 2,
+      "coupling_score": 0.667
+    },
+    {
+      "file_a": "backend/report_type/basic_report/basic_report.py",
+      "file_b": "gpt_researcher/agent.py",
+      "co_changes": 2,
+      "coupling_score": 0.667
+    },
+    {
+      "file_a": "backend/report_type/basic_report/basic_report.py",
+      "file_b": "gpt_researcher/llm_provider/image/image_generator.py",
+      "co_changes": 2,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "backend/report_type/basic_report/basic_report.py",
+      "file_b": "gpt_researcher/prompts.py",
+      "co_changes": 2,
+      "coupling_score": 0.667
+    },
+    {
+      "file_a": "backend/report_type/basic_report/basic_report.py",
+      "file_b": "gpt_researcher/skills/image_generator.py",
+      "co_changes": 2,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "backend/report_type/basic_report/basic_report.py",
+      "file_b": "gpt_researcher/skills/writer.py",
+      "co_changes": 2,
+      "coupling_score": 0.667
+    },
+    {
+      "file_a": "backend/report_type/detailed_report/detailed_report.py",
+      "file_b": "frontend/nextjs/styles/markdown.css",
+      "co_changes": 2,
+      "coupling_score": 1
+    }
+  ]
+}

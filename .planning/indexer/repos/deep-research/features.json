@@ -1,0 +1,111 @@
+[
+  {
+    "id": "src-ai-providers-functions",
+    "name": "Providers 工具函数",
+    "description": "providers 模块的 2 个顶层函数（typescript），包含: getModel, trimPrompt",
+    "nodes": [
+      "src.ai.providers.getModel",
+      "src.ai.providers.trimPrompt"
+    ],
+    "projects": [
+      "deep-research"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "src-ai-text-splitter-recursivecharactertextsplitter",
+    "name": "RecursiveCharacterTextSplitter",
+    "description": "类 RecursiveCharacterTextSplitter (L87-L143)，2 个方法，关键方法: constructor, splitText",
+    "nodes": [
+      "src.ai.text-splitter.RecursiveCharacterTextSplitter",
+      "src.ai.text-splitter.RecursiveCharacterTextSplitter.constructor",
+      "src.ai.text-splitter.RecursiveCharacterTextSplitter.splitText"
+    ],
+    "projects": [
+      "deep-research"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/ai/text-splitter.ts",
+      "startLine": 87,
+      "endLine": 143
+    }
+  },
+  {
+    "id": "src-ai-text-splitter-functions",
+    "name": "Text Splitter 工具函数",
+    "description": "text-splitter 模块的 5 个顶层函数（typescript），包含: constructor, createDocuments, splitDocuments, joinDocs, mergeSplits",
+    "nodes": [
+      "src.ai.text-splitter.constructor",
+      "src.ai.text-splitter.createDocuments",
+      "src.ai.text-splitter.splitDocuments",
+      "src.ai.text-splitter.joinDocs",
+      "src.ai.text-splitter.mergeSplits"
+    ],
+    "projects": [
+      "deep-research"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "src-api-functions",
+    "name": "Api 工具函数",
+    "description": "api 模块的 1 个顶层函数（typescript），包含: log",
+    "nodes": [
+      "src.api.log"
+    ],
+    "projects": [
+      "deep-research"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "src-deep-research-functions",
+    "name": "Deep Research 工具函数",
+    "description": "deep-research 模块的 6 个顶层函数（typescript），包含: log, generateSerpQueries, processSerpResult, writeFinalReport, writeFinalAnswer",
+    "nodes": [
+      "src.deep-research.log",
+      "src.deep-research.generateSerpQueries",
+      "src.deep-research.processSerpResult",
+      "src.deep-research.writeFinalReport",
+      "src.deep-research.writeFinalAnswer",
+      "src.deep-research.deepResearch"
+    ],
+    "projects": [
+      "deep-research"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "src-feedback-functions",
+    "name": "Feedback 工具函数",
+    "description": "feedback 模块的 1 个顶层函数（typescript），包含: generateFeedback",
+    "nodes": [
+      "src.feedback.generateFeedback"
+    ],
+    "projects": [
+      "deep-research"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "src-run-functions",
+    "name": "Run 工具函数",
+    "description": "run 模块的 3 个顶层函数（typescript），包含: log, askQuestion, run",
+    "nodes": [
+      "src.run.log",
+      "src.run.askQuestion",
+      "src.run.run"
+    ],
+    "projects": [
+      "deep-research"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  }
+]

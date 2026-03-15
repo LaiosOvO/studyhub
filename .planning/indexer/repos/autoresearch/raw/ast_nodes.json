@@ -1,0 +1,855 @@
+{
+  "languages": [
+    "python"
+  ],
+  "stats": {
+    "total_files": 2,
+    "total_lines": 1021,
+    "parse_errors": 0,
+    "truncated": false,
+    "truncated_nodes": 0,
+    "supported_file_counts": {
+      "python": 2
+    },
+    "languages_with_structural_queries": [
+      "c",
+      "cpp",
+      "csharp",
+      "elixir",
+      "gdscript",
+      "go",
+      "java",
+      "javascript",
+      "kotlin",
+      "lua",
+      "php",
+      "python",
+      "ruby",
+      "rust",
+      "scala",
+      "swift",
+      "tsx",
+      "typescript"
+    ],
+    "languages_with_custom_queries": [],
+    "module_only_file_counts": {},
+    "known_unsupported_file_counts": {},
+    "configured_but_unavailable_file_counts": {},
+    "custom_language_config_paths": []
+  },
+  "nodes": [
+    {
+      "id": "prepare",
+      "type": "Module",
+      "label": "prepare",
+      "path": "prepare.py",
+      "lines": 390,
+      "lang": "python"
+    },
+    {
+      "id": "prepare.download_single_shard",
+      "type": "Function",
+      "label": "download_single_shard",
+      "path": "prepare.py",
+      "parent": "prepare",
+      "start_line": 57,
+      "end_line": 88
+    },
+    {
+      "id": "prepare.download_data",
+      "type": "Function",
+      "label": "download_data",
+      "path": "prepare.py",
+      "parent": "prepare",
+      "start_line": 91,
+      "end_line": 113
+    },
+    {
+      "id": "prepare.list_parquet_files",
+      "type": "Function",
+      "label": "list_parquet_files",
+      "path": "prepare.py",
+      "parent": "prepare",
+      "start_line": 119,
+      "end_line": 122
+    },
+    {
+      "id": "prepare.text_iterator",
+      "type": "Function",
+      "label": "text_iterator",
+      "path": "prepare.py",
+      "parent": "prepare",
+      "start_line": 125,
+      "end_line": 138
+    },
+    {
+      "id": "prepare.train_tokenizer",
+      "type": "Function",
+      "label": "train_tokenizer",
+      "path": "prepare.py",
+      "parent": "prepare",
+      "start_line": 141,
+      "end_line": 203
+    },
+    {
+      "id": "prepare.Tokenizer",
+      "type": "Class",
+      "label": "Tokenizer",
+      "path": "prepare.py",
+      "parent": "prepare",
+      "start_line": 209,
+      "end_line": 245
+    },
+    {
+      "id": "prepare.Tokenizer.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "prepare.py",
+      "parent": "prepare.Tokenizer",
+      "start_line": 212,
+      "end_line": 214
+    },
+    {
+      "id": "prepare.Tokenizer.from_directory",
+      "type": "Function",
+      "label": "from_directory",
+      "path": "prepare.py",
+      "parent": "prepare.Tokenizer",
+      "start_line": 217,
+      "end_line": 220
+    },
+    {
+      "id": "prepare.Tokenizer.get_vocab_size",
+      "type": "Function",
+      "label": "get_vocab_size",
+      "path": "prepare.py",
+      "parent": "prepare.Tokenizer",
+      "start_line": 222,
+      "end_line": 223
+    },
+    {
+      "id": "prepare.Tokenizer.get_bos_token_id",
+      "type": "Function",
+      "label": "get_bos_token_id",
+      "path": "prepare.py",
+      "parent": "prepare.Tokenizer",
+      "start_line": 225,
+      "end_line": 226
+    },
+    {
+      "id": "prepare.Tokenizer.encode",
+      "type": "Function",
+      "label": "encode",
+      "path": "prepare.py",
+      "parent": "prepare.Tokenizer",
+      "start_line": 228,
+      "end_line": 242
+    },
+    {
+      "id": "prepare.Tokenizer.decode",
+      "type": "Function",
+      "label": "decode",
+      "path": "prepare.py",
+      "parent": "prepare.Tokenizer",
+      "start_line": 244,
+      "end_line": 245
+    },
+    {
+      "id": "prepare.get_token_bytes",
+      "type": "Function",
+      "label": "get_token_bytes",
+      "path": "prepare.py",
+      "parent": "prepare",
+      "start_line": 248,
+      "end_line": 251
+    },
+    {
+      "id": "prepare._document_batches",
+      "type": "Function",
+      "label": "_document_batches",
+      "path": "prepare.py",
+      "parent": "prepare",
+      "start_line": 254,
+      "end_line": 273
+    },
+    {
+      "id": "prepare.make_dataloader",
+      "type": "Function",
+      "label": "make_dataloader",
+      "path": "prepare.py",
+      "parent": "prepare",
+      "start_line": 276,
+      "end_line": 337
+    },
+    {
+      "id": "prepare.refill_buffer",
+      "type": "Function",
+      "label": "refill_buffer",
+      "path": "prepare.py",
+      "parent": "prepare",
+      "start_line": 290,
+      "end_line": 294
+    },
+    {
+      "id": "prepare.evaluate_bpb",
+      "type": "Function",
+      "label": "evaluate_bpb",
+      "path": "prepare.py",
+      "parent": "prepare",
+      "start_line": 344,
+      "end_line": 365
+    },
+    {
+      "id": "train",
+      "type": "Module",
+      "label": "train",
+      "path": "train.py",
+      "lines": 631,
+      "lang": "python"
+    },
+    {
+      "id": "train.GPTConfig",
+      "type": "Class",
+      "label": "GPTConfig",
+      "path": "train.py",
+      "parent": "train",
+      "start_line": 33,
+      "end_line": 40
+    },
+    {
+      "id": "train.norm",
+      "type": "Function",
+      "label": "norm",
+      "path": "train.py",
+      "parent": "train",
+      "start_line": 43,
+      "end_line": 44
+    },
+    {
+      "id": "train.has_ve",
+      "type": "Function",
+      "label": "has_ve",
+      "path": "train.py",
+      "parent": "train",
+      "start_line": 47,
+      "end_line": 49
+    },
+    {
+      "id": "train.apply_rotary_emb",
+      "type": "Function",
+      "label": "apply_rotary_emb",
+      "path": "train.py",
+      "parent": "train",
+      "start_line": 52,
+      "end_line": 58
+    },
+    {
+      "id": "train.CausalSelfAttention",
+      "type": "Class",
+      "label": "CausalSelfAttention",
+      "path": "train.py",
+      "parent": "train",
+      "start_line": 61,
+      "end_line": 96
+    },
+    {
+      "id": "train.CausalSelfAttention.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "train.py",
+      "parent": "train.CausalSelfAttention",
+      "start_line": 62,
+      "end_line": 75
+    },
+    {
+      "id": "train.CausalSelfAttention.forward",
+      "type": "Function",
+      "label": "forward",
+      "path": "train.py",
+      "parent": "train.CausalSelfAttention",
+      "start_line": 77,
+      "end_line": 96
+    },
+    {
+      "id": "train.MLP",
+      "type": "Class",
+      "label": "MLP",
+      "path": "train.py",
+      "parent": "train",
+      "start_line": 99,
+      "end_line": 109
+    },
+    {
+      "id": "train.MLP.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "train.py",
+      "parent": "train.MLP",
+      "start_line": 100,
+      "end_line": 103
+    },
+    {
+      "id": "train.MLP.forward",
+      "type": "Function",
+      "label": "forward",
+      "path": "train.py",
+      "parent": "train.MLP",
+      "start_line": 105,
+      "end_line": 109
+    },
+    {
+      "id": "train.Block",
+      "type": "Class",
+      "label": "Block",
+      "path": "train.py",
+      "parent": "train",
+      "start_line": 112,
+      "end_line": 121
+    },
+    {
+      "id": "train.Block.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "train.py",
+      "parent": "train.Block",
+      "start_line": 113,
+      "end_line": 116
+    },
+    {
+      "id": "train.Block.forward",
+      "type": "Function",
+      "label": "forward",
+      "path": "train.py",
+      "parent": "train.Block",
+      "start_line": 118,
+      "end_line": 121
+    },
+    {
+      "id": "train.GPT",
+      "type": "Class",
+      "label": "GPT",
+      "path": "train.py",
+      "parent": "train",
+      "start_line": 124,
+      "end_line": 291
+    },
+    {
+      "id": "train.GPT.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "train.py",
+      "parent": "train.GPT",
+      "start_line": 125,
+      "end_line": 147
+    },
+    {
+      "id": "train.GPT.init_weights",
+      "type": "Function",
+      "label": "init_weights",
+      "path": "train.py",
+      "parent": "train.GPT",
+      "start_line": 150,
+      "end_line": 181
+    },
+    {
+      "id": "train.GPT._precompute_rotary_embeddings",
+      "type": "Function",
+      "label": "_precompute_rotary_embeddings",
+      "path": "train.py",
+      "parent": "train.GPT",
+      "start_line": 183,
+      "end_line": 193
+    },
+    {
+      "id": "train.GPT._compute_window_sizes",
+      "type": "Function",
+      "label": "_compute_window_sizes",
+      "path": "train.py",
+      "parent": "train.GPT",
+      "start_line": 195,
+      "end_line": 206
+    },
+    {
+      "id": "train.GPT.estimate_flops",
+      "type": "Function",
+      "label": "estimate_flops",
+      "path": "train.py",
+      "parent": "train.GPT",
+      "start_line": 208,
+      "end_line": 222
+    },
+    {
+      "id": "train.GPT.num_scaling_params",
+      "type": "Function",
+      "label": "num_scaling_params",
+      "path": "train.py",
+      "parent": "train.GPT",
+      "start_line": 224,
+      "end_line": 234
+    },
+    {
+      "id": "train.GPT.setup_optimizer",
+      "type": "Function",
+      "label": "setup_optimizer",
+      "path": "train.py",
+      "parent": "train.GPT",
+      "start_line": 236,
+      "end_line": 266
+    },
+    {
+      "id": "train.GPT.forward",
+      "type": "Function",
+      "label": "forward",
+      "path": "train.py",
+      "parent": "train.GPT",
+      "start_line": 268,
+      "end_line": 291
+    },
+    {
+      "id": "train.adamw_step_fused",
+      "type": "Function",
+      "label": "adamw_step_fused",
+      "path": "train.py",
+      "parent": "train",
+      "start_line": 306,
+      "end_line": 314
+    },
+    {
+      "id": "train.muon_step_fused",
+      "type": "Function",
+      "label": "muon_step_fused",
+      "path": "train.py",
+      "parent": "train",
+      "start_line": 317,
+      "end_line": 353
+    },
+    {
+      "id": "train.MuonAdamW",
+      "type": "Class",
+      "label": "MuonAdamW",
+      "path": "train.py",
+      "parent": "train",
+      "start_line": 356,
+      "end_line": 426
+    },
+    {
+      "id": "train.MuonAdamW.__init__",
+      "type": "Function",
+      "label": "__init__",
+      "path": "train.py",
+      "parent": "train.MuonAdamW",
+      "start_line": 359,
+      "end_line": 371
+    },
+    {
+      "id": "train.MuonAdamW._step_adamw",
+      "type": "Function",
+      "label": "_step_adamw",
+      "path": "train.py",
+      "parent": "train.MuonAdamW",
+      "start_line": 373,
+      "end_line": 392
+    },
+    {
+      "id": "train.MuonAdamW._step_muon",
+      "type": "Function",
+      "label": "_step_muon",
+      "path": "train.py",
+      "parent": "train.MuonAdamW",
+      "start_line": 394,
+      "end_line": 418
+    },
+    {
+      "id": "train.MuonAdamW.step",
+      "type": "Function",
+      "label": "step",
+      "path": "train.py",
+      "parent": "train.MuonAdamW",
+      "start_line": 421,
+      "end_line": 426
+    },
+    {
+      "id": "train.build_model_config",
+      "type": "Function",
+      "label": "build_model_config",
+      "path": "train.py",
+      "parent": "train",
+      "start_line": 469,
+      "end_line": 477
+    },
+    {
+      "id": "train.get_lr_multiplier",
+      "type": "Function",
+      "label": "get_lr_multiplier",
+      "path": "train.py",
+      "parent": "train",
+      "start_line": 518,
+      "end_line": 525
+    },
+    {
+      "id": "train.get_muon_momentum",
+      "type": "Function",
+      "label": "get_muon_momentum",
+      "path": "train.py",
+      "parent": "train",
+      "start_line": 527,
+      "end_line": 529
+    },
+    {
+      "id": "train.get_weight_decay",
+      "type": "Function",
+      "label": "get_weight_decay",
+      "path": "train.py",
+      "parent": "train",
+      "start_line": 531,
+      "end_line": 532
+    }
+  ],
+  "edges": [
+    {
+      "source": "prepare",
+      "target": "prepare.download_single_shard",
+      "type": "contains"
+    },
+    {
+      "source": "prepare",
+      "target": "prepare.download_data",
+      "type": "contains"
+    },
+    {
+      "source": "prepare",
+      "target": "prepare.list_parquet_files",
+      "type": "contains"
+    },
+    {
+      "source": "prepare",
+      "target": "prepare.text_iterator",
+      "type": "contains"
+    },
+    {
+      "source": "prepare",
+      "target": "prepare.train_tokenizer",
+      "type": "contains"
+    },
+    {
+      "source": "prepare",
+      "target": "prepare.Tokenizer",
+      "type": "contains"
+    },
+    {
+      "source": "prepare.Tokenizer",
+      "target": "prepare.Tokenizer.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "prepare.Tokenizer",
+      "target": "prepare.Tokenizer.from_directory",
+      "type": "contains"
+    },
+    {
+      "source": "prepare.Tokenizer",
+      "target": "prepare.Tokenizer.get_vocab_size",
+      "type": "contains"
+    },
+    {
+      "source": "prepare.Tokenizer",
+      "target": "prepare.Tokenizer.get_bos_token_id",
+      "type": "contains"
+    },
+    {
+      "source": "prepare.Tokenizer",
+      "target": "prepare.Tokenizer.encode",
+      "type": "contains"
+    },
+    {
+      "source": "prepare.Tokenizer",
+      "target": "prepare.Tokenizer.decode",
+      "type": "contains"
+    },
+    {
+      "source": "prepare",
+      "target": "prepare.get_token_bytes",
+      "type": "contains"
+    },
+    {
+      "source": "prepare",
+      "target": "prepare._document_batches",
+      "type": "contains"
+    },
+    {
+      "source": "prepare",
+      "target": "prepare.make_dataloader",
+      "type": "contains"
+    },
+    {
+      "source": "prepare",
+      "target": "prepare.refill_buffer",
+      "type": "contains"
+    },
+    {
+      "source": "prepare",
+      "target": "prepare.evaluate_bpb",
+      "type": "contains"
+    },
+    {
+      "source": "prepare",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "prepare",
+      "target": "sys",
+      "type": "imports"
+    },
+    {
+      "source": "prepare",
+      "target": "time",
+      "type": "imports"
+    },
+    {
+      "source": "prepare",
+      "target": "math",
+      "type": "imports"
+    },
+    {
+      "source": "prepare",
+      "target": "argparse",
+      "type": "imports"
+    },
+    {
+      "source": "prepare",
+      "target": "pickle",
+      "type": "imports"
+    },
+    {
+      "source": "prepare",
+      "target": "multiprocessing",
+      "type": "imports"
+    },
+    {
+      "source": "prepare",
+      "target": "requests",
+      "type": "imports"
+    },
+    {
+      "source": "prepare",
+      "target": "rustbpe",
+      "type": "imports"
+    },
+    {
+      "source": "prepare",
+      "target": "tiktoken",
+      "type": "imports"
+    },
+    {
+      "source": "prepare",
+      "target": "torch",
+      "type": "imports"
+    },
+    {
+      "source": "train",
+      "target": "train.GPTConfig",
+      "type": "contains"
+    },
+    {
+      "source": "train",
+      "target": "train.norm",
+      "type": "contains"
+    },
+    {
+      "source": "train",
+      "target": "train.has_ve",
+      "type": "contains"
+    },
+    {
+      "source": "train",
+      "target": "train.apply_rotary_emb",
+      "type": "contains"
+    },
+    {
+      "source": "train",
+      "target": "train.CausalSelfAttention",
+      "type": "contains"
+    },
+    {
+      "source": "train.CausalSelfAttention",
+      "target": "train.CausalSelfAttention.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "train.CausalSelfAttention",
+      "target": "train.CausalSelfAttention.forward",
+      "type": "contains"
+    },
+    {
+      "source": "train",
+      "target": "train.MLP",
+      "type": "contains"
+    },
+    {
+      "source": "train.MLP",
+      "target": "train.MLP.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "train.MLP",
+      "target": "train.MLP.forward",
+      "type": "contains"
+    },
+    {
+      "source": "train",
+      "target": "train.Block",
+      "type": "contains"
+    },
+    {
+      "source": "train.Block",
+      "target": "train.Block.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "train.Block",
+      "target": "train.Block.forward",
+      "type": "contains"
+    },
+    {
+      "source": "train",
+      "target": "train.GPT",
+      "type": "contains"
+    },
+    {
+      "source": "train.GPT",
+      "target": "train.GPT.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "train.GPT",
+      "target": "train.GPT.init_weights",
+      "type": "contains"
+    },
+    {
+      "source": "train.GPT",
+      "target": "train.GPT._precompute_rotary_embeddings",
+      "type": "contains"
+    },
+    {
+      "source": "train.GPT",
+      "target": "train.GPT._compute_window_sizes",
+      "type": "contains"
+    },
+    {
+      "source": "train.GPT",
+      "target": "train.GPT.estimate_flops",
+      "type": "contains"
+    },
+    {
+      "source": "train.GPT",
+      "target": "train.GPT.num_scaling_params",
+      "type": "contains"
+    },
+    {
+      "source": "train.GPT",
+      "target": "train.GPT.setup_optimizer",
+      "type": "contains"
+    },
+    {
+      "source": "train.GPT",
+      "target": "train.GPT.forward",
+      "type": "contains"
+    },
+    {
+      "source": "train",
+      "target": "train.adamw_step_fused",
+      "type": "contains"
+    },
+    {
+      "source": "train",
+      "target": "train.muon_step_fused",
+      "type": "contains"
+    },
+    {
+      "source": "train",
+      "target": "train.MuonAdamW",
+      "type": "contains"
+    },
+    {
+      "source": "train.MuonAdamW",
+      "target": "train.MuonAdamW.__init__",
+      "type": "contains"
+    },
+    {
+      "source": "train.MuonAdamW",
+      "target": "train.MuonAdamW._step_adamw",
+      "type": "contains"
+    },
+    {
+      "source": "train.MuonAdamW",
+      "target": "train.MuonAdamW._step_muon",
+      "type": "contains"
+    },
+    {
+      "source": "train.MuonAdamW",
+      "target": "train.MuonAdamW.step",
+      "type": "contains"
+    },
+    {
+      "source": "train",
+      "target": "train.build_model_config",
+      "type": "contains"
+    },
+    {
+      "source": "train",
+      "target": "train.get_lr_multiplier",
+      "type": "contains"
+    },
+    {
+      "source": "train",
+      "target": "train.get_muon_momentum",
+      "type": "contains"
+    },
+    {
+      "source": "train",
+      "target": "train.get_weight_decay",
+      "type": "contains"
+    },
+    {
+      "source": "train",
+      "target": "os",
+      "type": "imports"
+    },
+    {
+      "source": "train",
+      "target": "gc",
+      "type": "imports"
+    },
+    {
+      "source": "train",
+      "target": "math",
+      "type": "imports"
+    },
+    {
+      "source": "train",
+      "target": "time",
+      "type": "imports"
+    },
+    {
+      "source": "train",
+      "target": "dataclasses",
+      "type": "imports"
+    },
+    {
+      "source": "train",
+      "target": "torch",
+      "type": "imports"
+    },
+    {
+      "source": "train",
+      "target": "kernels",
+      "type": "imports"
+    },
+    {
+      "source": "train",
+      "target": "prepare",
+      "type": "imports"
+    }
+  ]
+}

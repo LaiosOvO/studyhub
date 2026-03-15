@@ -1,0 +1,9 @@
+{
+  "analysis_period_days": 90,
+  "stats": {
+    "total_commits": 0,
+    "total_authors": 0
+  },
+  "hotspots": [],
+  "coupling_pairs": []
+}

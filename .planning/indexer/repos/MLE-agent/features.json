@@ -1,0 +1,1234 @@
+[
+  {
+    "id": "exp-cli-functions",
+    "name": "Cli 工具函数",
+    "description": "cli 模块的 8 个顶层函数（python），包含: require_init, wrapper, bench, init, prepare",
+    "nodes": [
+      "exp.cli.require_init",
+      "exp.cli.wrapper",
+      "exp.cli.bench",
+      "exp.cli.init",
+      "exp.cli.prepare",
+      "exp.cli._read_text_utf8",
+      "exp.cli.grade",
+      "exp.cli.grade_sample"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "exp-init-functions",
+    "name": "Init 工具函数",
+    "description": "init 模块的 3 个顶层函数（python），包含: is_init, find_git_lfs, init",
+    "nodes": [
+      "exp.init.is_init",
+      "exp.init.find_git_lfs",
+      "exp.init.init"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "exp-mlebench-api-functions",
+    "name": "Mlebench Api 工具函数",
+    "description": "mlebench_api 模块的 4 个顶层函数（python），包含: prepare, grade, grade_sample",
+    "nodes": [
+      "exp.mlebench_api.prepare",
+      "exp.mlebench_api._read_text_utf8",
+      "exp.mlebench_api.grade",
+      "exp.mlebench_api.grade_sample"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "exp-utils-functions",
+    "name": "Utils 工具函数",
+    "description": "utils 模块的 1 个顶层函数（python），包含: get_logger",
+    "nodes": [
+      "exp.utils.get_logger"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-agents-advisor-adviseagent",
+    "name": "AdviseAgent",
+    "description": "类 AdviseAgent (L31-L254)，4 个方法，关键方法: suggest, interact, clarify_dataset",
+    "nodes": [
+      "mle.agents.advisor.AdviseAgent",
+      "mle.agents.advisor.AdviseAgent.__init__",
+      "mle.agents.advisor.AdviseAgent.suggest",
+      "mle.agents.advisor.AdviseAgent.interact",
+      "mle.agents.advisor.AdviseAgent.clarify_dataset"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/agents/advisor.py",
+      "startLine": 31,
+      "endLine": 254
+    }
+  },
+  {
+    "id": "mle-agents-advisor-functions",
+    "name": "Advisor 工具函数",
+    "description": "advisor 模块的 1 个顶层函数（python），包含: process_report",
+    "nodes": [
+      "mle.agents.advisor.process_report"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-agents-chat-chatagent",
+    "name": "ChatAgent",
+    "description": "类 ChatAgent (L7-L142)，3 个方法，关键方法: greet, chat",
+    "nodes": [
+      "mle.agents.chat.ChatAgent",
+      "mle.agents.chat.ChatAgent.__init__",
+      "mle.agents.chat.ChatAgent.greet",
+      "mle.agents.chat.ChatAgent.chat"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/agents/chat.py",
+      "startLine": 7,
+      "endLine": 142
+    }
+  },
+  {
+    "id": "mle-agents-coder-codeagent",
+    "name": "CodeAgent",
+    "description": "类 CodeAgent (L24-L253)，5 个方法，关键方法: read_requirement, code, debug, interact",
+    "nodes": [
+      "mle.agents.coder.CodeAgent",
+      "mle.agents.coder.CodeAgent.__init__",
+      "mle.agents.coder.CodeAgent.read_requirement",
+      "mle.agents.coder.CodeAgent.code",
+      "mle.agents.coder.CodeAgent.debug",
+      "mle.agents.coder.CodeAgent.interact"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/agents/coder.py",
+      "startLine": 24,
+      "endLine": 253
+    }
+  },
+  {
+    "id": "mle-agents-coder-functions",
+    "name": "Coder 工具函数",
+    "description": "coder 模块的 1 个顶层函数（python），包含: process_summary",
+    "nodes": [
+      "mle.agents.coder.process_summary"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-agents-debugger-debugagent",
+    "name": "DebugAgent",
+    "description": "类 DebugAgent (L28-L180)，3 个方法，关键方法: analyze_with_log, analyze",
+    "nodes": [
+      "mle.agents.debugger.DebugAgent",
+      "mle.agents.debugger.DebugAgent.__init__",
+      "mle.agents.debugger.DebugAgent.analyze_with_log",
+      "mle.agents.debugger.DebugAgent.analyze"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/agents/debugger.py",
+      "startLine": 28,
+      "endLine": 180
+    }
+  },
+  {
+    "id": "mle-agents-debugger-functions",
+    "name": "Debugger 工具函数",
+    "description": "debugger 模块的 1 个顶层函数（python），包含: process_debug_report",
+    "nodes": [
+      "mle.agents.debugger.process_debug_report"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-agents-planner-planagent",
+    "name": "PlanAgent",
+    "description": "类 PlanAgent (L18-L131)，3 个方法，关键方法: plan, interact",
+    "nodes": [
+      "mle.agents.planner.PlanAgent",
+      "mle.agents.planner.PlanAgent.__init__",
+      "mle.agents.planner.PlanAgent.plan",
+      "mle.agents.planner.PlanAgent.interact"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/agents/planner.py",
+      "startLine": 18,
+      "endLine": 131
+    }
+  },
+  {
+    "id": "mle-agents-planner-functions",
+    "name": "Planner 工具函数",
+    "description": "planner 模块的 1 个顶层函数（python），包含: process_plan",
+    "nodes": [
+      "mle.agents.planner.process_plan"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-agents-reporter-reportagent",
+    "name": "ReportAgent",
+    "description": "类 ReportAgent (L6-L169)，3 个方法，关键方法: process_knowledge, gen_report",
+    "nodes": [
+      "mle.agents.reporter.ReportAgent",
+      "mle.agents.reporter.ReportAgent.__init__",
+      "mle.agents.reporter.ReportAgent.process_knowledge",
+      "mle.agents.reporter.ReportAgent.gen_report"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/agents/reporter.py",
+      "startLine": 6,
+      "endLine": 169
+    }
+  },
+  {
+    "id": "mle-agents-summarizer-githubsummaryagent",
+    "name": "GitHubSummaryAgent",
+    "description": "类 GitHubSummaryAgent (L8-L174)，4 个方法，关键方法: process_knowledge, summarize, kaggle_request_summarize",
+    "nodes": [
+      "mle.agents.summarizer.GitHubSummaryAgent",
+      "mle.agents.summarizer.GitHubSummaryAgent.__init__",
+      "mle.agents.summarizer.GitHubSummaryAgent.process_knowledge",
+      "mle.agents.summarizer.GitHubSummaryAgent.summarize",
+      "mle.agents.summarizer.GitHubSummaryAgent.kaggle_request_summarize"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/agents/summarizer.py",
+      "startLine": 8,
+      "endLine": 174
+    }
+  },
+  {
+    "id": "mle-agents-summarizer-gitsummaryagent",
+    "name": "GitSummaryAgent",
+    "description": "类 GitSummaryAgent (L177-L292)，3 个方法，关键方法: process_knowledge, summarize",
+    "nodes": [
+      "mle.agents.summarizer.GitSummaryAgent",
+      "mle.agents.summarizer.GitSummaryAgent.__init__",
+      "mle.agents.summarizer.GitSummaryAgent.process_knowledge",
+      "mle.agents.summarizer.GitSummaryAgent.summarize"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/agents/summarizer.py",
+      "startLine": 177,
+      "endLine": 292
+    }
+  },
+  {
+    "id": "mle-cli-functions",
+    "name": "Cli 工具函数",
+    "description": "cli 模块的 12 个顶层函数（python），包含: cli, start, report, report_local, kaggle",
+    "nodes": [
+      "mle.cli.cli",
+      "mle.cli.start",
+      "mle.cli.report",
+      "mle.cli.report_local",
+      "mle.cli.kaggle",
+      "mle.cli.chat",
+      "mle.cli.serve",
+      "mle.cli.web",
+      "mle.cli.new",
+      "mle.cli.integrate",
+      "mle.cli.memory",
+      "mle.cli.traces"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-function-functions",
+    "name": "Function 工具函数",
+    "description": "function 模块的 2 个顶层函数（python），包含: get_function, process_function_name",
+    "nodes": [
+      "mle.function.get_function",
+      "mle.function.process_function_name"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-function-data-preview",
+    "name": "preview_* 系列",
+    "description": "data 模块的 2 个 preview_* 函数，包含: preview_zip_structure, preview_csv_data",
+    "nodes": [
+      "mle.function.data.preview_zip_structure",
+      "mle.function.data.preview_csv_data"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "pattern",
+    "codeRange": null
+  },
+  {
+    "id": "mle-function-data-functions",
+    "name": "Data 工具函数",
+    "description": "data 模块的 1 个顶层函数（python），包含: unzip_data",
+    "nodes": [
+      "mle.function.data.unzip_data"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-function-execution-functions",
+    "name": "Execution 工具函数",
+    "description": "execution 模块的 1 个顶层函数（python），包含: execute_command",
+    "nodes": [
+      "mle.function.execution.execute_command"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-function-files-create",
+    "name": "create_* 系列",
+    "description": "files 模块的 2 个 create_* 函数，包含: create_file, create_directory",
+    "nodes": [
+      "mle.function.files.create_file",
+      "mle.function.files.create_directory"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "pattern",
+    "codeRange": null
+  },
+  {
+    "id": "mle-function-files-functions",
+    "name": "Files 工具函数",
+    "description": "files 模块的 3 个顶层函数（python），包含: read_file, write_file, list_files",
+    "nodes": [
+      "mle.function.files.read_file",
+      "mle.function.files.write_file",
+      "mle.function.files.list_files"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-function-interaction-ask",
+    "name": "ask_* 系列",
+    "description": "interaction 模块的 3 个 ask_* 函数，包含: ask_question, ask_yes_no, ask_choices",
+    "nodes": [
+      "mle.function.interaction.ask_question",
+      "mle.function.interaction.ask_yes_no",
+      "mle.function.interaction.ask_choices"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "pattern",
+    "codeRange": null
+  },
+  {
+    "id": "mle-function-search-search",
+    "name": "search_* 系列",
+    "description": "search 模块的 3 个 search_* 函数，包含: search_github_repos, search_arxiv, search_papers_with_code",
+    "nodes": [
+      "mle.function.search.search_github_repos",
+      "mle.function.search.search_arxiv",
+      "mle.function.search.search_papers_with_code"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "pattern",
+    "codeRange": null
+  },
+  {
+    "id": "mle-function-search-functions",
+    "name": "Search 工具函数",
+    "description": "search 模块的 1 个顶层函数（python），包含: web_search",
+    "nodes": [
+      "mle.function.search.web_search"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-integration-github-githubintegration",
+    "name": "GitHubIntegration",
+    "description": "类 GitHubIntegration (L19-L588)，19 个方法，关键方法: get_user_info, get_readme, get_license, get_contributors, get_source_code",
+    "nodes": [
+      "mle.integration.github.GitHubIntegration",
+      "mle.integration.github.GitHubIntegration.__init__",
+      "mle.integration.github.GitHubIntegration._make_request",
+      "mle.integration.github.GitHubIntegration._process_items",
+      "mle.integration.github.GitHubIntegration.get_user_info",
+      "mle.integration.github.GitHubIntegration.get_readme",
+      "mle.integration.github.GitHubIntegration.get_license",
+      "mle.integration.github.GitHubIntegration.get_contributors",
+      "mle.integration.github.GitHubIntegration.get_source_code",
+      "mle.integration.github.GitHubIntegration.get_contents",
+      "mle.integration.github.GitHubIntegration.get_commit_history",
+      "mle.integration.github.GitHubIntegration.get_issues",
+      "mle.integration.github.GitHubIntegration.get_metadata",
+      "mle.integration.github.GitHubIntegration.get_pull_requests",
+      "mle.integration.github.GitHubIntegration.get_pull_request_commits",
+      "mle.integration.github.GitHubIntegration.get_pull_request_diff",
+      "mle.integration.github.GitHubIntegration.get_releases",
+      "mle.integration.github.GitHubIntegration.get_structure",
+      "mle.integration.github.GitHubIntegration.traverse_tree",
+      "mle.integration.github.GitHubIntegration.get_user_activity"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/integration/github.py",
+      "startLine": 19,
+      "endLine": 588
+    }
+  },
+  {
+    "id": "mle-integration-github-functions",
+    "name": "Github 工具函数",
+    "description": "github 模块的 1 个顶层函数（python），包含: github_login",
+    "nodes": [
+      "mle.integration.github.github_login"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-integration-google-calendar-googlecalendarintegration",
+    "name": "GoogleCalendarIntegration",
+    "description": "类 GoogleCalendarIntegration (L36-L120)，2 个方法，关键方法: get_events",
+    "nodes": [
+      "mle.integration.google_calendar.GoogleCalendarIntegration",
+      "mle.integration.google_calendar.GoogleCalendarIntegration.__init__",
+      "mle.integration.google_calendar.GoogleCalendarIntegration.get_events"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/integration/google_calendar.py",
+      "startLine": 36,
+      "endLine": 120
+    }
+  },
+  {
+    "id": "mle-integration-google-calendar-functions",
+    "name": "Google Calendar 工具函数",
+    "description": "google_calendar 模块的 1 个顶层函数（python），包含: google_calendar_login",
+    "nodes": [
+      "mle.integration.google_calendar.google_calendar_login"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-integration-kaggle-kaggleintegration",
+    "name": "KaggleIntegration",
+    "description": "类 KaggleIntegration (L8-L78)，4 个方法，关键方法: list_competition, download_competition_dataset, fetch_competition_overview",
+    "nodes": [
+      "mle.integration.kaggle.KaggleIntegration",
+      "mle.integration.kaggle.KaggleIntegration.__init__",
+      "mle.integration.kaggle.KaggleIntegration.list_competition",
+      "mle.integration.kaggle.KaggleIntegration.download_competition_dataset",
+      "mle.integration.kaggle.KaggleIntegration.fetch_competition_overview"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/integration/kaggle.py",
+      "startLine": 8,
+      "endLine": 78
+    }
+  },
+  {
+    "id": "mle-integration-local-git-gitintegration",
+    "name": "GitIntegration",
+    "description": "类 GitIntegration (L8-L237)，9 个方法，关键方法: get_repo_status, get_commit_history, get_commit_diff, get_source_code, get_contents",
+    "nodes": [
+      "mle.integration.local_git.GitIntegration",
+      "mle.integration.local_git.GitIntegration.__init__",
+      "mle.integration.local_git.GitIntegration.get_repo_status",
+      "mle.integration.local_git.GitIntegration.get_commit_history",
+      "mle.integration.local_git.GitIntegration.get_commit_diff",
+      "mle.integration.local_git.GitIntegration.get_source_code",
+      "mle.integration.local_git.GitIntegration.get_contents",
+      "mle.integration.local_git.GitIntegration.get_readme",
+      "mle.integration.local_git.GitIntegration.get_structure",
+      "mle.integration.local_git.GitIntegration.get_user_activity"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/integration/local_git.py",
+      "startLine": 8,
+      "endLine": 237
+    }
+  },
+  {
+    "id": "mle-model-observablemodel",
+    "name": "ObservableModel",
+    "description": "类 ObservableModel (L21-L47)，3 个方法，关键方法: query, stream",
+    "nodes": [
+      "mle.model.ObservableModel",
+      "mle.model.ObservableModel.__init__",
+      "mle.model.ObservableModel.query",
+      "mle.model.ObservableModel.stream"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/model/__init__.py",
+      "startLine": 21,
+      "endLine": 47
+    }
+  },
+  {
+    "id": "mle-model-functions",
+    "name": "Model 工具函数",
+    "description": "model 模块的 1 个顶层函数（python），包含: load_model",
+    "nodes": [
+      "mle.model.load_model"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-model-anthropic-claudemodel",
+    "name": "ClaudeModel",
+    "description": "类 ClaudeModel (L7-L144)，4 个方法，关键方法: query, stream",
+    "nodes": [
+      "mle.model.anthropic.ClaudeModel",
+      "mle.model.anthropic.ClaudeModel.__init__",
+      "mle.model.anthropic.ClaudeModel._add_tool_result_into_chat_history",
+      "mle.model.anthropic.ClaudeModel.query",
+      "mle.model.anthropic.ClaudeModel.stream"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/model/anthropic.py",
+      "startLine": 7,
+      "endLine": 144
+    }
+  },
+  {
+    "id": "mle-model-common-model",
+    "name": "Model",
+    "description": "类 Model (L4-L18)，3 个方法，关键方法: query, stream",
+    "nodes": [
+      "mle.model.common.Model",
+      "mle.model.common.Model.__init__",
+      "mle.model.common.Model.query",
+      "mle.model.common.Model.stream"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/model/common.py",
+      "startLine": 4,
+      "endLine": 18
+    }
+  },
+  {
+    "id": "mle-model-deepseek-deepseekmodel",
+    "name": "DeepSeekModel",
+    "description": "类 DeepSeekModel (L8-L116)，4 个方法，关键方法: query, stream",
+    "nodes": [
+      "mle.model.deepseek.DeepSeekModel",
+      "mle.model.deepseek.DeepSeekModel.__init__",
+      "mle.model.deepseek.DeepSeekModel._convert_functions_to_tools",
+      "mle.model.deepseek.DeepSeekModel.query",
+      "mle.model.deepseek.DeepSeekModel.stream"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/model/deepseek.py",
+      "startLine": 8,
+      "endLine": 116
+    }
+  },
+  {
+    "id": "mle-model-gemini-geminimodel",
+    "name": "GeminiModel",
+    "description": "类 GeminiModel (L15-L187)，5 个方法，关键方法: query, stream",
+    "nodes": [
+      "mle.model.gemini.GeminiModel",
+      "mle.model.gemini.GeminiModel.__init__",
+      "mle.model.gemini.GeminiModel._create_gemini_tools",
+      "mle.model.gemini.GeminiModel._adapt_history_for_gemini",
+      "mle.model.gemini.GeminiModel.query",
+      "mle.model.gemini.GeminiModel.stream"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/model/gemini.py",
+      "startLine": 15,
+      "endLine": 187
+    }
+  },
+  {
+    "id": "mle-model-mistral-mistralmodel",
+    "name": "MistralModel",
+    "description": "类 MistralModel (L8-L117)，4 个方法，关键方法: query, stream",
+    "nodes": [
+      "mle.model.mistral.MistralModel",
+      "mle.model.mistral.MistralModel.__init__",
+      "mle.model.mistral.MistralModel._convert_functions_to_tools",
+      "mle.model.mistral.MistralModel.query",
+      "mle.model.mistral.MistralModel.stream"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/model/mistral.py",
+      "startLine": 8,
+      "endLine": 117
+    }
+  },
+  {
+    "id": "mle-model-ollama-ollamamodel",
+    "name": "OllamaModel",
+    "description": "类 OllamaModel (L7-L91)，5 个方法，关键方法: query, stream",
+    "nodes": [
+      "mle.model.ollama.OllamaModel",
+      "mle.model.ollama.OllamaModel.__init__",
+      "mle.model.ollama.OllamaModel._clean_think_tags",
+      "mle.model.ollama.OllamaModel._process_message",
+      "mle.model.ollama.OllamaModel.query",
+      "mle.model.ollama.OllamaModel.stream"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/model/ollama.py",
+      "startLine": 7,
+      "endLine": 91
+    }
+  },
+  {
+    "id": "mle-model-openai-openaimodel",
+    "name": "OpenAIModel",
+    "description": "类 OpenAIModel (L9-L100)，3 个方法，关键方法: query, stream",
+    "nodes": [
+      "mle.model.openai.OpenAIModel",
+      "mle.model.openai.OpenAIModel.__init__",
+      "mle.model.openai.OpenAIModel.query",
+      "mle.model.openai.OpenAIModel.stream"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/model/openai.py",
+      "startLine": 9,
+      "endLine": 100
+    }
+  },
+  {
+    "id": "mle-model-vllm-vllmmodel",
+    "name": "vLLMModel",
+    "description": "类 vLLMModel (L10-L185)，4 个方法，关键方法: normalize_chat_history, query, stream",
+    "nodes": [
+      "mle.model.vllm.vLLMModel",
+      "mle.model.vllm.vLLMModel.__init__",
+      "mle.model.vllm.vLLMModel.normalize_chat_history",
+      "mle.model.vllm.vLLMModel.query",
+      "mle.model.vllm.vLLMModel.stream"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/model/vllm.py",
+      "startLine": 10,
+      "endLine": 185
+    }
+  },
+  {
+    "id": "mle-server-app-reportrequest",
+    "name": "ReportRequest",
+    "description": "类 ReportRequest (L25-L32)，0 个方法",
+    "nodes": [
+      "mle.server.app.ReportRequest"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/server/app.py",
+      "startLine": 25,
+      "endLine": 32
+    }
+  },
+  {
+    "id": "mle-server-app-gen",
+    "name": "gen_* 系列",
+    "description": "app 模块的 2 个 gen_* 函数，包含: gen_report, gen_report_async",
+    "nodes": [
+      "mle.server.app.gen_report",
+      "mle.server.app.gen_report_async"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "pattern",
+    "codeRange": null
+  },
+  {
+    "id": "mle-server-app-functions",
+    "name": "App 工具函数",
+    "description": "app 模块的 2 个顶层函数（python），包含: root, read_latest_report",
+    "nodes": [
+      "mle.server.app.root",
+      "mle.server.app.read_latest_report"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-utils-cache-workflowcacheoperator",
+    "name": "WorkflowCacheOperator",
+    "description": "类 WorkflowCacheOperator (L8-L65)，5 个方法，关键方法: store, resume",
+    "nodes": [
+      "mle.utils.cache.WorkflowCacheOperator",
+      "mle.utils.cache.WorkflowCacheOperator.__init__",
+      "mle.utils.cache.WorkflowCacheOperator.store",
+      "mle.utils.cache.WorkflowCacheOperator.resume",
+      "mle.utils.cache.WorkflowCacheOperator.__enter__",
+      "mle.utils.cache.WorkflowCacheOperator.__exit__"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/utils/cache.py",
+      "startLine": 8,
+      "endLine": 65
+    }
+  },
+  {
+    "id": "mle-utils-cache-workflowcache",
+    "name": "WorkflowCache",
+    "description": "类 WorkflowCache (L68-L187)，9 个方法，关键方法: is_empty, remove, current_step, resume_variable",
+    "nodes": [
+      "mle.utils.cache.WorkflowCache",
+      "mle.utils.cache.WorkflowCache.__init__",
+      "mle.utils.cache.WorkflowCache.is_empty",
+      "mle.utils.cache.WorkflowCache.remove",
+      "mle.utils.cache.WorkflowCache.current_step",
+      "mle.utils.cache.WorkflowCache.resume_variable",
+      "mle.utils.cache.WorkflowCache._load_cache_buffer",
+      "mle.utils.cache.WorkflowCache._store_cache_buffer",
+      "mle.utils.cache.WorkflowCache.__call__",
+      "mle.utils.cache.WorkflowCache.__str__"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/utils/cache.py",
+      "startLine": 68,
+      "endLine": 187
+    }
+  },
+  {
+    "id": "mle-utils-chunk-codechunker",
+    "name": "CodeChunker",
+    "description": "含组件 Chunker, chunk, get_chunk, print_chunks, consolidate_chunks_into_file, count_lines；类 CodeChunker (L43-L130)，3 个方法，关键方法: chunk, get_chunk",
+    "nodes": [
+      "mle.utils.chunk.CodeChunker",
+      "mle.utils.chunk.CodeChunker.__init__",
+      "mle.utils.chunk.CodeChunker.chunk",
+      "mle.utils.chunk.CodeChunker.get_chunk",
+      "mle.utils.chunk.Chunker",
+      "mle.utils.chunk.Chunker.__init__",
+      "mle.utils.chunk.Chunker.chunk",
+      "mle.utils.chunk.Chunker.get_chunk",
+      "mle.utils.chunk.Chunker.print_chunks",
+      "mle.utils.chunk.Chunker.consolidate_chunks_into_file",
+      "mle.utils.chunk.Chunker.count_lines"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "mle/utils/chunk.py",
+      "startLine": 13,
+      "endLine": 130
+    }
+  },
+  {
+    "id": "mle-utils-chunk-functions",
+    "name": "Chunk 工具函数",
+    "description": "chunk 模块的 1 个顶层函数（python），包含: count_tokens",
+    "nodes": [
+      "mle.utils.chunk.count_tokens"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-utils-component-memory-componentmemory",
+    "name": "ComponentMemory",
+    "description": "类 ComponentMemory (L20-L316)，11 个方法，关键方法: store_trace, get_trace, get_recent_traces, search_traces, add_relationship",
+    "nodes": [
+      "mle.utils.component_memory.ComponentMemory",
+      "mle.utils.component_memory.ComponentMemory.__init__",
+      "mle.utils.component_memory.ComponentMemory.store_trace",
+      "mle.utils.component_memory.ComponentMemory.get_trace",
+      "mle.utils.component_memory.ComponentMemory.get_recent_traces",
+      "mle.utils.component_memory.ComponentMemory.search_traces",
+      "mle.utils.component_memory.ComponentMemory.add_relationship",
+      "mle.utils.component_memory.ComponentMemory.get_related_traces",
+      "mle.utils.component_memory.ComponentMemory.close",
+      "mle.utils.component_memory.ComponentMemory._serialize_data",
+      "mle.utils.component_memory.ComponentMemory._deserialize_data",
+      "mle.utils.component_memory.ComponentMemory._process_trace_result"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/utils/component_memory.py",
+      "startLine": 20,
+      "endLine": 316
+    }
+  },
+  {
+    "id": "mle-utils-component-memory-functions",
+    "name": "Component Memory 工具函数",
+    "description": "component_memory 模块的 3 个顶层函数（python），包含: trace_component, decorator, wrapper",
+    "nodes": [
+      "mle.utils.component_memory.trace_component",
+      "mle.utils.component_memory.decorator",
+      "mle.utils.component_memory.wrapper"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-utils-data-functions",
+    "name": "Data 工具函数",
+    "description": "data 模块的 5 个顶层函数（python），包含: dict_to_markdown, write_item, is_markdown_file, read_markdown, clean_json_string",
+    "nodes": [
+      "mle.utils.data.dict_to_markdown",
+      "mle.utils.data.write_item",
+      "mle.utils.data.is_markdown_file",
+      "mle.utils.data.read_markdown",
+      "mle.utils.data.clean_json_string"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-utils-memory-lancedbmemory",
+    "name": "LanceDBMemory",
+    "description": "类 LanceDBMemory (L12-L247)，12 个方法，关键方法: add, query, list_all_keys, get, get_by_metadata",
+    "nodes": [
+      "mle.utils.memory.LanceDBMemory",
+      "mle.utils.memory.LanceDBMemory.__init__",
+      "mle.utils.memory.LanceDBMemory._open_table",
+      "mle.utils.memory.LanceDBMemory.add",
+      "mle.utils.memory.LanceDBMemory.query",
+      "mle.utils.memory.LanceDBMemory.list_all_keys",
+      "mle.utils.memory.LanceDBMemory.get",
+      "mle.utils.memory.LanceDBMemory.get_by_metadata",
+      "mle.utils.memory.LanceDBMemory.delete",
+      "mle.utils.memory.LanceDBMemory.delete_by_metadata",
+      "mle.utils.memory.LanceDBMemory.drop",
+      "mle.utils.memory.LanceDBMemory.count",
+      "mle.utils.memory.LanceDBMemory.reset"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/utils/memory.py",
+      "startLine": 12,
+      "endLine": 247
+    }
+  },
+  {
+    "id": "mle-utils-memory-mem0",
+    "name": "Mem0",
+    "description": "类 Mem0 (L250-L344)，5 个方法，关键方法: add, query, get_all, reset",
+    "nodes": [
+      "mle.utils.memory.Mem0",
+      "mle.utils.memory.Mem0.__init__",
+      "mle.utils.memory.Mem0.add",
+      "mle.utils.memory.Mem0.query",
+      "mle.utils.memory.Mem0.get_all",
+      "mle.utils.memory.Mem0.reset"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/utils/memory.py",
+      "startLine": 250,
+      "endLine": 344
+    }
+  },
+  {
+    "id": "mle-utils-memory-hybridmemory",
+    "name": "HybridMemory",
+    "description": "类 HybridMemory (L347-L502)，7 个方法，关键方法: add, query, reset, last_n_consolidate, top_k_consolidate",
+    "nodes": [
+      "mle.utils.memory.HybridMemory",
+      "mle.utils.memory.HybridMemory.__init__",
+      "mle.utils.memory.HybridMemory.add",
+      "mle.utils.memory.HybridMemory.query",
+      "mle.utils.memory.HybridMemory.reset",
+      "mle.utils.memory.HybridMemory.last_n_consolidate",
+      "mle.utils.memory.HybridMemory.top_k_consolidate",
+      "mle.utils.memory.HybridMemory.prompt_based_consolidate"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/utils/memory.py",
+      "startLine": 347,
+      "endLine": 502
+    }
+  },
+  {
+    "id": "mle-utils-parser-codeparser",
+    "name": "CodeParser",
+    "description": "类 CodeParser (L19-L351)，12 个方法，关键方法: parse_code, extract_points_of_interest, extract_comments, get_lines_for_points_of_interest, get_lines_for_comments",
+    "nodes": [
+      "mle.utils.parser.CodeParser",
+      "mle.utils.parser.CodeParser.__init__",
+      "mle.utils.parser.CodeParser._install_parsers",
+      "mle.utils.parser.CodeParser._is_repo_valid",
+      "mle.utils.parser.CodeParser.parse_code",
+      "mle.utils.parser.CodeParser.extract_points_of_interest",
+      "mle.utils.parser.CodeParser._get_node_types_of_interest",
+      "mle.utils.parser.CodeParser._get_nodes_for_comments",
+      "mle.utils.parser.CodeParser.extract_comments",
+      "mle.utils.parser.CodeParser.get_lines_for_points_of_interest",
+      "mle.utils.parser.CodeParser.get_lines_for_comments",
+      "mle.utils.parser.CodeParser.print_all_line_types",
+      "mle.utils.parser.CodeParser.map_line_to_node_type"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "mle/utils/parser.py",
+      "startLine": 19,
+      "endLine": 351
+    }
+  },
+  {
+    "id": "mle-utils-parser-functions",
+    "name": "Parser 工具函数",
+    "description": "parser 模块的 1 个顶层函数（python），包含: return_simple_line_numbers_with_code",
+    "nodes": [
+      "mle.utils.parser.return_simple_line_numbers_with_code"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-utils-system-check",
+    "name": "check_* 系列",
+    "description": "system 模块的 2 个 check_* 函数，包含: check_config, check_installed",
+    "nodes": [
+      "mle.utils.system.check_config",
+      "mle.utils.system.check_installed"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "pattern",
+    "codeRange": null
+  },
+  {
+    "id": "mle-utils-system-get",
+    "name": "get_* 系列",
+    "description": "system 模块的 5 个 get_* 函数，包含: get_config, get_directory_name, get_user_id, get_session_id, get_langfuse_observer",
+    "nodes": [
+      "mle.utils.system.get_config",
+      "mle.utils.system.get_directory_name",
+      "mle.utils.system.get_user_id",
+      "mle.utils.system.get_session_id",
+      "mle.utils.system.get_langfuse_observer"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "pattern",
+    "codeRange": null
+  },
+  {
+    "id": "mle-utils-system-list",
+    "name": "list_* 系列",
+    "description": "system 模块的 2 个 list_* 函数，包含: list_files, list_dir_structure",
+    "nodes": [
+      "mle.utils.system.list_files",
+      "mle.utils.system.list_dir_structure"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "pattern",
+    "codeRange": null
+  },
+  {
+    "id": "mle-utils-system",
+    "name": "_* 系列",
+    "description": "system 模块的 2 个 _* 函数，包含: _observe, _fn",
+    "nodes": [
+      "mle.utils.system._observe",
+      "mle.utils.system._fn"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "pattern",
+    "codeRange": null
+  },
+  {
+    "id": "mle-utils-system-functions",
+    "name": "System 工具函数",
+    "description": "system 模块的 10 个顶层函数（python），包含: print_in_box, ask_text, write_config, delete_directory, extract_file_name",
+    "nodes": [
+      "mle.utils.system.print_in_box",
+      "mle.utils.system.ask_text",
+      "mle.utils.system.write_config",
+      "mle.utils.system.delete_directory",
+      "mle.utils.system.extract_file_name",
+      "mle.utils.system.read_file",
+      "mle.utils.system.is_hidden_path",
+      "mle.utils.system.load_file",
+      "mle.utils.system.startup_web",
+      "mle.utils.system.query"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-workflow-baseline-functions",
+    "name": "Baseline 工具函数",
+    "description": "baseline 模块的 2 个顶层函数（python），包含: ask_data, baseline",
+    "nodes": [
+      "mle.workflow.baseline.ask_data",
+      "mle.workflow.baseline.baseline"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-workflow-chat-functions",
+    "name": "Chat 工具函数",
+    "description": "chat 模块的 1 个顶层函数（python），包含: chat",
+    "nodes": [
+      "mle.workflow.chat.chat"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-workflow-kaggle-functions",
+    "name": "Kaggle 工具函数",
+    "description": "kaggle 模块的 2 个顶层函数（python），包含: auto_kaggle, kaggle",
+    "nodes": [
+      "mle.workflow.kaggle.auto_kaggle",
+      "mle.workflow.kaggle.kaggle"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "mle-workflow-report-functions",
+    "name": "Report 工具函数",
+    "description": "report 模块的 3 个顶层函数（python），包含: ask_data, report, report_local",
+    "nodes": [
+      "mle.workflow.report.ask_data",
+      "mle.workflow.report.report",
+      "mle.workflow.report.report_local"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "web-app-layout-functions",
+    "name": "Layout 工具函数",
+    "description": "layout 模块的 1 个顶层函数（tsx），包含: RootLayout",
+    "nodes": [
+      "web.app.layout.RootLayout"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "web-app-page-functions",
+    "name": "Page 工具函数",
+    "description": "page 模块的 1 个顶层函数（tsx），包含: Home",
+    "nodes": [
+      "web.app.page.Home"
+    ],
+    "projects": [
+      "MLE-agent"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  }
+]

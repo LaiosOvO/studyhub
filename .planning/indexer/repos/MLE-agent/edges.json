@@ -1,0 +1,2747 @@
+[
+  {
+    "source": "exp.cli",
+    "target": "exp.cli.require_init",
+    "relation": "contains"
+  },
+  {
+    "source": "exp.cli",
+    "target": "exp.cli.wrapper",
+    "relation": "contains"
+  },
+  {
+    "source": "exp.cli",
+    "target": "exp.cli.bench",
+    "relation": "contains"
+  },
+  {
+    "source": "exp.cli",
+    "target": "exp.cli.init",
+    "relation": "contains"
+  },
+  {
+    "source": "exp.cli",
+    "target": "exp.cli.prepare",
+    "relation": "contains"
+  },
+  {
+    "source": "exp.cli",
+    "target": "exp.cli._read_text_utf8",
+    "relation": "contains"
+  },
+  {
+    "source": "exp.cli",
+    "target": "exp.cli.grade",
+    "relation": "contains"
+  },
+  {
+    "source": "exp.cli",
+    "target": "exp.cli.grade_sample",
+    "relation": "contains"
+  },
+  {
+    "source": "exp.cli",
+    "target": "json",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.cli",
+    "target": "sys",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.cli",
+    "target": "pathlib",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.cli",
+    "target": "mle",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.cli",
+    "target": "exp.init",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.cli",
+    "target": "click",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.cli",
+    "target": "mlebench",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.cli",
+    "target": "mlebench.registry",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.cli",
+    "target": "exp.mlebench_api",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.cli",
+    "target": "pathlib",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.init",
+    "target": "exp.init.is_init",
+    "relation": "contains"
+  },
+  {
+    "source": "exp.init",
+    "target": "exp.init.find_git_lfs",
+    "relation": "contains"
+  },
+  {
+    "source": "exp.init",
+    "target": "exp.init.init",
+    "relation": "contains"
+  },
+  {
+    "source": "exp.init",
+    "target": "importlib.util",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.init",
+    "target": "shutil",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.init",
+    "target": "subprocess",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.init",
+    "target": "tempfile",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.init",
+    "target": "pathlib",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.init",
+    "target": "git",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.init",
+    "target": "typing",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.init",
+    "target": "exp.utils",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.init",
+    "target": "typing",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.mlebench_api",
+    "target": "exp.mlebench_api.prepare",
+    "relation": "contains"
+  },
+  {
+    "source": "exp.mlebench_api",
+    "target": "exp.mlebench_api._read_text_utf8",
+    "relation": "contains"
+  },
+  {
+    "source": "exp.mlebench_api",
+    "target": "exp.mlebench_api.grade",
+    "relation": "contains"
+  },
+  {
+    "source": "exp.mlebench_api",
+    "target": "exp.mlebench_api.grade_sample",
+    "relation": "contains"
+  },
+  {
+    "source": "exp.mlebench_api",
+    "target": "sys",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.mlebench_api",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.mlebench_api",
+    "target": "pathlib",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.mlebench_api",
+    "target": "typing",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.mlebench_api",
+    "target": "mlebench.data",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.mlebench_api",
+    "target": "mlebench.grade",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.mlebench_api",
+    "target": "mlebench.grade_helpers",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.mlebench_api",
+    "target": "mlebench.registry",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.mlebench_api",
+    "target": "typing",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.mlebench_api",
+    "target": "pathlib",
+    "relation": "imports"
+  },
+  {
+    "source": "exp.utils",
+    "target": "exp.utils.get_logger",
+    "relation": "contains"
+  },
+  {
+    "source": "exp.utils",
+    "target": "logging",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.advisor",
+    "target": "mle.agents.advisor.process_report",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.advisor",
+    "target": "mle.agents.advisor.AdviseAgent",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.advisor.AdviseAgent",
+    "target": "mle.agents.advisor.AdviseAgent.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.advisor.AdviseAgent",
+    "target": "mle.agents.advisor.AdviseAgent.suggest",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.advisor.AdviseAgent",
+    "target": "mle.agents.advisor.AdviseAgent.interact",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.advisor.AdviseAgent",
+    "target": "mle.agents.advisor.AdviseAgent.clarify_dataset",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.advisor",
+    "target": "sys",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.advisor",
+    "target": "json",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.advisor",
+    "target": "rich.console",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.advisor",
+    "target": "mle.function",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.advisor",
+    "target": "mle.utils",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.advisor",
+    "target": "mle.utils.component_memory",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.chat",
+    "target": "mle.agents.chat.ChatAgent",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.chat.ChatAgent",
+    "target": "mle.agents.chat.ChatAgent.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.chat.ChatAgent",
+    "target": "mle.agents.chat.ChatAgent.greet",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.chat.ChatAgent",
+    "target": "mle.agents.chat.ChatAgent.chat",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.chat",
+    "target": "rich.console",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.chat",
+    "target": "mle.function",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.chat",
+    "target": "mle.utils",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.chat",
+    "target": "mle.utils.component_memory",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.coder",
+    "target": "mle.agents.coder.process_summary",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.coder",
+    "target": "mle.agents.coder.CodeAgent",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.coder.CodeAgent",
+    "target": "mle.agents.coder.CodeAgent.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.coder.CodeAgent",
+    "target": "mle.agents.coder.CodeAgent.read_requirement",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.coder.CodeAgent",
+    "target": "mle.agents.coder.CodeAgent.code",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.coder.CodeAgent",
+    "target": "mle.agents.coder.CodeAgent.debug",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.coder.CodeAgent",
+    "target": "mle.agents.coder.CodeAgent.interact",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.coder",
+    "target": "sys",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.coder",
+    "target": "json",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.coder",
+    "target": "rich.console",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.coder",
+    "target": "mle.function",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.coder",
+    "target": "mle.utils",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.coder",
+    "target": "mle.utils.component_memory",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.debugger",
+    "target": "mle.agents.debugger.process_debug_report",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.debugger",
+    "target": "mle.agents.debugger.DebugAgent",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.debugger.DebugAgent",
+    "target": "mle.agents.debugger.DebugAgent.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.debugger.DebugAgent",
+    "target": "mle.agents.debugger.DebugAgent.analyze_with_log",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.debugger.DebugAgent",
+    "target": "mle.agents.debugger.DebugAgent.analyze",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.debugger",
+    "target": "json",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.debugger",
+    "target": "mle.function",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.debugger",
+    "target": "mle.utils",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.debugger",
+    "target": "rich.console",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.debugger",
+    "target": "mle.utils.component_memory",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.planner",
+    "target": "mle.agents.planner.process_plan",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.planner",
+    "target": "mle.agents.planner.PlanAgent",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.planner.PlanAgent",
+    "target": "mle.agents.planner.PlanAgent.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.planner.PlanAgent",
+    "target": "mle.agents.planner.PlanAgent.plan",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.planner.PlanAgent",
+    "target": "mle.agents.planner.PlanAgent.interact",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.planner",
+    "target": "sys",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.planner",
+    "target": "json",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.planner",
+    "target": "questionary",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.planner",
+    "target": "rich.console",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.planner",
+    "target": "mle.utils",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.planner",
+    "target": "mle.utils.component_memory",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.reporter",
+    "target": "mle.agents.reporter.ReportAgent",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.reporter.ReportAgent",
+    "target": "mle.agents.reporter.ReportAgent.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.reporter.ReportAgent",
+    "target": "mle.agents.reporter.ReportAgent.process_knowledge",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.reporter.ReportAgent",
+    "target": "mle.agents.reporter.ReportAgent.gen_report",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.reporter",
+    "target": "json",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.reporter",
+    "target": "rich.console",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.reporter",
+    "target": "time",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.reporter",
+    "target": "mle.utils.component_memory",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.summarizer",
+    "target": "mle.agents.summarizer.GitHubSummaryAgent",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.summarizer.GitHubSummaryAgent",
+    "target": "mle.agents.summarizer.GitHubSummaryAgent.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.summarizer.GitHubSummaryAgent",
+    "target": "mle.agents.summarizer.GitHubSummaryAgent.process_knowledge",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.summarizer.GitHubSummaryAgent",
+    "target": "mle.agents.summarizer.GitHubSummaryAgent.summarize",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.summarizer.GitHubSummaryAgent",
+    "target": "mle.agents.summarizer.GitHubSummaryAgent.kaggle_request_summarize",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.summarizer",
+    "target": "mle.agents.summarizer.GitSummaryAgent",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.summarizer.GitSummaryAgent",
+    "target": "mle.agents.summarizer.GitSummaryAgent.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.summarizer.GitSummaryAgent",
+    "target": "mle.agents.summarizer.GitSummaryAgent.process_knowledge",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.summarizer.GitSummaryAgent",
+    "target": "mle.agents.summarizer.GitSummaryAgent.summarize",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.agents.summarizer",
+    "target": "json",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.summarizer",
+    "target": "rich.console",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.summarizer",
+    "target": "mle.function",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.agents.summarizer",
+    "target": "mle.integration",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.cli.cli",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.cli.start",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.cli.report",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.cli.report_local",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.cli.kaggle",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.cli.chat",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.cli.serve",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.cli.web",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.cli.new",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.cli.integrate",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.cli.memory",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.cli.traces",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.cli",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "re",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "yaml",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "click",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "pickle",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "uvicorn",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "questionary",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "pathlib",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "rich.console",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "rich.progress",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "json",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.server",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.utils.system",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.utils",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.utils",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.utils.component_memory",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "concurrent.futures",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.integration.github",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "mle.integration.google_calendar",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.cli",
+    "target": "exp.cli",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function",
+    "target": "mle.function.get_function",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function",
+    "target": "mle.function.process_function_name",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function.data",
+    "target": "mle.function.data.unzip_data",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function.data",
+    "target": "mle.function.data.preview_zip_structure",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function.data",
+    "target": "mle.function.data.preview_csv_data",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function.data",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.data",
+    "target": "py7zr",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.data",
+    "target": "gzip",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.data",
+    "target": "bz2",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.data",
+    "target": "lzma",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.data",
+    "target": "shutil",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.data",
+    "target": "tarfile",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.data",
+    "target": "zipfile",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.data",
+    "target": "textwrap",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.data",
+    "target": "tempfile",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.data",
+    "target": "pandas.api.types",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.execution",
+    "target": "mle.function.execution.execute_command",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function.execution",
+    "target": "subprocess",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.execution",
+    "target": "collections",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.files",
+    "target": "mle.function.files.read_file",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function.files",
+    "target": "mle.function.files.create_file",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function.files",
+    "target": "mle.function.files.write_file",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function.files",
+    "target": "mle.function.files.list_files",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function.files",
+    "target": "mle.function.files.create_directory",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function.files",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.interaction",
+    "target": "mle.function.interaction.ask_question",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function.interaction",
+    "target": "mle.function.interaction.ask_yes_no",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function.interaction",
+    "target": "mle.function.interaction.ask_choices",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function.interaction",
+    "target": "questionary",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.search",
+    "target": "mle.function.search.search_github_repos",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function.search",
+    "target": "mle.function.search.web_search",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function.search",
+    "target": "mle.function.search.search_arxiv",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function.search",
+    "target": "mle.function.search.search_papers_with_code",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.function.search",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.search",
+    "target": "requests",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.search",
+    "target": "tavily",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.function.search",
+    "target": "xml.etree",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.github",
+    "target": "mle.integration.github.github_login",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github",
+    "target": "mle.integration.github.GitHubIntegration",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration._make_request",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration._process_items",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration.get_user_info",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration.get_readme",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration.get_license",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration.get_contributors",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration.get_source_code",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration.get_contents",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration.get_commit_history",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration.get_issues",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration.get_metadata",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration.get_pull_requests",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration.get_pull_request_commits",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration.get_pull_request_diff",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration.get_releases",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration.get_structure",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration.traverse_tree",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github.GitHubIntegration",
+    "target": "mle.integration.github.GitHubIntegration.get_user_activity",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.github",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.github",
+    "target": "base64",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.github",
+    "target": "requests",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.github",
+    "target": "questionary",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.github",
+    "target": "fnmatch",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.github",
+    "target": "datetime",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.google_calendar",
+    "target": "mle.integration.google_calendar.google_calendar_login",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.google_calendar",
+    "target": "mle.integration.google_calendar.GoogleCalendarIntegration",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.google_calendar.GoogleCalendarIntegration",
+    "target": "mle.integration.google_calendar.GoogleCalendarIntegration.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.google_calendar.GoogleCalendarIntegration",
+    "target": "mle.integration.google_calendar.GoogleCalendarIntegration.get_events",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.google_calendar",
+    "target": "json",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.google_calendar",
+    "target": "datetime",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.google_calendar",
+    "target": "mle.utils",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.google_calendar",
+    "target": "google.auth.transport.requests",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.google_calendar",
+    "target": "google_auth_oauthlib.flow",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.google_calendar",
+    "target": "googleapiclient.discovery",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.kaggle",
+    "target": "mle.integration.kaggle.KaggleIntegration",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.kaggle.KaggleIntegration",
+    "target": "mle.integration.kaggle.KaggleIntegration.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.kaggle.KaggleIntegration",
+    "target": "mle.integration.kaggle.KaggleIntegration.list_competition",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.kaggle.KaggleIntegration",
+    "target": "mle.integration.kaggle.KaggleIntegration.download_competition_dataset",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.kaggle.KaggleIntegration",
+    "target": "mle.integration.kaggle.KaggleIntegration.fetch_competition_overview",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.kaggle",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.kaggle",
+    "target": "json",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.kaggle",
+    "target": "requests",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.kaggle",
+    "target": "questionary",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.kaggle",
+    "target": "zipfile",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.kaggle",
+    "target": "kaggle.api.kaggle_api_extended",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.local_git",
+    "target": "mle.integration.local_git.GitIntegration",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.local_git.GitIntegration",
+    "target": "mle.integration.local_git.GitIntegration.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.local_git.GitIntegration",
+    "target": "mle.integration.local_git.GitIntegration.get_repo_status",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.local_git.GitIntegration",
+    "target": "mle.integration.local_git.GitIntegration.get_commit_history",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.local_git.GitIntegration",
+    "target": "mle.integration.local_git.GitIntegration.get_commit_diff",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.local_git.GitIntegration",
+    "target": "mle.integration.local_git.GitIntegration.get_source_code",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.local_git.GitIntegration",
+    "target": "mle.integration.local_git.GitIntegration.get_contents",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.local_git.GitIntegration",
+    "target": "mle.integration.local_git.GitIntegration.get_readme",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.local_git.GitIntegration",
+    "target": "mle.integration.local_git.GitIntegration.get_structure",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.local_git.GitIntegration",
+    "target": "mle.integration.local_git.GitIntegration.get_user_activity",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.integration.local_git",
+    "target": "git",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.local_git",
+    "target": "datetime",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.local_git",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.local_git",
+    "target": "fnmatch",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.integration.local_git",
+    "target": "subprocess",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model",
+    "target": "mle.model.ObservableModel",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.ObservableModel",
+    "target": "mle.model.ObservableModel.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.ObservableModel",
+    "target": "mle.model.ObservableModel.query",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.ObservableModel",
+    "target": "mle.model.ObservableModel.stream",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model",
+    "target": "mle.model.load_model",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model",
+    "target": "mle.utils",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model",
+    "target": "mle.utils",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.anthropic",
+    "target": "mle.model.anthropic.ClaudeModel",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.anthropic.ClaudeModel",
+    "target": "mle.model.anthropic.ClaudeModel.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.anthropic.ClaudeModel",
+    "target": "mle.model.anthropic.ClaudeModel._add_tool_result_into_chat_history",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.anthropic.ClaudeModel",
+    "target": "mle.model.anthropic.ClaudeModel.query",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.anthropic.ClaudeModel",
+    "target": "mle.model.anthropic.ClaudeModel.stream",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.anthropic",
+    "target": "importlib.util",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.anthropic",
+    "target": "mle.function",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.anthropic",
+    "target": "mle.model.common",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.common",
+    "target": "mle.model.common.Model",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.common.Model",
+    "target": "mle.model.common.Model.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.common.Model",
+    "target": "mle.model.common.Model.query",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.common.Model",
+    "target": "mle.model.common.Model.stream",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.common",
+    "target": "abc",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.deepseek",
+    "target": "mle.model.deepseek.DeepSeekModel",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.deepseek.DeepSeekModel",
+    "target": "mle.model.deepseek.DeepSeekModel.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.deepseek.DeepSeekModel",
+    "target": "mle.model.deepseek.DeepSeekModel._convert_functions_to_tools",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.deepseek.DeepSeekModel",
+    "target": "mle.model.deepseek.DeepSeekModel.query",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.deepseek.DeepSeekModel",
+    "target": "mle.model.deepseek.DeepSeekModel.stream",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.deepseek",
+    "target": "importlib.util",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.deepseek",
+    "target": "json",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.deepseek",
+    "target": "mle.function",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.deepseek",
+    "target": "mle.model.common",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.gemini",
+    "target": "mle.model.gemini.GeminiModel",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.gemini.GeminiModel",
+    "target": "mle.model.gemini.GeminiModel.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.gemini.GeminiModel",
+    "target": "mle.model.gemini.GeminiModel._create_gemini_tools",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.gemini.GeminiModel",
+    "target": "mle.model.gemini.GeminiModel._adapt_history_for_gemini",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.gemini.GeminiModel",
+    "target": "mle.model.gemini.GeminiModel.query",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.gemini.GeminiModel",
+    "target": "mle.model.gemini.GeminiModel.stream",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.gemini",
+    "target": "mle.function",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.gemini",
+    "target": "mle.model.common",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.gemini",
+    "target": "google.genai",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.gemini",
+    "target": "google.genai",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.mistral",
+    "target": "mle.model.mistral.MistralModel",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.mistral.MistralModel",
+    "target": "mle.model.mistral.MistralModel.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.mistral.MistralModel",
+    "target": "mle.model.mistral.MistralModel._convert_functions_to_tools",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.mistral.MistralModel",
+    "target": "mle.model.mistral.MistralModel.query",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.mistral.MistralModel",
+    "target": "mle.model.mistral.MistralModel.stream",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.mistral",
+    "target": "importlib.util",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.mistral",
+    "target": "json",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.mistral",
+    "target": "mle.function",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.mistral",
+    "target": "mle.model.common",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.ollama",
+    "target": "mle.model.ollama.OllamaModel",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.ollama.OllamaModel",
+    "target": "mle.model.ollama.OllamaModel.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.ollama.OllamaModel",
+    "target": "mle.model.ollama.OllamaModel._clean_think_tags",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.ollama.OllamaModel",
+    "target": "mle.model.ollama.OllamaModel._process_message",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.ollama.OllamaModel",
+    "target": "mle.model.ollama.OllamaModel.query",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.ollama.OllamaModel",
+    "target": "mle.model.ollama.OllamaModel.stream",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.ollama",
+    "target": "importlib.util",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.ollama",
+    "target": "re",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.openai",
+    "target": "mle.model.openai.OpenAIModel",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.openai.OpenAIModel",
+    "target": "mle.model.openai.OpenAIModel.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.openai.OpenAIModel",
+    "target": "mle.model.openai.OpenAIModel.query",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.openai.OpenAIModel",
+    "target": "mle.model.openai.OpenAIModel.stream",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.openai",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.openai",
+    "target": "importlib.util",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.openai",
+    "target": "json",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.openai",
+    "target": "mle.function",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.openai",
+    "target": "mle.model.common",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.vllm",
+    "target": "mle.model.vllm.vLLMModel",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.vllm.vLLMModel",
+    "target": "mle.model.vllm.vLLMModel.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.vllm.vLLMModel",
+    "target": "mle.model.vllm.vLLMModel.normalize_chat_history",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.vllm.vLLMModel",
+    "target": "mle.model.vllm.vLLMModel.query",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.vllm.vLLMModel",
+    "target": "mle.model.vllm.vLLMModel.stream",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.model.vllm",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.vllm",
+    "target": "json",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.vllm",
+    "target": "importlib.util",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.vllm",
+    "target": "typing",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.vllm",
+    "target": "mle.model.common",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.model.vllm",
+    "target": "mle.function",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.server.app",
+    "target": "mle.server.app.ReportRequest",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.server.app",
+    "target": "mle.server.app.root",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.server.app",
+    "target": "mle.server.app.read_latest_report",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.server.app",
+    "target": "mle.server.app.gen_report",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.server.app",
+    "target": "mle.server.app.gen_report_async",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.server.app",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.server.app",
+    "target": "json",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.server.app",
+    "target": "typing",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.server.app",
+    "target": "datetime",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.server.app",
+    "target": "pydantic",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.server.app",
+    "target": "fastapi",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.server.app",
+    "target": "fastapi.responses",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.server.app",
+    "target": "fastapi.middleware.cors",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.server.app",
+    "target": "mle.workflow",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.server.app",
+    "target": "mle.utils",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.cache",
+    "target": "mle.utils.cache.WorkflowCacheOperator",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.cache.WorkflowCacheOperator",
+    "target": "mle.utils.cache.WorkflowCacheOperator.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.cache.WorkflowCacheOperator",
+    "target": "mle.utils.cache.WorkflowCacheOperator.store",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.cache.WorkflowCacheOperator",
+    "target": "mle.utils.cache.WorkflowCacheOperator.resume",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.cache.WorkflowCacheOperator",
+    "target": "mle.utils.cache.WorkflowCacheOperator.__enter__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.cache.WorkflowCacheOperator",
+    "target": "mle.utils.cache.WorkflowCacheOperator.__exit__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.cache",
+    "target": "mle.utils.cache.WorkflowCache",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.cache.WorkflowCache",
+    "target": "mle.utils.cache.WorkflowCache.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.cache.WorkflowCache",
+    "target": "mle.utils.cache.WorkflowCache.is_empty",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.cache.WorkflowCache",
+    "target": "mle.utils.cache.WorkflowCache.remove",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.cache.WorkflowCache",
+    "target": "mle.utils.cache.WorkflowCache.current_step",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.cache.WorkflowCache",
+    "target": "mle.utils.cache.WorkflowCache.resume_variable",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.cache.WorkflowCache",
+    "target": "mle.utils.cache.WorkflowCache._load_cache_buffer",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.cache.WorkflowCache",
+    "target": "mle.utils.cache.WorkflowCache._store_cache_buffer",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.cache.WorkflowCache",
+    "target": "mle.utils.cache.WorkflowCache.__call__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.cache.WorkflowCache",
+    "target": "mle.utils.cache.WorkflowCache.__str__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.cache",
+    "target": "pickle",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.cache",
+    "target": "typing",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.cache",
+    "target": "datetime",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.cache",
+    "target": "mle.utils.system",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.chunk",
+    "target": "mle.utils.chunk.count_tokens",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.chunk",
+    "target": "mle.utils.chunk.Chunker",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.chunk.Chunker",
+    "target": "mle.utils.chunk.Chunker.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.chunk.Chunker",
+    "target": "mle.utils.chunk.Chunker.chunk",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.chunk.Chunker",
+    "target": "mle.utils.chunk.Chunker.get_chunk",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.chunk.Chunker",
+    "target": "mle.utils.chunk.Chunker.print_chunks",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.chunk.Chunker",
+    "target": "mle.utils.chunk.Chunker.consolidate_chunks_into_file",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.chunk.Chunker",
+    "target": "mle.utils.chunk.Chunker.count_lines",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.chunk",
+    "target": "mle.utils.chunk.CodeChunker",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.chunk.CodeChunker",
+    "target": "mle.utils.chunk.CodeChunker.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.chunk.CodeChunker",
+    "target": "mle.utils.chunk.CodeChunker.chunk",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.chunk.CodeChunker",
+    "target": "mle.utils.chunk.CodeChunker.get_chunk",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.chunk",
+    "target": "tiktoken",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.chunk",
+    "target": "abc",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.component_memory",
+    "target": "mle.utils.component_memory.ComponentMemory",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.component_memory.ComponentMemory",
+    "target": "mle.utils.component_memory.ComponentMemory.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.component_memory.ComponentMemory",
+    "target": "mle.utils.component_memory.ComponentMemory.store_trace",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.component_memory.ComponentMemory",
+    "target": "mle.utils.component_memory.ComponentMemory.get_trace",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.component_memory.ComponentMemory",
+    "target": "mle.utils.component_memory.ComponentMemory.get_recent_traces",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.component_memory.ComponentMemory",
+    "target": "mle.utils.component_memory.ComponentMemory.search_traces",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.component_memory.ComponentMemory",
+    "target": "mle.utils.component_memory.ComponentMemory.add_relationship",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.component_memory.ComponentMemory",
+    "target": "mle.utils.component_memory.ComponentMemory.get_related_traces",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.component_memory.ComponentMemory",
+    "target": "mle.utils.component_memory.ComponentMemory.close",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.component_memory.ComponentMemory",
+    "target": "mle.utils.component_memory.ComponentMemory._serialize_data",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.component_memory.ComponentMemory",
+    "target": "mle.utils.component_memory.ComponentMemory._deserialize_data",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.component_memory.ComponentMemory",
+    "target": "mle.utils.component_memory.ComponentMemory._process_trace_result",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.component_memory",
+    "target": "mle.utils.component_memory.trace_component",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.component_memory",
+    "target": "mle.utils.component_memory.decorator",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.component_memory",
+    "target": "mle.utils.component_memory.wrapper",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.component_memory",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.component_memory",
+    "target": "json",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.component_memory",
+    "target": "uuid",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.component_memory",
+    "target": "time",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.component_memory",
+    "target": "traceback",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.component_memory",
+    "target": "functools",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.component_memory",
+    "target": "datetime",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.component_memory",
+    "target": "typing",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.data",
+    "target": "mle.utils.data.dict_to_markdown",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.data",
+    "target": "mle.utils.data.write_item",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.data",
+    "target": "mle.utils.data.is_markdown_file",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.data",
+    "target": "mle.utils.data.read_markdown",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.data",
+    "target": "mle.utils.data.clean_json_string",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.data",
+    "target": "re",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.data",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.data",
+    "target": "json",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.data",
+    "target": "typing",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.memory",
+    "target": "mle.utils.memory.LanceDBMemory",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.LanceDBMemory",
+    "target": "mle.utils.memory.LanceDBMemory.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.LanceDBMemory",
+    "target": "mle.utils.memory.LanceDBMemory._open_table",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.LanceDBMemory",
+    "target": "mle.utils.memory.LanceDBMemory.add",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.LanceDBMemory",
+    "target": "mle.utils.memory.LanceDBMemory.query",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.LanceDBMemory",
+    "target": "mle.utils.memory.LanceDBMemory.list_all_keys",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.LanceDBMemory",
+    "target": "mle.utils.memory.LanceDBMemory.get",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.LanceDBMemory",
+    "target": "mle.utils.memory.LanceDBMemory.get_by_metadata",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.LanceDBMemory",
+    "target": "mle.utils.memory.LanceDBMemory.delete",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.LanceDBMemory",
+    "target": "mle.utils.memory.LanceDBMemory.delete_by_metadata",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.LanceDBMemory",
+    "target": "mle.utils.memory.LanceDBMemory.drop",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.LanceDBMemory",
+    "target": "mle.utils.memory.LanceDBMemory.count",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.LanceDBMemory",
+    "target": "mle.utils.memory.LanceDBMemory.reset",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory",
+    "target": "mle.utils.memory.Mem0",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.Mem0",
+    "target": "mle.utils.memory.Mem0.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.Mem0",
+    "target": "mle.utils.memory.Mem0.add",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.Mem0",
+    "target": "mle.utils.memory.Mem0.query",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.Mem0",
+    "target": "mle.utils.memory.Mem0.get_all",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.Mem0",
+    "target": "mle.utils.memory.Mem0.reset",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory",
+    "target": "mle.utils.memory.HybridMemory",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.HybridMemory",
+    "target": "mle.utils.memory.HybridMemory.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.HybridMemory",
+    "target": "mle.utils.memory.HybridMemory.add",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.HybridMemory",
+    "target": "mle.utils.memory.HybridMemory.query",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.HybridMemory",
+    "target": "mle.utils.memory.HybridMemory.reset",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.HybridMemory",
+    "target": "mle.utils.memory.HybridMemory.last_n_consolidate",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.HybridMemory",
+    "target": "mle.utils.memory.HybridMemory.top_k_consolidate",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory.HybridMemory",
+    "target": "mle.utils.memory.HybridMemory.prompt_based_consolidate",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.memory",
+    "target": "datetime",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.memory",
+    "target": "uuid",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.memory",
+    "target": "typing",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.memory",
+    "target": "lancedb",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.memory",
+    "target": "lancedb.embeddings",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.memory",
+    "target": "mem0",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.memory",
+    "target": "mle.utils",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.parser",
+    "target": "mle.utils.parser.return_simple_line_numbers_with_code",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.parser",
+    "target": "mle.utils.parser.CodeParser",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.parser.CodeParser",
+    "target": "mle.utils.parser.CodeParser.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.parser.CodeParser",
+    "target": "mle.utils.parser.CodeParser._install_parsers",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.parser.CodeParser",
+    "target": "mle.utils.parser.CodeParser._is_repo_valid",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.parser.CodeParser",
+    "target": "mle.utils.parser.CodeParser.parse_code",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.parser.CodeParser",
+    "target": "mle.utils.parser.CodeParser.extract_points_of_interest",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.parser.CodeParser",
+    "target": "mle.utils.parser.CodeParser._get_node_types_of_interest",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.parser.CodeParser",
+    "target": "mle.utils.parser.CodeParser._get_nodes_for_comments",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.parser.CodeParser",
+    "target": "mle.utils.parser.CodeParser.extract_comments",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.parser.CodeParser",
+    "target": "mle.utils.parser.CodeParser.get_lines_for_points_of_interest",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.parser.CodeParser",
+    "target": "mle.utils.parser.CodeParser.get_lines_for_comments",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.parser.CodeParser",
+    "target": "mle.utils.parser.CodeParser.print_all_line_types",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.parser.CodeParser",
+    "target": "mle.utils.parser.CodeParser.map_line_to_node_type",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.parser",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.parser",
+    "target": "subprocess",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.parser",
+    "target": "typing",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.parser",
+    "target": "tree_sitter",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.parser",
+    "target": "warnings",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.print_in_box",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.ask_text",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.check_config",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.get_config",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.write_config",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.delete_directory",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.get_directory_name",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.extract_file_name",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.read_file",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.list_files",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.is_hidden_path",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.list_dir_structure",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.load_file",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.check_installed",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.startup_web",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.get_user_id",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.get_session_id",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.get_langfuse_observer",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system._observe",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system._fn",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "mle.utils.system.query",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "re",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "uuid",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "yaml",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "base64",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "shutil",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "fnmatch",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "requests",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "platform",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "subprocess",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "importlib.util",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "rich.panel",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "rich.prompt",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "rich.console",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "typing",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.utils.system",
+    "target": "socket",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.baseline",
+    "target": "mle.workflow.baseline.ask_data",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.workflow.baseline",
+    "target": "mle.workflow.baseline.baseline",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.workflow.baseline",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.baseline",
+    "target": "questionary",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.baseline",
+    "target": "rich.console",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.baseline",
+    "target": "mle.model",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.baseline",
+    "target": "mle.utils",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.baseline",
+    "target": "mle.agents",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.chat",
+    "target": "mle.workflow.chat.chat",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.workflow.chat",
+    "target": "questionary",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.chat",
+    "target": "rich.live",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.chat",
+    "target": "rich.panel",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.chat",
+    "target": "rich.console",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.chat",
+    "target": "rich.markdown",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.chat",
+    "target": "mle.model",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.chat",
+    "target": "mle.utils",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.chat",
+    "target": "mle.agents",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.kaggle",
+    "target": "mle.workflow.kaggle.auto_kaggle",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.workflow.kaggle",
+    "target": "mle.workflow.kaggle.kaggle",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.workflow.kaggle",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.kaggle",
+    "target": "questionary",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.kaggle",
+    "target": "typing",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.kaggle",
+    "target": "rich.console",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.kaggle",
+    "target": "mle.model",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.kaggle",
+    "target": "mle.function",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.kaggle",
+    "target": "mle.integration",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.kaggle",
+    "target": "mle.utils",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.kaggle",
+    "target": "mle.agents",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.report",
+    "target": "mle.workflow.report.ask_data",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.workflow.report",
+    "target": "mle.workflow.report.report",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.workflow.report",
+    "target": "mle.workflow.report.report_local",
+    "relation": "contains"
+  },
+  {
+    "source": "mle.workflow.report",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.report",
+    "target": "pickle",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.report",
+    "target": "rich.console",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.report",
+    "target": "mle.model",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.report",
+    "target": "mle.utils.system",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.report",
+    "target": "mle.integration",
+    "relation": "imports"
+  },
+  {
+    "source": "mle.workflow.report",
+    "target": "mle.agents",
+    "relation": "imports"
+  },
+  {
+    "source": "web.app.layout",
+    "target": "web.app.layout.RootLayout",
+    "relation": "contains"
+  },
+  {
+    "source": "web.app.layout",
+    "target": "react",
+    "relation": "imports"
+  },
+  {
+    "source": "web.app.layout",
+    "target": "next/font/local",
+    "relation": "imports"
+  },
+  {
+    "source": "web.app.layout",
+    "target": "./globals.css",
+    "relation": "imports"
+  },
+  {
+    "source": "web.app.page",
+    "target": "web.app.page.Home",
+    "relation": "contains"
+  },
+  {
+    "source": "web.app.page",
+    "target": "react",
+    "relation": "imports"
+  },
+  {
+    "source": "web.app.page",
+    "target": "antd",
+    "relation": "imports"
+  },
+  {
+    "source": "web.app.page",
+    "target": "@ant-design/icons",
+    "relation": "imports"
+  },
+  {
+    "source": "web.app.page",
+    "target": "next/dynamic",
+    "relation": "imports"
+  },
+  {
+    "source": "web.tailwind.config",
+    "target": "tailwindcss",
+    "relation": "imports"
+  }
+]

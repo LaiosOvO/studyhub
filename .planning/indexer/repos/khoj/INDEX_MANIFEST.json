@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0",
+  "project": "khoj",
+  "indexedAt": "2026-03-15T07:44:55.452Z",
+  "stats": {
+    "totalFiles": 378,
+    "totalLines": 83837,
+    "totalNodes": 762,
+    "totalEdges": 4319,
+    "totalFeatures": 294,
+    "languages": [
+      "bash",
+      "java",
+      "javascript",
+      "python",
+      "tsx",
+      "typescript"
+    ]
+  },
+  "source": {
+    "path": "/Users/admin/ai/ref/khoj",
+    "url": null
+  }
+}

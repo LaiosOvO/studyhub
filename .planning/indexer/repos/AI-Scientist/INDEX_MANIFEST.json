@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "project": "AI-Scientist",
+  "indexedAt": "2026-03-15T07:44:39.552Z",
+  "stats": {
+    "totalFiles": 131,
+    "totalLines": 43260,
+    "totalNodes": 551,
+    "totalEdges": 3306,
+    "totalFeatures": 281,
+    "languages": [
+      "python"
+    ]
+  },
+  "source": {
+    "path": "/Users/admin/ai/ref/AI-Scientist",
+    "url": null
+  }
+}

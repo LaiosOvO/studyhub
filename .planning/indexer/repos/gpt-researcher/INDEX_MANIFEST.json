@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "project": "gpt-researcher",
+  "indexedAt": "2026-03-15T07:44:21.394Z",
+  "stats": {
+    "totalFiles": 281,
+    "totalLines": 32896,
+    "totalNodes": 500,
+    "totalEdges": 1919,
+    "totalFeatures": 134,
+    "languages": [
+      "javascript",
+      "python",
+      "tsx",
+      "typescript"
+    ]
+  },
+  "source": {
+    "path": "/Users/admin/ai/ref/gpt-researcher",
+    "url": null
+  }
+}

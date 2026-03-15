@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "project": "autoresearch",
+  "indexedAt": "2026-03-15T07:43:43.435Z",
+  "stats": {
+    "totalFiles": 2,
+    "totalLines": 1021,
+    "totalNodes": 52,
+    "totalEdges": 69,
+    "totalFeatures": 7,
+    "languages": [
+      "python"
+    ]
+  },
+  "source": {
+    "path": "/Users/admin/ai/ref/autoresearch",
+    "url": null
+  }
+}

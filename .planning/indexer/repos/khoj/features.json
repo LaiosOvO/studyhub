@@ -1,0 +1,5707 @@
+[
+  {
+    "id": "src-interface-android-app-src-main-java-dev-khoj-app-application-application",
+    "name": "Application",
+    "description": "类 Application (L20-L29)，0 个方法",
+    "nodes": [
+      "src.interface.android.app.src.main.java.dev.khoj.app.Application.Application",
+      "src.interface.android.app.src.main.java.dev.khoj.app.Application.Application.onCreate"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/interface/android/app/src/main/java/dev/khoj/app/Application.java",
+      "startLine": 20,
+      "endLine": 29
+    }
+  },
+  {
+    "id": "src-interface-android-app-src-main-java-dev-khoj-app-delegationservice-delegationservice",
+    "name": "DelegationService",
+    "description": "类 DelegationService (L7-L17)，0 个方法",
+    "nodes": [
+      "src.interface.android.app.src.main.java.dev.khoj.app.DelegationService.DelegationService",
+      "src.interface.android.app.src.main.java.dev.khoj.app.DelegationService.DelegationService.onCreate"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/interface/android/app/src/main/java/dev/khoj/app/DelegationService.java",
+      "startLine": 7,
+      "endLine": 17
+    }
+  },
+  {
+    "id": "src-interface-android-app-src-main-java-dev-khoj-app-launcheractivity-launcheractivity",
+    "name": "LauncherActivity",
+    "description": "类 LauncherActivity (L24-L49)，0 个方法",
+    "nodes": [
+      "src.interface.android.app.src.main.java.dev.khoj.app.LauncherActivity.LauncherActivity",
+      "src.interface.android.app.src.main.java.dev.khoj.app.LauncherActivity.LauncherActivity.onCreate",
+      "src.interface.android.app.src.main.java.dev.khoj.app.LauncherActivity.LauncherActivity.getLaunchingUrl"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/interface/android/app/src/main/java/dev/khoj/app/LauncherActivity.java",
+      "startLine": 24,
+      "endLine": 49
+    }
+  },
+  {
+    "id": "src-interface-obsidian-src-chat-view-khojchatview",
+    "name": "KhojChatView",
+    "description": "类 KhojChatView (L68-L2572)，0 个方法",
+    "nodes": [
+      "src.interface.obsidian.src.chat_view.KhojChatView",
+      "src.interface.obsidian.src.chat_view.KhojChatView.constructor",
+      "src.interface.obsidian.src.chat_view.KhojChatView.getViewType",
+      "src.interface.obsidian.src.chat_view.KhojChatView.getDisplayText",
+      "src.interface.obsidian.src.chat_view.KhojChatView.getIcon",
+      "src.interface.obsidian.src.chat_view.KhojChatView.chat",
+      "src.interface.obsidian.src.chat_view.KhojChatView.onOpen",
+      "src.interface.obsidian.src.chat_view.KhojChatView.startSpeechToText",
+      "src.interface.obsidian.src.chat_view.KhojChatView.stopSpeechToText",
+      "src.interface.obsidian.src.chat_view.KhojChatView.handleKeyDown",
+      "src.interface.obsidian.src.chat_view.KhojChatView.handleKeyUp",
+      "src.interface.obsidian.src.chat_view.KhojChatView.processOnlineReferences",
+      "src.interface.obsidian.src.chat_view.KhojChatView.generateOnlineReference",
+      "src.interface.obsidian.src.chat_view.KhojChatView.generateReference",
+      "src.interface.obsidian.src.chat_view.KhojChatView.textToSpeech",
+      "src.interface.obsidian.src.chat_view.KhojChatView.formatHTMLMessage",
+      "src.interface.obsidian.src.chat_view.KhojChatView.markdownTextToSanitizedHtml",
+      "src.interface.obsidian.src.chat_view.KhojChatView.processTrainOfThought",
+      "src.interface.obsidian.src.chat_view.KhojChatView.renderMessageWithReferences",
+      "src.interface.obsidian.src.chat_view.KhojChatView.generateImageMarkdown",
+      "src.interface.obsidian.src.chat_view.KhojChatView.renderMessage",
+      "src.interface.obsidian.src.chat_view.KhojChatView.createKhojResponseDiv",
+      "src.interface.obsidian.src.chat_view.KhojChatView.renderIncrementalMessage",
+      "src.interface.obsidian.src.chat_view.KhojChatView.renderActionButtons",
+      "src.interface.obsidian.src.chat_view.KhojChatView.formatDate",
+      "src.interface.obsidian.src.chat_view.KhojChatView.getLearningMoment",
+      "src.interface.obsidian.src.chat_view.KhojChatView.createNewConversation",
+      "src.interface.obsidian.src.chat_view.KhojChatView.toggleChatSessions",
+      "src.interface.obsidian.src.chat_view.KhojChatView.addConversationMenu",
+      "src.interface.obsidian.src.chat_view.KhojChatView.getChatHistory",
+      "src.interface.obsidian.src.chat_view.KhojChatView.convertMessageChunkToJson",
+      "src.interface.obsidian.src.chat_view.KhojChatView.processMessageChunk",
+      "src.interface.obsidian.src.chat_view.KhojChatView.handleJsonResponse",
+      "src.interface.obsidian.src.chat_view.KhojChatView.readChatStream",
+      "src.interface.obsidian.src.chat_view.KhojChatView.getChatResponse",
+      "src.interface.obsidian.src.chat_view.KhojChatView.flashStatusInChatInput",
+      "src.interface.obsidian.src.chat_view.KhojChatView.clearConversationHistory",
+      "src.interface.obsidian.src.chat_view.KhojChatView.speechToText",
+      "src.interface.obsidian.src.chat_view.KhojChatView.cancelSendMessage",
+      "src.interface.obsidian.src.chat_view.KhojChatView.incrementalChat",
+      "src.interface.obsidian.src.chat_view.KhojChatView.onChatInput",
+      "src.interface.obsidian.src.chat_view.KhojChatView.autoResize",
+      "src.interface.obsidian.src.chat_view.KhojChatView.scrollChatToBottom",
+      "src.interface.obsidian.src.chat_view.KhojChatView.createLoadingEllipse",
+      "src.interface.obsidian.src.chat_view.KhojChatView.handleStreamResponse",
+      "src.interface.obsidian.src.chat_view.KhojChatView.handleImageResponse",
+      "src.interface.obsidian.src.chat_view.KhojChatView.finalizeChatBodyResponse",
+      "src.interface.obsidian.src.chat_view.KhojChatView.createReferenceSection",
+      "src.interface.obsidian.src.chat_view.KhojChatView.handleArrowKeys",
+      "src.interface.obsidian.src.chat_view.KhojChatView.highlightVisibleOption",
+      "src.interface.obsidian.src.chat_view.KhojChatView.deleteMessage",
+      "src.interface.obsidian.src.chat_view.KhojChatView.fetchAgents",
+      "src.interface.obsidian.src.chat_view.KhojChatView.getOpenFilesContent",
+      "src.interface.obsidian.src.chat_view.KhojChatView.parseEditBlocks",
+      "src.interface.obsidian.src.chat_view.KhojChatView.applyEditBlocks",
+      "src.interface.obsidian.src.chat_view.KhojChatView.setupConfirmationButtons",
+      "src.interface.obsidian.src.chat_view.KhojChatView.convertCommandsToEmojis",
+      "src.interface.obsidian.src.chat_view.KhojChatView.applyPendingEdits",
+      "src.interface.obsidian.src.chat_view.KhojChatView.cancelPendingEdits",
+      "src.interface.obsidian.src.chat_view.KhojChatView.transformEditBlocks",
+      "src.interface.obsidian.src.chat_view.KhojChatView.handleEditRetry",
+      "src.interface.obsidian.src.chat_view.KhojChatView.showModeDropdown",
+      "src.interface.obsidian.src.chat_view.KhojChatView.filterDropdownOptions",
+      "src.interface.obsidian.src.chat_view.KhojChatView.hideModeDropdown"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/interface/obsidian/src/chat_view.ts",
+      "startLine": 68,
+      "endLine": 2572
+    }
+  },
+  {
+    "id": "src-interface-obsidian-src-interact-with-files-fileinteractions",
+    "name": "FileInteractions",
+    "description": "类 FileInteractions (L54-L996)，0 个方法",
+    "nodes": [
+      "src.interface.obsidian.src.interact_with_files.FileInteractions",
+      "src.interface.obsidian.src.interact_with_files.FileInteractions.constructor",
+      "src.interface.obsidian.src.interact_with_files.FileInteractions.getRecentActiveMarkdownFiles",
+      "src.interface.obsidian.src.interact_with_files.FileInteractions.getOpenFilesContent",
+      "src.interface.obsidian.src.interact_with_files.FileInteractions.levenshteinDistance",
+      "src.interface.obsidian.src.interact_with_files.FileInteractions.findBestMatchingFile",
+      "src.interface.obsidian.src.interact_with_files.FileInteractions.parseEditBlock",
+      "src.interface.obsidian.src.interact_with_files.FileInteractions.parseEditBlocks",
+      "src.interface.obsidian.src.interact_with_files.FileInteractions.createPreviewWithDiff",
+      "src.interface.obsidian.src.interact_with_files.FileInteractions.textNormalize",
+      "src.interface.obsidian.src.interact_with_files.FileInteractions.processSingleEdit",
+      "src.interface.obsidian.src.interact_with_files.FileInteractions.applyEditBlocks",
+      "src.interface.obsidian.src.interact_with_files.FileInteractions.transformEditBlocks",
+      "src.interface.obsidian.src.interact_with_files.FileInteractions.detectPartialEditBlocks"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/interface/obsidian/src/interact_with_files.ts",
+      "startLine": 54,
+      "endLine": 996
+    }
+  },
+  {
+    "id": "src-interface-obsidian-src-main-khoj",
+    "name": "Khoj",
+    "description": "类 Khoj (L10-L246)，0 个方法",
+    "nodes": [
+      "src.interface.obsidian.src.main.Khoj",
+      "src.interface.obsidian.src.main.Khoj.onload",
+      "src.interface.obsidian.src.main.Khoj.startSyncTimer",
+      "src.interface.obsidian.src.main.Khoj.restartSyncTimer",
+      "src.interface.obsidian.src.main.Khoj.loadSettings",
+      "src.interface.obsidian.src.main.Khoj.saveSettings",
+      "src.interface.obsidian.src.main.Khoj.onunload",
+      "src.interface.obsidian.src.main.Khoj.activateView"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/interface/obsidian/src/main.ts",
+      "startLine": 10,
+      "endLine": 246
+    }
+  },
+  {
+    "id": "src-interface-obsidian-src-search-modal-khojsearchmodal",
+    "name": "KhojSearchModal",
+    "description": "类 KhojSearchModal (L10-L365)，0 个方法",
+    "nodes": [
+      "src.interface.obsidian.src.search_modal.KhojSearchModal",
+      "src.interface.obsidian.src.search_modal.KhojSearchModal.constructor",
+      "src.interface.obsidian.src.search_modal.KhojSearchModal.isFileInVault",
+      "src.interface.obsidian.src.search_modal.KhojSearchModal.getSuggestions",
+      "src.interface.obsidian.src.search_modal.KhojSearchModal.updateLoadingState",
+      "src.interface.obsidian.src.search_modal.KhojSearchModal.onOpen",
+      "src.interface.obsidian.src.search_modal.KhojSearchModal.renderSuggestion",
+      "src.interface.obsidian.src.search_modal.KhojSearchModal.onChooseSuggestion"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/interface/obsidian/src/search_modal.ts",
+      "startLine": 10,
+      "endLine": 365
+    }
+  },
+  {
+    "id": "src-interface-obsidian-src-settings-khojsettingtab",
+    "name": "KhojSettingTab",
+    "description": "类 KhojSettingTab (L69-L622)，0 个方法",
+    "nodes": [
+      "src.interface.obsidian.src.settings.KhojSettingTab",
+      "src.interface.obsidian.src.settings.KhojSettingTab.constructor",
+      "src.interface.obsidian.src.settings.KhojSettingTab.display",
+      "src.interface.obsidian.src.settings.KhojSettingTab.connectStatusIcon",
+      "src.interface.obsidian.src.settings.KhojSettingTab.refreshStorageDisplay",
+      "src.interface.obsidian.src.settings.KhojSettingTab.refreshModelsAndServerPreference",
+      "src.interface.obsidian.src.settings.KhojSettingTab.renderChatModelDropdown",
+      "src.interface.obsidian.src.settings.KhojSettingTab.updateIncludeFolderList",
+      "src.interface.obsidian.src.settings.KhojSettingTab.updateExcludeFolderList",
+      "src.interface.obsidian.src.settings.KhojSettingTab.updateFolderList"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/interface/obsidian/src/settings.ts",
+      "startLine": 69,
+      "endLine": 622
+    }
+  },
+  {
+    "id": "src-interface-obsidian-src-settings-foldersuggestmodal",
+    "name": "FolderSuggestModal",
+    "description": "类 FolderSuggestModal (L625-L671)，0 个方法",
+    "nodes": [
+      "src.interface.obsidian.src.settings.FolderSuggestModal",
+      "src.interface.obsidian.src.settings.FolderSuggestModal.constructor",
+      "src.interface.obsidian.src.settings.FolderSuggestModal.getSuggestions",
+      "src.interface.obsidian.src.settings.FolderSuggestModal.renderSuggestion",
+      "src.interface.obsidian.src.settings.FolderSuggestModal.onChooseSuggestion",
+      "src.interface.obsidian.src.settings.FolderSuggestModal.getAllFolders"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/interface/obsidian/src/settings.ts",
+      "startLine": 625,
+      "endLine": 671
+    }
+  },
+  {
+    "id": "src-interface-obsidian-src-similar-view-khojsimilarview",
+    "name": "KhojSimilarView",
+    "description": "类 KhojSimilarView (L12-L432)，0 个方法",
+    "nodes": [
+      "src.interface.obsidian.src.similar_view.KhojSimilarView",
+      "src.interface.obsidian.src.similar_view.KhojSimilarView.constructor",
+      "src.interface.obsidian.src.similar_view.KhojSimilarView.getViewType",
+      "src.interface.obsidian.src.similar_view.KhojSimilarView.getDisplayText",
+      "src.interface.obsidian.src.similar_view.KhojSimilarView.getIcon",
+      "src.interface.obsidian.src.similar_view.KhojSimilarView.onOpen",
+      "src.interface.obsidian.src.similar_view.KhojSimilarView.registerFileActiveHandler",
+      "src.interface.obsidian.src.similar_view.KhojSimilarView.updateSimilarDocuments",
+      "src.interface.obsidian.src.similar_view.KhojSimilarView.getSimilarDocuments",
+      "src.interface.obsidian.src.similar_view.KhojSimilarView.isFileInVault",
+      "src.interface.obsidian.src.similar_view.KhojSimilarView.renderResults",
+      "src.interface.obsidian.src.similar_view.KhojSimilarView.openResult",
+      "src.interface.obsidian.src.similar_view.KhojSimilarView.updateLoadingState",
+      "src.interface.obsidian.src.similar_view.KhojSimilarView.updateUI"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/interface/obsidian/src/similar_view.ts",
+      "startLine": 12,
+      "endLine": 432
+    }
+  },
+  {
+    "id": "src-khoj-configure-userauthenticationbackend",
+    "name": "UserAuthenticationBackend",
+    "description": "含组件 AsyncCloseConnectionsMiddleware, dispatch；含组件 AuthenticatedKhojUser；类 UserAuthenticationBackend (L98-L230)，0 个方法",
+    "nodes": [
+      "src.khoj.configure.UserAuthenticationBackend",
+      "src.khoj.configure.UserAuthenticationBackend.__init__",
+      "src.khoj.configure.UserAuthenticationBackend._initialize_default_user",
+      "src.khoj.configure.UserAuthenticationBackend.authenticate",
+      "src.khoj.configure.AuthenticatedKhojUser",
+      "src.khoj.configure.AuthenticatedKhojUser.__init__",
+      "src.khoj.configure.AsyncCloseConnectionsMiddleware",
+      "src.khoj.configure.AsyncCloseConnectionsMiddleware.dispatch"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "src/khoj/configure.py",
+      "startLine": 62,
+      "endLine": 230
+    }
+  },
+  {
+    "id": "src-khoj-configure-nextjsmiddleware",
+    "name": "NextJsMiddleware",
+    "description": "类 NextJsMiddleware (L361-L369)，0 个方法",
+    "nodes": [
+      "src.khoj.configure.NextJsMiddleware",
+      "src.khoj.configure.NextJsMiddleware.__call__",
+      "src.khoj.configure.NextJsMiddleware.__init__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/configure.py",
+      "startLine": 361,
+      "endLine": 369
+    }
+  },
+  {
+    "id": "src-khoj-configure-suppressclientdisconnectmiddleware",
+    "name": "SuppressClientDisconnectMiddleware",
+    "description": "类 SuppressClientDisconnectMiddleware (L371-L379)，0 个方法",
+    "nodes": [
+      "src.khoj.configure.SuppressClientDisconnectMiddleware",
+      "src.khoj.configure.SuppressClientDisconnectMiddleware.dispatch"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/configure.py",
+      "startLine": 371,
+      "endLine": 379
+    }
+  },
+  {
+    "id": "src-khoj-configure-servererrormiddleware",
+    "name": "ServerErrorMiddleware",
+    "description": "类 ServerErrorMiddleware (L381-L397)，0 个方法",
+    "nodes": [
+      "src.khoj.configure.ServerErrorMiddleware",
+      "src.khoj.configure.ServerErrorMiddleware.dispatch"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/configure.py",
+      "startLine": 381,
+      "endLine": 397
+    }
+  },
+  {
+    "id": "src-khoj-database-adapters-processlockadapters",
+    "name": "ProcessLockAdapters",
+    "description": "含组件 SubscriptionState；类 ProcessLockAdapters (L589-L655)，0 个方法",
+    "nodes": [
+      "src.khoj.database.adapters.ProcessLockAdapters",
+      "src.khoj.database.adapters.ProcessLockAdapters.get_process_lock",
+      "src.khoj.database.adapters.ProcessLockAdapters.set_process_lock",
+      "src.khoj.database.adapters.ProcessLockAdapters.is_process_locked_by_name",
+      "src.khoj.database.adapters.ProcessLockAdapters.is_process_locked",
+      "src.khoj.database.adapters.ProcessLockAdapters.remove_process_lock",
+      "src.khoj.database.adapters.ProcessLockAdapters.run_with_lock",
+      "src.khoj.database.adapters.SubscriptionState"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "src/khoj/database/adapters/__init__.py",
+      "startLine": 94,
+      "endLine": 655
+    }
+  },
+  {
+    "id": "src-khoj-database-adapters-agentadapters",
+    "name": "AgentAdapters",
+    "description": "含组件 ClientApplicationAdapters, aget_client_application_by_id；类 AgentAdapters (L672-L979)，0 个方法",
+    "nodes": [
+      "src.khoj.database.adapters.AgentAdapters",
+      "src.khoj.database.adapters.AgentAdapters.aget_readonly_agent_by_slug",
+      "src.khoj.database.adapters.AgentAdapters.adelete_agent_by_slug",
+      "src.khoj.database.adapters.AgentAdapters.aget_agent_by_slug",
+      "src.khoj.database.adapters.AgentAdapters.aget_agent_by_name",
+      "src.khoj.database.adapters.AgentAdapters.get_agent_by_slug",
+      "src.khoj.database.adapters.AgentAdapters.get_all_accessible_agents",
+      "src.khoj.database.adapters.AgentAdapters.aget_all_accessible_agents",
+      "src.khoj.database.adapters.AgentAdapters.ais_agent_accessible",
+      "src.khoj.database.adapters.AgentAdapters.aget_conversation_agent_by_id",
+      "src.khoj.database.adapters.AgentAdapters.get_default_agent",
+      "src.khoj.database.adapters.AgentAdapters.create_default_agent",
+      "src.khoj.database.adapters.AgentAdapters.aget_default_agent",
+      "src.khoj.database.adapters.AgentAdapters.get_agent_chat_model",
+      "src.khoj.database.adapters.AgentAdapters.aget_agent_chat_model",
+      "src.khoj.database.adapters.AgentAdapters.atomic_update_agent",
+      "src.khoj.database.adapters.AgentAdapters.aupdate_agent",
+      "src.khoj.database.adapters.AgentAdapters.aupdate_hidden_agent",
+      "src.khoj.database.adapters.ClientApplicationAdapters",
+      "src.khoj.database.adapters.ClientApplicationAdapters.aget_client_application_by_id"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "src/khoj/database/adapters/__init__.py",
+      "startLine": 666,
+      "endLine": 979
+    }
+  },
+  {
+    "id": "src-khoj-database-adapters-conversationadapters",
+    "name": "ConversationAdapters",
+    "description": "含组件 PublicConversationAdapters, get_public_conversation_by_slug, get_public_conversation_url, delete_public_conversation_by_slug；类 ConversationAdapters (L997-L1838)，0 个方法",
+    "nodes": [
+      "src.khoj.database.adapters.ConversationAdapters",
+      "src.khoj.database.adapters.ConversationAdapters.make_public_conversation_copy",
+      "src.khoj.database.adapters.ConversationAdapters.get_conversation_by_user",
+      "src.khoj.database.adapters.ConversationAdapters.get_all_conversations_for_export",
+      "src.khoj.database.adapters.ConversationAdapters.get_num_conversations",
+      "src.khoj.database.adapters.ConversationAdapters.get_conversation_sessions",
+      "src.khoj.database.adapters.ConversationAdapters.aset_conversation_title",
+      "src.khoj.database.adapters.ConversationAdapters.get_conversation_by_id",
+      "src.khoj.database.adapters.ConversationAdapters.acreate_conversation_session",
+      "src.khoj.database.adapters.ConversationAdapters.create_conversation_session",
+      "src.khoj.database.adapters.ConversationAdapters.aget_conversation_by_user",
+      "src.khoj.database.adapters.ConversationAdapters.adelete_conversation_by_user",
+      "src.khoj.database.adapters.ConversationAdapters.has_any_chat_model",
+      "src.khoj.database.adapters.ConversationAdapters.get_all_chat_models",
+      "src.khoj.database.adapters.ConversationAdapters.aget_all_chat_models",
+      "src.khoj.database.adapters.ConversationAdapters.aget_vision_enabled_config",
+      "src.khoj.database.adapters.ConversationAdapters.get_ai_model_api",
+      "src.khoj.database.adapters.ConversationAdapters.has_valid_ai_model_api",
+      "src.khoj.database.adapters.ConversationAdapters.aset_user_conversation_processor",
+      "src.khoj.database.adapters.ConversationAdapters.aset_user_voice_model",
+      "src.khoj.database.adapters.ConversationAdapters.get_chat_model",
+      "src.khoj.database.adapters.ConversationAdapters.aget_chat_model",
+      "src.khoj.database.adapters.ConversationAdapters.get_chat_model_by_name",
+      "src.khoj.database.adapters.ConversationAdapters.aget_chat_model_by_name",
+      "src.khoj.database.adapters.ConversationAdapters.aget_chat_model_by_friendly_name",
+      "src.khoj.database.adapters.ConversationAdapters.aget_voice_model_config",
+      "src.khoj.database.adapters.ConversationAdapters.get_voice_model_options",
+      "src.khoj.database.adapters.ConversationAdapters.get_voice_model_config",
+      "src.khoj.database.adapters.ConversationAdapters.get_default_chat_model",
+      "src.khoj.database.adapters.ConversationAdapters.aget_default_chat_model",
+      "src.khoj.database.adapters.ConversationAdapters.get_advanced_chat_model",
+      "src.khoj.database.adapters.ConversationAdapters.aget_advanced_chat_model",
+      "src.khoj.database.adapters.ConversationAdapters.set_default_chat_model",
+      "src.khoj.database.adapters.ConversationAdapters.get_max_context_size",
+      "src.khoj.database.adapters.ConversationAdapters.aget_max_context_size",
+      "src.khoj.database.adapters.ConversationAdapters.aget_chat_models_with_fallbacks",
+      "src.khoj.database.adapters.ConversationAdapters.aget_chat_model_slot",
+      "src.khoj.database.adapters.ConversationAdapters.aget_server_webscraper",
+      "src.khoj.database.adapters.ConversationAdapters.aget_enabled_webscrapers",
+      "src.khoj.database.adapters.ConversationAdapters.create_conversation_from_public_conversation",
+      "src.khoj.database.adapters.ConversationAdapters.save_conversation",
+      "src.khoj.database.adapters.ConversationAdapters.get_conversation_processor_options",
+      "src.khoj.database.adapters.ConversationAdapters.set_user_chat_model",
+      "src.khoj.database.adapters.ConversationAdapters.aget_user_chat_model",
+      "src.khoj.database.adapters.ConversationAdapters.ais_memory_enabled",
+      "src.khoj.database.adapters.ConversationAdapters.is_memory_enabled",
+      "src.khoj.database.adapters.ConversationAdapters.get_speech_to_text_config",
+      "src.khoj.database.adapters.ConversationAdapters.aget_conversation_starters",
+      "src.khoj.database.adapters.ConversationAdapters.aget_valid_chat_model",
+      "src.khoj.database.adapters.ConversationAdapters.aget_text_to_image_model_config",
+      "src.khoj.database.adapters.ConversationAdapters.get_text_to_image_model_config",
+      "src.khoj.database.adapters.ConversationAdapters.get_text_to_image_model_options",
+      "src.khoj.database.adapters.ConversationAdapters.get_user_text_to_image_model_config",
+      "src.khoj.database.adapters.ConversationAdapters.aget_user_text_to_image_model",
+      "src.khoj.database.adapters.ConversationAdapters.aset_user_text_to_image_model",
+      "src.khoj.database.adapters.ConversationAdapters.add_files_to_filter",
+      "src.khoj.database.adapters.ConversationAdapters.remove_files_from_filter",
+      "src.khoj.database.adapters.ConversationAdapters.delete_message_by_turn_id",
+      "src.khoj.database.adapters.PublicConversationAdapters",
+      "src.khoj.database.adapters.PublicConversationAdapters.get_public_conversation_by_slug",
+      "src.khoj.database.adapters.PublicConversationAdapters.get_public_conversation_url",
+      "src.khoj.database.adapters.PublicConversationAdapters.delete_public_conversation_by_slug"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "src/khoj/database/adapters/__init__.py",
+      "startLine": 982,
+      "endLine": 1838
+    }
+  },
+  {
+    "id": "src-khoj-database-adapters-fileobjectadapters",
+    "name": "FileObjectAdapters",
+    "description": "类 FileObjectAdapters (L1841-L1941)，0 个方法",
+    "nodes": [
+      "src.khoj.database.adapters.FileObjectAdapters",
+      "src.khoj.database.adapters.FileObjectAdapters.update_raw_text",
+      "src.khoj.database.adapters.FileObjectAdapters.create_file_object",
+      "src.khoj.database.adapters.FileObjectAdapters.get_file_object_by_name",
+      "src.khoj.database.adapters.FileObjectAdapters.get_all_file_objects",
+      "src.khoj.database.adapters.FileObjectAdapters.delete_file_object_by_name",
+      "src.khoj.database.adapters.FileObjectAdapters.delete_all_file_objects",
+      "src.khoj.database.adapters.FileObjectAdapters.aupdate_raw_text",
+      "src.khoj.database.adapters.FileObjectAdapters.acreate_file_object",
+      "src.khoj.database.adapters.FileObjectAdapters.aget_file_objects_by_name",
+      "src.khoj.database.adapters.FileObjectAdapters.aget_file_objects_by_path_prefix",
+      "src.khoj.database.adapters.FileObjectAdapters.aget_file_objects_by_names",
+      "src.khoj.database.adapters.FileObjectAdapters.aget_all_file_objects",
+      "src.khoj.database.adapters.FileObjectAdapters.aget_number_of_pages",
+      "src.khoj.database.adapters.FileObjectAdapters.adelete_file_object_by_name",
+      "src.khoj.database.adapters.FileObjectAdapters.adelete_file_objects_by_names",
+      "src.khoj.database.adapters.FileObjectAdapters.adelete_all_file_objects",
+      "src.khoj.database.adapters.FileObjectAdapters.aget_file_objects_by_regex"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/adapters/__init__.py",
+      "startLine": 1841,
+      "endLine": 1941
+    }
+  },
+  {
+    "id": "src-khoj-database-adapters-entryadapters",
+    "name": "EntryAdapters",
+    "description": "类 EntryAdapters (L1944-L2182)，0 个方法",
+    "nodes": [
+      "src.khoj.database.adapters.EntryAdapters",
+      "src.khoj.database.adapters.EntryAdapters.does_entry_exist",
+      "src.khoj.database.adapters.EntryAdapters.delete_entry_by_file",
+      "src.khoj.database.adapters.EntryAdapters.get_filtered_entries",
+      "src.khoj.database.adapters.EntryAdapters.delete_all_entries",
+      "src.khoj.database.adapters.EntryAdapters.adelete_all_entries",
+      "src.khoj.database.adapters.EntryAdapters.get_existing_entry_hashes_by_file",
+      "src.khoj.database.adapters.EntryAdapters.delete_entry_by_hash",
+      "src.khoj.database.adapters.EntryAdapters.get_entries_by_date_filter",
+      "src.khoj.database.adapters.EntryAdapters.user_has_entries",
+      "src.khoj.database.adapters.EntryAdapters.agent_has_entries",
+      "src.khoj.database.adapters.EntryAdapters.auser_has_entries",
+      "src.khoj.database.adapters.EntryAdapters.aagent_has_entries",
+      "src.khoj.database.adapters.EntryAdapters.adelete_entry_by_file",
+      "src.khoj.database.adapters.EntryAdapters.adelete_entries_by_filenames",
+      "src.khoj.database.adapters.EntryAdapters.aget_agent_entry_filepaths",
+      "src.khoj.database.adapters.EntryAdapters.get_all_filenames_by_source",
+      "src.khoj.database.adapters.EntryAdapters.get_all_filenames_by_type",
+      "src.khoj.database.adapters.EntryAdapters.get_size_of_indexed_data_in_mb",
+      "src.khoj.database.adapters.EntryAdapters.apply_filters",
+      "src.khoj.database.adapters.EntryAdapters.search_with_embeddings",
+      "src.khoj.database.adapters.EntryAdapters.get_unique_file_types",
+      "src.khoj.database.adapters.EntryAdapters.get_unique_file_sources"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/adapters/__init__.py",
+      "startLine": 1944,
+      "endLine": 2182
+    }
+  },
+  {
+    "id": "src-khoj-database-adapters-automationadapters",
+    "name": "AutomationAdapters",
+    "description": "类 AutomationAdapters (L2185-L2271)，0 个方法",
+    "nodes": [
+      "src.khoj.database.adapters.AutomationAdapters",
+      "src.khoj.database.adapters.AutomationAdapters.get_automations",
+      "src.khoj.database.adapters.AutomationAdapters.get_automation_metadata",
+      "src.khoj.database.adapters.AutomationAdapters.get_job_last_run",
+      "src.khoj.database.adapters.AutomationAdapters.get_automations_metadata",
+      "src.khoj.database.adapters.AutomationAdapters.get_automation",
+      "src.khoj.database.adapters.AutomationAdapters.aget_automation",
+      "src.khoj.database.adapters.AutomationAdapters.delete_automation"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/adapters/__init__.py",
+      "startLine": 2185,
+      "endLine": 2271
+    }
+  },
+  {
+    "id": "src-khoj-database-adapters-usermemoryadapters",
+    "name": "UserMemoryAdapters",
+    "description": "含组件 McpServerAdapters, aget_all_mcp_servers；类 UserMemoryAdapters (L2286-L2374)，0 个方法",
+    "nodes": [
+      "src.khoj.database.adapters.UserMemoryAdapters",
+      "src.khoj.database.adapters.UserMemoryAdapters.pull_memories",
+      "src.khoj.database.adapters.UserMemoryAdapters.save_memory",
+      "src.khoj.database.adapters.UserMemoryAdapters.search_memories",
+      "src.khoj.database.adapters.UserMemoryAdapters.delete_memory",
+      "src.khoj.database.adapters.UserMemoryAdapters.to_dict",
+      "src.khoj.database.adapters.McpServerAdapters",
+      "src.khoj.database.adapters.McpServerAdapters.aget_all_mcp_servers"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "src/khoj/database/adapters/__init__.py",
+      "startLine": 2274,
+      "endLine": 2374
+    }
+  },
+  {
+    "id": "src-khoj-database-admin-khojuseradmin",
+    "name": "KhojUserAdmin",
+    "description": "含组件 UserAdmin；含组件 GroupAdmin；含组件 KhojDjangoJobExecutionAdmin；含组件 KhojDjangoJobAdmin, job_info, get_search_results；类 KhojUserAdmin (L88-L170)，0 个方法",
+    "nodes": [
+      "src.khoj.database.admin.KhojUserAdmin",
+      "src.khoj.database.admin.KhojUserAdmin.lookups",
+      "src.khoj.database.admin.KhojUserAdmin.queryset",
+      "src.khoj.database.admin.KhojUserAdmin.lookups",
+      "src.khoj.database.admin.KhojUserAdmin.queryset",
+      "src.khoj.database.admin.KhojUserAdmin.get_email_login_url",
+      "src.khoj.database.admin.KhojDjangoJobAdmin",
+      "src.khoj.database.admin.KhojDjangoJobAdmin.job_info",
+      "src.khoj.database.admin.KhojDjangoJobAdmin.get_search_results",
+      "src.khoj.database.admin.KhojDjangoJobExecutionAdmin",
+      "src.khoj.database.admin.GroupAdmin",
+      "src.khoj.database.admin.UserAdmin"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "src/khoj/database/admin.py",
+      "startLine": 46,
+      "endLine": 170
+    }
+  },
+  {
+    "id": "src-khoj-database-admin-conversationadmin",
+    "name": "ConversationAdmin",
+    "description": "含组件 WebScraperAdmin；含组件 ServerChatSettingsAdmin；含组件 SearchModelConfigAdmin；含组件 AiModelApiAdmin；含组件 TextToImageModelOptionsAdmin；含组件 ChatModelAdmin；含组件 KhojUserSubscription；含组件 EntryAdmin；含组件 AgentAdmin；含组件 McpServerAdmin；含组件 HasGoogleAuthFilter；含组件 DateJoinedAfterFilter；类 ConversationAdmin (L320-L415)，0 个方法",
+    "nodes": [
+      "src.khoj.database.admin.ConversationAdmin",
+      "src.khoj.database.admin.ConversationAdmin.export_selected_objects",
+      "src.khoj.database.admin.ConversationAdmin.export_selected_minimal_objects",
+      "src.khoj.database.admin.ConversationAdmin.get_actions",
+      "src.khoj.database.admin.DateJoinedAfterFilter",
+      "src.khoj.database.admin.HasGoogleAuthFilter",
+      "src.khoj.database.admin.McpServerAdmin",
+      "src.khoj.database.admin.AgentAdmin",
+      "src.khoj.database.admin.EntryAdmin",
+      "src.khoj.database.admin.KhojUserSubscription",
+      "src.khoj.database.admin.ChatModelAdmin",
+      "src.khoj.database.admin.TextToImageModelOptionsAdmin",
+      "src.khoj.database.admin.AiModelApiAdmin",
+      "src.khoj.database.admin.SearchModelConfigAdmin",
+      "src.khoj.database.admin.ServerChatSettingsAdmin",
+      "src.khoj.database.admin.WebScraperAdmin"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "src/khoj/database/admin.py",
+      "startLine": 89,
+      "endLine": 415
+    }
+  },
+  {
+    "id": "src-khoj-database-admin-userconversationconfigadmin",
+    "name": "UserConversationConfigAdmin",
+    "description": "类 UserConversationConfigAdmin (L419-L447)，0 个方法",
+    "nodes": [
+      "src.khoj.database.admin.UserConversationConfigAdmin",
+      "src.khoj.database.admin.UserConversationConfigAdmin.get_user_email",
+      "src.khoj.database.admin.UserConversationConfigAdmin.get_chat_model",
+      "src.khoj.database.admin.UserConversationConfigAdmin.get_subscription_type"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/admin.py",
+      "startLine": 419,
+      "endLine": 447
+    }
+  },
+  {
+    "id": "src-khoj-database-apps-databaseconfig",
+    "name": "DatabaseConfig",
+    "description": "类 DatabaseConfig (L4-L6)，0 个方法",
+    "nodes": [
+      "src.khoj.database.apps.DatabaseConfig"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/apps.py",
+      "startLine": 4,
+      "endLine": 6
+    }
+  },
+  {
+    "id": "src-khoj-database-management-commands-change-default-model-command",
+    "name": "Command",
+    "description": "类 Command (L19-L117)，0 个方法",
+    "nodes": [
+      "src.khoj.database.management.commands.change_default_model.Command",
+      "src.khoj.database.management.commands.change_default_model.Command.add_arguments",
+      "src.khoj.database.management.commands.change_default_model.Command.handle",
+      "src.khoj.database.management.commands.change_default_model.Command.regenerate_entries"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/management/commands/change_default_model.py",
+      "startLine": 19,
+      "endLine": 117
+    }
+  },
+  {
+    "id": "src-khoj-database-management-commands-change-generated-images-url-command",
+    "name": "Command",
+    "description": "类 Command (L8-L61)，0 个方法",
+    "nodes": [
+      "src.khoj.database.management.commands.change_generated_images_url.Command",
+      "src.khoj.database.management.commands.change_generated_images_url.Command.add_arguments",
+      "src.khoj.database.management.commands.change_generated_images_url.Command.handle"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/management/commands/change_generated_images_url.py",
+      "startLine": 8,
+      "endLine": 61
+    }
+  },
+  {
+    "id": "src-khoj-database-management-commands-convert-images-png-to-webp-command",
+    "name": "Command",
+    "description": "类 Command (L11-L99)，0 个方法",
+    "nodes": [
+      "src.khoj.database.management.commands.convert_images_png_to_webp.Command",
+      "src.khoj.database.management.commands.convert_images_png_to_webp.Command.add_arguments",
+      "src.khoj.database.management.commands.convert_images_png_to_webp.Command.handle"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/management/commands/convert_images_png_to_webp.py",
+      "startLine": 11,
+      "endLine": 99
+    }
+  },
+  {
+    "id": "src-khoj-database-management-commands-delete-orphaned-fileobjects-command",
+    "name": "Command",
+    "description": "类 Command (L7-L56)，0 个方法",
+    "nodes": [
+      "src.khoj.database.management.commands.delete_orphaned_fileobjects.Command",
+      "src.khoj.database.management.commands.delete_orphaned_fileobjects.Command.add_arguments",
+      "src.khoj.database.management.commands.delete_orphaned_fileobjects.Command.handle"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/management/commands/delete_orphaned_fileobjects.py",
+      "startLine": 7,
+      "endLine": 56
+    }
+  },
+  {
+    "id": "src-khoj-database-management-commands-manage-memories-command",
+    "name": "Command",
+    "description": "类 Command (L19-L384)，0 个方法",
+    "nodes": [
+      "src.khoj.database.management.commands.manage_memories.Command",
+      "src.khoj.database.management.commands.manage_memories.Command.add_arguments",
+      "src.khoj.database.management.commands.manage_memories.Command.handle",
+      "src.khoj.database.management.commands.manage_memories.Command.async_handle",
+      "src.khoj.database.management.commands.manage_memories.Command.get_users_to_process",
+      "src.khoj.database.management.commands.manage_memories.Command.get_user_conversations",
+      "src.khoj.database.management.commands.manage_memories.Command.process_conversation_batch",
+      "src.khoj.database.management.commands.manage_memories.Command.get_messages",
+      "src.khoj.database.management.commands.manage_memories.Command.get_agent",
+      "src.khoj.database.management.commands.manage_memories.Command.load_agent_with_chat_model",
+      "src.khoj.database.management.commands.manage_memories.Command.get_or_create_checkpoint",
+      "src.khoj.database.management.commands.manage_memories.Command.update_checkpoint",
+      "src.khoj.database.management.commands.manage_memories.Command.clear_checkpoint",
+      "src.khoj.database.management.commands.manage_memories.Command.handle_delete_memories"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/management/commands/manage_memories.py",
+      "startLine": 19,
+      "endLine": 384
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0001-khojuser-migration",
+    "name": "Migration",
+    "description": "类 Migration (L9-L98)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0001_khojuser.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0001_khojuser.py",
+      "startLine": 9,
+      "endLine": 98
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0002-googleuser-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L32)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0002_googleuser.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0002_googleuser.py",
+      "startLine": 8,
+      "endLine": 32
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0003-vector-extension-migration",
+    "name": "Migration",
+    "description": "类 Migration (L5-L10)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0003_vector_extension.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0003_vector_extension.py",
+      "startLine": 5,
+      "endLine": 10
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0004-content-types-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L11-L181)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0004_content_types_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0004_content_types_and_more.py",
+      "startLine": 11,
+      "endLine": 181
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0005-embeddings-corpus-id-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L19)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0005_embeddings_corpus_id.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0005_embeddings_corpus_id.py",
+      "startLine": 8,
+      "endLine": 19
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0006-embeddingsdates-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L33)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0006_embeddingsdates.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0006_embeddingsdates.py",
+      "startLine": 7,
+      "endLine": 33
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0007-add-conversation-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L27)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0007_add_conversation.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0007_add_conversation.py",
+      "startLine": 8,
+      "endLine": 27
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0008-alter-conversation-conversation-log-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L17)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0008_alter_conversation_conversation_log.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0008_alter_conversation_conversation_log.py",
+      "startLine": 6,
+      "endLine": 17
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0009-khojapiuser-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L24)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0009_khojapiuser.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0009_khojapiuser.py",
+      "startLine": 8,
+      "endLine": 24
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0010-chatmodeloptions-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L83)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0010_chatmodeloptions_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0010_chatmodeloptions_and_more.py",
+      "startLine": 8,
+      "endLine": 83
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0010-rename-embeddings-entry-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L30)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0010_rename_embeddings_entry_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0010_rename_embeddings_entry_and_more.py",
+      "startLine": 6,
+      "endLine": 30
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0011-merge-20231102-0138-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L14)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0011_merge_20231102_0138.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0011_merge_20231102_0138.py",
+      "startLine": 8,
+      "endLine": 14
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0012-entry-file-source-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L21)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0012_entry_file_source.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0012_entry_file_source.py",
+      "startLine": 6,
+      "endLine": 21
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0013-subscription-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L37)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0013_subscription.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0013_subscription.py",
+      "startLine": 8,
+      "endLine": 37
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0014-alter-googleuser-picture-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L17)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0014_alter_googleuser_picture.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0014_alter_googleuser_picture.py",
+      "startLine": 6,
+      "endLine": 17
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0015-alter-subscription-user-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L21)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0015_alter_subscription_user.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0015_alter_subscription_user.py",
+      "startLine": 8,
+      "endLine": 21
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0016-alter-subscription-renewal-date-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L17)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0016_alter_subscription_renewal_date.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0016_alter_subscription_renewal_date.py",
+      "startLine": 6,
+      "endLine": 17
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0017-searchmodel-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L32)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0017_searchmodel.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0017_searchmodel.py",
+      "startLine": 6,
+      "endLine": 32
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0018-searchmodelconfig-delete-searchmodel-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L30)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0018_searchmodelconfig_delete_searchmodel.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0018_searchmodelconfig_delete_searchmodel.py",
+      "startLine": 6,
+      "endLine": 30
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0019-alter-googleuser-family-name-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L27)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0019_alter_googleuser_family_name_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0019_alter_googleuser_family_name_and_more.py",
+      "startLine": 6,
+      "endLine": 27
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0020-reflectivequestion-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L36)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0020_reflectivequestion.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0020_reflectivequestion.py",
+      "startLine": 8,
+      "endLine": 36
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0021-speechtotextmodeloptions-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L42)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0021_speechtotextmodeloptions_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0021_speechtotextmodeloptions_and_more.py",
+      "startLine": 6,
+      "endLine": 42
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0022-texttoimagemodelconfig-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L25)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0022_texttoimagemodelconfig.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0022_texttoimagemodelconfig.py",
+      "startLine": 6,
+      "endLine": 25
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0023-usersearchmodelconfig-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L33)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0023_usersearchmodelconfig.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0023_usersearchmodelconfig.py",
+      "startLine": 8,
+      "endLine": 33
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0024-alter-entry-embeddings-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L18)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0024_alter_entry_embeddings.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0024_alter_entry_embeddings.py",
+      "startLine": 7,
+      "endLine": 18
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0025-clientapplication-khojuser-phone-number-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L46)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0025_clientapplication_khojuser_phone_number_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0025_clientapplication_khojuser_phone_number_and_more.py",
+      "startLine": 8,
+      "endLine": 46
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0025-searchmodelconfig-embeddings-inference-endpoint-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L22)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0025_searchmodelconfig_embeddings_inference_endpoint_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0025_searchmodelconfig_embeddings_inference_endpoint_and_more.py",
+      "startLine": 6,
+      "endLine": 22
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0026-searchmodelconfig-cross-encoder-inference-endpoint-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L22)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0026_searchmodelconfig_cross_encoder_inference_endpoint_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0026_searchmodelconfig_cross_encoder_inference_endpoint_and_more.py",
+      "startLine": 6,
+      "endLine": 22
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0027-merge-20240118-1324-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L13)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0027_merge_20240118_1324.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0027_merge_20240118_1324.py",
+      "startLine": 7,
+      "endLine": 13
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0028-khojuser-verified-phone-number-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L17)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0028_khojuser_verified_phone_number.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0028_khojuser_verified_phone_number.py",
+      "startLine": 6,
+      "endLine": 17
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0029-userrequests-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L27)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0029_userrequests.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0029_userrequests.py",
+      "startLine": 8,
+      "endLine": 27
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0030-conversation-slug-and-title-migration",
+    "name": "Migration",
+    "description": "类 Migration (L21-L38)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0030_conversation_slug_and_title.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0030_conversation_slug_and_title.py",
+      "startLine": 21,
+      "endLine": 38
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0031-agent-conversation-agent-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L53)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0031_agent_conversation_agent.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0031_agent_conversation_agent.py",
+      "startLine": 8,
+      "endLine": 53
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0031-alter-googleuser-locale-migration",
+    "name": "Migration",
+    "description": "类 Migration (L18-L30)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0031_alter_googleuser_locale.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0031_alter_googleuser_locale.py",
+      "startLine": 18,
+      "endLine": 30
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0032-merge-20240322-0427-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L14)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0032_merge_20240322_0427.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0032_merge_20240322_0427.py",
+      "startLine": 8,
+      "endLine": 14
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0033-rename-tuning-agent-personality-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L17)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0033_rename_tuning_agent_personality.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0033_rename_tuning_agent_personality.py",
+      "startLine": 6,
+      "endLine": 17
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0034-alter-chatmodeloptions-chat-model-migration",
+    "name": "Migration",
+    "description": "类 Migration (L20-L32)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0034_alter_chatmodeloptions_chat_model.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0034_alter_chatmodeloptions_chat_model.py",
+      "startLine": 20,
+      "endLine": 32
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0035-processlock-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L26)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0035_processlock.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0035_processlock.py",
+      "startLine": 6,
+      "endLine": 26
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0036-alter-processlock-name-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L19)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0036_alter_processlock_name.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0036_alter_processlock_name.py",
+      "startLine": 6,
+      "endLine": 19
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0036-delete-offlinechatprocessorconversationconfig-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L15)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0036_delete_offlinechatprocessorconversationconfig.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0036_delete_offlinechatprocessorconversationconfig.py",
+      "startLine": 6,
+      "endLine": 15
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0036-publicconversation-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L42)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0036_publicconversation.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0036_publicconversation.py",
+      "startLine": 8,
+      "endLine": 42
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0037-chatmodeloptions-openai-config-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L22-L51)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0037_chatmodeloptions_openai_config_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0037_chatmodeloptions_openai_config_and_more.py",
+      "startLine": 22,
+      "endLine": 51
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0037-searchmodelconfig-bi-encoder-docs-encode-config-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L32)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0037_searchmodelconfig_bi_encoder_docs_encode_config_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0037_searchmodelconfig_bi_encoder_docs_encode_config_and_more.py",
+      "startLine": 6,
+      "endLine": 32
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0038-merge-20240425-0857-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L14)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0038_merge_20240425_0857.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0038_merge_20240425_0857.py",
+      "startLine": 8,
+      "endLine": 14
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0038-merge-20240426-1640-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L12)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0038_merge_20240426_1640.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0038_merge_20240426_1640.py",
+      "startLine": 6,
+      "endLine": 12
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0039-merge-20240501-0301-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L12)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0039_merge_20240501_0301.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0039_merge_20240501_0301.py",
+      "startLine": 6,
+      "endLine": 12
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0040-alter-processlock-name-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L26)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0040_alter_processlock_name.Migration",
+      "src.khoj.database.migrations.0040_alter_processlock_name.Migration.delete_all_existing_process_locks"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0040_alter_processlock_name.py",
+      "startLine": 6,
+      "endLine": 26
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0040-merge-20240504-1010-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L14)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0040_merge_20240504_1010.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0040_merge_20240504_1010.py",
+      "startLine": 8,
+      "endLine": 14
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0041-merge-20240505-1234-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L14)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0041_merge_20240505_1234.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0041_merge_20240505_1234.py",
+      "startLine": 8,
+      "endLine": 14
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0042-serverchatsettings-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L46)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0042_serverchatsettings.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0042_serverchatsettings.py",
+      "startLine": 7,
+      "endLine": 46
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0043-alter-chatmodeloptions-model-type-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L21)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0043_alter_chatmodeloptions_model_type.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0043_alter_chatmodeloptions_model_type.py",
+      "startLine": 6,
+      "endLine": 21
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0044-conversation-file-filters-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L17)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0044_conversation_file_filters.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0044_conversation_file_filters.py",
+      "startLine": 6,
+      "endLine": 17
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0045-fileobject-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L37)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0045_fileobject.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0045_fileobject.py",
+      "startLine": 8,
+      "endLine": 37
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0046-khojuser-email-verification-code-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L22)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0046_khojuser_email_verification_code_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0046_khojuser_email_verification_code_and_more.py",
+      "startLine": 6,
+      "endLine": 22
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0047-alter-entry-file-type-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L31)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0047_alter_entry_file_type.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0047_alter_entry_file_type.py",
+      "startLine": 6,
+      "endLine": 31
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0048-voicemodeloption-uservoicemodelconfig-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L52)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0048_voicemodeloption_uservoicemodelconfig.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0048_voicemodeloption_uservoicemodelconfig.py",
+      "startLine": 8,
+      "endLine": 52
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0049-datastore-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L38)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0049_datastore.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0049_datastore.py",
+      "startLine": 8,
+      "endLine": 38
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0049-texttoimagemodelconfig-api-key-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L58)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0049_texttoimagemodelconfig_api_key_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0049_texttoimagemodelconfig_api_key_and_more.py",
+      "startLine": 8,
+      "endLine": 58
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0050-alter-processlock-name-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L25)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0050_alter_processlock_name.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0050_alter_processlock_name.py",
+      "startLine": 6,
+      "endLine": 25
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0051-merge-20240702-1220-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L14)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0051_merge_20240702_1220.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0051_merge_20240702_1220.py",
+      "startLine": 8,
+      "endLine": 14
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0052-alter-searchmodelconfig-bi-encoder-docs-encode-config-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L27)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0052_alter_searchmodelconfig_bi_encoder_docs_encode_config_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0052_alter_searchmodelconfig_bi_encoder_docs_encode_config_and_more.py",
+      "startLine": 6,
+      "endLine": 27
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0053-agent-style-color-agent-style-icon-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L61)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0053_agent_style_color_agent_style_icon.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0053_agent_style_color_agent_style_icon.py",
+      "startLine": 6,
+      "endLine": 61
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0054-alter-agent-style-color-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L38)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0054_alter_agent_style_color.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0054_alter_agent_style_color.py",
+      "startLine": 6,
+      "endLine": 38
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0055-alter-agent-style-icon-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L37)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0055_alter_agent_style_icon.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0055_alter_agent_style_icon.py",
+      "startLine": 6,
+      "endLine": 37
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0056-chatmodeloptions-vision-enabled-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L17)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0056_chatmodeloptions_vision_enabled.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0056_chatmodeloptions_vision_enabled.py",
+      "startLine": 6,
+      "endLine": 17
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0056-searchmodelconfig-cross-encoder-model-config-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L17)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0056_searchmodelconfig_cross_encoder_model_config.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0056_searchmodelconfig_cross_encoder_model_config.py",
+      "startLine": 6,
+      "endLine": 17
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0057-merge-20240816-1409-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L13)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0057_merge_20240816_1409.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0057_merge_20240816_1409.py",
+      "startLine": 8,
+      "endLine": 13
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0057-remove-serverchatsettings-default-model-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L51)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0057_remove_serverchatsettings_default_model_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0057_remove_serverchatsettings_default_model_and_more.py",
+      "startLine": 7,
+      "endLine": 51
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0058-alter-chatmodeloptions-chat-model-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L17)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0058_alter_chatmodeloptions_chat_model.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0058_alter_chatmodeloptions_chat_model.py",
+      "startLine": 6,
+      "endLine": 17
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0059-searchmodelconfig-bi-encoder-confidence-threshold-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L17)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0059_searchmodelconfig_bi_encoder_confidence_threshold.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0059_searchmodelconfig_bi_encoder_confidence_threshold.py",
+      "startLine": 6,
+      "endLine": 17
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0060-merge-20240905-1828-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L14)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0060_merge_20240905_1828.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0060_merge_20240905_1828.py",
+      "startLine": 8,
+      "endLine": 14
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0061-alter-chatmodeloptions-model-type-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L26)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0061_alter_chatmodeloptions_model_type.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0061_alter_chatmodeloptions_model_type.py",
+      "startLine": 6,
+      "endLine": 26
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0061-alter-texttoimagemodelconfig-model-type-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L21)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0061_alter_texttoimagemodelconfig_model_type.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0061_alter_texttoimagemodelconfig_model_type.py",
+      "startLine": 6,
+      "endLine": 21
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0062-merge-20240913-0222-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L14)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0062_merge_20240913_0222.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0062_merge_20240913_0222.py",
+      "startLine": 8,
+      "endLine": 14
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0063-conversation-temp-id-migration",
+    "name": "Migration",
+    "description": "类 Migration (L19-L36)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0063_conversation_temp_id.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0063_conversation_temp_id.py",
+      "startLine": 19,
+      "endLine": 36
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0064-remove-conversation-temp-id-alter-conversation-id-migration",
+    "name": "Migration",
+    "description": "类 Migration (L60-L86)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0064_remove_conversation_temp_id_alter_conversation_id.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0064_remove_conversation_temp_id_alter_conversation_id.py",
+      "startLine": 60,
+      "endLine": 86
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0065-remove-agent-avatar-remove-agent-public-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L49)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0065_remove_agent_avatar_remove_agent_public_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0065_remove_agent_avatar_remove_agent_public_and_more.py",
+      "startLine": 7,
+      "endLine": 49
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0066-remove-agent-tools-agent-input-tools-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L69)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0066_remove_agent_tools_agent_input_tools_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0066_remove_agent_tools_agent_input_tools_and_more.py",
+      "startLine": 7,
+      "endLine": 69
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0067-alter-agent-style-icon-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L50)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0067_alter_agent_style_icon.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0067_alter_agent_style_icon.py",
+      "startLine": 6,
+      "endLine": 50
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0068-alter-agent-output-modes-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L24)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0068_alter_agent_output_modes.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0068_alter_agent_output_modes.py",
+      "startLine": 7,
+      "endLine": 24
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0069-webscraper-serverchatsettings-web-scraper-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L89)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0069_webscraper_serverchatsettings_web_scraper.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0069_webscraper_serverchatsettings_web_scraper.py",
+      "startLine": 7,
+      "endLine": 89
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0070-alter-agent-input-tools-alter-agent-output-modes-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L46)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0070_alter_agent_input_tools_alter_agent_output_modes.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0070_alter_agent_input_tools_alter_agent_output_modes.py",
+      "startLine": 7,
+      "endLine": 46
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0071-subscription-enabled-trial-at-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L13-L32)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0071_subscription_enabled_trial_at_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0071_subscription_enabled_trial_at_and_more.py",
+      "startLine": 13,
+      "endLine": 32
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0072-entry-search-model-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L24)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0072_entry_search_model.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0072_entry_search_model.py",
+      "startLine": 7,
+      "endLine": 24
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0073-delete-usersearchmodelconfig-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L15)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0073_delete_usersearchmodelconfig.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0073_delete_usersearchmodelconfig.py",
+      "startLine": 6,
+      "endLine": 15
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0074-alter-conversation-title-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L17)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0074_alter_conversation_title.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0074_alter_conversation_title.py",
+      "startLine": 6,
+      "endLine": 17
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0075-migrate-generated-assets-and-validate-migration",
+    "name": "Migration",
+    "description": "类 Migration (L78-L85)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0075_migrate_generated_assets_and_validate.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0075_migrate_generated_assets_and_validate.py",
+      "startLine": 78,
+      "endLine": 85
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0076-rename-openaiprocessorconversationconfig-aimodelapi-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L26)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0076_rename_openaiprocessorconversationconfig_aimodelapi_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0076_rename_openaiprocessorconversationconfig_aimodelapi_and_more.py",
+      "startLine": 6,
+      "endLine": 26
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0077-chatmodel-alter-agent-chat-model-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L62)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0077_chatmodel_alter_agent_chat_model_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0077_chatmodel_alter_agent_chat_model_and_more.py",
+      "startLine": 7,
+      "endLine": 62
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0078-khojuser-email-verification-code-expiry-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L17)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0078_khojuser_email_verification_code_expiry.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0078_khojuser_email_verification_code_expiry.py",
+      "startLine": 6,
+      "endLine": 17
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0079-entry-file-object-migration",
+    "name": "Migration",
+    "description": "类 Migration (L52-L70)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0079_entry_file_object.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0079_entry_file_object.py",
+      "startLine": 52,
+      "endLine": 70
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0079-searchmodelconfig-embeddings-inference-endpoint-type-migration",
+    "name": "Migration",
+    "description": "类 Migration (L13-L29)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0079_searchmodelconfig_embeddings_inference_endpoint_type.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0079_searchmodelconfig_embeddings_inference_endpoint_type.py",
+      "startLine": 13,
+      "endLine": 29
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0080-speechtotextmodeloptions-ai-model-api-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L24)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0080_speechtotextmodeloptions_ai_model_api.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0080_speechtotextmodeloptions_ai_model_api.py",
+      "startLine": 7,
+      "endLine": 24
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0081-agent-is-hidden-chatmodel-description-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L27)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0081_agent_is_hidden_chatmodel_description_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0081_agent_is_hidden_chatmodel_description_and_more.py",
+      "startLine": 6,
+      "endLine": 27
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0081-merge-20250120-1633-migration",
+    "name": "Migration",
+    "description": "类 Migration (L8-L14)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0081_merge_20250120_1633.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0081_merge_20250120_1633.py",
+      "startLine": 8,
+      "endLine": 14
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0082-merge-20250121-1842-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L13)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0082_merge_20250121_1842.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0082_merge_20250121_1842.py",
+      "startLine": 7,
+      "endLine": 13
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0083-alter-agent-output-modes-alter-agent-personality-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L71)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0083_alter_agent_output_modes_alter_agent_personality_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0083_alter_agent_output_modes_alter_agent_personality_and_more.py",
+      "startLine": 7,
+      "endLine": 71
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0084-alter-agent-input-tools-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L33)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0084_alter_agent_input_tools.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0084_alter_agent_input_tools.py",
+      "startLine": 7,
+      "endLine": 33
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0085-alter-agent-output-modes-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L24)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0085_alter_agent_output_modes.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0085_alter_agent_output_modes.py",
+      "startLine": 7,
+      "endLine": 24
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0086-alter-texttoimagemodelconfig-model-type-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L26)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0086_alter_texttoimagemodelconfig_model_type.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0086_alter_texttoimagemodelconfig_model_type.py",
+      "startLine": 6,
+      "endLine": 26
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0087-alter-aimodelapi-api-key-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L17)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0087_alter_aimodelapi_api_key.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0087_alter_aimodelapi_api_key.py",
+      "startLine": 6,
+      "endLine": 17
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0088-ratelimitrecord-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L28)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0088_ratelimitrecord.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0088_ratelimitrecord.py",
+      "startLine": 6,
+      "endLine": 28
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0089-chatmodel-price-tier-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L34)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0089_chatmodel_price_tier_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0089_chatmodel_price_tier_and_more.py",
+      "startLine": 6,
+      "endLine": 34
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0090-alter-khojuser-uuid-migration",
+    "name": "Migration",
+    "description": "类 Migration (L94-L106)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0090_alter_khojuser_uuid.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0090_alter_khojuser_uuid.py",
+      "startLine": 94,
+      "endLine": 106
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0091-chatmodel-friendly-name-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L22-L44)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0091_chatmodel_friendly_name_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0091_chatmodel_friendly_name_and_more.py",
+      "startLine": 22,
+      "endLine": 44
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0092-alter-chatmodel-model-type-alter-chatmodel-name-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L36)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0092_alter_chatmodel_model_type_alter_chatmodel_name_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0092_alter_chatmodel_model_type_alter_chatmodel_name_and_more.py",
+      "startLine": 6,
+      "endLine": 36
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0093-remove-localorgconfig-user-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L36)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0093_remove_localorgconfig_user_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0093_remove_localorgconfig_user_and_more.py",
+      "startLine": 6,
+      "endLine": 36
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0094-serverchatsettings-think-free-deep-and-more-migration",
+    "name": "Migration",
+    "description": "类 Migration (L7-L61)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0094_serverchatsettings_think_free_deep_and_more.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0094_serverchatsettings_think_free_deep_and_more.py",
+      "startLine": 7,
+      "endLine": 61
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0095-alter-webscraper-type-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L26)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0095_alter_webscraper_type.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0095_alter_webscraper_type.py",
+      "startLine": 6,
+      "endLine": 26
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0096-mcpserver-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L26)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0096_mcpserver.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0096_mcpserver.py",
+      "startLine": 6,
+      "endLine": 26
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0097-serverchatsettings-priority-migration",
+    "name": "Migration",
+    "description": "类 Migration (L6-L23)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0097_serverchatsettings_priority.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0097_serverchatsettings_priority.py",
+      "startLine": 6,
+      "endLine": 23
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0098-alter-texttoimagemodelconfig-model-type-migration",
+    "name": "Migration",
+    "description": "类 Migration (L11-L31)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0098_alter_texttoimagemodelconfig_model_type.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0098_alter_texttoimagemodelconfig_model_type.py",
+      "startLine": 11,
+      "endLine": 31
+    }
+  },
+  {
+    "id": "src-khoj-database-migrations-0099-usermemory-migration",
+    "name": "Migration",
+    "description": "类 Migration (L9-L82)，0 个方法",
+    "nodes": [
+      "src.khoj.database.migrations.0099_usermemory.Migration"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/migrations/0099_usermemory.py",
+      "startLine": 9,
+      "endLine": 82
+    }
+  },
+  {
+    "id": "src-khoj-database-models-agent",
+    "name": "Agent",
+    "description": "含组件 VoiceModelOption；含组件 ModelType；含组件 ChatModel；含组件 PriceTier；含组件 AiModelApi；含组件 Type；含组件 Subscription；含组件 KhojApiUser；含组件 GoogleUser；含组件 KhojUser, save；含组件 ClientApplication；含组件 Meta；含组件 DbBaseModel；含组件 ChatMessageModel；含组件 TrainOfThought；含组件 Intent；含组件 OnlineContext；含组件 OrganicContext；含组件 KnowledgeGraph；含组件 PeopleAlsoAsk；含组件 AnswerBox；含组件 WebPage；含组件 CodeContextData；含组件 CodeContextResult；含组件 CodeContextFile；含组件 Context, set_uri_fallback；类 Agent (L248-L348)，0 个方法",
+    "nodes": [
+      "src.khoj.database.models.Agent",
+      "src.khoj.database.models.Agent.save",
+      "src.khoj.database.models.Agent.__str__",
+      "src.khoj.database.models.Context",
+      "src.khoj.database.models.Context.set_uri_fallback",
+      "src.khoj.database.models.CodeContextFile",
+      "src.khoj.database.models.CodeContextResult",
+      "src.khoj.database.models.CodeContextData",
+      "src.khoj.database.models.WebPage",
+      "src.khoj.database.models.AnswerBox",
+      "src.khoj.database.models.PeopleAlsoAsk",
+      "src.khoj.database.models.KnowledgeGraph",
+      "src.khoj.database.models.OrganicContext",
+      "src.khoj.database.models.OnlineContext",
+      "src.khoj.database.models.Intent",
+      "src.khoj.database.models.TrainOfThought",
+      "src.khoj.database.models.ChatMessageModel",
+      "src.khoj.database.models.DbBaseModel",
+      "src.khoj.database.models.Meta",
+      "src.khoj.database.models.ClientApplication",
+      "src.khoj.database.models.ClientApplication.__str__",
+      "src.khoj.database.models.KhojUser",
+      "src.khoj.database.models.KhojUser.save",
+      "src.khoj.database.models.KhojUser.__str__",
+      "src.khoj.database.models.GoogleUser",
+      "src.khoj.database.models.GoogleUser.__str__",
+      "src.khoj.database.models.KhojApiUser",
+      "src.khoj.database.models.Subscription",
+      "src.khoj.database.models.Type",
+      "src.khoj.database.models.AiModelApi",
+      "src.khoj.database.models.AiModelApi.__str__",
+      "src.khoj.database.models.PriceTier",
+      "src.khoj.database.models.ChatModel",
+      "src.khoj.database.models.ChatModel.__str__",
+      "src.khoj.database.models.ModelType",
+      "src.khoj.database.models.VoiceModelOption"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "src/khoj/database/models/__init__.py",
+      "startLine": 23,
+      "endLine": 348
+    }
+  },
+  {
+    "id": "src-khoj-database-models-webscraper",
+    "name": "WebScraper",
+    "description": "含组件 GithubRepoConfig；含组件 GithubConfig；含组件 NotionConfig；含组件 Operation；含组件 ProcessLock；含组件 OutputModeOptions；含组件 InputToolOptions；含组件 PrivacyLevel；含组件 StyleIconTypes；含组件 StyleColorTypes；类 WebScraper (L392-L467)，0 个方法",
+    "nodes": [
+      "src.khoj.database.models.WebScraper",
+      "src.khoj.database.models.WebScraper.clean",
+      "src.khoj.database.models.WebScraper.save",
+      "src.khoj.database.models.WebScraper.__str__",
+      "src.khoj.database.models.StyleColorTypes",
+      "src.khoj.database.models.StyleIconTypes",
+      "src.khoj.database.models.PrivacyLevel",
+      "src.khoj.database.models.InputToolOptions",
+      "src.khoj.database.models.OutputModeOptions",
+      "src.khoj.database.models.ProcessLock",
+      "src.khoj.database.models.Operation",
+      "src.khoj.database.models.NotionConfig",
+      "src.khoj.database.models.GithubConfig",
+      "src.khoj.database.models.GithubRepoConfig"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "src/khoj/database/models/__init__.py",
+      "startLine": 249,
+      "endLine": 467
+    }
+  },
+  {
+    "id": "src-khoj-database-models-serverchatsettings",
+    "name": "ServerChatSettings",
+    "description": "含组件 WebScraperType；类 ServerChatSettings (L470-L541)，0 个方法",
+    "nodes": [
+      "src.khoj.database.models.ServerChatSettings",
+      "src.khoj.database.models.ServerChatSettings.clean",
+      "src.khoj.database.models.ServerChatSettings.save",
+      "src.khoj.database.models.WebScraperType"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "src/khoj/database/models/__init__.py",
+      "startLine": 393,
+      "endLine": 541
+    }
+  },
+  {
+    "id": "src-khoj-database-models-conversation",
+    "name": "Conversation",
+    "description": "含组件 UserTextToImageModelConfig；含组件 UserVoiceModelConfig；含组件 UserConversationConfig；含组件 SpeechToTextModelOptions；含组件 TextToImageModelConfig, clean, save；含组件 ApiType；含组件 SearchModelConfig；含组件 MemoryMode；含组件 ChatModelSlot；类 Conversation (L658-L729)，0 个方法",
+    "nodes": [
+      "src.khoj.database.models.Conversation",
+      "src.khoj.database.models.Conversation.clean",
+      "src.khoj.database.models.Conversation.save",
+      "src.khoj.database.models.Conversation.messages",
+      "src.khoj.database.models.Conversation.pop_message",
+      "src.khoj.database.models.ChatModelSlot",
+      "src.khoj.database.models.MemoryMode",
+      "src.khoj.database.models.SearchModelConfig",
+      "src.khoj.database.models.SearchModelConfig.__str__",
+      "src.khoj.database.models.ApiType",
+      "src.khoj.database.models.TextToImageModelConfig",
+      "src.khoj.database.models.TextToImageModelConfig.clean",
+      "src.khoj.database.models.TextToImageModelConfig.save",
+      "src.khoj.database.models.TextToImageModelConfig.__str__",
+      "src.khoj.database.models.SpeechToTextModelOptions",
+      "src.khoj.database.models.SpeechToTextModelOptions.__str__",
+      "src.khoj.database.models.UserConversationConfig",
+      "src.khoj.database.models.UserVoiceModelConfig",
+      "src.khoj.database.models.UserTextToImageModelConfig"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "src/khoj/database/models/__init__.py",
+      "startLine": 471,
+      "endLine": 729
+    }
+  },
+  {
+    "id": "src-khoj-database-models-publicconversation",
+    "name": "PublicConversation",
+    "description": "类 PublicConversation (L732-L737)，0 个方法",
+    "nodes": [
+      "src.khoj.database.models.PublicConversation"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/models/__init__.py",
+      "startLine": 732,
+      "endLine": 737
+    }
+  },
+  {
+    "id": "src-khoj-database-models-reflectivequestion",
+    "name": "ReflectiveQuestion",
+    "description": "类 ReflectiveQuestion (L755-L757)，0 个方法",
+    "nodes": [
+      "src.khoj.database.models.ReflectiveQuestion"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/models/__init__.py",
+      "startLine": 755,
+      "endLine": 757
+    }
+  },
+  {
+    "id": "src-khoj-database-models-fileobject",
+    "name": "FileObject",
+    "description": "类 FileObject (L760-L765)，0 个方法",
+    "nodes": [
+      "src.khoj.database.models.FileObject"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/models/__init__.py",
+      "startLine": 760,
+      "endLine": 765
+    }
+  },
+  {
+    "id": "src-khoj-database-models-entry",
+    "name": "Entry",
+    "description": "类 Entry (L768-L803)，0 个方法",
+    "nodes": [
+      "src.khoj.database.models.Entry",
+      "src.khoj.database.models.Entry.save"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/models/__init__.py",
+      "startLine": 768,
+      "endLine": 803
+    }
+  },
+  {
+    "id": "src-khoj-database-models-entrytype",
+    "name": "EntryType",
+    "description": "类 EntryType (L769-L778)，0 个方法",
+    "nodes": [
+      "src.khoj.database.models.EntryType"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/models/__init__.py",
+      "startLine": 769,
+      "endLine": 778
+    }
+  },
+  {
+    "id": "src-khoj-database-models-entrysource",
+    "name": "EntrySource",
+    "description": "类 EntrySource (L780-L783)，0 个方法",
+    "nodes": [
+      "src.khoj.database.models.EntrySource"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/models/__init__.py",
+      "startLine": 780,
+      "endLine": 783
+    }
+  },
+  {
+    "id": "src-khoj-database-models-entrydates",
+    "name": "EntryDates",
+    "description": "类 EntryDates (L806-L813)，0 个方法",
+    "nodes": [
+      "src.khoj.database.models.EntryDates"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/models/__init__.py",
+      "startLine": 806,
+      "endLine": 813
+    }
+  },
+  {
+    "id": "src-khoj-database-models-userrequests",
+    "name": "UserRequests",
+    "description": "类 UserRequests (L816-L820)，0 个方法",
+    "nodes": [
+      "src.khoj.database.models.UserRequests"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/models/__init__.py",
+      "startLine": 816,
+      "endLine": 820
+    }
+  },
+  {
+    "id": "src-khoj-database-models-ratelimitrecord",
+    "name": "RateLimitRecord",
+    "description": "类 RateLimitRecord (L823-L836)，0 个方法",
+    "nodes": [
+      "src.khoj.database.models.RateLimitRecord",
+      "src.khoj.database.models.RateLimitRecord.__str__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/models/__init__.py",
+      "startLine": 823,
+      "endLine": 836
+    }
+  },
+  {
+    "id": "src-khoj-database-models-datastore",
+    "name": "DataStore",
+    "description": "类 DataStore (L839-L843)，0 个方法",
+    "nodes": [
+      "src.khoj.database.models.DataStore"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/models/__init__.py",
+      "startLine": 839,
+      "endLine": 843
+    }
+  },
+  {
+    "id": "src-khoj-database-models-mcpserver",
+    "name": "McpServer",
+    "description": "类 McpServer (L846-L852)，0 个方法",
+    "nodes": [
+      "src.khoj.database.models.McpServer",
+      "src.khoj.database.models.McpServer.__str__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/models/__init__.py",
+      "startLine": 846,
+      "endLine": 852
+    }
+  },
+  {
+    "id": "src-khoj-database-models-usermemory",
+    "name": "UserMemory",
+    "description": "类 UserMemory (L855-L864)，0 个方法",
+    "nodes": [
+      "src.khoj.database.models.UserMemory"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/database/models/__init__.py",
+      "startLine": 855,
+      "endLine": 864
+    }
+  },
+  {
+    "id": "src-khoj-processor-content-docx-docx-to-entries-docxtoentries",
+    "name": "DocxToEntries",
+    "description": "类 DocxToEntries (L16-L111)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.content.docx.docx_to_entries.DocxToEntries",
+      "src.khoj.processor.content.docx.docx_to_entries.DocxToEntries.__init__",
+      "src.khoj.processor.content.docx.docx_to_entries.DocxToEntries.process",
+      "src.khoj.processor.content.docx.docx_to_entries.DocxToEntries.extract_docx_entries",
+      "src.khoj.processor.content.docx.docx_to_entries.DocxToEntries.convert_docx_entries_to_maps",
+      "src.khoj.processor.content.docx.docx_to_entries.DocxToEntries.extract_text"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/content/docx/docx_to_entries.py",
+      "startLine": 16,
+      "endLine": 111
+    }
+  },
+  {
+    "id": "src-khoj-processor-content-github-github-to-entries-githubtoentries",
+    "name": "GithubToEntries",
+    "description": "类 GithubToEntries (L21-L226)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.content.github.github_to_entries.GithubToEntries",
+      "src.khoj.processor.content.github.github_to_entries.GithubToEntries.__init__",
+      "src.khoj.processor.content.github.github_to_entries.GithubToEntries.wait_for_rate_limit_reset",
+      "src.khoj.processor.content.github.github_to_entries.GithubToEntries.process",
+      "src.khoj.processor.content.github.github_to_entries.GithubToEntries.process_repo",
+      "src.khoj.processor.content.github.github_to_entries.GithubToEntries.update_entries_with_ids",
+      "src.khoj.processor.content.github.github_to_entries.GithubToEntries.get_files",
+      "src.khoj.processor.content.github.github_to_entries.GithubToEntries.get_file_contents",
+      "src.khoj.processor.content.github.github_to_entries.GithubToEntries.extract_markdown_entries",
+      "src.khoj.processor.content.github.github_to_entries.GithubToEntries.extract_org_entries",
+      "src.khoj.processor.content.github.github_to_entries.GithubToEntries.extract_plaintext_entries"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/content/github/github_to_entries.py",
+      "startLine": 21,
+      "endLine": 226
+    }
+  },
+  {
+    "id": "src-khoj-processor-content-images-image-to-entries-imagetoentries",
+    "name": "ImageToEntries",
+    "description": "类 ImageToEntries (L15-L119)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.content.images.image_to_entries.ImageToEntries",
+      "src.khoj.processor.content.images.image_to_entries.ImageToEntries.__init__",
+      "src.khoj.processor.content.images.image_to_entries.ImageToEntries.process",
+      "src.khoj.processor.content.images.image_to_entries.ImageToEntries.extract_image_entries",
+      "src.khoj.processor.content.images.image_to_entries.ImageToEntries.convert_image_entries_to_maps"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/content/images/image_to_entries.py",
+      "startLine": 15,
+      "endLine": 119
+    }
+  },
+  {
+    "id": "src-khoj-processor-content-markdown-markdown-to-entries-markdowntoentries",
+    "name": "MarkdownToEntries",
+    "description": "类 MarkdownToEntries (L16-L188)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.content.markdown.markdown_to_entries.MarkdownToEntries",
+      "src.khoj.processor.content.markdown.markdown_to_entries.MarkdownToEntries.__init__",
+      "src.khoj.processor.content.markdown.markdown_to_entries.MarkdownToEntries.process",
+      "src.khoj.processor.content.markdown.markdown_to_entries.MarkdownToEntries.extract_markdown_entries",
+      "src.khoj.processor.content.markdown.markdown_to_entries.MarkdownToEntries.process_single_markdown_file",
+      "src.khoj.processor.content.markdown.markdown_to_entries.MarkdownToEntries.convert_markdown_entries_to_maps"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/content/markdown/markdown_to_entries.py",
+      "startLine": 16,
+      "endLine": 188
+    }
+  },
+  {
+    "id": "src-khoj-processor-content-notion-notion-to-entries-notiontoentries",
+    "name": "NotionToEntries",
+    "description": "含组件 NotionBlockType；类 NotionToEntries (L48-L259)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.content.notion.notion_to_entries.NotionToEntries",
+      "src.khoj.processor.content.notion.notion_to_entries.NotionToEntries.__init__",
+      "src.khoj.processor.content.notion.notion_to_entries.NotionToEntries.process",
+      "src.khoj.processor.content.notion.notion_to_entries.NotionToEntries.process_page",
+      "src.khoj.processor.content.notion.notion_to_entries.NotionToEntries.process_heading",
+      "src.khoj.processor.content.notion.notion_to_entries.NotionToEntries.process_nested_children",
+      "src.khoj.processor.content.notion.notion_to_entries.NotionToEntries.process_text",
+      "src.khoj.processor.content.notion.notion_to_entries.NotionToEntries.get_block_children",
+      "src.khoj.processor.content.notion.notion_to_entries.NotionToEntries.get_page",
+      "src.khoj.processor.content.notion.notion_to_entries.NotionToEntries.get_page_children",
+      "src.khoj.processor.content.notion.notion_to_entries.NotionToEntries.get_page_content",
+      "src.khoj.processor.content.notion.notion_to_entries.NotionToEntries.update_entries_with_ids",
+      "src.khoj.processor.content.notion.notion_to_entries.NotionBlockType"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "src/khoj/processor/content/notion/notion_to_entries.py",
+      "startLine": 16,
+      "endLine": 259
+    }
+  },
+  {
+    "id": "src-khoj-processor-content-org-mode-org-to-entries-orgtoentries",
+    "name": "OrgToEntries",
+    "description": "类 OrgToEntries (L17-L241)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.content.org_mode.org_to_entries.OrgToEntries",
+      "src.khoj.processor.content.org_mode.org_to_entries.OrgToEntries.__init__",
+      "src.khoj.processor.content.org_mode.org_to_entries.OrgToEntries.process",
+      "src.khoj.processor.content.org_mode.org_to_entries.OrgToEntries.extract_org_entries",
+      "src.khoj.processor.content.org_mode.org_to_entries.OrgToEntries.extract_org_nodes",
+      "src.khoj.processor.content.org_mode.org_to_entries.OrgToEntries.process_single_org_file",
+      "src.khoj.processor.content.org_mode.org_to_entries.OrgToEntries.convert_org_nodes_to_entries"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/content/org_mode/org_to_entries.py",
+      "startLine": 17,
+      "endLine": 241
+    }
+  },
+  {
+    "id": "src-khoj-processor-content-org-mode-orgnode-orgnode",
+    "name": "Orgnode",
+    "description": "类 Orgnode (L276-L534)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.__init__",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.ancestors",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.ancestors",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.heading",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.heading",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.body",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.hasBody",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.level",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.priority",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.priority",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.tags",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.tags",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.hasTag",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.todo",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.todo",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.properties",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.properties",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.Property",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.scheduled",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.scheduled",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.deadline",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.deadline",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.closed",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.closed",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.logbook",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.logbook",
+      "src.khoj.processor.content.org_mode.orgnode.Orgnode.__repr__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/content/org_mode/orgnode.py",
+      "startLine": 276,
+      "endLine": 534
+    }
+  },
+  {
+    "id": "src-khoj-processor-content-pdf-pdf-to-entries-pdftoentries",
+    "name": "PdfToEntries",
+    "description": "类 PdfToEntries (L16-L119)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.content.pdf.pdf_to_entries.PdfToEntries",
+      "src.khoj.processor.content.pdf.pdf_to_entries.PdfToEntries.__init__",
+      "src.khoj.processor.content.pdf.pdf_to_entries.PdfToEntries.process",
+      "src.khoj.processor.content.pdf.pdf_to_entries.PdfToEntries.extract_pdf_entries",
+      "src.khoj.processor.content.pdf.pdf_to_entries.PdfToEntries.convert_pdf_entries_to_maps",
+      "src.khoj.processor.content.pdf.pdf_to_entries.PdfToEntries.extract_text",
+      "src.khoj.processor.content.pdf.pdf_to_entries.PdfToEntries.clean_text"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/content/pdf/pdf_to_entries.py",
+      "startLine": 16,
+      "endLine": 119
+    }
+  },
+  {
+    "id": "src-khoj-processor-content-plaintext-plaintext-to-entries-plaintexttoentries",
+    "name": "PlaintextToEntries",
+    "description": "类 PlaintextToEntries (L17-L116)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.content.plaintext.plaintext_to_entries.PlaintextToEntries",
+      "src.khoj.processor.content.plaintext.plaintext_to_entries.PlaintextToEntries.__init__",
+      "src.khoj.processor.content.plaintext.plaintext_to_entries.PlaintextToEntries.process",
+      "src.khoj.processor.content.plaintext.plaintext_to_entries.PlaintextToEntries.extract_html_content",
+      "src.khoj.processor.content.plaintext.plaintext_to_entries.PlaintextToEntries.extract_plaintext_entries",
+      "src.khoj.processor.content.plaintext.plaintext_to_entries.PlaintextToEntries.process_single_plaintext_file",
+      "src.khoj.processor.content.plaintext.plaintext_to_entries.PlaintextToEntries.convert_text_files_to_entries"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/content/plaintext/plaintext_to_entries.py",
+      "startLine": 17,
+      "endLine": 116
+    }
+  },
+  {
+    "id": "src-khoj-processor-content-text-to-entries-texttoentries",
+    "name": "TextToEntries",
+    "description": "类 TextToEntries (L27-L327)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.content.text_to_entries.TextToEntries",
+      "src.khoj.processor.content.text_to_entries.TextToEntries.__init__",
+      "src.khoj.processor.content.text_to_entries.TextToEntries.process",
+      "src.khoj.processor.content.text_to_entries.TextToEntries.hash_func",
+      "src.khoj.processor.content.text_to_entries.TextToEntries.remove_long_words",
+      "src.khoj.processor.content.text_to_entries.TextToEntries.tokenizer",
+      "src.khoj.processor.content.text_to_entries.TextToEntries.split_entries_by_max_tokens",
+      "src.khoj.processor.content.text_to_entries.TextToEntries.update_embeddings",
+      "src.khoj.processor.content.text_to_entries.TextToEntries.mark_entries_for_update",
+      "src.khoj.processor.content.text_to_entries.TextToEntries.clean_field"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/content/text_to_entries.py",
+      "startLine": 27,
+      "endLine": 327
+    }
+  },
+  {
+    "id": "src-khoj-processor-conversation-google-utils-geminiretryableclienterror",
+    "name": "GeminiRetryableClientError",
+    "description": "类 GeminiRetryableClientError (L75-L86)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.conversation.google.utils.GeminiRetryableClientError",
+      "src.khoj.processor.conversation.google.utils.GeminiRetryableClientError.__init__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/conversation/google/utils.py",
+      "startLine": 75,
+      "endLine": 86
+    }
+  },
+  {
+    "id": "src-khoj-processor-conversation-openai-utils-thoughtdeltaevent",
+    "name": "ThoughtDeltaEvent",
+    "description": "类 ThoughtDeltaEvent (L945-L951)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.conversation.openai.utils.ThoughtDeltaEvent"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/conversation/openai/utils.py",
+      "startLine": 945,
+      "endLine": 951
+    }
+  },
+  {
+    "id": "src-khoj-processor-conversation-openai-utils-choicedeltawiththoughts",
+    "name": "ChoiceDeltaWithThoughts",
+    "description": "类 ChoiceDeltaWithThoughts (L957-L963)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.conversation.openai.utils.ChoiceDeltaWithThoughts"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/conversation/openai/utils.py",
+      "startLine": 957,
+      "endLine": 963
+    }
+  },
+  {
+    "id": "src-khoj-processor-conversation-openai-utils-choicewiththoughts",
+    "name": "ChoiceWithThoughts",
+    "description": "类 ChoiceWithThoughts (L966-L967)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.conversation.openai.utils.ChoiceWithThoughts"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/conversation/openai/utils.py",
+      "startLine": 966,
+      "endLine": 967
+    }
+  },
+  {
+    "id": "src-khoj-processor-conversation-openai-utils-chatcompletionwiththoughtschunk",
+    "name": "ChatCompletionWithThoughtsChunk",
+    "description": "类 ChatCompletionWithThoughtsChunk (L970-L971)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.conversation.openai.utils.ChatCompletionWithThoughtsChunk"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/conversation/openai/utils.py",
+      "startLine": 970,
+      "endLine": 971
+    }
+  },
+  {
+    "id": "src-khoj-processor-conversation-utils-retryablemodelerror",
+    "name": "RetryableModelError",
+    "description": "类 RetryableModelError (L101-L119)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.conversation.utils.RetryableModelError",
+      "src.khoj.processor.conversation.utils.RetryableModelError.__init__",
+      "src.khoj.processor.conversation.utils.RetryableModelError.__str__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/conversation/utils.py",
+      "startLine": 101,
+      "endLine": 119
+    }
+  },
+  {
+    "id": "src-khoj-processor-conversation-utils-agentmessage",
+    "name": "AgentMessage",
+    "description": "类 AgentMessage (L161-L163)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.conversation.utils.AgentMessage"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/conversation/utils.py",
+      "startLine": 161,
+      "endLine": 163
+    }
+  },
+  {
+    "id": "src-khoj-processor-conversation-utils-operatorrun",
+    "name": "OperatorRun",
+    "description": "类 OperatorRun (L166-L200)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.conversation.utils.OperatorRun",
+      "src.khoj.processor.conversation.utils.OperatorRun.__init__",
+      "src.khoj.processor.conversation.utils.OperatorRun.to_dict"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/conversation/utils.py",
+      "startLine": 166,
+      "endLine": 200
+    }
+  },
+  {
+    "id": "src-khoj-processor-conversation-utils-toolcall",
+    "name": "ToolCall",
+    "description": "类 ToolCall (L203-L207)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.conversation.utils.ToolCall",
+      "src.khoj.processor.conversation.utils.ToolCall.__init__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/conversation/utils.py",
+      "startLine": 203,
+      "endLine": 207
+    }
+  },
+  {
+    "id": "src-khoj-processor-conversation-utils-researchiteration",
+    "name": "ResearchIteration",
+    "description": "类 ResearchIteration (L210-L235)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.conversation.utils.ResearchIteration",
+      "src.khoj.processor.conversation.utils.ResearchIteration.__init__",
+      "src.khoj.processor.conversation.utils.ResearchIteration.to_dict"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/conversation/utils.py",
+      "startLine": 210,
+      "endLine": 235
+    }
+  },
+  {
+    "id": "src-khoj-processor-conversation-utils-chatevent",
+    "name": "ChatEvent",
+    "description": "类 ChatEvent (L482-L494)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.conversation.utils.ChatEvent"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/conversation/utils.py",
+      "startLine": 482,
+      "endLine": 494
+    }
+  },
+  {
+    "id": "src-khoj-processor-conversation-utils-strictchatmessagemodel",
+    "name": "StrictChatMessageModel",
+    "description": "类 StrictChatMessageModel (L523-L524)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.conversation.utils.StrictChatMessageModel"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/conversation/utils.py",
+      "startLine": 523,
+      "endLine": 524
+    }
+  },
+  {
+    "id": "src-khoj-processor-conversation-utils-imagewithtype",
+    "name": "ImageWithType",
+    "description": "类 ImageWithType (L1032-L1034)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.conversation.utils.ImageWithType"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/conversation/utils.py",
+      "startLine": 1032,
+      "endLine": 1034
+    }
+  },
+  {
+    "id": "src-khoj-processor-conversation-utils-structuredoutputsupport",
+    "name": "StructuredOutputSupport",
+    "description": "类 StructuredOutputSupport (L1270-L1274)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.conversation.utils.StructuredOutputSupport"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/conversation/utils.py",
+      "startLine": 1270,
+      "endLine": 1274
+    }
+  },
+  {
+    "id": "src-khoj-processor-conversation-utils-responsewiththought",
+    "name": "ResponseWithThought",
+    "description": "类 ResponseWithThought (L1277-L1281)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.conversation.utils.ResponseWithThought",
+      "src.khoj.processor.conversation.utils.ResponseWithThought.__init__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/conversation/utils.py",
+      "startLine": 1277,
+      "endLine": 1281
+    }
+  },
+  {
+    "id": "src-khoj-processor-embeddings-embeddingsmodel",
+    "name": "EmbeddingsModel",
+    "description": "类 EmbeddingsModel (L29-L114)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.embeddings.EmbeddingsModel",
+      "src.khoj.processor.embeddings.EmbeddingsModel.__init__",
+      "src.khoj.processor.embeddings.EmbeddingsModel.embed_query",
+      "src.khoj.processor.embeddings.EmbeddingsModel.embed_with_hf",
+      "src.khoj.processor.embeddings.EmbeddingsModel.embed_with_openai",
+      "src.khoj.processor.embeddings.EmbeddingsModel.embed_documents"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/embeddings.py",
+      "startLine": 29,
+      "endLine": 114
+    }
+  },
+  {
+    "id": "src-khoj-processor-embeddings-crossencodermodel",
+    "name": "CrossEncoderModel",
+    "description": "类 CrossEncoderModel (L117-L146)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.embeddings.CrossEncoderModel",
+      "src.khoj.processor.embeddings.CrossEncoderModel.__init__",
+      "src.khoj.processor.embeddings.CrossEncoderModel.inference_server_enabled",
+      "src.khoj.processor.embeddings.CrossEncoderModel.predict"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/embeddings.py",
+      "startLine": 117,
+      "endLine": 146
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-grounding-agent-groundingagent",
+    "name": "GroundingAgent",
+    "description": "类 GroundingAgent (L31-L412)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.grounding_agent.GroundingAgent",
+      "src.khoj.processor.operator.grounding_agent.GroundingAgent.__init__",
+      "src.khoj.processor.operator.grounding_agent.GroundingAgent.act",
+      "src.khoj.processor.operator.grounding_agent.GroundingAgent._format_message_for_api",
+      "src.khoj.processor.operator.grounding_agent.GroundingAgent._parse_action",
+      "src.khoj.processor.operator.grounding_agent.GroundingAgent.get_instruction",
+      "src.khoj.processor.operator.grounding_agent.GroundingAgent.get_tools",
+      "src.khoj.processor.operator.grounding_agent.GroundingAgent.reset"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/grounding_agent.py",
+      "startLine": 31,
+      "endLine": 412
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-grounding-agent-uitars-groundingagentuitars",
+    "name": "GroundingAgentUitars",
+    "description": "类 GroundingAgentUitars (L43-L995)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars.__init__",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars.act",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars._parse_action",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars.get_instruction",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars._format_messages_for_api",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars.reset",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars.parse_action_string",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars.escape_single_quotes",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars.round_by_factor",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars.ceil_by_factor",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars.floor_by_factor",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars.smart_resize",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars.parse_action_to_structure_output",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars.escape_quotes",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars.parsing_response_to_action",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars.parsing_response_to_pyautogui_code",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars.parse_instruction_to_action",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars.add_box_token",
+      "src.khoj.processor.operator.grounding_agent_uitars.GroundingAgentUitars.pil_to_base64"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/grounding_agent_uitars.py",
+      "startLine": 43,
+      "endLine": 995
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-point",
+    "name": "Point",
+    "description": "类 Point (L7-L9)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.Point"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 7,
+      "endLine": 9
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-baseaction",
+    "name": "BaseAction",
+    "description": "类 BaseAction (L12-L13)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.BaseAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 12,
+      "endLine": 13
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-clickaction",
+    "name": "ClickAction",
+    "description": "类 ClickAction (L16-L21)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.ClickAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 16,
+      "endLine": 21
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-doubleclickaction",
+    "name": "DoubleClickAction",
+    "description": "类 DoubleClickAction (L24-L27)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.DoubleClickAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 24,
+      "endLine": 27
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-tripleclickaction",
+    "name": "TripleClickAction",
+    "description": "类 TripleClickAction (L30-L33)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.TripleClickAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 30,
+      "endLine": 33
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-scrollaction",
+    "name": "ScrollAction",
+    "description": "类 ScrollAction (L36-L43)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.ScrollAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 36,
+      "endLine": 43
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-keypressaction",
+    "name": "KeypressAction",
+    "description": "类 KeypressAction (L46-L48)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.KeypressAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 46,
+      "endLine": 48
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-typeaction",
+    "name": "TypeAction",
+    "description": "类 TypeAction (L51-L53)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.TypeAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 51,
+      "endLine": 53
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-waitaction",
+    "name": "WaitAction",
+    "description": "类 WaitAction (L56-L58)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.WaitAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 56,
+      "endLine": 58
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-screenshotaction",
+    "name": "ScreenshotAction",
+    "description": "类 ScreenshotAction (L61-L62)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.ScreenshotAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 61,
+      "endLine": 62
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-moveaction",
+    "name": "MoveAction",
+    "description": "类 MoveAction (L65-L68)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.MoveAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 65,
+      "endLine": 68
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-dragaction",
+    "name": "DragAction",
+    "description": "类 DragAction (L71-L73)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.DragAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 71,
+      "endLine": 73
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-mousedownaction",
+    "name": "MouseDownAction",
+    "description": "类 MouseDownAction (L76-L78)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.MouseDownAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 76,
+      "endLine": 78
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-mouseupaction",
+    "name": "MouseUpAction",
+    "description": "类 MouseUpAction (L81-L83)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.MouseUpAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 81,
+      "endLine": 83
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-holdkeyaction",
+    "name": "HoldKeyAction",
+    "description": "类 HoldKeyAction (L86-L89)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.HoldKeyAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 86,
+      "endLine": 89
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-keyupaction",
+    "name": "KeyUpAction",
+    "description": "类 KeyUpAction (L92-L94)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.KeyUpAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 92,
+      "endLine": 94
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-keydownaction",
+    "name": "KeyDownAction",
+    "description": "类 KeyDownAction (L97-L99)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.KeyDownAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 97,
+      "endLine": 99
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-cursorpositionaction",
+    "name": "CursorPositionAction",
+    "description": "类 CursorPositionAction (L102-L103)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.CursorPositionAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 102,
+      "endLine": 103
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-gotoaction",
+    "name": "GotoAction",
+    "description": "类 GotoAction (L106-L108)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.GotoAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 106,
+      "endLine": 108
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-backaction",
+    "name": "BackAction",
+    "description": "类 BackAction (L111-L112)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.BackAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 111,
+      "endLine": 112
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-requestuseraction",
+    "name": "RequestUserAction",
+    "description": "类 RequestUserAction (L115-L119)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.RequestUserAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 115,
+      "endLine": 119
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-noopaction",
+    "name": "NoopAction",
+    "description": "类 NoopAction (L122-L125)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.NoopAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 122,
+      "endLine": 125
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-texteditorviewaction",
+    "name": "TextEditorViewAction",
+    "description": "类 TextEditorViewAction (L129-L134)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.TextEditorViewAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 129,
+      "endLine": 134
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-texteditorcreateaction",
+    "name": "TextEditorCreateAction",
+    "description": "类 TextEditorCreateAction (L137-L142)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.TextEditorCreateAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 137,
+      "endLine": 142
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-texteditorstrreplaceaction",
+    "name": "TextEditorStrReplaceAction",
+    "description": "类 TextEditorStrReplaceAction (L145-L151)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.TextEditorStrReplaceAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 145,
+      "endLine": 151
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-texteditorinsertaction",
+    "name": "TextEditorInsertAction",
+    "description": "类 TextEditorInsertAction (L154-L160)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.TextEditorInsertAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 154,
+      "endLine": 160
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-actions-terminalaction",
+    "name": "TerminalAction",
+    "description": "类 TerminalAction (L163-L168)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_actions.TerminalAction"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_actions.py",
+      "startLine": 163,
+      "endLine": 168
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-agent-anthropic-anthropicoperatoragent",
+    "name": "AnthropicOperatorAgent",
+    "description": "类 AnthropicOperatorAgent (L52-L635)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_agent_anthropic.AnthropicOperatorAgent",
+      "src.khoj.processor.operator.operator_agent_anthropic.AnthropicOperatorAgent.act",
+      "src.khoj.processor.operator.operator_agent_anthropic.AnthropicOperatorAgent.add_action_results",
+      "src.khoj.processor.operator.operator_agent_anthropic.AnthropicOperatorAgent._format_message_for_api",
+      "src.khoj.processor.operator.operator_agent_anthropic.AnthropicOperatorAgent._compile_response",
+      "src.khoj.processor.operator.operator_agent_anthropic.AnthropicOperatorAgent._render_response",
+      "src.khoj.processor.operator.operator_agent_anthropic.AnthropicOperatorAgent._call_model",
+      "src.khoj.processor.operator.operator_agent_anthropic.AnthropicOperatorAgent._compress",
+      "src.khoj.processor.operator.operator_agent_anthropic.AnthropicOperatorAgent.get_coordinates",
+      "src.khoj.processor.operator.operator_agent_anthropic.AnthropicOperatorAgent.model_default_tool",
+      "src.khoj.processor.operator.operator_agent_anthropic.AnthropicOperatorAgent.model_default_headers",
+      "src.khoj.processor.operator.operator_agent_anthropic.AnthropicOperatorAgent.get_instructions",
+      "src.khoj.processor.operator.operator_agent_anthropic.AnthropicOperatorAgent.get_tools"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_agent_anthropic.py",
+      "startLine": 52,
+      "endLine": 635
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-agent-base-operatoragent",
+    "name": "OperatorAgent",
+    "description": "含组件 AgentActResult；类 OperatorAgent (L30-L111)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_agent_base.OperatorAgent",
+      "src.khoj.processor.operator.operator_agent_base.OperatorAgent.__init__",
+      "src.khoj.processor.operator.operator_agent_base.OperatorAgent.act",
+      "src.khoj.processor.operator.operator_agent_base.OperatorAgent.add_action_results",
+      "src.khoj.processor.operator.operator_agent_base.OperatorAgent.summarize",
+      "src.khoj.processor.operator.operator_agent_base.OperatorAgent._compile_response",
+      "src.khoj.processor.operator.operator_agent_base.OperatorAgent._render_response",
+      "src.khoj.processor.operator.operator_agent_base.OperatorAgent._format_message_for_api",
+      "src.khoj.processor.operator.operator_agent_base.OperatorAgent._update_usage",
+      "src.khoj.processor.operator.operator_agent_base.OperatorAgent._commit_trace",
+      "src.khoj.processor.operator.operator_agent_base.OperatorAgent.reset",
+      "src.khoj.processor.operator.operator_agent_base.AgentActResult"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_agent_base.py",
+      "startLine": 24,
+      "endLine": 111
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-agent-binary-binaryoperatoragent",
+    "name": "BinaryOperatorAgent",
+    "description": "类 BinaryOperatorAgent (L29-L405)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_agent_binary.BinaryOperatorAgent",
+      "src.khoj.processor.operator.operator_agent_binary.BinaryOperatorAgent.__init__",
+      "src.khoj.processor.operator.operator_agent_binary.BinaryOperatorAgent.act",
+      "src.khoj.processor.operator.operator_agent_binary.BinaryOperatorAgent.act_reason",
+      "src.khoj.processor.operator.operator_agent_binary.BinaryOperatorAgent.act_ground",
+      "src.khoj.processor.operator.operator_agent_binary.BinaryOperatorAgent.add_action_results",
+      "src.khoj.processor.operator.operator_agent_binary.BinaryOperatorAgent.summarize",
+      "src.khoj.processor.operator.operator_agent_binary.BinaryOperatorAgent._compile_response",
+      "src.khoj.processor.operator.operator_agent_binary.BinaryOperatorAgent._render_response",
+      "src.khoj.processor.operator.operator_agent_binary.BinaryOperatorAgent._get_message_text",
+      "src.khoj.processor.operator.operator_agent_binary.BinaryOperatorAgent._get_message_images",
+      "src.khoj.processor.operator.operator_agent_binary.BinaryOperatorAgent._format_message_for_api",
+      "src.khoj.processor.operator.operator_agent_binary.BinaryOperatorAgent.get_instruction",
+      "src.khoj.processor.operator.operator_agent_binary.BinaryOperatorAgent.reset"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_agent_binary.py",
+      "startLine": 29,
+      "endLine": 405
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-agent-openai-openaioperatoragent",
+    "name": "OpenAIOperatorAgent",
+    "description": "类 OpenAIOperatorAgent (L41-L472)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_agent_openai.OpenAIOperatorAgent",
+      "src.khoj.processor.operator.operator_agent_openai.OpenAIOperatorAgent.act",
+      "src.khoj.processor.operator.operator_agent_openai.OpenAIOperatorAgent.add_action_results",
+      "src.khoj.processor.operator.operator_agent_openai.OpenAIOperatorAgent.summarize",
+      "src.khoj.processor.operator.operator_agent_openai.OpenAIOperatorAgent._call_model",
+      "src.khoj.processor.operator.operator_agent_openai.OpenAIOperatorAgent._format_message_for_api",
+      "src.khoj.processor.operator.operator_agent_openai.OpenAIOperatorAgent._compile_response",
+      "src.khoj.processor.operator.operator_agent_openai.OpenAIOperatorAgent._render_response",
+      "src.khoj.processor.operator.operator_agent_openai.OpenAIOperatorAgent.get_instructions",
+      "src.khoj.processor.operator.operator_agent_openai.OpenAIOperatorAgent.get_tools",
+      "src.khoj.processor.operator.operator_agent_openai.OpenAIOperatorAgent._format_messages_for_summary"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_agent_openai.py",
+      "startLine": 41,
+      "endLine": 472
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-environment-base-environmenttype",
+    "name": "EnvironmentType",
+    "description": "类 EnvironmentType (L10-L14)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_environment_base.EnvironmentType"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_environment_base.py",
+      "startLine": 10,
+      "endLine": 14
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-environment-base-envstate",
+    "name": "EnvState",
+    "description": "类 EnvState (L17-L21)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_environment_base.EnvState"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_environment_base.py",
+      "startLine": 17,
+      "endLine": 21
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-environment-base-envstepresult",
+    "name": "EnvStepResult",
+    "description": "类 EnvStepResult (L24-L29)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_environment_base.EnvStepResult"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_environment_base.py",
+      "startLine": 24,
+      "endLine": 29
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-environment-base-environment",
+    "name": "Environment",
+    "description": "类 Environment (L32-L47)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_environment_base.Environment",
+      "src.khoj.processor.operator.operator_environment_base.Environment.start",
+      "src.khoj.processor.operator.operator_environment_base.Environment.step",
+      "src.khoj.processor.operator.operator_environment_base.Environment.close",
+      "src.khoj.processor.operator.operator_environment_base.Environment.get_state"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_environment_base.py",
+      "startLine": 32,
+      "endLine": 47
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-environment-browser-browserenvironment",
+    "name": "BrowserEnvironment",
+    "description": "类 BrowserEnvironment (L27-L397)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_environment_browser.BrowserEnvironment",
+      "src.khoj.processor.operator.operator_environment_browser.BrowserEnvironment.__init__",
+      "src.khoj.processor.operator.operator_environment_browser.BrowserEnvironment.start",
+      "src.khoj.processor.operator.operator_environment_browser.BrowserEnvironment.handle_load",
+      "src.khoj.processor.operator.operator_environment_browser.BrowserEnvironment.handle_new_page",
+      "src.khoj.processor.operator.operator_environment_browser.BrowserEnvironment._get_screenshot",
+      "src.khoj.processor.operator.operator_environment_browser.BrowserEnvironment._draw_mouse_position",
+      "src.khoj.processor.operator.operator_environment_browser.BrowserEnvironment.get_state",
+      "src.khoj.processor.operator.operator_environment_browser.BrowserEnvironment.step",
+      "src.khoj.processor.operator.operator_environment_browser.BrowserEnvironment.reset",
+      "src.khoj.processor.operator.operator_environment_browser.BrowserEnvironment.close",
+      "src.khoj.processor.operator.operator_environment_browser.BrowserEnvironment.parse_key_combination"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_environment_browser.py",
+      "startLine": 27,
+      "endLine": 397
+    }
+  },
+  {
+    "id": "src-khoj-processor-operator-operator-environment-computer-computerenvironment",
+    "name": "ComputerEnvironment",
+    "description": "类 ComputerEnvironment (L24-L658)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.operator.operator_environment_computer.ComputerEnvironment",
+      "src.khoj.processor.operator.operator_environment_computer.ComputerEnvironment.__init__",
+      "src.khoj.processor.operator.operator_environment_computer.ComputerEnvironment._execute",
+      "src.khoj.processor.operator.operator_environment_computer.ComputerEnvironment.start",
+      "src.khoj.processor.operator.operator_environment_computer.ComputerEnvironment._get_screenshot",
+      "src.khoj.processor.operator.operator_environment_computer.ComputerEnvironment._draw_mouse_position",
+      "src.khoj.processor.operator.operator_environment_computer.ComputerEnvironment.get_state",
+      "src.khoj.processor.operator.operator_environment_computer.ComputerEnvironment.step",
+      "src.khoj.processor.operator.operator_environment_computer.ComputerEnvironment._execute_shell_command",
+      "src.khoj.processor.operator.operator_environment_computer.ComputerEnvironment.close",
+      "src.khoj.processor.operator.operator_environment_computer.ComputerEnvironment.parse_key_combination",
+      "src.khoj.processor.operator.operator_environment_computer.ComputerEnvironment.generate_pyautogui_command",
+      "src.khoj.processor.operator.operator_environment_computer.ComputerEnvironment.docker_execute"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/operator/operator_environment_computer.py",
+      "startLine": 24,
+      "endLine": 658
+    }
+  },
+  {
+    "id": "src-khoj-processor-speech-text-to-speech-texttospeecherror",
+    "name": "TextToSpeechError",
+    "description": "类 TextToSpeechError (L20-L21)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.speech.text_to_speech.TextToSpeechError"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/speech/text_to_speech.py",
+      "startLine": 20,
+      "endLine": 21
+    }
+  },
+  {
+    "id": "src-khoj-processor-tools-mcp-mcpclient",
+    "name": "MCPClient",
+    "description": "类 MCPClient (L13-L124)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.tools.mcp.MCPClient",
+      "src.khoj.processor.tools.mcp.MCPClient.__init__",
+      "src.khoj.processor.tools.mcp.MCPClient.connect",
+      "src.khoj.processor.tools.mcp.MCPClient.get_tools",
+      "src.khoj.processor.tools.mcp.MCPClient.run_tool",
+      "src.khoj.processor.tools.mcp.MCPClient._connect_to_sse_server",
+      "src.khoj.processor.tools.mcp.MCPClient._connect_to_stdio_server",
+      "src.khoj.processor.tools.mcp.MCPClient.close"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/tools/mcp.py",
+      "startLine": 13,
+      "endLine": 124
+    }
+  },
+  {
+    "id": "src-khoj-processor-tools-run-code-generatedcode",
+    "name": "GeneratedCode",
+    "description": "类 GeneratedCode (L48-L50)，0 个方法",
+    "nodes": [
+      "src.khoj.processor.tools.run_code.GeneratedCode"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/processor/tools/run_code.py",
+      "startLine": 48,
+      "endLine": 50
+    }
+  },
+  {
+    "id": "src-khoj-routers-api-agents-modifyagentbody",
+    "name": "ModifyAgentBody",
+    "description": "类 ModifyAgentBody (L30-L41)，0 个方法",
+    "nodes": [
+      "src.khoj.routers.api_agents.ModifyAgentBody"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/routers/api_agents.py",
+      "startLine": 30,
+      "endLine": 41
+    }
+  },
+  {
+    "id": "src-khoj-routers-api-agents-modifyhiddenagentbody",
+    "name": "ModifyHiddenAgentBody",
+    "description": "类 ModifyHiddenAgentBody (L44-L49)，0 个方法",
+    "nodes": [
+      "src.khoj.routers.api_agents.ModifyHiddenAgentBody"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/routers/api_agents.py",
+      "startLine": 44,
+      "endLine": 49
+    }
+  },
+  {
+    "id": "src-khoj-routers-api-chat-messagebuffer",
+    "name": "MessageBuffer",
+    "description": "类 MessageBuffer (L1594-L1604)，0 个方法",
+    "nodes": [
+      "src.khoj.routers.api_chat.MessageBuffer",
+      "src.khoj.routers.api_chat.MessageBuffer.__post_init__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/routers/api_chat.py",
+      "startLine": 1594,
+      "endLine": 1604
+    }
+  },
+  {
+    "id": "src-khoj-routers-api-content-file",
+    "name": "File",
+    "description": "类 File (L52-L54)，0 个方法",
+    "nodes": [
+      "src.khoj.routers.api_content.File"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/routers/api_content.py",
+      "startLine": 52,
+      "endLine": 54
+    }
+  },
+  {
+    "id": "src-khoj-routers-api-content-indexbatchrequest",
+    "name": "IndexBatchRequest",
+    "description": "类 IndexBatchRequest (L57-L58)，0 个方法",
+    "nodes": [
+      "src.khoj.routers.api_content.IndexBatchRequest"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/routers/api_content.py",
+      "startLine": 57,
+      "endLine": 58
+    }
+  },
+  {
+    "id": "src-khoj-routers-api-content-indexerinput",
+    "name": "IndexerInput",
+    "description": "类 IndexerInput (L61-L67)，0 个方法",
+    "nodes": [
+      "src.khoj.routers.api_content.IndexerInput"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/routers/api_content.py",
+      "startLine": 61,
+      "endLine": 67
+    }
+  },
+  {
+    "id": "src-khoj-routers-api-content-deletefilesrequest",
+    "name": "DeleteFilesRequest",
+    "description": "类 DeleteFilesRequest (L258-L259)，0 个方法",
+    "nodes": [
+      "src.khoj.routers.api_content.DeleteFilesRequest"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/routers/api_content.py",
+      "startLine": 258,
+      "endLine": 259
+    }
+  },
+  {
+    "id": "src-khoj-routers-api-memories-updatememorybody",
+    "name": "UpdateMemoryBody",
+    "description": "类 UpdateMemoryBody (L65-L68)，0 个方法",
+    "nodes": [
+      "src.khoj.routers.api_memories.UpdateMemoryBody"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/routers/api_memories.py",
+      "startLine": 65,
+      "endLine": 68
+    }
+  },
+  {
+    "id": "src-khoj-routers-helpers-apiuserratelimiter",
+    "name": "ApiUserRateLimiter",
+    "description": "含组件 EmailVerificationApiRateLimiter；含组件 EmailAttemptRateLimiter；含组件 MagicLinkForm；含组件 FeedbackData；含组件 DeleteMessageRequestBody；含组件 DocumentQueries；含组件 ImagePromptResponse；含组件 MemoryUpdates；含组件 OnlineQueries；含组件 WebpageUrls；含组件 PickTools；含组件 SafetyCheck；类 ApiUserRateLimiter (L2095-L2197)，0 个方法",
+    "nodes": [
+      "src.khoj.routers.helpers.ApiUserRateLimiter",
+      "src.khoj.routers.helpers.ApiUserRateLimiter.__init__",
+      "src.khoj.routers.helpers.ApiUserRateLimiter.__call__",
+      "src.khoj.routers.helpers.ApiUserRateLimiter.check_websocket",
+      "src.khoj.routers.helpers.SafetyCheck",
+      "src.khoj.routers.helpers.PickTools",
+      "src.khoj.routers.helpers.WebpageUrls",
+      "src.khoj.routers.helpers.OnlineQueries",
+      "src.khoj.routers.helpers.MemoryUpdates",
+      "src.khoj.routers.helpers.ImagePromptResponse",
+      "src.khoj.routers.helpers.DocumentQueries",
+      "src.khoj.routers.helpers.DeleteMessageRequestBody",
+      "src.khoj.routers.helpers.FeedbackData",
+      "src.khoj.routers.helpers.MagicLinkForm",
+      "src.khoj.routers.helpers.EmailAttemptRateLimiter",
+      "src.khoj.routers.helpers.EmailAttemptRateLimiter.__init__",
+      "src.khoj.routers.helpers.EmailAttemptRateLimiter.__call__",
+      "src.khoj.routers.helpers.EmailVerificationApiRateLimiter",
+      "src.khoj.routers.helpers.EmailVerificationApiRateLimiter.__init__",
+      "src.khoj.routers.helpers.EmailVerificationApiRateLimiter.__call__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "src/khoj/routers/helpers.py",
+      "startLine": 329,
+      "endLine": 2197
+    }
+  },
+  {
+    "id": "src-khoj-routers-helpers-apiimageratelimiter",
+    "name": "ApiImageRateLimiter",
+    "description": "类 ApiImageRateLimiter (L2200-L2285)，0 个方法",
+    "nodes": [
+      "src.khoj.routers.helpers.ApiImageRateLimiter",
+      "src.khoj.routers.helpers.ApiImageRateLimiter.__init__",
+      "src.khoj.routers.helpers.ApiImageRateLimiter.__call__",
+      "src.khoj.routers.helpers.ApiImageRateLimiter.check_websocket"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/routers/helpers.py",
+      "startLine": 2200,
+      "endLine": 2285
+    }
+  },
+  {
+    "id": "src-khoj-routers-helpers-apiindexeddatalimiter",
+    "name": "ApiIndexedDataLimiter",
+    "description": "含组件 ConversationCommandRateLimiter, update_and_check_if_valid；含组件 WebSocketConnectionManager, can_connect, register_connection, unregister_connection, _cleanup_stale_connections；类 ApiIndexedDataLimiter (L2378-L2442)，0 个方法",
+    "nodes": [
+      "src.khoj.routers.helpers.ApiIndexedDataLimiter",
+      "src.khoj.routers.helpers.ApiIndexedDataLimiter.__init__",
+      "src.khoj.routers.helpers.ApiIndexedDataLimiter.__call__",
+      "src.khoj.routers.helpers.WebSocketConnectionManager",
+      "src.khoj.routers.helpers.WebSocketConnectionManager.__init__",
+      "src.khoj.routers.helpers.WebSocketConnectionManager.can_connect",
+      "src.khoj.routers.helpers.WebSocketConnectionManager.register_connection",
+      "src.khoj.routers.helpers.WebSocketConnectionManager.unregister_connection",
+      "src.khoj.routers.helpers.WebSocketConnectionManager._cleanup_stale_connections",
+      "src.khoj.routers.helpers.ConversationCommandRateLimiter",
+      "src.khoj.routers.helpers.ConversationCommandRateLimiter.__init__",
+      "src.khoj.routers.helpers.ConversationCommandRateLimiter.update_and_check_if_valid"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "src/khoj/routers/helpers.py",
+      "startLine": 2288,
+      "endLine": 2442
+    }
+  },
+  {
+    "id": "src-khoj-routers-helpers-messageprocessor",
+    "name": "MessageProcessor",
+    "description": "含组件 CommonQueryParamsClass；类 MessageProcessor (L2763-L2825)，0 个方法",
+    "nodes": [
+      "src.khoj.routers.helpers.MessageProcessor",
+      "src.khoj.routers.helpers.MessageProcessor.__init__",
+      "src.khoj.routers.helpers.MessageProcessor.convert_message_chunk_to_json",
+      "src.khoj.routers.helpers.MessageProcessor.process_message_chunk",
+      "src.khoj.routers.helpers.MessageProcessor.handle_json_response",
+      "src.khoj.routers.helpers.CommonQueryParamsClass",
+      "src.khoj.routers.helpers.CommonQueryParamsClass.__init__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "src/khoj/routers/helpers.py",
+      "startLine": 2445,
+      "endLine": 2825
+    }
+  },
+  {
+    "id": "src-khoj-routers-research-toolexecutionresult",
+    "name": "ToolExecutionResult",
+    "description": "类 ToolExecutionResult (L51-L61)，0 个方法",
+    "nodes": [
+      "src.khoj.routers.research.ToolExecutionResult",
+      "src.khoj.routers.research.ToolExecutionResult.__init__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/routers/research.py",
+      "startLine": 51,
+      "endLine": 61
+    }
+  },
+  {
+    "id": "src-khoj-search-filter-base-filter-basefilter",
+    "name": "BaseFilter",
+    "description": "类 BaseFilter (L5-L13)，0 个方法",
+    "nodes": [
+      "src.khoj.search_filter.base_filter.BaseFilter",
+      "src.khoj.search_filter.base_filter.BaseFilter.get_filter_terms",
+      "src.khoj.search_filter.base_filter.BaseFilter.can_filter",
+      "src.khoj.search_filter.base_filter.BaseFilter.defilter"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/search_filter/base_filter.py",
+      "startLine": 5,
+      "endLine": 13
+    }
+  },
+  {
+    "id": "src-khoj-search-filter-date-filter-datefilter",
+    "name": "DateFilter",
+    "description": "类 DateFilter (L18-L215)，0 个方法",
+    "nodes": [
+      "src.khoj.search_filter.date_filter.DateFilter",
+      "src.khoj.search_filter.date_filter.DateFilter.__init__",
+      "src.khoj.search_filter.date_filter.DateFilter.compile_date_regexes",
+      "src.khoj.search_filter.date_filter.DateFilter.extract_dates",
+      "src.khoj.search_filter.date_filter.DateFilter.get_filter_terms",
+      "src.khoj.search_filter.date_filter.DateFilter.get_query_date_range",
+      "src.khoj.search_filter.date_filter.DateFilter.defilter",
+      "src.khoj.search_filter.date_filter.DateFilter.extract_date_range",
+      "src.khoj.search_filter.date_filter.DateFilter.parse",
+      "src.khoj.search_filter.date_filter.DateFilter.date_to_daterange"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/search_filter/date_filter.py",
+      "startLine": 18,
+      "endLine": 215
+    }
+  },
+  {
+    "id": "src-khoj-search-filter-file-filter-filefilter",
+    "name": "FileFilter",
+    "description": "类 FileFilter (L12-L32)，0 个方法",
+    "nodes": [
+      "src.khoj.search_filter.file_filter.FileFilter",
+      "src.khoj.search_filter.file_filter.FileFilter.__init__",
+      "src.khoj.search_filter.file_filter.FileFilter.get_filter_terms",
+      "src.khoj.search_filter.file_filter.FileFilter.convert_to_regex",
+      "src.khoj.search_filter.file_filter.FileFilter.defilter"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/search_filter/file_filter.py",
+      "startLine": 12,
+      "endLine": 32
+    }
+  },
+  {
+    "id": "src-khoj-search-filter-word-filter-wordfilter",
+    "name": "WordFilter",
+    "description": "类 WordFilter (L12-L29)，0 个方法",
+    "nodes": [
+      "src.khoj.search_filter.word_filter.WordFilter",
+      "src.khoj.search_filter.word_filter.WordFilter.__init__",
+      "src.khoj.search_filter.word_filter.WordFilter.get_filter_terms",
+      "src.khoj.search_filter.word_filter.WordFilter.defilter"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/search_filter/word_filter.py",
+      "startLine": 12,
+      "endLine": 29
+    }
+  },
+  {
+    "id": "src-khoj-utils-config-searchtype",
+    "name": "SearchType",
+    "description": "类 SearchType (L7-L16)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.config.SearchType"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/config.py",
+      "startLine": 7,
+      "endLine": 16
+    }
+  },
+  {
+    "id": "src-khoj-utils-helpers-asynciteratorwrapper",
+    "name": "AsyncIteratorWrapper",
+    "description": "类 AsyncIteratorWrapper (L61-L80)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.helpers.AsyncIteratorWrapper",
+      "src.khoj.utils.helpers.AsyncIteratorWrapper.__init__",
+      "src.khoj.utils.helpers.AsyncIteratorWrapper.__aiter__",
+      "src.khoj.utils.helpers.AsyncIteratorWrapper.__anext__",
+      "src.khoj.utils.helpers.AsyncIteratorWrapper.next_async"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/helpers.py",
+      "startLine": 61,
+      "endLine": 80
+    }
+  },
+  {
+    "id": "src-khoj-utils-helpers-timer",
+    "name": "timer",
+    "description": "类 timer (L193-L210)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.helpers.timer",
+      "src.khoj.utils.helpers.timer.__init__",
+      "src.khoj.utils.helpers.timer.__enter__",
+      "src.khoj.utils.helpers.timer.__exit__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/helpers.py",
+      "startLine": 193,
+      "endLine": 210
+    }
+  },
+  {
+    "id": "src-khoj-utils-helpers-lru",
+    "name": "LRU",
+    "description": "类 LRU (L213-L227)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.helpers.LRU",
+      "src.khoj.utils.helpers.LRU.__init__",
+      "src.khoj.utils.helpers.LRU.__getitem__",
+      "src.khoj.utils.helpers.LRU.__setitem__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/helpers.py",
+      "startLine": 213,
+      "endLine": 227
+    }
+  },
+  {
+    "id": "src-khoj-utils-helpers-tooldefinition",
+    "name": "ToolDefinition",
+    "description": "类 ToolDefinition (L336-L340)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.helpers.ToolDefinition",
+      "src.khoj.utils.helpers.ToolDefinition.__init__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/helpers.py",
+      "startLine": 336,
+      "endLine": 340
+    }
+  },
+  {
+    "id": "src-khoj-utils-helpers-conversationcommand",
+    "name": "ConversationCommand",
+    "description": "类 ConversationCommand (L415-L435)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.helpers.ConversationCommand"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/helpers.py",
+      "startLine": 415,
+      "endLine": 435
+    }
+  },
+  {
+    "id": "src-khoj-utils-helpers-imageintenttype",
+    "name": "ImageIntentType",
+    "description": "类 ImageIntentType (L699-L710)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.helpers.ImageIntentType"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/helpers.py",
+      "startLine": 699,
+      "endLine": 710
+    }
+  },
+  {
+    "id": "src-khoj-utils-helpers-imageshape",
+    "name": "ImageShape",
+    "description": "类 ImageShape (L903-L906)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.helpers.ImageShape"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/helpers.py",
+      "startLine": 903,
+      "endLine": 906
+    }
+  },
+  {
+    "id": "src-khoj-utils-helpers-aiapiinfo",
+    "name": "AiApiInfo",
+    "description": "类 AiApiInfo (L1089-L1093)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.helpers.AiApiInfo"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/helpers.py",
+      "startLine": 1089,
+      "endLine": 1093
+    }
+  },
+  {
+    "id": "src-khoj-utils-models-baseencoder",
+    "name": "BaseEncoder",
+    "description": "类 BaseEncoder (L9-L14)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.models.BaseEncoder",
+      "src.khoj.utils.models.BaseEncoder.__init__",
+      "src.khoj.utils.models.BaseEncoder.encode"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/models.py",
+      "startLine": 9,
+      "endLine": 14
+    }
+  },
+  {
+    "id": "src-khoj-utils-models-openai",
+    "name": "OpenAI",
+    "description": "类 OpenAI (L17-L45)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.models.OpenAI",
+      "src.khoj.utils.models.OpenAI.__init__",
+      "src.khoj.utils.models.OpenAI.encode"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/models.py",
+      "startLine": 17,
+      "endLine": 45
+    }
+  },
+  {
+    "id": "src-khoj-utils-rawconfig-configbase",
+    "name": "ConfigBase",
+    "description": "类 ConfigBase (L11-L20)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.rawconfig.ConfigBase",
+      "src.khoj.utils.rawconfig.ConfigBase.__getitem__",
+      "src.khoj.utils.rawconfig.ConfigBase.__setitem__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/rawconfig.py",
+      "startLine": 11,
+      "endLine": 20
+    }
+  },
+  {
+    "id": "src-khoj-utils-rawconfig-config",
+    "name": "Config",
+    "description": "类 Config (L12-L14)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.rawconfig.Config"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/rawconfig.py",
+      "startLine": 12,
+      "endLine": 14
+    }
+  },
+  {
+    "id": "src-khoj-utils-rawconfig-locationdata",
+    "name": "LocationData",
+    "description": "类 LocationData (L23-L37)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.rawconfig.LocationData",
+      "src.khoj.utils.rawconfig.LocationData.__str__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/rawconfig.py",
+      "startLine": 23,
+      "endLine": 37
+    }
+  },
+  {
+    "id": "src-khoj-utils-rawconfig-filefilterrequest",
+    "name": "FileFilterRequest",
+    "description": "类 FileFilterRequest (L40-L42)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.rawconfig.FileFilterRequest"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/rawconfig.py",
+      "startLine": 40,
+      "endLine": 42
+    }
+  },
+  {
+    "id": "src-khoj-utils-rawconfig-filesfilterrequest",
+    "name": "FilesFilterRequest",
+    "description": "类 FilesFilterRequest (L45-L47)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.rawconfig.FilesFilterRequest"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/rawconfig.py",
+      "startLine": 45,
+      "endLine": 47
+    }
+  },
+  {
+    "id": "src-khoj-utils-rawconfig-githubrepoconfig",
+    "name": "GithubRepoConfig",
+    "description": "类 GithubRepoConfig (L50-L53)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.rawconfig.GithubRepoConfig"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/rawconfig.py",
+      "startLine": 50,
+      "endLine": 53
+    }
+  },
+  {
+    "id": "src-khoj-utils-rawconfig-githubcontentconfig",
+    "name": "GithubContentConfig",
+    "description": "类 GithubContentConfig (L56-L58)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.rawconfig.GithubContentConfig"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/rawconfig.py",
+      "startLine": 56,
+      "endLine": 58
+    }
+  },
+  {
+    "id": "src-khoj-utils-rawconfig-notioncontentconfig",
+    "name": "NotionContentConfig",
+    "description": "类 NotionContentConfig (L61-L62)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.rawconfig.NotionContentConfig"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/rawconfig.py",
+      "startLine": 61,
+      "endLine": 62
+    }
+  },
+  {
+    "id": "src-khoj-utils-rawconfig-searchresponse",
+    "name": "SearchResponse",
+    "description": "类 SearchResponse (L65-L70)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.rawconfig.SearchResponse"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/rawconfig.py",
+      "startLine": 65,
+      "endLine": 70
+    }
+  },
+  {
+    "id": "src-khoj-utils-rawconfig-filedata",
+    "name": "FileData",
+    "description": "类 FileData (L73-L77)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.rawconfig.FileData"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/rawconfig.py",
+      "startLine": 73,
+      "endLine": 77
+    }
+  },
+  {
+    "id": "src-khoj-utils-rawconfig-fileattachment",
+    "name": "FileAttachment",
+    "description": "类 FileAttachment (L80-L84)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.rawconfig.FileAttachment"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/rawconfig.py",
+      "startLine": 80,
+      "endLine": 84
+    }
+  },
+  {
+    "id": "src-khoj-utils-rawconfig-chatrequestbody",
+    "name": "ChatRequestBody",
+    "description": "类 ChatRequestBody (L87-L102)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.rawconfig.ChatRequestBody"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/rawconfig.py",
+      "startLine": 87,
+      "endLine": 102
+    }
+  },
+  {
+    "id": "src-khoj-utils-rawconfig-entry",
+    "name": "Entry",
+    "description": "类 Entry (L105-L151)，0 个方法",
+    "nodes": [
+      "src.khoj.utils.rawconfig.Entry",
+      "src.khoj.utils.rawconfig.Entry.__init__",
+      "src.khoj.utils.rawconfig.Entry.to_json",
+      "src.khoj.utils.rawconfig.Entry.__repr__",
+      "src.khoj.utils.rawconfig.Entry.from_dict"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "src/khoj/utils/rawconfig.py",
+      "startLine": 105,
+      "endLine": 151
+    }
+  },
+  {
+    "id": "tests-evals-eval-counter",
+    "name": "Counter",
+    "description": "类 Counter (L53-L66)，0 个方法",
+    "nodes": [
+      "tests.evals.eval.Counter",
+      "tests.evals.eval.Counter.__init__",
+      "tests.evals.eval.Counter.add",
+      "tests.evals.eval.Counter.get"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/evals/eval.py",
+      "startLine": 53,
+      "endLine": 66
+    }
+  },
+  {
+    "id": "tests-helpers-userfactory",
+    "name": "UserFactory",
+    "description": "类 UserFactory (L208-L215)，0 个方法",
+    "nodes": [
+      "tests.helpers.UserFactory"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 208,
+      "endLine": 215
+    }
+  },
+  {
+    "id": "tests-helpers-meta",
+    "name": "Meta",
+    "description": "类 Meta (L209-L210)，0 个方法",
+    "nodes": [
+      "tests.helpers.Meta"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 209,
+      "endLine": 210
+    }
+  },
+  {
+    "id": "tests-helpers-apiuserfactory",
+    "name": "ApiUserFactory",
+    "description": "类 ApiUserFactory (L218-L224)，0 个方法",
+    "nodes": [
+      "tests.helpers.ApiUserFactory"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 218,
+      "endLine": 224
+    }
+  },
+  {
+    "id": "tests-helpers-meta",
+    "name": "Meta",
+    "description": "类 Meta (L209-L210)，0 个方法",
+    "nodes": [
+      "tests.helpers.Meta"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 209,
+      "endLine": 210
+    }
+  },
+  {
+    "id": "tests-helpers-aimodelapifactory",
+    "name": "AiModelApiFactory",
+    "description": "类 AiModelApiFactory (L227-L231)，0 个方法",
+    "nodes": [
+      "tests.helpers.AiModelApiFactory"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 227,
+      "endLine": 231
+    }
+  },
+  {
+    "id": "tests-helpers-meta",
+    "name": "Meta",
+    "description": "类 Meta (L209-L210)，0 个方法",
+    "nodes": [
+      "tests.helpers.Meta"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 209,
+      "endLine": 210
+    }
+  },
+  {
+    "id": "tests-helpers-chatmodelfactory",
+    "name": "ChatModelFactory",
+    "description": "类 ChatModelFactory (L234-L242)，0 个方法",
+    "nodes": [
+      "tests.helpers.ChatModelFactory"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 234,
+      "endLine": 242
+    }
+  },
+  {
+    "id": "tests-helpers-meta",
+    "name": "Meta",
+    "description": "类 Meta (L209-L210)，0 个方法",
+    "nodes": [
+      "tests.helpers.Meta"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 209,
+      "endLine": 210
+    }
+  },
+  {
+    "id": "tests-helpers-userconversationprocessorconfigfactory",
+    "name": "UserConversationProcessorConfigFactory",
+    "description": "类 UserConversationProcessorConfigFactory (L245-L250)，0 个方法",
+    "nodes": [
+      "tests.helpers.UserConversationProcessorConfigFactory"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 245,
+      "endLine": 250
+    }
+  },
+  {
+    "id": "tests-helpers-meta",
+    "name": "Meta",
+    "description": "类 Meta (L209-L210)，0 个方法",
+    "nodes": [
+      "tests.helpers.Meta"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 209,
+      "endLine": 210
+    }
+  },
+  {
+    "id": "tests-helpers-conversationfactory",
+    "name": "ConversationFactory",
+    "description": "类 ConversationFactory (L253-L257)，0 个方法",
+    "nodes": [
+      "tests.helpers.ConversationFactory"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 253,
+      "endLine": 257
+    }
+  },
+  {
+    "id": "tests-helpers-meta",
+    "name": "Meta",
+    "description": "类 Meta (L209-L210)，0 个方法",
+    "nodes": [
+      "tests.helpers.Meta"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 209,
+      "endLine": 210
+    }
+  },
+  {
+    "id": "tests-helpers-searchmodelfactory",
+    "name": "SearchModelFactory",
+    "description": "类 SearchModelFactory (L260-L267)，0 个方法",
+    "nodes": [
+      "tests.helpers.SearchModelFactory"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 260,
+      "endLine": 267
+    }
+  },
+  {
+    "id": "tests-helpers-meta",
+    "name": "Meta",
+    "description": "类 Meta (L209-L210)，0 个方法",
+    "nodes": [
+      "tests.helpers.Meta"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 209,
+      "endLine": 210
+    }
+  },
+  {
+    "id": "tests-helpers-subscriptionfactory",
+    "name": "SubscriptionFactory",
+    "description": "类 SubscriptionFactory (L270-L277)，0 个方法",
+    "nodes": [
+      "tests.helpers.SubscriptionFactory"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 270,
+      "endLine": 277
+    }
+  },
+  {
+    "id": "tests-helpers-meta",
+    "name": "Meta",
+    "description": "类 Meta (L209-L210)，0 个方法",
+    "nodes": [
+      "tests.helpers.Meta"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 209,
+      "endLine": 210
+    }
+  },
+  {
+    "id": "tests-helpers-processlockfactory",
+    "name": "ProcessLockFactory",
+    "description": "类 ProcessLockFactory (L280-L284)，0 个方法",
+    "nodes": [
+      "tests.helpers.ProcessLockFactory"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 280,
+      "endLine": 284
+    }
+  },
+  {
+    "id": "tests-helpers-meta",
+    "name": "Meta",
+    "description": "类 Meta (L209-L210)，0 个方法",
+    "nodes": [
+      "tests.helpers.Meta"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 209,
+      "endLine": 210
+    }
+  },
+  {
+    "id": "tests-helpers-serverchatsettingsfactory",
+    "name": "ServerChatSettingsFactory",
+    "description": "类 ServerChatSettingsFactory (L287-L291)，0 个方法",
+    "nodes": [
+      "tests.helpers.ServerChatSettingsFactory"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 287,
+      "endLine": 291
+    }
+  },
+  {
+    "id": "tests-helpers-meta",
+    "name": "Meta",
+    "description": "类 Meta (L209-L210)，0 个方法",
+    "nodes": [
+      "tests.helpers.Meta"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/helpers.py",
+      "startLine": 209,
+      "endLine": 210
+    }
+  },
+  {
+    "id": "tests-test-conversation-utils-testtruncatemessage",
+    "name": "TestTruncateMessage",
+    "description": "类 TestTruncateMessage (L9-L174)，0 个方法",
+    "nodes": [
+      "tests.test_conversation_utils.TestTruncateMessage",
+      "tests.test_conversation_utils.TestTruncateMessage.test_truncate_message_all_small",
+      "tests.test_conversation_utils.TestTruncateMessage.test_truncate_message_only_oldest_big",
+      "tests.test_conversation_utils.TestTruncateMessage.test_truncate_message_with_image",
+      "tests.test_conversation_utils.TestTruncateMessage.test_truncate_message_with_content_list",
+      "tests.test_conversation_utils.TestTruncateMessage.test_truncate_message_first_large",
+      "tests.test_conversation_utils.TestTruncateMessage.test_truncate_message_large_system_message_first",
+      "tests.test_conversation_utils.TestTruncateMessage.test_truncate_single_large_non_system_message",
+      "tests.test_conversation_utils.TestTruncateMessage.test_truncate_single_large_question"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/test_conversation_utils.py",
+      "startLine": 9,
+      "endLine": 174
+    }
+  },
+  {
+    "id": "tests-test-conversation-utils-testloadcomplexjson",
+    "name": "TestLoadComplexJson",
+    "description": "类 TestLoadComplexJson (L177-L216)，0 个方法",
+    "nodes": [
+      "tests.test_conversation_utils.TestLoadComplexJson",
+      "tests.test_conversation_utils.TestLoadComplexJson.test_load_complex_raw_json_string",
+      "tests.test_conversation_utils.TestLoadComplexJson.test_load_complex_json_with_python_code",
+      "tests.test_conversation_utils.TestLoadComplexJson.test_load_complex_json_inline"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/test_conversation_utils.py",
+      "startLine": 177,
+      "endLine": 216
+    }
+  },
+  {
+    "id": "tests-test-file-filter-entry",
+    "name": "Entry",
+    "description": "类 Entry (L6-L10)，0 个方法",
+    "nodes": [
+      "tests.test_file_filter.Entry",
+      "tests.test_file_filter.Entry.__init__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/test_file_filter.py",
+      "startLine": 6,
+      "endLine": 10
+    }
+  },
+  {
+    "id": "tests-test-word-filter-entry",
+    "name": "Entry",
+    "description": "类 Entry (L6-L9)，0 个方法",
+    "nodes": [
+      "tests.test_word_filter.Entry",
+      "tests.test_word_filter.Entry.__init__"
+    ],
+    "projects": [
+      "khoj"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/test_word_filter.py",
+      "startLine": 6,
+      "endLine": 9
+    }
+  }
+]

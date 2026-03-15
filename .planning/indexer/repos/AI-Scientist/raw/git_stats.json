@@ -1,0 +1,20 @@
+{
+  "analysis_period_days": 90,
+  "stats": {
+    "total_commits": 3,
+    "total_authors": 2
+  },
+  "hotspots": [
+    {
+      "path": "README.md",
+      "changes": 1,
+      "risk": "low"
+    },
+    {
+      "path": "LICENSE",
+      "changes": 1,
+      "risk": "low"
+    }
+  ],
+  "coupling_pairs": []
+}

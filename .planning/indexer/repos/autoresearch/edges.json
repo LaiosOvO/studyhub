@@ -1,0 +1,347 @@
+[
+  {
+    "source": "prepare",
+    "target": "prepare.download_single_shard",
+    "relation": "contains"
+  },
+  {
+    "source": "prepare",
+    "target": "prepare.download_data",
+    "relation": "contains"
+  },
+  {
+    "source": "prepare",
+    "target": "prepare.list_parquet_files",
+    "relation": "contains"
+  },
+  {
+    "source": "prepare",
+    "target": "prepare.text_iterator",
+    "relation": "contains"
+  },
+  {
+    "source": "prepare",
+    "target": "prepare.train_tokenizer",
+    "relation": "contains"
+  },
+  {
+    "source": "prepare",
+    "target": "prepare.Tokenizer",
+    "relation": "contains"
+  },
+  {
+    "source": "prepare.Tokenizer",
+    "target": "prepare.Tokenizer.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "prepare.Tokenizer",
+    "target": "prepare.Tokenizer.from_directory",
+    "relation": "contains"
+  },
+  {
+    "source": "prepare.Tokenizer",
+    "target": "prepare.Tokenizer.get_vocab_size",
+    "relation": "contains"
+  },
+  {
+    "source": "prepare.Tokenizer",
+    "target": "prepare.Tokenizer.get_bos_token_id",
+    "relation": "contains"
+  },
+  {
+    "source": "prepare.Tokenizer",
+    "target": "prepare.Tokenizer.encode",
+    "relation": "contains"
+  },
+  {
+    "source": "prepare.Tokenizer",
+    "target": "prepare.Tokenizer.decode",
+    "relation": "contains"
+  },
+  {
+    "source": "prepare",
+    "target": "prepare.get_token_bytes",
+    "relation": "contains"
+  },
+  {
+    "source": "prepare",
+    "target": "prepare._document_batches",
+    "relation": "contains"
+  },
+  {
+    "source": "prepare",
+    "target": "prepare.make_dataloader",
+    "relation": "contains"
+  },
+  {
+    "source": "prepare",
+    "target": "prepare.refill_buffer",
+    "relation": "contains"
+  },
+  {
+    "source": "prepare",
+    "target": "prepare.evaluate_bpb",
+    "relation": "contains"
+  },
+  {
+    "source": "prepare",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "prepare",
+    "target": "sys",
+    "relation": "imports"
+  },
+  {
+    "source": "prepare",
+    "target": "time",
+    "relation": "imports"
+  },
+  {
+    "source": "prepare",
+    "target": "math",
+    "relation": "imports"
+  },
+  {
+    "source": "prepare",
+    "target": "argparse",
+    "relation": "imports"
+  },
+  {
+    "source": "prepare",
+    "target": "pickle",
+    "relation": "imports"
+  },
+  {
+    "source": "prepare",
+    "target": "multiprocessing",
+    "relation": "imports"
+  },
+  {
+    "source": "prepare",
+    "target": "requests",
+    "relation": "imports"
+  },
+  {
+    "source": "prepare",
+    "target": "rustbpe",
+    "relation": "imports"
+  },
+  {
+    "source": "prepare",
+    "target": "tiktoken",
+    "relation": "imports"
+  },
+  {
+    "source": "prepare",
+    "target": "torch",
+    "relation": "imports"
+  },
+  {
+    "source": "train",
+    "target": "train.GPTConfig",
+    "relation": "contains"
+  },
+  {
+    "source": "train",
+    "target": "train.norm",
+    "relation": "contains"
+  },
+  {
+    "source": "train",
+    "target": "train.has_ve",
+    "relation": "contains"
+  },
+  {
+    "source": "train",
+    "target": "train.apply_rotary_emb",
+    "relation": "contains"
+  },
+  {
+    "source": "train",
+    "target": "train.CausalSelfAttention",
+    "relation": "contains"
+  },
+  {
+    "source": "train.CausalSelfAttention",
+    "target": "train.CausalSelfAttention.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "train.CausalSelfAttention",
+    "target": "train.CausalSelfAttention.forward",
+    "relation": "contains"
+  },
+  {
+    "source": "train",
+    "target": "train.MLP",
+    "relation": "contains"
+  },
+  {
+    "source": "train.MLP",
+    "target": "train.MLP.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "train.MLP",
+    "target": "train.MLP.forward",
+    "relation": "contains"
+  },
+  {
+    "source": "train",
+    "target": "train.Block",
+    "relation": "contains"
+  },
+  {
+    "source": "train.Block",
+    "target": "train.Block.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "train.Block",
+    "target": "train.Block.forward",
+    "relation": "contains"
+  },
+  {
+    "source": "train",
+    "target": "train.GPT",
+    "relation": "contains"
+  },
+  {
+    "source": "train.GPT",
+    "target": "train.GPT.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "train.GPT",
+    "target": "train.GPT.init_weights",
+    "relation": "contains"
+  },
+  {
+    "source": "train.GPT",
+    "target": "train.GPT._precompute_rotary_embeddings",
+    "relation": "contains"
+  },
+  {
+    "source": "train.GPT",
+    "target": "train.GPT._compute_window_sizes",
+    "relation": "contains"
+  },
+  {
+    "source": "train.GPT",
+    "target": "train.GPT.estimate_flops",
+    "relation": "contains"
+  },
+  {
+    "source": "train.GPT",
+    "target": "train.GPT.num_scaling_params",
+    "relation": "contains"
+  },
+  {
+    "source": "train.GPT",
+    "target": "train.GPT.setup_optimizer",
+    "relation": "contains"
+  },
+  {
+    "source": "train.GPT",
+    "target": "train.GPT.forward",
+    "relation": "contains"
+  },
+  {
+    "source": "train",
+    "target": "train.adamw_step_fused",
+    "relation": "contains"
+  },
+  {
+    "source": "train",
+    "target": "train.muon_step_fused",
+    "relation": "contains"
+  },
+  {
+    "source": "train",
+    "target": "train.MuonAdamW",
+    "relation": "contains"
+  },
+  {
+    "source": "train.MuonAdamW",
+    "target": "train.MuonAdamW.__init__",
+    "relation": "contains"
+  },
+  {
+    "source": "train.MuonAdamW",
+    "target": "train.MuonAdamW._step_adamw",
+    "relation": "contains"
+  },
+  {
+    "source": "train.MuonAdamW",
+    "target": "train.MuonAdamW._step_muon",
+    "relation": "contains"
+  },
+  {
+    "source": "train.MuonAdamW",
+    "target": "train.MuonAdamW.step",
+    "relation": "contains"
+  },
+  {
+    "source": "train",
+    "target": "train.build_model_config",
+    "relation": "contains"
+  },
+  {
+    "source": "train",
+    "target": "train.get_lr_multiplier",
+    "relation": "contains"
+  },
+  {
+    "source": "train",
+    "target": "train.get_muon_momentum",
+    "relation": "contains"
+  },
+  {
+    "source": "train",
+    "target": "train.get_weight_decay",
+    "relation": "contains"
+  },
+  {
+    "source": "train",
+    "target": "os",
+    "relation": "imports"
+  },
+  {
+    "source": "train",
+    "target": "gc",
+    "relation": "imports"
+  },
+  {
+    "source": "train",
+    "target": "math",
+    "relation": "imports"
+  },
+  {
+    "source": "train",
+    "target": "time",
+    "relation": "imports"
+  },
+  {
+    "source": "train",
+    "target": "dataclasses",
+    "relation": "imports"
+  },
+  {
+    "source": "train",
+    "target": "torch",
+    "relation": "imports"
+  },
+  {
+    "source": "train",
+    "target": "kernels",
+    "relation": "imports"
+  },
+  {
+    "source": "train",
+    "target": "prepare",
+    "relation": "imports"
+  }
+]

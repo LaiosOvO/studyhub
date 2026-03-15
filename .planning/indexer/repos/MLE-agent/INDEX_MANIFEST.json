@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "project": "MLE-agent",
+  "indexedAt": "2026-03-15T07:44:49.117Z",
+  "stats": {
+    "totalFiles": 57,
+    "totalLines": 8624,
+    "totalNodes": 353,
+    "totalEdges": 549,
+    "totalFeatures": 68,
+    "languages": [
+      "javascript",
+      "python",
+      "tsx",
+      "typescript"
+    ]
+  },
+  "source": {
+    "path": "/Users/admin/ai/ref/MLE-agent",
+    "url": null
+  }
+}

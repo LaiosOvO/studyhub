@@ -1,0 +1,242 @@
+[
+  {
+    "source": "src.ai.providers",
+    "target": "src.ai.providers.getModel",
+    "relation": "contains"
+  },
+  {
+    "source": "src.ai.providers",
+    "target": "src.ai.providers.trimPrompt",
+    "relation": "contains"
+  },
+  {
+    "source": "src.ai.providers",
+    "target": "@ai-sdk/fireworks",
+    "relation": "imports"
+  },
+  {
+    "source": "src.ai.providers",
+    "target": "@ai-sdk/openai",
+    "relation": "imports"
+  },
+  {
+    "source": "src.ai.providers",
+    "target": "ai",
+    "relation": "imports"
+  },
+  {
+    "source": "src.ai.providers",
+    "target": "js-tiktoken",
+    "relation": "imports"
+  },
+  {
+    "source": "src.ai.providers",
+    "target": "./text-splitter",
+    "relation": "imports"
+  },
+  {
+    "source": "src.ai.text-splitter.test",
+    "target": "node:assert",
+    "relation": "imports"
+  },
+  {
+    "source": "src.ai.text-splitter.test",
+    "target": "node:test",
+    "relation": "imports"
+  },
+  {
+    "source": "src.ai.text-splitter.test",
+    "target": "./text-splitter",
+    "relation": "imports"
+  },
+  {
+    "source": "src.ai.text-splitter",
+    "target": "src.ai.text-splitter.constructor",
+    "relation": "contains"
+  },
+  {
+    "source": "src.ai.text-splitter",
+    "target": "src.ai.text-splitter.createDocuments",
+    "relation": "contains"
+  },
+  {
+    "source": "src.ai.text-splitter",
+    "target": "src.ai.text-splitter.splitDocuments",
+    "relation": "contains"
+  },
+  {
+    "source": "src.ai.text-splitter",
+    "target": "src.ai.text-splitter.joinDocs",
+    "relation": "contains"
+  },
+  {
+    "source": "src.ai.text-splitter",
+    "target": "src.ai.text-splitter.mergeSplits",
+    "relation": "contains"
+  },
+  {
+    "source": "src.ai.text-splitter",
+    "target": "src.ai.text-splitter.RecursiveCharacterTextSplitter",
+    "relation": "contains"
+  },
+  {
+    "source": "src.ai.text-splitter.RecursiveCharacterTextSplitter",
+    "target": "src.ai.text-splitter.RecursiveCharacterTextSplitter.constructor",
+    "relation": "contains"
+  },
+  {
+    "source": "src.ai.text-splitter.RecursiveCharacterTextSplitter",
+    "target": "src.ai.text-splitter.RecursiveCharacterTextSplitter.splitText",
+    "relation": "contains"
+  },
+  {
+    "source": "src.api",
+    "target": "src.api.log",
+    "relation": "contains"
+  },
+  {
+    "source": "src.api",
+    "target": "cors",
+    "relation": "imports"
+  },
+  {
+    "source": "src.api",
+    "target": "express",
+    "relation": "imports"
+  },
+  {
+    "source": "src.api",
+    "target": "./deep-research",
+    "relation": "imports"
+  },
+  {
+    "source": "src.deep-research",
+    "target": "src.deep-research.log",
+    "relation": "contains"
+  },
+  {
+    "source": "src.deep-research",
+    "target": "src.deep-research.generateSerpQueries",
+    "relation": "contains"
+  },
+  {
+    "source": "src.deep-research",
+    "target": "src.deep-research.processSerpResult",
+    "relation": "contains"
+  },
+  {
+    "source": "src.deep-research",
+    "target": "src.deep-research.writeFinalReport",
+    "relation": "contains"
+  },
+  {
+    "source": "src.deep-research",
+    "target": "src.deep-research.writeFinalAnswer",
+    "relation": "contains"
+  },
+  {
+    "source": "src.deep-research",
+    "target": "src.deep-research.deepResearch",
+    "relation": "contains"
+  },
+  {
+    "source": "src.deep-research",
+    "target": "@mendable/firecrawl-js",
+    "relation": "imports"
+  },
+  {
+    "source": "src.deep-research",
+    "target": "ai",
+    "relation": "imports"
+  },
+  {
+    "source": "src.deep-research",
+    "target": "lodash-es",
+    "relation": "imports"
+  },
+  {
+    "source": "src.deep-research",
+    "target": "p-limit",
+    "relation": "imports"
+  },
+  {
+    "source": "src.deep-research",
+    "target": "zod",
+    "relation": "imports"
+  },
+  {
+    "source": "src.deep-research",
+    "target": "./ai/providers",
+    "relation": "imports"
+  },
+  {
+    "source": "src.deep-research",
+    "target": "./prompt",
+    "relation": "imports"
+  },
+  {
+    "source": "src.feedback",
+    "target": "src.feedback.generateFeedback",
+    "relation": "contains"
+  },
+  {
+    "source": "src.feedback",
+    "target": "ai",
+    "relation": "imports"
+  },
+  {
+    "source": "src.feedback",
+    "target": "zod",
+    "relation": "imports"
+  },
+  {
+    "source": "src.feedback",
+    "target": "./ai/providers",
+    "relation": "imports"
+  },
+  {
+    "source": "src.feedback",
+    "target": "./prompt",
+    "relation": "imports"
+  },
+  {
+    "source": "src.run",
+    "target": "src.run.log",
+    "relation": "contains"
+  },
+  {
+    "source": "src.run",
+    "target": "src.run.askQuestion",
+    "relation": "contains"
+  },
+  {
+    "source": "src.run",
+    "target": "src.run.run",
+    "relation": "contains"
+  },
+  {
+    "source": "src.run",
+    "target": "fs/promises",
+    "relation": "imports"
+  },
+  {
+    "source": "src.run",
+    "target": "readline",
+    "relation": "imports"
+  },
+  {
+    "source": "src.run",
+    "target": "./ai/providers",
+    "relation": "imports"
+  },
+  {
+    "source": "src.run",
+    "target": "./deep-research",
+    "relation": "imports"
+  },
+  {
+    "source": "src.run",
+    "target": "./feedback",
+    "relation": "imports"
+  }
+]

@@ -1,0 +1,231 @@
+{
+  "analysis_period_days": 90,
+  "stats": {
+    "total_commits": 31,
+    "total_authors": 10
+  },
+  "hotspots": [
+    {
+      "path": "src/interface/web/package.json",
+      "changes": 5,
+      "risk": "medium"
+    },
+    {
+      "path": "src/interface/web/app/settings/page.tsx",
+      "changes": 4,
+      "risk": "low"
+    },
+    {
+      "path": "src/interface/desktop/package.json",
+      "changes": 4,
+      "risk": "low"
+    },
+    {
+      "path": "src/interface/obsidian/package.json",
+      "changes": 4,
+      "risk": "low"
+    },
+    {
+      "path": "manifest.json",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "src/interface/emacs/khoj.el",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "src/interface/obsidian/manifest.json",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "src/interface/obsidian/versions.json",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "versions.json",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "pyproject.toml",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "src/khoj/routers/web_client.py",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "src/khoj/processor/conversation/prompts.py",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "src/khoj/processor/tools/run_code.py",
+      "changes": 3,
+      "risk": "low"
+    },
+    {
+      "path": "README.md",
+      "changes": 2,
+      "risk": "low"
+    },
+    {
+      "path": "src/khoj/routers/api_chat.py",
+      "changes": 2,
+      "risk": "low"
+    },
+    {
+      "path": "uv.lock",
+      "changes": 2,
+      "risk": "low"
+    },
+    {
+      "path": "src/khoj/processor/conversation/utils.py",
+      "changes": 2,
+      "risk": "low"
+    },
+    {
+      "path": "src/interface/obsidian/src/settings.ts",
+      "changes": 2,
+      "risk": "low"
+    },
+    {
+      "path": "src/interface/obsidian/src/utils.ts",
+      "changes": 2,
+      "risk": "low"
+    },
+    {
+      "path": "src/interface/web/bun.lock",
+      "changes": 2,
+      "risk": "low"
+    }
+  ],
+  "coupling_pairs": [
+    {
+      "file_a": "src/interface/desktop/package.json",
+      "file_b": "src/interface/obsidian/package.json",
+      "co_changes": 4,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "manifest.json",
+      "file_b": "src/interface/desktop/package.json",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "manifest.json",
+      "file_b": "src/interface/emacs/khoj.el",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "manifest.json",
+      "file_b": "src/interface/obsidian/manifest.json",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "manifest.json",
+      "file_b": "src/interface/obsidian/package.json",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "manifest.json",
+      "file_b": "src/interface/obsidian/versions.json",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "manifest.json",
+      "file_b": "src/interface/web/package.json",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "manifest.json",
+      "file_b": "versions.json",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "src/interface/desktop/package.json",
+      "file_b": "src/interface/emacs/khoj.el",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "src/interface/desktop/package.json",
+      "file_b": "src/interface/obsidian/manifest.json",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "src/interface/desktop/package.json",
+      "file_b": "src/interface/obsidian/versions.json",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "src/interface/desktop/package.json",
+      "file_b": "src/interface/web/package.json",
+      "co_changes": 3,
+      "coupling_score": 0.75
+    },
+    {
+      "file_a": "src/interface/desktop/package.json",
+      "file_b": "versions.json",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "src/interface/emacs/khoj.el",
+      "file_b": "src/interface/obsidian/manifest.json",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "src/interface/emacs/khoj.el",
+      "file_b": "src/interface/obsidian/package.json",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "src/interface/emacs/khoj.el",
+      "file_b": "src/interface/obsidian/versions.json",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "src/interface/emacs/khoj.el",
+      "file_b": "src/interface/web/package.json",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "src/interface/emacs/khoj.el",
+      "file_b": "versions.json",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "src/interface/obsidian/manifest.json",
+      "file_b": "src/interface/obsidian/package.json",
+      "co_changes": 3,
+      "coupling_score": 1
+    },
+    {
+      "file_a": "src/interface/obsidian/manifest.json",
+      "file_b": "src/interface/obsidian/versions.json",
+      "co_changes": 3,
+      "coupling_score": 1
+    }
+  ]
+}

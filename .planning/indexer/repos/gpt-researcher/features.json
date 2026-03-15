@@ -1,0 +1,2824 @@
+[
+  {
+    "id": "backend-chat-chat-chatagentwithmemory",
+    "name": "ChatAgentWithMemory",
+    "description": "类 ChatAgentWithMemory (L55-L258)，7 个方法，关键方法: quick_search, process_chat_completion, chat, get_context",
+    "nodes": [
+      "backend.chat.chat.ChatAgentWithMemory",
+      "backend.chat.chat.ChatAgentWithMemory.__init__",
+      "backend.chat.chat.ChatAgentWithMemory._setup_vector_store",
+      "backend.chat.chat.ChatAgentWithMemory._process_document",
+      "backend.chat.chat.ChatAgentWithMemory.quick_search",
+      "backend.chat.chat.ChatAgentWithMemory.process_chat_completion",
+      "backend.chat.chat.ChatAgentWithMemory.chat",
+      "backend.chat.chat.ChatAgentWithMemory.get_context"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "backend/chat/chat.py",
+      "startLine": 55,
+      "endLine": 258
+    }
+  },
+  {
+    "id": "backend-chat-chat-functions",
+    "name": "Chat 工具函数",
+    "description": "chat 模块的 1 个顶层函数（python），包含: get_tools",
+    "nodes": [
+      "backend.chat.chat.get_tools"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "backend-memory-draft-draftstate",
+    "name": "DraftState",
+    "description": "类 DraftState (L5-L10)，0 个方法",
+    "nodes": [
+      "backend.memory.draft.DraftState"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "backend/memory/draft.py",
+      "startLine": 5,
+      "endLine": 10
+    }
+  },
+  {
+    "id": "backend-memory-research-researchstate",
+    "name": "ResearchState",
+    "description": "类 ResearchState (L5-L18)，0 个方法",
+    "nodes": [
+      "backend.memory.research.ResearchState"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "backend/memory/research.py",
+      "startLine": 5,
+      "endLine": 18
+    }
+  },
+  {
+    "id": "backend-report-type-basic-report-basic-report-basicreport",
+    "name": "BasicReport",
+    "description": "类 BasicReport (L9-L75)，3 个方法，关键方法: run",
+    "nodes": [
+      "backend.report_type.basic_report.basic_report.BasicReport",
+      "backend.report_type.basic_report.basic_report.BasicReport.__init__",
+      "backend.report_type.basic_report.basic_report.BasicReport._generate_research_id",
+      "backend.report_type.basic_report.basic_report.BasicReport.run"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "backend/report_type/basic_report/basic_report.py",
+      "startLine": 9,
+      "endLine": 75
+    }
+  },
+  {
+    "id": "backend-report-type-deep-research-example-deepresearch",
+    "name": "DeepResearch",
+    "description": "含组件 ResearchProgress；类 DeepResearch (L27-L324)，7 个方法，关键方法: generate_feedback, generate_serp_queries, process_serp_result, deep_research, process_query",
+    "nodes": [
+      "backend.report_type.deep_research.example.DeepResearch",
+      "backend.report_type.deep_research.example.DeepResearch.__init__",
+      "backend.report_type.deep_research.example.DeepResearch.generate_feedback",
+      "backend.report_type.deep_research.example.DeepResearch.generate_serp_queries",
+      "backend.report_type.deep_research.example.DeepResearch.process_serp_result",
+      "backend.report_type.deep_research.example.DeepResearch.deep_research",
+      "backend.report_type.deep_research.example.DeepResearch.process_query",
+      "backend.report_type.deep_research.example.DeepResearch.run",
+      "backend.report_type.deep_research.example.ResearchProgress",
+      "backend.report_type.deep_research.example.ResearchProgress.__init__"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "backend/report_type/deep_research/example.py",
+      "startLine": 17,
+      "endLine": 324
+    }
+  },
+  {
+    "id": "backend-report-type-deep-research-main-functions",
+    "name": "Main 工具函数",
+    "description": "main 模块的 2 个顶层函数（python），包含: main, on_progress",
+    "nodes": [
+      "backend.report_type.deep_research.main.main",
+      "backend.report_type.deep_research.main.on_progress"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "backend-report-type-detailed-report-detailed-report-detailedreport",
+    "name": "DetailedReport",
+    "description": "类 DetailedReport (L10-L189)，8 个方法，关键方法: run",
+    "nodes": [
+      "backend.report_type.detailed_report.detailed_report.DetailedReport",
+      "backend.report_type.detailed_report.detailed_report.DetailedReport.__init__",
+      "backend.report_type.detailed_report.detailed_report.DetailedReport._generate_research_id",
+      "backend.report_type.detailed_report.detailed_report.DetailedReport.run",
+      "backend.report_type.detailed_report.detailed_report.DetailedReport._initial_research",
+      "backend.report_type.detailed_report.detailed_report.DetailedReport._get_all_subtopics",
+      "backend.report_type.detailed_report.detailed_report.DetailedReport._generate_subtopic_reports",
+      "backend.report_type.detailed_report.detailed_report.DetailedReport._get_subtopic_report",
+      "backend.report_type.detailed_report.detailed_report.DetailedReport._construct_detailed_report"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "backend/report_type/detailed_report/detailed_report.py",
+      "startLine": 10,
+      "endLine": 189
+    }
+  },
+  {
+    "id": "backend-server-app-researchrequest",
+    "name": "ResearchRequest",
+    "description": "类 ResearchRequest (L52-L60)，0 个方法",
+    "nodes": [
+      "backend.server.app.ResearchRequest"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "backend/server/app.py",
+      "startLine": 52,
+      "endLine": 60
+    }
+  },
+  {
+    "id": "backend-server-app-chatrequest",
+    "name": "ChatRequest",
+    "description": "类 ChatRequest (L63-L67)，0 个方法",
+    "nodes": [
+      "backend.server.app.ChatRequest"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "backend/server/app.py",
+      "startLine": 63,
+      "endLine": 67
+    }
+  },
+  {
+    "id": "backend-server-app-get",
+    "name": "get_* 系列",
+    "description": "app 模块的 3 个 get_* 函数，包含: get_all_reports, get_report_by_id, get_report_chat",
+    "nodes": [
+      "backend.server.app.get_all_reports",
+      "backend.server.app.get_report_by_id",
+      "backend.server.app.get_report_chat"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "pattern",
+    "codeRange": null
+  },
+  {
+    "id": "backend-server-app-update",
+    "name": "update_* 系列",
+    "description": "app 模块的 2 个 update_* 函数，包含: update_report, update_report",
+    "nodes": [
+      "backend.server.app.update_report",
+      "backend.server.app.update_report"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "pattern",
+    "codeRange": null
+  },
+  {
+    "id": "backend-server-app-delete",
+    "name": "delete_* 系列",
+    "description": "app 模块的 3 个 delete_* 函数，包含: delete_report, delete_file, delete_report",
+    "nodes": [
+      "backend.server.app.delete_report",
+      "backend.server.app.delete_file",
+      "backend.server.app.delete_report"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "pattern",
+    "codeRange": null
+  },
+  {
+    "id": "backend-server-app-functions",
+    "name": "App 工具函数",
+    "description": "app 模块的 13 个顶层函数（python），包含: lifespan, serve_frontend, read_report, create_or_update_report, add_report_chat_message",
+    "nodes": [
+      "backend.server.app.lifespan",
+      "backend.server.app.serve_frontend",
+      "backend.server.app.read_report",
+      "backend.server.app.create_or_update_report",
+      "backend.server.app.add_report_chat_message",
+      "backend.server.app.write_report",
+      "backend.server.app.generate_report",
+      "backend.server.app.list_files",
+      "backend.server.app.run_multi_agents",
+      "backend.server.app.upload_file",
+      "backend.server.app.websocket_endpoint",
+      "backend.server.app.chat",
+      "backend.server.app.research_report_chat"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "backend-server-logging-config-jsonresearchhandler",
+    "name": "JSONResearchHandler",
+    "description": "类 JSONResearchHandler (L7-L36)，4 个方法，关键方法: log_event, update_content",
+    "nodes": [
+      "backend.server.logging_config.JSONResearchHandler",
+      "backend.server.logging_config.JSONResearchHandler.__init__",
+      "backend.server.logging_config.JSONResearchHandler.log_event",
+      "backend.server.logging_config.JSONResearchHandler.update_content",
+      "backend.server.logging_config.JSONResearchHandler._save_json"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "backend/server/logging_config.py",
+      "startLine": 7,
+      "endLine": 36
+    }
+  },
+  {
+    "id": "backend-server-logging-config-get",
+    "name": "get_* 系列",
+    "description": "logging_config 模块的 2 个 get_* 函数，包含: get_research_logger, get_json_handler",
+    "nodes": [
+      "backend.server.logging_config.get_research_logger",
+      "backend.server.logging_config.get_json_handler"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "pattern",
+    "codeRange": null
+  },
+  {
+    "id": "backend-server-logging-config-functions",
+    "name": "Logging Config 工具函数",
+    "description": "logging_config 模块的 1 个顶层函数（python），包含: setup_research_logging",
+    "nodes": [
+      "backend.server.logging_config.setup_research_logging"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "backend-server-multi-agent-runner",
+    "name": "_* 系列",
+    "description": "multi_agent_runner 模块的 2 个 _* 函数，包含: _ensure_repo_root_on_path, _resolve_run_research_task",
+    "nodes": [
+      "backend.server.multi_agent_runner._ensure_repo_root_on_path",
+      "backend.server.multi_agent_runner._resolve_run_research_task"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "pattern",
+    "codeRange": null
+  },
+  {
+    "id": "backend-server-multi-agent-runner-functions",
+    "name": "Multi Agent Runner 工具函数",
+    "description": "multi_agent_runner 模块的 1 个顶层函数（python），包含: run_multi_agent_task",
+    "nodes": [
+      "backend.server.multi_agent_runner.run_multi_agent_task"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "backend-server-report-store-reportstore",
+    "name": "ReportStore",
+    "description": "类 ReportStore (L7-L57)，8 个方法，关键方法: list_reports, get_report, upsert_report, delete_report",
+    "nodes": [
+      "backend.server.report_store.ReportStore",
+      "backend.server.report_store.ReportStore.__init__",
+      "backend.server.report_store.ReportStore._ensure_parent_dir",
+      "backend.server.report_store.ReportStore._read_all_unlocked",
+      "backend.server.report_store.ReportStore._write_all_unlocked",
+      "backend.server.report_store.ReportStore.list_reports",
+      "backend.server.report_store.ReportStore.get_report",
+      "backend.server.report_store.ReportStore.upsert_report",
+      "backend.server.report_store.ReportStore.delete_report"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "backend/server/report_store.py",
+      "startLine": 7,
+      "endLine": 57
+    }
+  },
+  {
+    "id": "backend-server-server-utils-customlogshandler",
+    "name": "CustomLogsHandler",
+    "description": "类 CustomLogsHandler (L33-L79)，2 个方法，关键方法: send_json",
+    "nodes": [
+      "backend.server.server_utils.CustomLogsHandler",
+      "backend.server.server_utils.CustomLogsHandler.__init__",
+      "backend.server.server_utils.CustomLogsHandler.send_json"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "backend/server/server_utils.py",
+      "startLine": 33,
+      "endLine": 79
+    }
+  },
+  {
+    "id": "backend-server-server-utils-researcher",
+    "name": "Researcher",
+    "description": "类 Researcher (L82-L113)，2 个方法，关键方法: research",
+    "nodes": [
+      "backend.server.server_utils.Researcher",
+      "backend.server.server_utils.Researcher.__init__",
+      "backend.server.server_utils.Researcher.research"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "backend/server/server_utils.py",
+      "startLine": 82,
+      "endLine": 113
+    }
+  },
+  {
+    "id": "backend-server-server-utils-handle",
+    "name": "handle_* 系列",
+    "description": "server_utils 模块的 6 个 handle_* 函数，包含: handle_start_command, handle_human_feedback, handle_chat_command, handle_file_upload, handle_file_deletion, handle_websocket_communication",
+    "nodes": [
+      "backend.server.server_utils.handle_start_command",
+      "backend.server.server_utils.handle_human_feedback",
+      "backend.server.server_utils.handle_chat_command",
+      "backend.server.server_utils.handle_file_upload",
+      "backend.server.server_utils.handle_file_deletion",
+      "backend.server.server_utils.handle_websocket_communication"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "pattern",
+    "codeRange": null
+  },
+  {
+    "id": "backend-server-server-utils-functions",
+    "name": "Server Utils 工具函数",
+    "description": "server_utils 模块的 9 个顶层函数（python），包含: sanitize_filename, generate_report_files, send_file_paths, get_config_dict, update_environment_variables",
+    "nodes": [
+      "backend.server.server_utils.sanitize_filename",
+      "backend.server.server_utils.generate_report_files",
+      "backend.server.server_utils.send_file_paths",
+      "backend.server.server_utils.get_config_dict",
+      "backend.server.server_utils.update_environment_variables",
+      "backend.server.server_utils.execute_multi_agents",
+      "backend.server.server_utils.run_long_running_task",
+      "backend.server.server_utils.safe_run",
+      "backend.server.server_utils.extract_command_data"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "backend-server-websocket-manager-websocketmanager",
+    "name": "WebSocketManager",
+    "description": "类 WebSocketManager (L19-L112)，5 个方法，关键方法: start_sender, connect, disconnect, start_streaming",
+    "nodes": [
+      "backend.server.websocket_manager.WebSocketManager",
+      "backend.server.websocket_manager.WebSocketManager.__init__",
+      "backend.server.websocket_manager.WebSocketManager.start_sender",
+      "backend.server.websocket_manager.WebSocketManager.connect",
+      "backend.server.websocket_manager.WebSocketManager.disconnect",
+      "backend.server.websocket_manager.WebSocketManager.start_streaming"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "backend/server/websocket_manager.py",
+      "startLine": 19,
+      "endLine": 112
+    }
+  },
+  {
+    "id": "backend-server-websocket-manager-functions",
+    "name": "Websocket Manager 工具函数",
+    "description": "websocket_manager 模块的 1 个顶层函数（python），包含: run_agent",
+    "nodes": [
+      "backend.server.websocket_manager.run_agent"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "docs-npm-index-gptresearcher",
+    "name": "GPTResearcher",
+    "description": "类 GPTResearcher (L4-L121)，0 个方法",
+    "nodes": [
+      "docs.npm.index.GPTResearcher",
+      "docs.npm.index.GPTResearcher.constructor",
+      "docs.npm.index.GPTResearcher.initializeWebSocket",
+      "docs.npm.index.GPTResearcher.sendMessage",
+      "docs.npm.index.GPTResearcher.sendHttpRequest",
+      "docs.npm.index.GPTResearcher.getReport"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "docs/npm/index.js",
+      "startLine": 4,
+      "endLine": 121
+    }
+  },
+  {
+    "id": "evals-hallucination-eval-evaluate-hallucinationevaluator",
+    "name": "HallucinationEvaluator",
+    "description": "类 HallucinationEvaluator (L18-L53)，0 个方法",
+    "nodes": [
+      "evals.hallucination_eval.evaluate.HallucinationEvaluator",
+      "evals.hallucination_eval.evaluate.HallucinationEvaluator.__init__",
+      "evals.hallucination_eval.evaluate.HallucinationEvaluator.evaluate_response"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "evals/hallucination_eval/evaluate.py",
+      "startLine": 18,
+      "endLine": 53
+    }
+  },
+  {
+    "id": "evals-hallucination-eval-run-eval-researchevaluator",
+    "name": "ResearchEvaluator",
+    "description": "类 ResearchEvaluator (L34-L144)，0 个方法",
+    "nodes": [
+      "evals.hallucination_eval.run_eval.ResearchEvaluator",
+      "evals.hallucination_eval.run_eval.ResearchEvaluator.__init__",
+      "evals.hallucination_eval.run_eval.ResearchEvaluator.load_queries",
+      "evals.hallucination_eval.run_eval.ResearchEvaluator.run_research",
+      "evals.hallucination_eval.run_eval.ResearchEvaluator.evaluate_research"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "evals/hallucination_eval/run_eval.py",
+      "startLine": 34,
+      "endLine": 144
+    }
+  },
+  {
+    "id": "evals-simple-evals-simpleqa-eval-simpleqaeval",
+    "name": "SimpleQAEval",
+    "description": "类 SimpleQAEval (L101-L172)，0 个方法",
+    "nodes": [
+      "evals.simple_evals.simpleqa_eval.SimpleQAEval",
+      "evals.simple_evals.simpleqa_eval.SimpleQAEval.__init__",
+      "evals.simple_evals.simpleqa_eval.SimpleQAEval.evaluate_example",
+      "evals.simple_evals.simpleqa_eval.SimpleQAEval.grade_response"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "evals/simple_evals/simpleqa_eval.py",
+      "startLine": 101,
+      "endLine": 172
+    }
+  },
+  {
+    "id": "frontend-nextjs-public-workbox-f1770938-s",
+    "name": "s",
+    "description": "类 s (L1-L1)，0 个方法",
+    "nodes": [
+      "frontend.nextjs.public.workbox-f1770938.s",
+      "frontend.nextjs.public.workbox-f1770938.s.constructor"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "frontend/nextjs/public/workbox-f1770938.js",
+      "startLine": 1,
+      "endLine": 1
+    }
+  },
+  {
+    "id": "frontend-nextjs-public-workbox-f1770938-r",
+    "name": "r",
+    "description": "类 r (L1-L1)，0 个方法",
+    "nodes": [
+      "frontend.nextjs.public.workbox-f1770938.r",
+      "frontend.nextjs.public.workbox-f1770938.r.constructor",
+      "frontend.nextjs.public.workbox-f1770938.r.setCatchHandler"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "frontend/nextjs/public/workbox-f1770938.js",
+      "startLine": 1,
+      "endLine": 1
+    }
+  },
+  {
+    "id": "frontend-nextjs-public-workbox-f1770938-i",
+    "name": "i",
+    "description": "类 i (L1-L1)，0 个方法",
+    "nodes": [
+      "frontend.nextjs.public.workbox-f1770938.i",
+      "frontend.nextjs.public.workbox-f1770938.i.constructor"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "frontend/nextjs/public/workbox-f1770938.js",
+      "startLine": 1,
+      "endLine": 1
+    }
+  },
+  {
+    "id": "frontend-nextjs-public-workbox-f1770938-a",
+    "name": "a",
+    "description": "类 a (L1-L1)，0 个方法",
+    "nodes": [
+      "frontend.nextjs.public.workbox-f1770938.a",
+      "frontend.nextjs.public.workbox-f1770938.a.constructor",
+      "frontend.nextjs.public.workbox-f1770938.a.routes",
+      "frontend.nextjs.public.workbox-f1770938.a.addFetchListener",
+      "frontend.nextjs.public.workbox-f1770938.a.addCacheListener",
+      "frontend.nextjs.public.workbox-f1770938.a.handleRequest",
+      "frontend.nextjs.public.workbox-f1770938.a.findMatchingRoute",
+      "frontend.nextjs.public.workbox-f1770938.a.setDefaultHandler",
+      "frontend.nextjs.public.workbox-f1770938.a.setCatchHandler",
+      "frontend.nextjs.public.workbox-f1770938.a.registerRoute",
+      "frontend.nextjs.public.workbox-f1770938.a.unregisterRoute"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "frontend/nextjs/public/workbox-f1770938.js",
+      "startLine": 1,
+      "endLine": 1
+    }
+  },
+  {
+    "id": "frontend-nextjs-public-workbox-f1770938-y",
+    "name": "y",
+    "description": "类 y (L1-L1)，0 个方法",
+    "nodes": [
+      "frontend.nextjs.public.workbox-f1770938.y",
+      "frontend.nextjs.public.workbox-f1770938.y.constructor"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "frontend/nextjs/public/workbox-f1770938.js",
+      "startLine": 1,
+      "endLine": 1
+    }
+  },
+  {
+    "id": "frontend-nextjs-public-workbox-f1770938-v",
+    "name": "v",
+    "description": "类 v (L1-L1)，0 个方法",
+    "nodes": [
+      "frontend.nextjs.public.workbox-f1770938.v",
+      "frontend.nextjs.public.workbox-f1770938.v.constructor",
+      "frontend.nextjs.public.workbox-f1770938.v.fetch",
+      "frontend.nextjs.public.workbox-f1770938.v.fetchAndCachePut",
+      "frontend.nextjs.public.workbox-f1770938.v.cacheMatch",
+      "frontend.nextjs.public.workbox-f1770938.v.cachePut",
+      "frontend.nextjs.public.workbox-f1770938.v.getCacheKey",
+      "frontend.nextjs.public.workbox-f1770938.v.hasCallback",
+      "frontend.nextjs.public.workbox-f1770938.v.runCallbacks",
+      "frontend.nextjs.public.workbox-f1770938.v.iterateCallbacks",
+      "frontend.nextjs.public.workbox-f1770938.v.waitUntil",
+      "frontend.nextjs.public.workbox-f1770938.v.doneWaiting",
+      "frontend.nextjs.public.workbox-f1770938.v.destroy",
+      "frontend.nextjs.public.workbox-f1770938.v.R"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "frontend/nextjs/public/workbox-f1770938.js",
+      "startLine": 1,
+      "endLine": 1
+    }
+  },
+  {
+    "id": "frontend-nextjs-public-workbox-f1770938-r",
+    "name": "R",
+    "description": "类 R (L1-L1)，0 个方法",
+    "nodes": [
+      "frontend.nextjs.public.workbox-f1770938.R",
+      "frontend.nextjs.public.workbox-f1770938.R.constructor",
+      "frontend.nextjs.public.workbox-f1770938.R.handle",
+      "frontend.nextjs.public.workbox-f1770938.R.handleAll",
+      "frontend.nextjs.public.workbox-f1770938.R.q",
+      "frontend.nextjs.public.workbox-f1770938.R.D"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "frontend/nextjs/public/workbox-f1770938.js",
+      "startLine": 1,
+      "endLine": 1
+    }
+  },
+  {
+    "id": "frontend-nextjs-public-workbox-f1770938-a",
+    "name": "A",
+    "description": "类 A (L1-L1)，0 个方法",
+    "nodes": [
+      "frontend.nextjs.public.workbox-f1770938.A",
+      "frontend.nextjs.public.workbox-f1770938.A.constructor",
+      "frontend.nextjs.public.workbox-f1770938.A.I",
+      "frontend.nextjs.public.workbox-f1770938.A.C",
+      "frontend.nextjs.public.workbox-f1770938.A.setTimestamp",
+      "frontend.nextjs.public.workbox-f1770938.A.getTimestamp",
+      "frontend.nextjs.public.workbox-f1770938.A.expireEntries",
+      "frontend.nextjs.public.workbox-f1770938.A.N",
+      "frontend.nextjs.public.workbox-f1770938.A.getDb"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "frontend/nextjs/public/workbox-f1770938.js",
+      "startLine": 1,
+      "endLine": 1
+    }
+  },
+  {
+    "id": "frontend-nextjs-public-workbox-f1770938-f",
+    "name": "F",
+    "description": "类 F (L1-L1)，0 个方法",
+    "nodes": [
+      "frontend.nextjs.public.workbox-f1770938.F",
+      "frontend.nextjs.public.workbox-f1770938.F.constructor",
+      "frontend.nextjs.public.workbox-f1770938.F.expireEntries",
+      "frontend.nextjs.public.workbox-f1770938.F.updateTimestamp",
+      "frontend.nextjs.public.workbox-f1770938.F.isURLExpired",
+      "frontend.nextjs.public.workbox-f1770938.F.delete"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "frontend/nextjs/public/workbox-f1770938.js",
+      "startLine": 1,
+      "endLine": 1
+    }
+  },
+  {
+    "id": "frontend-nextjs-public-workbox-f1770938-g",
+    "name": "G",
+    "description": "类 G (L1-L1)，0 个方法",
+    "nodes": [
+      "frontend.nextjs.public.workbox-f1770938.G",
+      "frontend.nextjs.public.workbox-f1770938.G.constructor"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "frontend/nextjs/public/workbox-f1770938.js",
+      "startLine": 1,
+      "endLine": 1
+    }
+  },
+  {
+    "id": "frontend-nextjs-public-workbox-f1770938-v",
+    "name": "V",
+    "description": "类 V (L1-L1)，0 个方法",
+    "nodes": [
+      "frontend.nextjs.public.workbox-f1770938.V",
+      "frontend.nextjs.public.workbox-f1770938.V.constructor"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "frontend/nextjs/public/workbox-f1770938.js",
+      "startLine": 1,
+      "endLine": 1
+    }
+  },
+  {
+    "id": "frontend-nextjs-public-workbox-f1770938-y",
+    "name": "Y",
+    "description": "类 Y (L1-L1)，0 个方法",
+    "nodes": [
+      "frontend.nextjs.public.workbox-f1770938.Y",
+      "frontend.nextjs.public.workbox-f1770938.Y.constructor",
+      "frontend.nextjs.public.workbox-f1770938.Y.U",
+      "frontend.nextjs.public.workbox-f1770938.Y.K",
+      "frontend.nextjs.public.workbox-f1770938.Y.S",
+      "frontend.nextjs.public.workbox-f1770938.Y.A"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "frontend/nextjs/public/workbox-f1770938.js",
+      "startLine": 1,
+      "endLine": 1
+    }
+  },
+  {
+    "id": "frontend-nextjs-public-workbox-f1770938-z",
+    "name": "Z",
+    "description": "类 Z (L1-L1)，0 个方法",
+    "nodes": [
+      "frontend.nextjs.public.workbox-f1770938.Z",
+      "frontend.nextjs.public.workbox-f1770938.Z.constructor",
+      "frontend.nextjs.public.workbox-f1770938.Z.strategy",
+      "frontend.nextjs.public.workbox-f1770938.Z.precache",
+      "frontend.nextjs.public.workbox-f1770938.Z.addToCacheList",
+      "frontend.nextjs.public.workbox-f1770938.Z.install",
+      "frontend.nextjs.public.workbox-f1770938.Z.activate",
+      "frontend.nextjs.public.workbox-f1770938.Z.getURLsToCacheKeys",
+      "frontend.nextjs.public.workbox-f1770938.Z.getCachedURLs",
+      "frontend.nextjs.public.workbox-f1770938.Z.getCacheKeyForURL",
+      "frontend.nextjs.public.workbox-f1770938.Z.getIntegrityForCacheKey",
+      "frontend.nextjs.public.workbox-f1770938.Z.matchPrecache",
+      "frontend.nextjs.public.workbox-f1770938.Z.createHandlerBoundToURL"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "frontend/nextjs/public/workbox-f1770938.js",
+      "startLine": 1,
+      "endLine": 1
+    }
+  },
+  {
+    "id": "frontend-nextjs-public-workbox-f1770938-et",
+    "name": "et",
+    "description": "类 et (L1-L1)，0 个方法",
+    "nodes": [
+      "frontend.nextjs.public.workbox-f1770938.et",
+      "frontend.nextjs.public.workbox-f1770938.et.constructor"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "frontend/nextjs/public/workbox-f1770938.js",
+      "startLine": 1,
+      "endLine": 1
+    }
+  },
+  {
+    "id": "frontend-nextjs-public-workbox-f1770938-v",
+    "name": "V",
+    "description": "类 V (L1-L1)，0 个方法",
+    "nodes": [
+      "frontend.nextjs.public.workbox-f1770938.V",
+      "frontend.nextjs.public.workbox-f1770938.V.constructor"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "frontend/nextjs/public/workbox-f1770938.js",
+      "startLine": 1,
+      "endLine": 1
+    }
+  },
+  {
+    "id": "frontend-nextjs-public-workbox-f1770938-z",
+    "name": "Z",
+    "description": "类 Z (L1-L1)，0 个方法",
+    "nodes": [
+      "frontend.nextjs.public.workbox-f1770938.Z",
+      "frontend.nextjs.public.workbox-f1770938.Z.constructor",
+      "frontend.nextjs.public.workbox-f1770938.Z.strategy",
+      "frontend.nextjs.public.workbox-f1770938.Z.precache",
+      "frontend.nextjs.public.workbox-f1770938.Z.addToCacheList",
+      "frontend.nextjs.public.workbox-f1770938.Z.install",
+      "frontend.nextjs.public.workbox-f1770938.Z.activate",
+      "frontend.nextjs.public.workbox-f1770938.Z.getURLsToCacheKeys",
+      "frontend.nextjs.public.workbox-f1770938.Z.getCachedURLs",
+      "frontend.nextjs.public.workbox-f1770938.Z.getCacheKeyForURL",
+      "frontend.nextjs.public.workbox-f1770938.Z.getIntegrityForCacheKey",
+      "frontend.nextjs.public.workbox-f1770938.Z.matchPrecache",
+      "frontend.nextjs.public.workbox-f1770938.Z.createHandlerBoundToURL"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "frontend/nextjs/public/workbox-f1770938.js",
+      "startLine": 1,
+      "endLine": 1
+    }
+  },
+  {
+    "id": "frontend-nextjs-public-workbox-f1770938-et",
+    "name": "et",
+    "description": "类 et (L1-L1)，0 个方法",
+    "nodes": [
+      "frontend.nextjs.public.workbox-f1770938.et",
+      "frontend.nextjs.public.workbox-f1770938.et.constructor"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "frontend/nextjs/public/workbox-f1770938.js",
+      "startLine": 1,
+      "endLine": 1
+    }
+  },
+  {
+    "id": "gpt-researcher-agent-gptresearcher",
+    "name": "GPTResearcher",
+    "description": "类 GPTResearcher (L36-L739)，0 个方法",
+    "nodes": [
+      "gpt_researcher.agent.GPTResearcher",
+      "gpt_researcher.agent.GPTResearcher.__init__",
+      "gpt_researcher.agent.GPTResearcher._generate_research_id",
+      "gpt_researcher.agent.GPTResearcher._resolve_mcp_strategy",
+      "gpt_researcher.agent.GPTResearcher._process_mcp_configs",
+      "gpt_researcher.agent.GPTResearcher._log_event",
+      "gpt_researcher.agent.GPTResearcher.conduct_research",
+      "gpt_researcher.agent.GPTResearcher._handle_deep_research",
+      "gpt_researcher.agent.GPTResearcher.write_report",
+      "gpt_researcher.agent.GPTResearcher.write_report_conclusion",
+      "gpt_researcher.agent.GPTResearcher.write_introduction",
+      "gpt_researcher.agent.GPTResearcher.quick_search",
+      "gpt_researcher.agent.GPTResearcher.get_subtopics",
+      "gpt_researcher.agent.GPTResearcher.get_draft_section_titles",
+      "gpt_researcher.agent.GPTResearcher.get_similar_written_contents_by_draft_section_titles",
+      "gpt_researcher.agent.GPTResearcher.get_research_images",
+      "gpt_researcher.agent.GPTResearcher.add_research_images",
+      "gpt_researcher.agent.GPTResearcher.get_research_sources",
+      "gpt_researcher.agent.GPTResearcher.add_research_sources",
+      "gpt_researcher.agent.GPTResearcher.add_references",
+      "gpt_researcher.agent.GPTResearcher.extract_headers",
+      "gpt_researcher.agent.GPTResearcher.extract_sections",
+      "gpt_researcher.agent.GPTResearcher.table_of_contents",
+      "gpt_researcher.agent.GPTResearcher.get_source_urls",
+      "gpt_researcher.agent.GPTResearcher.get_research_context",
+      "gpt_researcher.agent.GPTResearcher.get_costs",
+      "gpt_researcher.agent.GPTResearcher.get_step_costs",
+      "gpt_researcher.agent.GPTResearcher.set_verbose",
+      "gpt_researcher.agent.GPTResearcher.add_costs"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/agent.py",
+      "startLine": 36,
+      "endLine": 739
+    }
+  },
+  {
+    "id": "gpt-researcher-config-config-config",
+    "name": "Config",
+    "description": "类 Config (L19-L312)，0 个方法",
+    "nodes": [
+      "gpt_researcher.config.config.Config",
+      "gpt_researcher.config.config.Config.__init__",
+      "gpt_researcher.config.config.Config._set_attributes",
+      "gpt_researcher.config.config.Config._set_embedding_attributes",
+      "gpt_researcher.config.config.Config._set_llm_attributes",
+      "gpt_researcher.config.config.Config._handle_deprecated_attributes",
+      "gpt_researcher.config.config.Config._set_doc_path",
+      "gpt_researcher.config.config.Config.load_config",
+      "gpt_researcher.config.config.Config.list_available_configs",
+      "gpt_researcher.config.config.Config.parse_retrievers",
+      "gpt_researcher.config.config.Config.parse_llm",
+      "gpt_researcher.config.config.Config.parse_reasoning_effort",
+      "gpt_researcher.config.config.Config.parse_embedding",
+      "gpt_researcher.config.config.Config.validate_doc_path",
+      "gpt_researcher.config.config.Config.convert_env_value",
+      "gpt_researcher.config.config.Config.set_verbose",
+      "gpt_researcher.config.config.Config.get_mcp_server_config"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/config/config.py",
+      "startLine": 19,
+      "endLine": 312
+    }
+  },
+  {
+    "id": "gpt-researcher-config-variables-base-baseconfig",
+    "name": "BaseConfig",
+    "description": "类 BaseConfig (L5-L50)，0 个方法",
+    "nodes": [
+      "gpt_researcher.config.variables.base.BaseConfig"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/config/variables/base.py",
+      "startLine": 5,
+      "endLine": 50
+    }
+  },
+  {
+    "id": "gpt-researcher-context-compression-contextcompressor",
+    "name": "ContextCompressor",
+    "description": "含组件 VectorstoreCompressor, async_get_context；类 ContextCompressor (L85-L178)，0 个方法",
+    "nodes": [
+      "gpt_researcher.context.compression.ContextCompressor",
+      "gpt_researcher.context.compression.ContextCompressor.__init__",
+      "gpt_researcher.context.compression.ContextCompressor.__get_contextual_retriever",
+      "gpt_researcher.context.compression.ContextCompressor.async_get_context",
+      "gpt_researcher.context.compression.VectorstoreCompressor",
+      "gpt_researcher.context.compression.VectorstoreCompressor.__init__",
+      "gpt_researcher.context.compression.VectorstoreCompressor.async_get_context"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "gpt_researcher/context/compression.py",
+      "startLine": 36,
+      "endLine": 178
+    }
+  },
+  {
+    "id": "gpt-researcher-context-compression-writtencontentcompressor",
+    "name": "WrittenContentCompressor",
+    "description": "类 WrittenContentCompressor (L181-L255)，0 个方法",
+    "nodes": [
+      "gpt_researcher.context.compression.WrittenContentCompressor",
+      "gpt_researcher.context.compression.WrittenContentCompressor.__init__",
+      "gpt_researcher.context.compression.WrittenContentCompressor.__get_contextual_retriever",
+      "gpt_researcher.context.compression.WrittenContentCompressor.__pretty_docs_list",
+      "gpt_researcher.context.compression.WrittenContentCompressor.async_get_context"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/context/compression.py",
+      "startLine": 181,
+      "endLine": 255
+    }
+  },
+  {
+    "id": "gpt-researcher-context-retriever-searchapiretriever",
+    "name": "SearchAPIRetriever",
+    "description": "类 SearchAPIRetriever (L10-L29)，0 个方法",
+    "nodes": [
+      "gpt_researcher.context.retriever.SearchAPIRetriever",
+      "gpt_researcher.context.retriever.SearchAPIRetriever._get_relevant_documents"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/context/retriever.py",
+      "startLine": 10,
+      "endLine": 29
+    }
+  },
+  {
+    "id": "gpt-researcher-context-retriever-sectionretriever",
+    "name": "SectionRetriever",
+    "description": "类 SectionRetriever (L31-L62)，0 个方法",
+    "nodes": [
+      "gpt_researcher.context.retriever.SectionRetriever",
+      "gpt_researcher.context.retriever.SectionRetriever._get_relevant_documents"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/context/retriever.py",
+      "startLine": 31,
+      "endLine": 62
+    }
+  },
+  {
+    "id": "gpt-researcher-document-azure-document-loader-azuredocumentloader",
+    "name": "AzureDocumentLoader",
+    "description": "类 AzureDocumentLoader (L5-L22)，0 个方法",
+    "nodes": [
+      "gpt_researcher.document.azure_document_loader.AzureDocumentLoader",
+      "gpt_researcher.document.azure_document_loader.AzureDocumentLoader.__init__",
+      "gpt_researcher.document.azure_document_loader.AzureDocumentLoader.load"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/document/azure_document_loader.py",
+      "startLine": 5,
+      "endLine": 22
+    }
+  },
+  {
+    "id": "gpt-researcher-document-document-documentloader",
+    "name": "DocumentLoader",
+    "description": "类 DocumentLoader (L16-L92)，0 个方法",
+    "nodes": [
+      "gpt_researcher.document.document.DocumentLoader",
+      "gpt_researcher.document.document.DocumentLoader.__init__",
+      "gpt_researcher.document.document.DocumentLoader.load",
+      "gpt_researcher.document.document.DocumentLoader._load_document"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/document/document.py",
+      "startLine": 16,
+      "endLine": 92
+    }
+  },
+  {
+    "id": "gpt-researcher-document-langchain-document-langchaindocumentloader",
+    "name": "LangChainDocumentLoader",
+    "description": "类 LangChainDocumentLoader (L10-L24)，0 个方法",
+    "nodes": [
+      "gpt_researcher.document.langchain_document.LangChainDocumentLoader",
+      "gpt_researcher.document.langchain_document.LangChainDocumentLoader.__init__",
+      "gpt_researcher.document.langchain_document.LangChainDocumentLoader.load"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/document/langchain_document.py",
+      "startLine": 10,
+      "endLine": 24
+    }
+  },
+  {
+    "id": "gpt-researcher-document-online-document-onlinedocumentloader",
+    "name": "OnlineDocumentLoader",
+    "description": "类 OnlineDocumentLoader (L15-L91)，0 个方法",
+    "nodes": [
+      "gpt_researcher.document.online_document.OnlineDocumentLoader",
+      "gpt_researcher.document.online_document.OnlineDocumentLoader.__init__",
+      "gpt_researcher.document.online_document.OnlineDocumentLoader.load",
+      "gpt_researcher.document.online_document.OnlineDocumentLoader._download_and_process",
+      "gpt_researcher.document.online_document.OnlineDocumentLoader._load_document",
+      "gpt_researcher.document.online_document.OnlineDocumentLoader._get_extension"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/document/online_document.py",
+      "startLine": 15,
+      "endLine": 91
+    }
+  },
+  {
+    "id": "gpt-researcher-llm-provider-generic-base-genericllmprovider",
+    "name": "GenericLLMProvider",
+    "description": "含组件 ChatLogger, log_request；含组件 ReasoningEfforts；类 GenericLLMProvider (L91-L313)，0 个方法",
+    "nodes": [
+      "gpt_researcher.llm_provider.generic.base.GenericLLMProvider",
+      "gpt_researcher.llm_provider.generic.base.GenericLLMProvider.__init__",
+      "gpt_researcher.llm_provider.generic.base.GenericLLMProvider.from_provider",
+      "gpt_researcher.llm_provider.generic.base.GenericLLMProvider.get_chat_response",
+      "gpt_researcher.llm_provider.generic.base.GenericLLMProvider.stream_response",
+      "gpt_researcher.llm_provider.generic.base.GenericLLMProvider._send_output",
+      "gpt_researcher.llm_provider.generic.base.ReasoningEfforts",
+      "gpt_researcher.llm_provider.generic.base.ChatLogger",
+      "gpt_researcher.llm_provider.generic.base.ChatLogger.__init__",
+      "gpt_researcher.llm_provider.generic.base.ChatLogger.log_request"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "gpt_researcher/llm_provider/generic/base.py",
+      "startLine": 67,
+      "endLine": 313
+    }
+  },
+  {
+    "id": "gpt-researcher-llm-provider-image-image-generator-imagegeneratorprovider",
+    "name": "ImageGeneratorProvider",
+    "description": "类 ImageGeneratorProvider (L22-L440)，0 个方法",
+    "nodes": [
+      "gpt_researcher.llm_provider.image.image_generator.ImageGeneratorProvider",
+      "gpt_researcher.llm_provider.image.image_generator.ImageGeneratorProvider.__init__",
+      "gpt_researcher.llm_provider.image.image_generator.ImageGeneratorProvider._ensure_client",
+      "gpt_researcher.llm_provider.image.image_generator.ImageGeneratorProvider._ensure_output_dir",
+      "gpt_researcher.llm_provider.image.image_generator.ImageGeneratorProvider._generate_image_filename",
+      "gpt_researcher.llm_provider.image.image_generator.ImageGeneratorProvider._crop_to_landscape",
+      "gpt_researcher.llm_provider.image.image_generator.ImageGeneratorProvider._build_enhanced_prompt",
+      "gpt_researcher.llm_provider.image.image_generator.ImageGeneratorProvider.generate_image",
+      "gpt_researcher.llm_provider.image.image_generator.ImageGeneratorProvider._generate_with_gemini",
+      "gpt_researcher.llm_provider.image.image_generator.ImageGeneratorProvider._generate_with_imagen",
+      "gpt_researcher.llm_provider.image.image_generator.ImageGeneratorProvider._generate_alt_text",
+      "gpt_researcher.llm_provider.image.image_generator.ImageGeneratorProvider.is_available",
+      "gpt_researcher.llm_provider.image.image_generator.ImageGeneratorProvider.from_config"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/llm_provider/image/image_generator.py",
+      "startLine": 22,
+      "endLine": 440
+    }
+  },
+  {
+    "id": "gpt-researcher-mcp-client-mcpclientmanager",
+    "name": "MCPClientManager",
+    "description": "类 MCPClientManager (L19-L179)，0 个方法",
+    "nodes": [
+      "gpt_researcher.mcp.client.MCPClientManager",
+      "gpt_researcher.mcp.client.MCPClientManager.__init__",
+      "gpt_researcher.mcp.client.MCPClientManager.convert_configs_to_langchain_format",
+      "gpt_researcher.mcp.client.MCPClientManager.get_or_create_client",
+      "gpt_researcher.mcp.client.MCPClientManager.close_client",
+      "gpt_researcher.mcp.client.MCPClientManager.get_all_tools"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/mcp/client.py",
+      "startLine": 19,
+      "endLine": 179
+    }
+  },
+  {
+    "id": "gpt-researcher-mcp-research-mcpresearchskill",
+    "name": "MCPResearchSkill",
+    "description": "类 MCPResearchSkill (L13-L271)，0 个方法",
+    "nodes": [
+      "gpt_researcher.mcp.research.MCPResearchSkill",
+      "gpt_researcher.mcp.research.MCPResearchSkill.__init__",
+      "gpt_researcher.mcp.research.MCPResearchSkill.conduct_research_with_tools",
+      "gpt_researcher.mcp.research.MCPResearchSkill._process_tool_result"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/mcp/research.py",
+      "startLine": 13,
+      "endLine": 271
+    }
+  },
+  {
+    "id": "gpt-researcher-mcp-streaming-mcpstreamer",
+    "name": "MCPStreamer",
+    "description": "类 MCPStreamer (L13-L102)，0 个方法",
+    "nodes": [
+      "gpt_researcher.mcp.streaming.MCPStreamer",
+      "gpt_researcher.mcp.streaming.MCPStreamer.__init__",
+      "gpt_researcher.mcp.streaming.MCPStreamer.stream_log",
+      "gpt_researcher.mcp.streaming.MCPStreamer.stream_log_sync",
+      "gpt_researcher.mcp.streaming.MCPStreamer.stream_stage_start",
+      "gpt_researcher.mcp.streaming.MCPStreamer.stream_stage_complete",
+      "gpt_researcher.mcp.streaming.MCPStreamer.stream_tool_selection",
+      "gpt_researcher.mcp.streaming.MCPStreamer.stream_tool_execution",
+      "gpt_researcher.mcp.streaming.MCPStreamer.stream_research_results",
+      "gpt_researcher.mcp.streaming.MCPStreamer.stream_error",
+      "gpt_researcher.mcp.streaming.MCPStreamer.stream_warning",
+      "gpt_researcher.mcp.streaming.MCPStreamer.stream_info"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/mcp/streaming.py",
+      "startLine": 13,
+      "endLine": 102
+    }
+  },
+  {
+    "id": "gpt-researcher-mcp-tool-selector-mcptoolselector",
+    "name": "MCPToolSelector",
+    "description": "类 MCPToolSelector (L14-L204)，0 个方法",
+    "nodes": [
+      "gpt_researcher.mcp.tool_selector.MCPToolSelector",
+      "gpt_researcher.mcp.tool_selector.MCPToolSelector.__init__",
+      "gpt_researcher.mcp.tool_selector.MCPToolSelector.select_relevant_tools",
+      "gpt_researcher.mcp.tool_selector.MCPToolSelector._call_llm_for_tool_selection",
+      "gpt_researcher.mcp.tool_selector.MCPToolSelector._fallback_tool_selection"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/mcp/tool_selector.py",
+      "startLine": 14,
+      "endLine": 204
+    }
+  },
+  {
+    "id": "gpt-researcher-memory-embeddings-memory",
+    "name": "Memory",
+    "description": "类 Memory (L55-L215)，0 个方法",
+    "nodes": [
+      "gpt_researcher.memory.embeddings.Memory",
+      "gpt_researcher.memory.embeddings.Memory.__init__",
+      "gpt_researcher.memory.embeddings.Memory.get_embeddings"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/memory/embeddings.py",
+      "startLine": 55,
+      "endLine": 215
+    }
+  },
+  {
+    "id": "gpt-researcher-prompts-promptfamily",
+    "name": "PromptFamily",
+    "description": "类 PromptFamily (L14-L749)，0 个方法",
+    "nodes": [
+      "gpt_researcher.prompts.PromptFamily",
+      "gpt_researcher.prompts.PromptFamily.__init__",
+      "gpt_researcher.prompts.PromptFamily.generate_mcp_tool_selection_prompt",
+      "gpt_researcher.prompts.PromptFamily.generate_mcp_research_prompt",
+      "gpt_researcher.prompts.PromptFamily.generate_image_analysis_prompt",
+      "gpt_researcher.prompts.PromptFamily.generate_image_prompt_enhancement",
+      "gpt_researcher.prompts.PromptFamily.generate_search_queries_prompt",
+      "gpt_researcher.prompts.PromptFamily.generate_report_prompt",
+      "gpt_researcher.prompts.PromptFamily.curate_sources",
+      "gpt_researcher.prompts.PromptFamily.generate_resource_report_prompt",
+      "gpt_researcher.prompts.PromptFamily.generate_custom_report_prompt",
+      "gpt_researcher.prompts.PromptFamily.generate_outline_report_prompt",
+      "gpt_researcher.prompts.PromptFamily.generate_deep_research_prompt",
+      "gpt_researcher.prompts.PromptFamily.auto_agent_instructions",
+      "gpt_researcher.prompts.PromptFamily.generate_summary_prompt",
+      "gpt_researcher.prompts.PromptFamily.generate_quick_summary_prompt",
+      "gpt_researcher.prompts.PromptFamily.pretty_print_docs",
+      "gpt_researcher.prompts.PromptFamily.join_local_web_documents",
+      "gpt_researcher.prompts.PromptFamily.generate_subtopics_prompt",
+      "gpt_researcher.prompts.PromptFamily.generate_subtopic_report_prompt",
+      "gpt_researcher.prompts.PromptFamily.generate_draft_titles_prompt",
+      "gpt_researcher.prompts.PromptFamily.generate_report_introduction",
+      "gpt_researcher.prompts.PromptFamily.generate_report_conclusion"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/prompts.py",
+      "startLine": 14,
+      "endLine": 749
+    }
+  },
+  {
+    "id": "gpt-researcher-prompts-granitepromptfamily",
+    "name": "GranitePromptFamily",
+    "description": "类 GranitePromptFamily (L752-L769)，0 个方法",
+    "nodes": [
+      "gpt_researcher.prompts.GranitePromptFamily",
+      "gpt_researcher.prompts.GranitePromptFamily._get_granite_class",
+      "gpt_researcher.prompts.GranitePromptFamily.pretty_print_docs",
+      "gpt_researcher.prompts.GranitePromptFamily.join_local_web_documents"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/prompts.py",
+      "startLine": 752,
+      "endLine": 769
+    }
+  },
+  {
+    "id": "gpt-researcher-prompts-granite3promptfamily",
+    "name": "Granite3PromptFamily",
+    "description": "类 Granite3PromptFamily (L772-L799)，0 个方法",
+    "nodes": [
+      "gpt_researcher.prompts.Granite3PromptFamily",
+      "gpt_researcher.prompts.Granite3PromptFamily.pretty_print_docs",
+      "gpt_researcher.prompts.Granite3PromptFamily.join_local_web_documents"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/prompts.py",
+      "startLine": 772,
+      "endLine": 799
+    }
+  },
+  {
+    "id": "gpt-researcher-prompts-granite33promptfamily",
+    "name": "Granite33PromptFamily",
+    "description": "类 Granite33PromptFamily (L802-L830)，0 个方法",
+    "nodes": [
+      "gpt_researcher.prompts.Granite33PromptFamily",
+      "gpt_researcher.prompts.Granite33PromptFamily._get_content",
+      "gpt_researcher.prompts.Granite33PromptFamily.pretty_print_docs",
+      "gpt_researcher.prompts.Granite33PromptFamily.join_local_web_documents"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/prompts.py",
+      "startLine": 802,
+      "endLine": 830
+    }
+  },
+  {
+    "id": "gpt-researcher-retrievers-arxiv-arxiv-arxivsearch",
+    "name": "ArxivSearch",
+    "description": "类 ArxivSearch (L4-L40)，0 个方法",
+    "nodes": [
+      "gpt_researcher.retrievers.arxiv.arxiv.ArxivSearch",
+      "gpt_researcher.retrievers.arxiv.arxiv.ArxivSearch.__init__",
+      "gpt_researcher.retrievers.arxiv.arxiv.ArxivSearch.search"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/retrievers/arxiv/arxiv.py",
+      "startLine": 4,
+      "endLine": 40
+    }
+  },
+  {
+    "id": "gpt-researcher-retrievers-bing-bing-bingsearch",
+    "name": "BingSearch",
+    "description": "类 BingSearch (L10-L95)，0 个方法",
+    "nodes": [
+      "gpt_researcher.retrievers.bing.bing.BingSearch",
+      "gpt_researcher.retrievers.bing.bing.BingSearch.__init__",
+      "gpt_researcher.retrievers.bing.bing.BingSearch.get_api_key",
+      "gpt_researcher.retrievers.bing.bing.BingSearch.search"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/retrievers/bing/bing.py",
+      "startLine": 10,
+      "endLine": 95
+    }
+  },
+  {
+    "id": "gpt-researcher-retrievers-bocha-bocha-bochasearch",
+    "name": "BoChaSearch",
+    "description": "类 BoChaSearch (L10-L58)，0 个方法",
+    "nodes": [
+      "gpt_researcher.retrievers.bocha.bocha.BoChaSearch",
+      "gpt_researcher.retrievers.bocha.bocha.BoChaSearch.__init__",
+      "gpt_researcher.retrievers.bocha.bocha.BoChaSearch.search"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/retrievers/bocha/bocha.py",
+      "startLine": 10,
+      "endLine": 58
+    }
+  },
+  {
+    "id": "gpt-researcher-retrievers-custom-custom-customretriever",
+    "name": "CustomRetriever",
+    "description": "类 CustomRetriever (L6-L52)，0 个方法",
+    "nodes": [
+      "gpt_researcher.retrievers.custom.custom.CustomRetriever",
+      "gpt_researcher.retrievers.custom.custom.CustomRetriever.__init__",
+      "gpt_researcher.retrievers.custom.custom.CustomRetriever._populate_params",
+      "gpt_researcher.retrievers.custom.custom.CustomRetriever.search"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/retrievers/custom/custom.py",
+      "startLine": 6,
+      "endLine": 52
+    }
+  },
+  {
+    "id": "gpt-researcher-retrievers-duckduckgo-duckduckgo-duckduckgo",
+    "name": "Duckduckgo",
+    "description": "类 Duckduckgo (L5-L29)，0 个方法",
+    "nodes": [
+      "gpt_researcher.retrievers.duckduckgo.duckduckgo.Duckduckgo",
+      "gpt_researcher.retrievers.duckduckgo.duckduckgo.Duckduckgo.__init__",
+      "gpt_researcher.retrievers.duckduckgo.duckduckgo.Duckduckgo.search"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/retrievers/duckduckgo/duckduckgo.py",
+      "startLine": 5,
+      "endLine": 29
+    }
+  },
+  {
+    "id": "gpt-researcher-retrievers-exa-exa-exasearch",
+    "name": "ExaSearch",
+    "description": "类 ExaSearch (L5-L101)，0 个方法",
+    "nodes": [
+      "gpt_researcher.retrievers.exa.exa.ExaSearch",
+      "gpt_researcher.retrievers.exa.exa.ExaSearch.__init__",
+      "gpt_researcher.retrievers.exa.exa.ExaSearch._retrieve_api_key",
+      "gpt_researcher.retrievers.exa.exa.ExaSearch.search",
+      "gpt_researcher.retrievers.exa.exa.ExaSearch.find_similar",
+      "gpt_researcher.retrievers.exa.exa.ExaSearch.get_contents"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/retrievers/exa/exa.py",
+      "startLine": 5,
+      "endLine": 101
+    }
+  },
+  {
+    "id": "gpt-researcher-retrievers-google-google-googlesearch",
+    "name": "GoogleSearch",
+    "description": "类 GoogleSearch (L9-L100)，0 个方法",
+    "nodes": [
+      "gpt_researcher.retrievers.google.google.GoogleSearch",
+      "gpt_researcher.retrievers.google.google.GoogleSearch.__init__",
+      "gpt_researcher.retrievers.google.google.GoogleSearch.get_api_key",
+      "gpt_researcher.retrievers.google.google.GoogleSearch.get_cx_key",
+      "gpt_researcher.retrievers.google.google.GoogleSearch.search"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/retrievers/google/google.py",
+      "startLine": 9,
+      "endLine": 100
+    }
+  },
+  {
+    "id": "gpt-researcher-retrievers-mcp-retriever-mcpretriever",
+    "name": "MCPRetriever",
+    "description": "类 MCPRetriever (L27-L324)，0 个方法",
+    "nodes": [
+      "gpt_researcher.retrievers.mcp.retriever.MCPRetriever",
+      "gpt_researcher.retrievers.mcp.retriever.MCPRetriever.__init__",
+      "gpt_researcher.retrievers.mcp.retriever.MCPRetriever._get_mcp_configs",
+      "gpt_researcher.retrievers.mcp.retriever.MCPRetriever._get_config",
+      "gpt_researcher.retrievers.mcp.retriever.MCPRetriever.search_async",
+      "gpt_researcher.retrievers.mcp.retriever.MCPRetriever.search",
+      "gpt_researcher.retrievers.mcp.retriever.MCPRetriever.run_in_thread",
+      "gpt_researcher.retrievers.mcp.retriever.MCPRetriever._get_all_tools"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/retrievers/mcp/retriever.py",
+      "startLine": 27,
+      "endLine": 324
+    }
+  },
+  {
+    "id": "gpt-researcher-retrievers-pubmed-central-pubmed-central-pubmedcentralsearch",
+    "name": "PubMedCentralSearch",
+    "description": "类 PubMedCentralSearch (L7-L152)，0 个方法",
+    "nodes": [
+      "gpt_researcher.retrievers.pubmed_central.pubmed_central.PubMedCentralSearch",
+      "gpt_researcher.retrievers.pubmed_central.pubmed_central.PubMedCentralSearch.__init__",
+      "gpt_researcher.retrievers.pubmed_central.pubmed_central.PubMedCentralSearch._populate_params",
+      "gpt_researcher.retrievers.pubmed_central.pubmed_central.PubMedCentralSearch._search_articles",
+      "gpt_researcher.retrievers.pubmed_central.pubmed_central.PubMedCentralSearch._fetch_full_text",
+      "gpt_researcher.retrievers.pubmed_central.pubmed_central.PubMedCentralSearch.search"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/retrievers/pubmed_central/pubmed_central.py",
+      "startLine": 7,
+      "endLine": 152
+    }
+  },
+  {
+    "id": "gpt-researcher-retrievers-searchapi-searchapi-searchapisearch",
+    "name": "SearchApiSearch",
+    "description": "类 SearchApiSearch (L9-L84)，0 个方法",
+    "nodes": [
+      "gpt_researcher.retrievers.searchapi.searchapi.SearchApiSearch",
+      "gpt_researcher.retrievers.searchapi.searchapi.SearchApiSearch.__init__",
+      "gpt_researcher.retrievers.searchapi.searchapi.SearchApiSearch.get_api_key",
+      "gpt_researcher.retrievers.searchapi.searchapi.SearchApiSearch.search"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/retrievers/searchapi/searchapi.py",
+      "startLine": 9,
+      "endLine": 84
+    }
+  },
+  {
+    "id": "gpt-researcher-retrievers-searx-searx-searxsearch",
+    "name": "SearxSearch",
+    "description": "类 SearxSearch (L8-L78)，0 个方法",
+    "nodes": [
+      "gpt_researcher.retrievers.searx.searx.SearxSearch",
+      "gpt_researcher.retrievers.searx.searx.SearxSearch.__init__",
+      "gpt_researcher.retrievers.searx.searx.SearxSearch.get_searxng_url",
+      "gpt_researcher.retrievers.searx.searx.SearxSearch.search"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/retrievers/searx/searx.py",
+      "startLine": 8,
+      "endLine": 78
+    }
+  },
+  {
+    "id": "gpt-researcher-retrievers-semantic-scholar-semantic-scholar-semanticscholarsearch",
+    "name": "SemanticScholarSearch",
+    "description": "类 SemanticScholarSearch (L6-L59)，0 个方法",
+    "nodes": [
+      "gpt_researcher.retrievers.semantic_scholar.semantic_scholar.SemanticScholarSearch",
+      "gpt_researcher.retrievers.semantic_scholar.semantic_scholar.SemanticScholarSearch.__init__",
+      "gpt_researcher.retrievers.semantic_scholar.semantic_scholar.SemanticScholarSearch.search"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/retrievers/semantic_scholar/semantic_scholar.py",
+      "startLine": 6,
+      "endLine": 59
+    }
+  },
+  {
+    "id": "gpt-researcher-retrievers-serpapi-serpapi-serpapisearch",
+    "name": "SerpApiSearch",
+    "description": "类 SerpApiSearch (L9-L82)，0 个方法",
+    "nodes": [
+      "gpt_researcher.retrievers.serpapi.serpapi.SerpApiSearch",
+      "gpt_researcher.retrievers.serpapi.serpapi.SerpApiSearch.__init__",
+      "gpt_researcher.retrievers.serpapi.serpapi.SerpApiSearch.get_api_key",
+      "gpt_researcher.retrievers.serpapi.serpapi.SerpApiSearch.search"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/retrievers/serpapi/serpapi.py",
+      "startLine": 9,
+      "endLine": 82
+    }
+  },
+  {
+    "id": "gpt-researcher-retrievers-serper-serper-serpersearch",
+    "name": "SerperSearch",
+    "description": "类 SerperSearch (L9-L130)，0 个方法",
+    "nodes": [
+      "gpt_researcher.retrievers.serper.serper.SerperSearch",
+      "gpt_researcher.retrievers.serper.serper.SerperSearch.__init__",
+      "gpt_researcher.retrievers.serper.serper.SerperSearch._get_exclude_sites_from_env",
+      "gpt_researcher.retrievers.serper.serper.SerperSearch.get_api_key",
+      "gpt_researcher.retrievers.serper.serper.SerperSearch.search"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/retrievers/serper/serper.py",
+      "startLine": 9,
+      "endLine": 130
+    }
+  },
+  {
+    "id": "gpt-researcher-retrievers-tavily-tavily-search-tavilysearch",
+    "name": "TavilySearch",
+    "description": "类 TavilySearch (L14-L125)，0 个方法",
+    "nodes": [
+      "gpt_researcher.retrievers.tavily.tavily_search.TavilySearch",
+      "gpt_researcher.retrievers.tavily.tavily_search.TavilySearch.__init__",
+      "gpt_researcher.retrievers.tavily.tavily_search.TavilySearch.get_api_key",
+      "gpt_researcher.retrievers.tavily.tavily_search.TavilySearch._search",
+      "gpt_researcher.retrievers.tavily.tavily_search.TavilySearch.search"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/retrievers/tavily/tavily_search.py",
+      "startLine": 14,
+      "endLine": 125
+    }
+  },
+  {
+    "id": "gpt-researcher-scraper-arxiv-arxiv-arxivscraper",
+    "name": "ArxivScraper",
+    "description": "类 ArxivScraper (L4-L28)，0 个方法",
+    "nodes": [
+      "gpt_researcher.scraper.arxiv.arxiv.ArxivScraper",
+      "gpt_researcher.scraper.arxiv.arxiv.ArxivScraper.__init__",
+      "gpt_researcher.scraper.arxiv.arxiv.ArxivScraper.scrape"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/scraper/arxiv/arxiv.py",
+      "startLine": 4,
+      "endLine": 28
+    }
+  },
+  {
+    "id": "gpt-researcher-scraper-beautiful-soup-beautiful-soup-beautifulsoupscraper",
+    "name": "BeautifulSoupScraper",
+    "description": "类 BeautifulSoupScraper (L6-L42)，0 个方法",
+    "nodes": [
+      "gpt_researcher.scraper.beautiful_soup.beautiful_soup.BeautifulSoupScraper",
+      "gpt_researcher.scraper.beautiful_soup.beautiful_soup.BeautifulSoupScraper.__init__",
+      "gpt_researcher.scraper.beautiful_soup.beautiful_soup.BeautifulSoupScraper.scrape"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/scraper/beautiful_soup/beautiful_soup.py",
+      "startLine": 6,
+      "endLine": 42
+    }
+  },
+  {
+    "id": "gpt-researcher-scraper-browser-browser-browserscraper",
+    "name": "BrowserScraper",
+    "description": "类 BrowserScraper (L24-L245)，0 个方法",
+    "nodes": [
+      "gpt_researcher.scraper.browser.browser.BrowserScraper",
+      "gpt_researcher.scraper.browser.browser.BrowserScraper.__init__",
+      "gpt_researcher.scraper.browser.browser.BrowserScraper.scrape",
+      "gpt_researcher.scraper.browser.browser.BrowserScraper._import_selenium",
+      "gpt_researcher.scraper.browser.browser.BrowserScraper.setup_driver",
+      "gpt_researcher.scraper.browser.browser.BrowserScraper._load_saved_cookies",
+      "gpt_researcher.scraper.browser.browser.BrowserScraper._load_browser_cookies",
+      "gpt_researcher.scraper.browser.browser.BrowserScraper._cleanup_cookie_file",
+      "gpt_researcher.scraper.browser.browser.BrowserScraper._generate_random_string",
+      "gpt_researcher.scraper.browser.browser.BrowserScraper._get_domain",
+      "gpt_researcher.scraper.browser.browser.BrowserScraper._visit_google_and_save_cookies",
+      "gpt_researcher.scraper.browser.browser.BrowserScraper.scrape_text_with_selenium",
+      "gpt_researcher.scraper.browser.browser.BrowserScraper._scroll_to_bottom",
+      "gpt_researcher.scraper.browser.browser.BrowserScraper._scroll_to_percentage",
+      "gpt_researcher.scraper.browser.browser.BrowserScraper._add_header"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/scraper/browser/browser.py",
+      "startLine": 24,
+      "endLine": 245
+    }
+  },
+  {
+    "id": "gpt-researcher-scraper-browser-nodriver-scraper-nodriverscraper",
+    "name": "NoDriverScraper",
+    "description": "类 NoDriverScraper (L16-L260)，0 个方法",
+    "nodes": [
+      "gpt_researcher.scraper.browser.nodriver_scraper.NoDriverScraper",
+      "gpt_researcher.scraper.browser.nodriver_scraper.NoDriverScraper.get_domain",
+      "gpt_researcher.scraper.browser.nodriver_scraper.NoDriverScraper.__init__",
+      "gpt_researcher.scraper.browser.nodriver_scraper.NoDriverScraper.get",
+      "gpt_researcher.scraper.browser.nodriver_scraper.NoDriverScraper.scroll_page_to_bottom",
+      "gpt_researcher.scraper.browser.nodriver_scraper.NoDriverScraper.wait_or_timeout",
+      "gpt_researcher.scraper.browser.nodriver_scraper.NoDriverScraper.close_page",
+      "gpt_researcher.scraper.browser.nodriver_scraper.NoDriverScraper.rate_limit_for_domain",
+      "gpt_researcher.scraper.browser.nodriver_scraper.NoDriverScraper.stop",
+      "gpt_researcher.scraper.browser.nodriver_scraper.NoDriverScraper.get_browser",
+      "gpt_researcher.scraper.browser.nodriver_scraper.NoDriverScraper.create_browser",
+      "gpt_researcher.scraper.browser.nodriver_scraper.NoDriverScraper.release_browser",
+      "gpt_researcher.scraper.browser.nodriver_scraper.NoDriverScraper.__init__",
+      "gpt_researcher.scraper.browser.nodriver_scraper.NoDriverScraper.scrape_async"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/scraper/browser/nodriver_scraper.py",
+      "startLine": 16,
+      "endLine": 260
+    }
+  },
+  {
+    "id": "gpt-researcher-scraper-browser-nodriver-scraper-browser",
+    "name": "Browser",
+    "description": "类 Browser (L31-L134)，0 个方法",
+    "nodes": [
+      "gpt_researcher.scraper.browser.nodriver_scraper.Browser"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/scraper/browser/nodriver_scraper.py",
+      "startLine": 31,
+      "endLine": 134
+    }
+  },
+  {
+    "id": "gpt-researcher-scraper-firecrawl-firecrawl-firecrawl",
+    "name": "FireCrawl",
+    "description": "类 FireCrawl (L5-L82)，0 个方法",
+    "nodes": [
+      "gpt_researcher.scraper.firecrawl.firecrawl.FireCrawl",
+      "gpt_researcher.scraper.firecrawl.firecrawl.FireCrawl.__init__",
+      "gpt_researcher.scraper.firecrawl.firecrawl.FireCrawl.get_api_key",
+      "gpt_researcher.scraper.firecrawl.firecrawl.FireCrawl.get_server_url",
+      "gpt_researcher.scraper.firecrawl.firecrawl.FireCrawl.scrape"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/scraper/firecrawl/firecrawl.py",
+      "startLine": 5,
+      "endLine": 82
+    }
+  },
+  {
+    "id": "gpt-researcher-scraper-pymupdf-pymupdf-pymupdfscraper",
+    "name": "PyMuPDFScraper",
+    "description": "类 PyMuPDFScraper (L8-L80)，0 个方法",
+    "nodes": [
+      "gpt_researcher.scraper.pymupdf.pymupdf.PyMuPDFScraper",
+      "gpt_researcher.scraper.pymupdf.pymupdf.PyMuPDFScraper.__init__",
+      "gpt_researcher.scraper.pymupdf.pymupdf.PyMuPDFScraper.is_url",
+      "gpt_researcher.scraper.pymupdf.pymupdf.PyMuPDFScraper.scrape"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/scraper/pymupdf/pymupdf.py",
+      "startLine": 8,
+      "endLine": 80
+    }
+  },
+  {
+    "id": "gpt-researcher-scraper-scraper-scraper",
+    "name": "Scraper",
+    "description": "类 Scraper (L30-L212)，0 个方法",
+    "nodes": [
+      "gpt_researcher.scraper.scraper.Scraper",
+      "gpt_researcher.scraper.scraper.Scraper.__init__",
+      "gpt_researcher.scraper.scraper.Scraper.run",
+      "gpt_researcher.scraper.scraper.Scraper._check_pkg",
+      "gpt_researcher.scraper.scraper.Scraper.extract_data_from_url",
+      "gpt_researcher.scraper.scraper.Scraper.get_scraper"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/scraper/scraper.py",
+      "startLine": 30,
+      "endLine": 212
+    }
+  },
+  {
+    "id": "gpt-researcher-scraper-tavily-extract-tavily-extract-tavilyextract",
+    "name": "TavilyExtract",
+    "description": "类 TavilyExtract (L5-L62)，0 个方法",
+    "nodes": [
+      "gpt_researcher.scraper.tavily_extract.tavily_extract.TavilyExtract",
+      "gpt_researcher.scraper.tavily_extract.tavily_extract.TavilyExtract.__init__",
+      "gpt_researcher.scraper.tavily_extract.tavily_extract.TavilyExtract.get_api_key",
+      "gpt_researcher.scraper.tavily_extract.tavily_extract.TavilyExtract.scrape"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/scraper/tavily_extract/tavily_extract.py",
+      "startLine": 5,
+      "endLine": 62
+    }
+  },
+  {
+    "id": "gpt-researcher-scraper-web-base-loader-web-base-loader-webbaseloaderscraper",
+    "name": "WebBaseLoaderScraper",
+    "description": "类 WebBaseLoaderScraper (L6-L43)，0 个方法",
+    "nodes": [
+      "gpt_researcher.scraper.web_base_loader.web_base_loader.WebBaseLoaderScraper",
+      "gpt_researcher.scraper.web_base_loader.web_base_loader.WebBaseLoaderScraper.__init__",
+      "gpt_researcher.scraper.web_base_loader.web_base_loader.WebBaseLoaderScraper.scrape"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/scraper/web_base_loader/web_base_loader.py",
+      "startLine": 6,
+      "endLine": 43
+    }
+  },
+  {
+    "id": "gpt-researcher-skills-browser-browsermanager",
+    "name": "BrowserManager",
+    "description": "类 BrowserManager (L14-L115)，0 个方法",
+    "nodes": [
+      "gpt_researcher.skills.browser.BrowserManager",
+      "gpt_researcher.skills.browser.BrowserManager.__init__",
+      "gpt_researcher.skills.browser.BrowserManager.browse_urls",
+      "gpt_researcher.skills.browser.BrowserManager.select_top_images"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/skills/browser.py",
+      "startLine": 14,
+      "endLine": 115
+    }
+  },
+  {
+    "id": "gpt-researcher-skills-context-manager-contextmanager",
+    "name": "ContextManager",
+    "description": "类 ContextManager (L18-L154)，0 个方法",
+    "nodes": [
+      "gpt_researcher.skills.context_manager.ContextManager",
+      "gpt_researcher.skills.context_manager.ContextManager.__init__",
+      "gpt_researcher.skills.context_manager.ContextManager.get_similar_content_by_query",
+      "gpt_researcher.skills.context_manager.ContextManager.get_similar_content_by_query_with_vectorstore",
+      "gpt_researcher.skills.context_manager.ContextManager.get_similar_written_contents_by_draft_section_titles",
+      "gpt_researcher.skills.context_manager.ContextManager.process_query",
+      "gpt_researcher.skills.context_manager.ContextManager.__get_similar_written_contents_by_query"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/skills/context_manager.py",
+      "startLine": 18,
+      "endLine": 154
+    }
+  },
+  {
+    "id": "gpt-researcher-skills-curator-sourcecurator",
+    "name": "SourceCurator",
+    "description": "类 SourceCurator (L15-L96)，0 个方法",
+    "nodes": [
+      "gpt_researcher.skills.curator.SourceCurator",
+      "gpt_researcher.skills.curator.SourceCurator.__init__",
+      "gpt_researcher.skills.curator.SourceCurator.curate_sources"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/skills/curator.py",
+      "startLine": 15,
+      "endLine": 96
+    }
+  },
+  {
+    "id": "gpt-researcher-skills-deep-research-deepresearchskill",
+    "name": "DeepResearchSkill",
+    "description": "含组件 ResearchProgress；类 DeepResearchSkill (L50-L427)，0 个方法",
+    "nodes": [
+      "gpt_researcher.skills.deep_research.DeepResearchSkill",
+      "gpt_researcher.skills.deep_research.DeepResearchSkill.__init__",
+      "gpt_researcher.skills.deep_research.DeepResearchSkill.generate_search_queries",
+      "gpt_researcher.skills.deep_research.DeepResearchSkill.generate_research_plan",
+      "gpt_researcher.skills.deep_research.DeepResearchSkill.process_research_results",
+      "gpt_researcher.skills.deep_research.DeepResearchSkill.deep_research",
+      "gpt_researcher.skills.deep_research.DeepResearchSkill.process_query",
+      "gpt_researcher.skills.deep_research.DeepResearchSkill.run",
+      "gpt_researcher.skills.deep_research.ResearchProgress",
+      "gpt_researcher.skills.deep_research.ResearchProgress.__init__"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "gpt_researcher/skills/deep_research.py",
+      "startLine": 39,
+      "endLine": 427
+    }
+  },
+  {
+    "id": "gpt-researcher-skills-image-generator-imagegenerator",
+    "name": "ImageGenerator",
+    "description": "类 ImageGenerator (L20-L767)，0 个方法",
+    "nodes": [
+      "gpt_researcher.skills.image_generator.ImageGenerator",
+      "gpt_researcher.skills.image_generator.ImageGenerator.__init__",
+      "gpt_researcher.skills.image_generator.ImageGenerator._init_provider",
+      "gpt_researcher.skills.image_generator.ImageGenerator.is_enabled",
+      "gpt_researcher.skills.image_generator.ImageGenerator.plan_and_generate_images",
+      "gpt_researcher.skills.image_generator.ImageGenerator.generate_single_image",
+      "gpt_researcher.skills.image_generator.ImageGenerator._plan_image_concepts",
+      "gpt_researcher.skills.image_generator.ImageGenerator.analyze_report_for_images",
+      "gpt_researcher.skills.image_generator.ImageGenerator._extract_sections",
+      "gpt_researcher.skills.image_generator.ImageGenerator._build_analysis_prompt",
+      "gpt_researcher.skills.image_generator.ImageGenerator._parse_analysis_response",
+      "gpt_researcher.skills.image_generator.ImageGenerator.generate_images_for_report",
+      "gpt_researcher.skills.image_generator.ImageGenerator._embed_images_in_report",
+      "gpt_researcher.skills.image_generator.ImageGenerator.get_generated_images",
+      "gpt_researcher.skills.image_generator.ImageGenerator.process_image_placeholders"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/skills/image_generator.py",
+      "startLine": 20,
+      "endLine": 767
+    }
+  },
+  {
+    "id": "gpt-researcher-skills-researcher-researchconductor",
+    "name": "ResearchConductor",
+    "description": "类 ResearchConductor (L21-L988)，0 个方法",
+    "nodes": [
+      "gpt_researcher.skills.researcher.ResearchConductor",
+      "gpt_researcher.skills.researcher.ResearchConductor.__init__",
+      "gpt_researcher.skills.researcher.ResearchConductor.plan_research",
+      "gpt_researcher.skills.researcher.ResearchConductor.conduct_research",
+      "gpt_researcher.skills.researcher.ResearchConductor._get_context_by_urls",
+      "gpt_researcher.skills.researcher.ResearchConductor._get_context_by_vectorstore",
+      "gpt_researcher.skills.researcher.ResearchConductor._get_context_by_web_search",
+      "gpt_researcher.skills.researcher.ResearchConductor._get_mcp_strategy",
+      "gpt_researcher.skills.researcher.ResearchConductor._execute_mcp_research_for_queries",
+      "gpt_researcher.skills.researcher.ResearchConductor._process_sub_query",
+      "gpt_researcher.skills.researcher.ResearchConductor._execute_mcp_research",
+      "gpt_researcher.skills.researcher.ResearchConductor._combine_mcp_and_web_context",
+      "gpt_researcher.skills.researcher.ResearchConductor._process_sub_query_with_vectorstore",
+      "gpt_researcher.skills.researcher.ResearchConductor._get_new_urls",
+      "gpt_researcher.skills.researcher.ResearchConductor._search_relevant_source_urls",
+      "gpt_researcher.skills.researcher.ResearchConductor._scrape_data_by_urls",
+      "gpt_researcher.skills.researcher.ResearchConductor._search",
+      "gpt_researcher.skills.researcher.ResearchConductor._extract_content",
+      "gpt_researcher.skills.researcher.ResearchConductor._summarize_content",
+      "gpt_researcher.skills.researcher.ResearchConductor._update_search_progress"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/skills/researcher.py",
+      "startLine": 21,
+      "endLine": 988
+    }
+  },
+  {
+    "id": "gpt-researcher-skills-writer-reportgenerator",
+    "name": "ReportGenerator",
+    "description": "类 ReportGenerator (L20-L254)，0 个方法",
+    "nodes": [
+      "gpt_researcher.skills.writer.ReportGenerator",
+      "gpt_researcher.skills.writer.ReportGenerator.__init__",
+      "gpt_researcher.skills.writer.ReportGenerator.write_report",
+      "gpt_researcher.skills.writer.ReportGenerator.write_report_conclusion",
+      "gpt_researcher.skills.writer.ReportGenerator.write_introduction",
+      "gpt_researcher.skills.writer.ReportGenerator.get_subtopics",
+      "gpt_researcher.skills.writer.ReportGenerator.get_draft_section_titles"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/skills/writer.py",
+      "startLine": 20,
+      "endLine": 254
+    }
+  },
+  {
+    "id": "gpt-researcher-utils-enum-reporttype",
+    "name": "ReportType",
+    "description": "类 ReportType (L6-L27)，0 个方法",
+    "nodes": [
+      "gpt_researcher.utils.enum.ReportType"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/utils/enum.py",
+      "startLine": 6,
+      "endLine": 27
+    }
+  },
+  {
+    "id": "gpt-researcher-utils-enum-reportsource",
+    "name": "ReportSource",
+    "description": "类 ReportSource (L30-L51)，0 个方法",
+    "nodes": [
+      "gpt_researcher.utils.enum.ReportSource"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/utils/enum.py",
+      "startLine": 30,
+      "endLine": 51
+    }
+  },
+  {
+    "id": "gpt-researcher-utils-enum-tone",
+    "name": "Tone",
+    "description": "类 Tone (L54-L91)，0 个方法",
+    "nodes": [
+      "gpt_researcher.utils.enum.Tone"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/utils/enum.py",
+      "startLine": 54,
+      "endLine": 91
+    }
+  },
+  {
+    "id": "gpt-researcher-utils-enum-promptfamily",
+    "name": "PromptFamily",
+    "description": "类 PromptFamily (L94-L101)，0 个方法",
+    "nodes": [
+      "gpt_researcher.utils.enum.PromptFamily"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/utils/enum.py",
+      "startLine": 94,
+      "endLine": 101
+    }
+  },
+  {
+    "id": "gpt-researcher-utils-logger-colourizedformatter",
+    "name": "ColourizedFormatter",
+    "description": "类 ColourizedFormatter (L40-L91)，0 个方法",
+    "nodes": [
+      "gpt_researcher.utils.logger.ColourizedFormatter",
+      "gpt_researcher.utils.logger.ColourizedFormatter.__init__",
+      "gpt_researcher.utils.logger.ColourizedFormatter.color_level_name",
+      "gpt_researcher.utils.logger.ColourizedFormatter.default",
+      "gpt_researcher.utils.logger.ColourizedFormatter.should_use_colors",
+      "gpt_researcher.utils.logger.ColourizedFormatter.formatMessage"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/utils/logger.py",
+      "startLine": 40,
+      "endLine": 91
+    }
+  },
+  {
+    "id": "gpt-researcher-utils-logger-defaultformatter",
+    "name": "DefaultFormatter",
+    "description": "类 DefaultFormatter (L94-L96)，0 个方法",
+    "nodes": [
+      "gpt_researcher.utils.logger.DefaultFormatter",
+      "gpt_researcher.utils.logger.DefaultFormatter.should_use_colors"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/utils/logger.py",
+      "startLine": 94,
+      "endLine": 96
+    }
+  },
+  {
+    "id": "gpt-researcher-utils-logging-config-jsonresearchhandler",
+    "name": "JSONResearchHandler",
+    "description": "类 JSONResearchHandler (L7-L36)，0 个方法",
+    "nodes": [
+      "gpt_researcher.utils.logging_config.JSONResearchHandler",
+      "gpt_researcher.utils.logging_config.JSONResearchHandler.__init__",
+      "gpt_researcher.utils.logging_config.JSONResearchHandler.log_event",
+      "gpt_researcher.utils.logging_config.JSONResearchHandler.update_content",
+      "gpt_researcher.utils.logging_config.JSONResearchHandler._save_json"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/utils/logging_config.py",
+      "startLine": 7,
+      "endLine": 36
+    }
+  },
+  {
+    "id": "gpt-researcher-utils-rate-limiter-globalratelimiter",
+    "name": "GlobalRateLimiter",
+    "description": "类 GlobalRateLimiter (L13-L83)，0 个方法",
+    "nodes": [
+      "gpt_researcher.utils.rate_limiter.GlobalRateLimiter",
+      "gpt_researcher.utils.rate_limiter.GlobalRateLimiter.__new__",
+      "gpt_researcher.utils.rate_limiter.GlobalRateLimiter.__init__",
+      "gpt_researcher.utils.rate_limiter.GlobalRateLimiter.get_lock",
+      "gpt_researcher.utils.rate_limiter.GlobalRateLimiter.configure",
+      "gpt_researcher.utils.rate_limiter.GlobalRateLimiter.wait_if_needed",
+      "gpt_researcher.utils.rate_limiter.GlobalRateLimiter.reset"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/utils/rate_limiter.py",
+      "startLine": 13,
+      "endLine": 83
+    }
+  },
+  {
+    "id": "gpt-researcher-utils-validators-subtopic",
+    "name": "Subtopic",
+    "description": "类 Subtopic (L8-L14)，0 个方法",
+    "nodes": [
+      "gpt_researcher.utils.validators.Subtopic"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/utils/validators.py",
+      "startLine": 8,
+      "endLine": 14
+    }
+  },
+  {
+    "id": "gpt-researcher-utils-validators-subtopics",
+    "name": "Subtopics",
+    "description": "类 Subtopics (L17-L26)，0 个方法",
+    "nodes": [
+      "gpt_researcher.utils.validators.Subtopics"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/utils/validators.py",
+      "startLine": 17,
+      "endLine": 26
+    }
+  },
+  {
+    "id": "gpt-researcher-utils-workers-workerpool",
+    "name": "WorkerPool",
+    "description": "类 WorkerPool (L8-L50)，0 个方法",
+    "nodes": [
+      "gpt_researcher.utils.workers.WorkerPool",
+      "gpt_researcher.utils.workers.WorkerPool.__init__",
+      "gpt_researcher.utils.workers.WorkerPool.throttle"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/utils/workers.py",
+      "startLine": 8,
+      "endLine": 50
+    }
+  },
+  {
+    "id": "gpt-researcher-vector-store-vector-store-vectorstorewrapper",
+    "name": "VectorStoreWrapper",
+    "description": "类 VectorStoreWrapper (L10-L43)，0 个方法",
+    "nodes": [
+      "gpt_researcher.vector_store.vector_store.VectorStoreWrapper",
+      "gpt_researcher.vector_store.vector_store.VectorStoreWrapper.__init__",
+      "gpt_researcher.vector_store.vector_store.VectorStoreWrapper.load",
+      "gpt_researcher.vector_store.vector_store.VectorStoreWrapper._create_langchain_documents",
+      "gpt_researcher.vector_store.vector_store.VectorStoreWrapper._split_documents",
+      "gpt_researcher.vector_store.vector_store.VectorStoreWrapper.asimilarity_search"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "gpt_researcher/vector_store/vector_store.py",
+      "startLine": 10,
+      "endLine": 43
+    }
+  },
+  {
+    "id": "json-schema-generator-userschema",
+    "name": "UserSchema",
+    "description": "类 UserSchema (L5-L10)，0 个方法",
+    "nodes": [
+      "json_schema_generator.UserSchema"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "json_schema_generator.py",
+      "startLine": 5,
+      "endLine": 10
+    }
+  },
+  {
+    "id": "multi-agents-agents-editor-editoragent",
+    "name": "EditorAgent",
+    "description": "类 EditorAgent (L13-L168)，0 个方法",
+    "nodes": [
+      "multi_agents.agents.editor.EditorAgent",
+      "multi_agents.agents.editor.EditorAgent.__init__",
+      "multi_agents.agents.editor.EditorAgent.plan_research",
+      "multi_agents.agents.editor.EditorAgent.run_parallel_research",
+      "multi_agents.agents.editor.EditorAgent._create_planning_prompt",
+      "multi_agents.agents.editor.EditorAgent._format_planning_instructions",
+      "multi_agents.agents.editor.EditorAgent._initialize_agents",
+      "multi_agents.agents.editor.EditorAgent._create_workflow",
+      "multi_agents.agents.editor.EditorAgent._log_parallel_research",
+      "multi_agents.agents.editor.EditorAgent._create_task_input"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "multi_agents/agents/editor.py",
+      "startLine": 13,
+      "endLine": 168
+    }
+  },
+  {
+    "id": "multi-agents-agents-human-humanagent",
+    "name": "HumanAgent",
+    "description": "类 HumanAgent (L4-L52)，0 个方法",
+    "nodes": [
+      "multi_agents.agents.human.HumanAgent",
+      "multi_agents.agents.human.HumanAgent.__init__",
+      "multi_agents.agents.human.HumanAgent.review_plan"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "multi_agents/agents/human.py",
+      "startLine": 4,
+      "endLine": 52
+    }
+  },
+  {
+    "id": "multi-agents-agents-orchestrator-chiefeditoragent",
+    "name": "ChiefEditorAgent",
+    "description": "类 ChiefEditorAgent (L19-L118)，0 个方法",
+    "nodes": [
+      "multi_agents.agents.orchestrator.ChiefEditorAgent",
+      "multi_agents.agents.orchestrator.ChiefEditorAgent.__init__",
+      "multi_agents.agents.orchestrator.ChiefEditorAgent._generate_task_id",
+      "multi_agents.agents.orchestrator.ChiefEditorAgent._create_output_directory",
+      "multi_agents.agents.orchestrator.ChiefEditorAgent._initialize_agents",
+      "multi_agents.agents.orchestrator.ChiefEditorAgent._create_workflow",
+      "multi_agents.agents.orchestrator.ChiefEditorAgent._add_workflow_edges",
+      "multi_agents.agents.orchestrator.ChiefEditorAgent.init_research_team",
+      "multi_agents.agents.orchestrator.ChiefEditorAgent._log_research_start",
+      "multi_agents.agents.orchestrator.ChiefEditorAgent.run_research_task"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "multi_agents/agents/orchestrator.py",
+      "startLine": 19,
+      "endLine": 118
+    }
+  },
+  {
+    "id": "multi-agents-agents-publisher-publisheragent",
+    "name": "PublisherAgent",
+    "description": "类 PublisherAgent (L9-L71)，0 个方法",
+    "nodes": [
+      "multi_agents.agents.publisher.PublisherAgent",
+      "multi_agents.agents.publisher.PublisherAgent.__init__",
+      "multi_agents.agents.publisher.PublisherAgent.publish_research_report",
+      "multi_agents.agents.publisher.PublisherAgent.generate_layout",
+      "multi_agents.agents.publisher.PublisherAgent.write_report_by_formats",
+      "multi_agents.agents.publisher.PublisherAgent.run"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "multi_agents/agents/publisher.py",
+      "startLine": 9,
+      "endLine": 71
+    }
+  },
+  {
+    "id": "multi-agents-agents-researcher-researchagent",
+    "name": "ResearchAgent",
+    "description": "类 ResearchAgent (L6-L58)，0 个方法",
+    "nodes": [
+      "multi_agents.agents.researcher.ResearchAgent",
+      "multi_agents.agents.researcher.ResearchAgent.__init__",
+      "multi_agents.agents.researcher.ResearchAgent.research",
+      "multi_agents.agents.researcher.ResearchAgent.run_subtopic_research",
+      "multi_agents.agents.researcher.ResearchAgent.run_initial_research",
+      "multi_agents.agents.researcher.ResearchAgent.run_depth_research"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "multi_agents/agents/researcher.py",
+      "startLine": 6,
+      "endLine": 58
+    }
+  },
+  {
+    "id": "multi-agents-agents-reviewer-revieweragent",
+    "name": "ReviewerAgent",
+    "description": "类 ReviewerAgent (L9-L79)，0 个方法",
+    "nodes": [
+      "multi_agents.agents.reviewer.ReviewerAgent",
+      "multi_agents.agents.reviewer.ReviewerAgent.__init__",
+      "multi_agents.agents.reviewer.ReviewerAgent.review_draft",
+      "multi_agents.agents.reviewer.ReviewerAgent.run"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "multi_agents/agents/reviewer.py",
+      "startLine": 9,
+      "endLine": 79
+    }
+  },
+  {
+    "id": "multi-agents-agents-reviser-reviseragent",
+    "name": "ReviserAgent",
+    "description": "类 ReviserAgent (L15-L74)，0 个方法",
+    "nodes": [
+      "multi_agents.agents.reviser.ReviserAgent",
+      "multi_agents.agents.reviser.ReviserAgent.__init__",
+      "multi_agents.agents.reviser.ReviserAgent.revise_draft",
+      "multi_agents.agents.reviser.ReviserAgent.run"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "multi_agents/agents/reviser.py",
+      "startLine": 15,
+      "endLine": 74
+    }
+  },
+  {
+    "id": "multi-agents-agents-utils-views-agentcolor",
+    "name": "AgentColor",
+    "description": "类 AgentColor (L5-L12)，0 个方法",
+    "nodes": [
+      "multi_agents.agents.utils.views.AgentColor"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "multi_agents/agents/utils/views.py",
+      "startLine": 5,
+      "endLine": 12
+    }
+  },
+  {
+    "id": "multi-agents-agents-writer-writeragent",
+    "name": "WriterAgent",
+    "description": "类 WriterAgent (L16-L142)，0 个方法",
+    "nodes": [
+      "multi_agents.agents.writer.WriterAgent",
+      "multi_agents.agents.writer.WriterAgent.__init__",
+      "multi_agents.agents.writer.WriterAgent.get_headers",
+      "multi_agents.agents.writer.WriterAgent.write_sections",
+      "multi_agents.agents.writer.WriterAgent.revise_headers",
+      "multi_agents.agents.writer.WriterAgent.run"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "multi_agents/agents/writer.py",
+      "startLine": 16,
+      "endLine": 142
+    }
+  },
+  {
+    "id": "multi-agents-memory-draft-draftstate",
+    "name": "DraftState",
+    "description": "类 DraftState (L5-L10)，0 个方法",
+    "nodes": [
+      "multi_agents.memory.draft.DraftState"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "multi_agents/memory/draft.py",
+      "startLine": 5,
+      "endLine": 10
+    }
+  },
+  {
+    "id": "multi-agents-memory-research-researchstate",
+    "name": "ResearchState",
+    "description": "类 ResearchState (L5-L19)，0 个方法",
+    "nodes": [
+      "multi_agents.memory.research.ResearchState"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "multi_agents/memory/research.py",
+      "startLine": 5,
+      "endLine": 19
+    }
+  },
+  {
+    "id": "multi-agents-ag2-agents-editor-editoragent",
+    "name": "EditorAgent",
+    "description": "类 EditorAgent (L8-L89)，0 个方法",
+    "nodes": [
+      "multi_agents_ag2.agents.editor.EditorAgent",
+      "multi_agents_ag2.agents.editor.EditorAgent.__init__",
+      "multi_agents_ag2.agents.editor.EditorAgent.plan_research",
+      "multi_agents_ag2.agents.editor.EditorAgent._create_planning_prompt",
+      "multi_agents_ag2.agents.editor.EditorAgent._format_planning_instructions"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "multi_agents_ag2/agents/editor.py",
+      "startLine": 8,
+      "endLine": 89
+    }
+  },
+  {
+    "id": "multi-agents-ag2-agents-orchestrator-chiefeditoragent",
+    "name": "ChiefEditorAgent",
+    "description": "类 ChiefEditorAgent (L20-L215)，0 个方法",
+    "nodes": [
+      "multi_agents_ag2.agents.orchestrator.ChiefEditorAgent",
+      "multi_agents_ag2.agents.orchestrator.ChiefEditorAgent.__init__",
+      "multi_agents_ag2.agents.orchestrator.ChiefEditorAgent._generate_task_id",
+      "multi_agents_ag2.agents.orchestrator.ChiefEditorAgent._create_output_directory",
+      "multi_agents_ag2.agents.orchestrator.ChiefEditorAgent._llm_config",
+      "multi_agents_ag2.agents.orchestrator.ChiefEditorAgent._initialize_ag2_team",
+      "multi_agents_ag2.agents.orchestrator.ChiefEditorAgent._chat",
+      "multi_agents_ag2.agents.orchestrator.ChiefEditorAgent._log",
+      "multi_agents_ag2.agents.orchestrator.ChiefEditorAgent._initialize_agents",
+      "multi_agents_ag2.agents.orchestrator.ChiefEditorAgent._run_section",
+      "multi_agents_ag2.agents.orchestrator.ChiefEditorAgent._run_parallel_research",
+      "multi_agents_ag2.agents.orchestrator.ChiefEditorAgent.run_research_task"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "multi_agents_ag2/agents/orchestrator.py",
+      "startLine": 20,
+      "endLine": 215
+    }
+  },
+  {
+    "id": "tests-test-your-retriever-mockresearcher",
+    "name": "MockResearcher",
+    "description": "类 MockResearcher (L19-L26)，0 个方法",
+    "nodes": [
+      "tests.test-your-retriever.MockResearcher",
+      "tests.test-your-retriever.MockResearcher.init"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/test-your-retriever.py",
+      "startLine": 19,
+      "endLine": 26
+    }
+  },
+  {
+    "id": "tests-test-logging-output-testwebsocket",
+    "name": "TestWebSocket",
+    "description": "类 TestWebSocket (L12-L26)，0 个方法",
+    "nodes": [
+      "tests.test_logging_output.TestWebSocket",
+      "tests.test_logging_output.TestWebSocket.__init__",
+      "tests.test_logging_output.TestWebSocket.__bool__",
+      "tests.test_logging_output.TestWebSocket.accept",
+      "tests.test_logging_output.TestWebSocket.send_json"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/test_logging_output.py",
+      "startLine": 12,
+      "endLine": 26
+    }
+  },
+  {
+    "id": "tests-test-quick-search-testquicksearch",
+    "name": "TestQuickSearch",
+    "description": "类 TestQuickSearch (L7-L43)，0 个方法",
+    "nodes": [
+      "tests.test_quick_search.TestQuickSearch",
+      "tests.test_quick_search.TestQuickSearch.test_quick_search_no_summary",
+      "tests.test_quick_search.TestQuickSearch.test_quick_search_with_summary"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/test_quick_search.py",
+      "startLine": 7,
+      "endLine": 43
+    }
+  },
+  {
+    "id": "tests-test-security-fix-testsecurefilename",
+    "name": "TestSecureFilename",
+    "description": "类 TestSecureFilename (L28-L106)，0 个方法",
+    "nodes": [
+      "tests.test_security_fix.TestSecureFilename",
+      "tests.test_security_fix.TestSecureFilename.test_basic_filename",
+      "tests.test_security_fix.TestSecureFilename.test_path_traversal_attacks",
+      "tests.test_security_fix.TestSecureFilename.test_null_byte_injection",
+      "tests.test_security_fix.TestSecureFilename.test_control_characters",
+      "tests.test_security_fix.TestSecureFilename.test_unicode_normalization",
+      "tests.test_security_fix.TestSecureFilename.test_drive_letters_windows",
+      "tests.test_security_fix.TestSecureFilename.test_reserved_names_windows",
+      "tests.test_security_fix.TestSecureFilename.test_empty_filename",
+      "tests.test_security_fix.TestSecureFilename.test_filename_length_limit",
+      "tests.test_security_fix.TestSecureFilename.test_leading_dots_spaces"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/test_security_fix.py",
+      "startLine": 28,
+      "endLine": 106
+    }
+  },
+  {
+    "id": "tests-test-security-fix-testhandlefileupload",
+    "name": "TestHandleFileUpload",
+    "description": "含组件 TestValidateFilePath, test_valid_path, test_path_traversal_blocked, test_symlink_traversal_blocked；类 TestHandleFileUpload (L146-L245)，0 个方法",
+    "nodes": [
+      "tests.test_security_fix.TestHandleFileUpload",
+      "tests.test_security_fix.TestHandleFileUpload.mock_file",
+      "tests.test_security_fix.TestHandleFileUpload.temp_doc_path",
+      "tests.test_security_fix.TestHandleFileUpload.test_normal_file_upload",
+      "tests.test_security_fix.TestHandleFileUpload.__init__",
+      "tests.test_security_fix.TestHandleFileUpload.load",
+      "tests.test_security_fix.TestHandleFileUpload.test_malicious_filename_upload",
+      "tests.test_security_fix.TestHandleFileUpload.test_empty_filename_upload",
+      "tests.test_security_fix.TestHandleFileUpload.test_file_conflict_handling",
+      "tests.test_security_fix.TestHandleFileUpload.__init__",
+      "tests.test_security_fix.TestHandleFileUpload.load",
+      "tests.test_security_fix.TestValidateFilePath",
+      "tests.test_security_fix.TestValidateFilePath.test_valid_path",
+      "tests.test_security_fix.TestValidateFilePath.test_path_traversal_blocked",
+      "tests.test_security_fix.TestValidateFilePath.test_symlink_traversal_blocked"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "tests/test_security_fix.py",
+      "startLine": 109,
+      "endLine": 245
+    }
+  },
+  {
+    "id": "tests-test-security-fix-testhandlefiledeletion",
+    "name": "TestHandleFileDeletion",
+    "description": "含组件 MockDocumentLoader；类 TestHandleFileDeletion (L248-L299)，0 个方法",
+    "nodes": [
+      "tests.test_security_fix.TestHandleFileDeletion",
+      "tests.test_security_fix.TestHandleFileDeletion.temp_doc_path",
+      "tests.test_security_fix.TestHandleFileDeletion.test_normal_file_deletion",
+      "tests.test_security_fix.TestHandleFileDeletion.test_malicious_filename_deletion",
+      "tests.test_security_fix.TestHandleFileDeletion.test_nonexistent_file_deletion",
+      "tests.test_security_fix.TestHandleFileDeletion.test_directory_deletion_blocked",
+      "tests.test_security_fix.MockDocumentLoader"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "tests/test_security_fix.py",
+      "startLine": 174,
+      "endLine": 299
+    }
+  },
+  {
+    "id": "tests-test-security-fix-testsecurityintegration",
+    "name": "TestSecurityIntegration",
+    "description": "类 TestSecurityIntegration (L302-L347)，0 个方法",
+    "nodes": [
+      "tests.test_security_fix.TestSecurityIntegration",
+      "tests.test_security_fix.TestSecurityIntegration.test_attack_vectors_blocked",
+      "tests.test_security_fix.TestSecurityIntegration.test_legitimate_files_allowed"
+    ],
+    "projects": [
+      "gpt-researcher"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "tests/test_security_fix.py",
+      "startLine": 302,
+      "endLine": 347
+    }
+  }
+]

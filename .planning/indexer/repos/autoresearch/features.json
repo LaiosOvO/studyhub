@@ -1,0 +1,148 @@
+[
+  {
+    "id": "prepare-tokenizer",
+    "name": "Tokenizer",
+    "description": "类 Tokenizer (L209-L245)，6 个方法，关键方法: from_directory, get_vocab_size, get_bos_token_id, encode, decode",
+    "nodes": [
+      "prepare.Tokenizer",
+      "prepare.Tokenizer.__init__",
+      "prepare.Tokenizer.from_directory",
+      "prepare.Tokenizer.get_vocab_size",
+      "prepare.Tokenizer.get_bos_token_id",
+      "prepare.Tokenizer.encode",
+      "prepare.Tokenizer.decode"
+    ],
+    "projects": [
+      "autoresearch"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "prepare.py",
+      "startLine": 209,
+      "endLine": 245
+    }
+  },
+  {
+    "id": "prepare-download",
+    "name": "download_* 系列",
+    "description": "prepare 模块的 2 个 download_* 函数，包含: download_single_shard, download_data",
+    "nodes": [
+      "prepare.download_single_shard",
+      "prepare.download_data"
+    ],
+    "projects": [
+      "autoresearch"
+    ],
+    "anchor": "pattern",
+    "codeRange": null
+  },
+  {
+    "id": "prepare-functions",
+    "name": "Prepare 工具函数",
+    "description": "prepare 模块的 8 个顶层函数（python），包含: list_parquet_files, text_iterator, train_tokenizer, get_token_bytes, make_dataloader",
+    "nodes": [
+      "prepare.list_parquet_files",
+      "prepare.text_iterator",
+      "prepare.train_tokenizer",
+      "prepare.get_token_bytes",
+      "prepare._document_batches",
+      "prepare.make_dataloader",
+      "prepare.refill_buffer",
+      "prepare.evaluate_bpb"
+    ],
+    "projects": [
+      "autoresearch"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  },
+  {
+    "id": "train-gpt",
+    "name": "GPT",
+    "description": "含组件 Block, forward；含组件 MLP, forward；含组件 CausalSelfAttention, forward；含组件 GPTConfig；类 GPT (L124-L291)，8 个方法，关键方法: init_weights, estimate_flops, num_scaling_params, setup_optimizer, forward",
+    "nodes": [
+      "train.GPT",
+      "train.GPT.__init__",
+      "train.GPT.init_weights",
+      "train.GPT._precompute_rotary_embeddings",
+      "train.GPT._compute_window_sizes",
+      "train.GPT.estimate_flops",
+      "train.GPT.num_scaling_params",
+      "train.GPT.setup_optimizer",
+      "train.GPT.forward",
+      "train.GPTConfig",
+      "train.CausalSelfAttention",
+      "train.CausalSelfAttention.__init__",
+      "train.CausalSelfAttention.forward",
+      "train.MLP",
+      "train.MLP.__init__",
+      "train.MLP.forward",
+      "train.Block",
+      "train.Block.__init__",
+      "train.Block.forward"
+    ],
+    "projects": [
+      "autoresearch"
+    ],
+    "anchor": "class-group",
+    "codeRange": {
+      "file": "train.py",
+      "startLine": 33,
+      "endLine": 291
+    }
+  },
+  {
+    "id": "train-muonadamw",
+    "name": "MuonAdamW",
+    "description": "类 MuonAdamW (L356-L426)，4 个方法，关键方法: step",
+    "nodes": [
+      "train.MuonAdamW",
+      "train.MuonAdamW.__init__",
+      "train.MuonAdamW._step_adamw",
+      "train.MuonAdamW._step_muon",
+      "train.MuonAdamW.step"
+    ],
+    "projects": [
+      "autoresearch"
+    ],
+    "anchor": "class",
+    "codeRange": {
+      "file": "train.py",
+      "startLine": 356,
+      "endLine": 426
+    }
+  },
+  {
+    "id": "train-get",
+    "name": "get_* 系列",
+    "description": "train 模块的 3 个 get_* 函数，包含: get_lr_multiplier, get_muon_momentum, get_weight_decay",
+    "nodes": [
+      "train.get_lr_multiplier",
+      "train.get_muon_momentum",
+      "train.get_weight_decay"
+    ],
+    "projects": [
+      "autoresearch"
+    ],
+    "anchor": "pattern",
+    "codeRange": null
+  },
+  {
+    "id": "train-functions",
+    "name": "Train 工具函数",
+    "description": "train 模块的 6 个顶层函数（python），包含: norm, has_ve, apply_rotary_emb, adamw_step_fused, muon_step_fused",
+    "nodes": [
+      "train.norm",
+      "train.has_ve",
+      "train.apply_rotary_emb",
+      "train.adamw_step_fused",
+      "train.muon_step_fused",
+      "train.build_model_config"
+    ],
+    "projects": [
+      "autoresearch"
+    ],
+    "anchor": "module",
+    "codeRange": null
+  }
+]

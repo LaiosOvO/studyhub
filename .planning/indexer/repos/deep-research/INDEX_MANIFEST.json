@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "project": "deep-research",
+  "indexedAt": "2026-03-15T07:44:23.903Z",
+  "stats": {
+    "totalFiles": 9,
+    "totalLines": 910,
+    "totalNodes": 30,
+    "totalEdges": 48,
+    "totalFeatures": 7,
+    "languages": [
+      "javascript",
+      "typescript"
+    ]
+  },
+  "source": {
+    "path": "/Users/admin/ai/ref/deep-research",
+    "url": null
+  }
+}

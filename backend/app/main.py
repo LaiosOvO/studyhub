@@ -24,6 +24,7 @@ from app.routers.health import router as health_router
 from app.routers.llm import router as llm_router
 from app.routers.papers import router as papers_router
 from app.routers.reading_lists import router as reading_lists_router
+from app.routers.profiles import router as profiles_router
 from app.routers.scholars import router as scholars_router
 from app.routers.search import router as search_router
 from app.services.temporal_service import get_temporal_client, reset_client
@@ -120,6 +121,7 @@ def create_app() -> FastAPI:
     application.include_router(deep_research_router, prefix="/api/v1", tags=["deep-research"])
     application.include_router(plans_router, prefix="/api/v1/plans", tags=["plans"])
     application.include_router(experiments_router, prefix="/api/v1/experiments", tags=["experiments"])
+    application.include_router(profiles_router, prefix="/api/v1/profiles", tags=["profiles"])
 
     return application
 

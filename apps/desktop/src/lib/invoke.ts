@@ -92,3 +92,37 @@ export function resumeExperiment(): Promise<void> {
 export function cancelExperiment(): Promise<void> {
   return invoke<void>("cancel_experiment");
 }
+
+// ─── GPU Monitoring Commands ─────────────────────────────────────────────────
+
+/** Get available GPU information. */
+export function getGpuInfo(): Promise<GpuInfo[]> {
+  return invoke<GpuInfo[]>("get_gpu_info");
+}
+
+/** Start GPU monitoring, emitting "gpu-metrics" events. */
+export function startGpuMonitoring(deviceId: number): Promise<void> {
+  return invoke<void>("start_gpu_monitoring", { deviceId });
+}
+
+/** Stop GPU monitoring. */
+export function stopGpuMonitoring(): Promise<void> {
+  return invoke<void>("stop_gpu_monitoring");
+}
+
+// ─── Backend Sync Commands ───────────────────────────────────────────────────
+
+/** Connect to web backend via WebSocket. */
+export function connectBackend(url: string, token: string): Promise<void> {
+  return invoke<void>("connect_backend", { url, token });
+}
+
+/** Disconnect from web backend. */
+export function disconnectBackend(): Promise<void> {
+  return invoke<void>("disconnect_backend");
+}
+
+/** Send experiment sync payload to web backend. */
+export function sendSync(payload: ExperimentSyncPayload): Promise<void> {
+  return invoke<void>("send_sync", { payload });
+}

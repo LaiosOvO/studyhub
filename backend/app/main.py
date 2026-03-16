@@ -18,6 +18,7 @@ from app.middleware.rate_limit import limiter
 from app.routers.auth import router as auth_router
 from app.routers.citations import router as citations_router
 from app.routers.deep_research import router as deep_research_router
+from app.routers.experiments import router as experiments_router
 from app.routers.plans import router as plans_router
 from app.routers.health import router as health_router
 from app.routers.llm import router as llm_router
@@ -118,6 +119,7 @@ def create_app() -> FastAPI:
     application.include_router(reading_lists_router, prefix="/api", tags=["reading-lists"])
     application.include_router(deep_research_router, prefix="/api/v1", tags=["deep-research"])
     application.include_router(plans_router, prefix="/api/v1/plans", tags=["plans"])
+    application.include_router(experiments_router, prefix="/api/v1/experiments", tags=["experiments"])
 
     return application
 

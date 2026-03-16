@@ -124,8 +124,8 @@
 
 - [x] **DASH-01**: User can view experiment progress (current round, best metrics, improvement over baseline)
 - [x] **DASH-02**: System displays training curves and metric evolution across iterations
-- [ ] **DASH-03**: User can compare results across experiment iterations in a table
-- [ ] **DASH-04**: Experiment queue management (add, reorder, cancel queued experiments)
+- [x] **DASH-03**: User can compare results across experiment iterations in a table
+- [x] **DASH-04**: Experiment queue management (add, reorder, cancel queued experiments)
 - [x] **DASH-05**: Desktop experiment status syncs to web dashboard in real-time
 
 ### Experiment Reports (REPT)
@@ -308,8 +308,8 @@ Updated during roadmap creation.
 | EXPR-10 | Phase 8 | Pending |
 | DASH-01 | Phase 9 | Complete |
 | DASH-02 | Phase 9 | Complete |
-| DASH-03 | Phase 9 | Pending |
-| DASH-04 | Phase 9 | Pending |
+| DASH-03 | Phase 9 | Complete |
+| DASH-04 | Phase 9 | Complete |
 | DASH-05 | Phase 9 | Complete |
 | REPT-01 | Phase 9 | Pending |
 | REPT-02 | Phase 9 | Pending |

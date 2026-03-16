@@ -130,10 +130,10 @@
 
 ### Experiment Reports (REPT)
 
-- [ ] **REPT-01**: System auto-generates structured experiment report after completion
-- [ ] **REPT-02**: Report includes: abstract, methodology, results table, training curves, ablation analysis, conclusion
-- [ ] **REPT-03**: Report available in Markdown and PDF format
-- [ ] **REPT-04**: Figures and charts auto-generated from experiment data
+- [x] **REPT-01**: System auto-generates structured experiment report after completion
+- [x] **REPT-02**: Report includes: abstract, methodology, results table, training curves, ablation analysis, conclusion
+- [x] **REPT-03**: Report available in Markdown and PDF format
+- [x] **REPT-04**: Figures and charts auto-generated from experiment data
 
 ### Researcher Profiles (PROF)
 
@@ -311,10 +311,10 @@ Updated during roadmap creation.
 | DASH-03 | Phase 9 | Complete |
 | DASH-04 | Phase 9 | Complete |
 | DASH-05 | Phase 9 | Complete |
-| REPT-01 | Phase 9 | Pending |
-| REPT-02 | Phase 9 | Pending |
-| REPT-03 | Phase 9 | Pending |
-| REPT-04 | Phase 9 | Pending |
+| REPT-01 | Phase 9 | Complete |
+| REPT-02 | Phase 9 | Complete |
+| REPT-03 | Phase 9 | Complete |
+| REPT-04 | Phase 9 | Complete |
 | PROF-01 | Phase 10 | Pending |
 | PROF-02 | Phase 10 | Pending |
 | PROF-03 | Phase 10 | Pending |

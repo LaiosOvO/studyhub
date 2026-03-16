@@ -124,6 +124,72 @@
     "deleteConfirmTitle": "删除方案",
     "deleteConfirmMessage": "确定要删除此方案吗？此操作不可撤销。"
   },
+  "community": {
+    "matches": {
+      "title": "推荐合作者",
+      "empty": "完善个人资料以查看推荐",
+      "score": "匹配分数",
+      "explanation": "推荐理由"
+    },
+    "profile": {
+      "title": "研究者主页",
+      "hIndex": "H指数",
+      "citations": "引用次数",
+      "publications": "发表论文",
+      "coAuthors": "合作者",
+      "directions": "研究方向",
+      "expertise": "专业技能",
+      "sendMessage": "发送消息"
+    },
+    "breakdown": {
+      "complementarity": "互补性",
+      "coCitation": "共被引",
+      "adjacency": "主题邻近",
+      "institutional": "机构距离"
+    },
+    "needs": {
+      "title": "研究需求",
+      "create": "发布需求",
+      "form": {
+        "title": "标题",
+        "description": "描述",
+        "skills": "所需技能",
+        "direction": "研究方向",
+        "tags": "标签",
+        "submit": "发布",
+        "skillPlaceholder": "输入技能后按回车添加"
+      },
+      "card": {
+        "contact": "联系",
+        "matchScore": "匹配度",
+        "open": "开放",
+        "closed": "已关闭",
+        "filled": "已满"
+      },
+      "empty": "暂无研究需求",
+      "filter": {
+        "search": "搜索需求...",
+        "sortRelevance": "最相关",
+        "sortRecent": "最新",
+        "allStatus": "全部",
+        "openOnly": "仅开放"
+      }
+    },
+    "messages": {
+      "title": "消息",
+      "conversations": "会话列表",
+      "noConversations": "暂无会话",
+      "noMessages": "开始对话",
+      "send": "发送",
+      "placeholder": "输入消息...",
+      "unread": "未读"
+    },
+    "tabs": {
+      "matches": "推荐合作",
+      "needs": "研究需求",
+      "messages": "消息"
+    }
+  },
   "experiments": {
     "title": "实验管理",
     "loading": "加载中...",

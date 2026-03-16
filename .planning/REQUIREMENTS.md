@@ -109,16 +109,16 @@
 
 ### Experiment Execution (EXPR)
 
-- [ ] **EXPR-01**: Desktop agent (Tauri) manages experiment execution on user's local GPU
-- [ ] **EXPR-02**: System sets up isolated experiment environment (git branch, dependencies, data download)
-- [ ] **EXPR-03**: System reproduces baseline first, confirming metrics match reported values
-- [ ] **EXPR-04**: Autonomous experiment loop: LLM analyzes → generates improvement → modifies code → trains → evaluates → keeps/discards
-- [ ] **EXPR-05**: Each iteration tracked with git commit, metrics recorded in results.tsv
-- [ ] **EXPR-06**: User can set stopping conditions (max rounds, consecutive rounds without improvement, time budget)
-- [ ] **EXPR-07**: User can manually guide the experiment loop (suggest specific changes to try)
-- [ ] **EXPR-08**: Experiment code execution is sandboxed in Docker containers with restricted filesystem/network
-- [ ] **EXPR-09**: GPU utilization, memory, and temperature displayed in real-time
-- [ ] **EXPR-10**: User can pause, resume, and skip experiment iterations
+- [x] **EXPR-01**: Desktop agent (Tauri) manages experiment execution on user's local GPU
+- [x] **EXPR-02**: System sets up isolated experiment environment (git branch, dependencies, data download)
+- [x] **EXPR-03**: System reproduces baseline first, confirming metrics match reported values
+- [x] **EXPR-04**: Autonomous experiment loop: LLM analyzes → generates improvement → modifies code → trains → evaluates → keeps/discards
+- [x] **EXPR-05**: Each iteration tracked with git commit, metrics recorded in results.tsv
+- [x] **EXPR-06**: User can set stopping conditions (max rounds, consecutive rounds without improvement, time budget)
+- [x] **EXPR-07**: User can manually guide the experiment loop (suggest specific changes to try)
+- [x] **EXPR-08**: Experiment code execution is sandboxed in Docker containers with restricted filesystem/network
+- [x] **EXPR-09**: GPU utilization, memory, and temperature displayed in real-time
+- [x] **EXPR-10**: User can pause, resume, and skip experiment iterations
 
 ### Experiment Dashboard (DASH)
 

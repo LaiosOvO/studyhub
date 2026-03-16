@@ -1,12 +1,13 @@
 """REST and WebSocket endpoints for experiment run management.
 
-Provides CRUD operations, desktop-to-web sync, and real-time
-status streaming for the experiment execution engine.
+Provides CRUD operations, desktop-to-web sync via Valkey pub/sub,
+and real-time status streaming for the experiment execution engine.
 
 Reference: deep_research router patterns for auth and WebSocket.
 """
 
 import asyncio
+import json
 import logging
 from datetime import datetime, timezone
 from typing import Annotated
@@ -40,6 +41,23 @@ from app.schemas.experiment import (
 logger = logging.getLogger(__name__)
 
 router = APIRouter()
+
+
+# ─── Valkey Pub/Sub Helper ───────────────────────────────────────────────────
+
+
+async def _get_valkey_client():
+    """Create a Valkey async client. Returns None if connection fails."""
+    try:
+        from valkey.asyncio import Valkey
+
+        settings = get_settings()
+        client = Valkey.from_url(settings.valkey_url)
+        await client.ping()
+        return client
+    except Exception as exc:
+        logger.warning("Valkey connection failed (pub/sub disabled): %s", exc)
+        return None
 
 # ─── Valid Status Transitions ─────────────────────────────────────────────────
 
@@ -322,6 +340,27 @@ async def sync_experiment_status(
     await session.commit()
     await session.refresh(run)
 
+    # Publish progress to Valkey pub/sub for instant WebSocket push
+    progress_data = {
+        "run_id": run.id,
+        "status": run.status,
+        "current_round": run.current_round,
+        "max_rounds": run.max_rounds,
+        "best_metric_name": run.best_metric_name,
+        "best_metric_value": run.best_metric_value,
+        "baseline_metric_value": run.baseline_metric_value,
+        "rounds": run.rounds,
+        "gpu_metrics": run.config.get("gpu_metrics"),
+    }
+    try:
+        valkey = await _get_valkey_client()
+        if valkey is not None:
+            channel = f"experiment:{run.id}"
+            await valkey.publish(channel, json.dumps(progress_data, default=str))
+            await valkey.aclose()
+    except Exception as exc:
+        logger.warning("Valkey publish failed for %s: %s", run.id, exc)
+
     return ApiResponse(
         success=True,
         data=ExperimentRunResponse.model_validate(run),
@@ -365,44 +404,46 @@ async def experiment_progress(
     await websocket.accept()
 
     try:
-        while True:
-            # Get fresh session for each poll
-            from app.database import get_db_session
+        # Send initial snapshot from DB
+        from app.database import get_db_session
 
-            async for session in get_db_session():
-                result = await session.execute(
-                    select(ExperimentRun).where(ExperimentRun.id == run_id)
-                )
-                run = result.scalar_one_or_none()
-                break
+        async for session in get_db_session():
+            result = await session.execute(
+                select(ExperimentRun).where(ExperimentRun.id == run_id)
+            )
+            run = result.scalar_one_or_none()
+            break
 
-            if run is None:
-                await websocket.send_json({"error": "Experiment run not found"})
-                break
+        if run is None:
+            await websocket.send_json({"error": "Experiment run not found"})
+            return
+        if run.user_id != user_id:
+            await websocket.send_json({"error": "Not authorized"})
+            return
 
-            if run.user_id != user_id:
-                await websocket.send_json({"error": "Not authorized"})
-                break
+        initial_progress = {
+            "run_id": run.id,
+            "status": run.status,
+            "current_round": run.current_round,
+            "max_rounds": run.max_rounds,
+            "best_metric_name": run.best_metric_name,
+            "best_metric_value": run.best_metric_value,
+            "baseline_metric_value": run.baseline_metric_value,
+            "rounds": run.rounds,
+            "gpu_metrics": run.config.get("gpu_metrics"),
+        }
+        await websocket.send_json(initial_progress)
 
-            progress = {
-                "run_id": run.id,
-                "status": run.status,
-                "current_round": run.current_round,
-                "max_rounds": run.max_rounds,
-                "best_metric_name": run.best_metric_name,
-                "best_metric_value": run.best_metric_value,
-                "baseline_metric_value": run.baseline_metric_value,
-                "rounds": run.rounds,
-                "gpu_metrics": run.config.get("gpu_metrics"),
-            }
+        if run.status in ("completed", "failed", "cancelled"):
+            return
 
-            await websocket.send_json(progress)
-
-            # Stop streaming on terminal states
-            if run.status in ("completed", "failed", "cancelled"):
-                break
-
-            await asyncio.sleep(2)
+        # Try Valkey pub/sub for instant push; fall back to 2s polling
+        valkey = await _get_valkey_client()
+        if valkey is not None:
+            await _ws_valkey_loop(websocket, valkey, run_id)
+        else:
+            logger.info("Valkey unavailable, falling back to polling for %s", run_id)
+            await _ws_polling_loop(websocket, run_id, user_id)
 
     except WebSocketDisconnect:
         logger.info("WebSocket disconnected for experiment %s", run_id)
@@ -413,3 +454,68 @@ async def experiment_progress(
             await websocket.close()
         except Exception:
             pass
+
+
+async def _ws_valkey_loop(
+    websocket: WebSocket, valkey, run_id: str
+) -> None:
+    """Listen for Valkey pub/sub messages and forward to WebSocket."""
+    channel = f"experiment:{run_id}"
+    pubsub = valkey.pubsub()
+    try:
+        await pubsub.subscribe(channel)
+        async for message in pubsub.listen():
+            if message["type"] != "message":
+                continue
+            data = message["data"]
+            if isinstance(data, bytes):
+                data = data.decode("utf-8")
+            parsed = json.loads(data)
+            await websocket.send_json(parsed)
+            # Close on terminal states
+            if parsed.get("status") in ("completed", "failed", "cancelled"):
+                break
+    finally:
+        await pubsub.unsubscribe(channel)
+        await pubsub.aclose()
+        await valkey.aclose()
+
+
+async def _ws_polling_loop(
+    websocket: WebSocket, run_id: str, user_id: str
+) -> None:
+    """Fallback 2s polling loop when Valkey is unavailable."""
+    from app.database import get_db_session
+
+    while True:
+        async for session in get_db_session():
+            result = await session.execute(
+                select(ExperimentRun).where(ExperimentRun.id == run_id)
+            )
+            run = result.scalar_one_or_none()
+            break
+
+        if run is None:
+            await websocket.send_json({"error": "Experiment run not found"})
+            break
+        if run.user_id != user_id:
+            await websocket.send_json({"error": "Not authorized"})
+            break
+
+        progress = {
+            "run_id": run.id,
+            "status": run.status,
+            "current_round": run.current_round,
+            "max_rounds": run.max_rounds,
+            "best_metric_name": run.best_metric_name,
+            "best_metric_value": run.best_metric_value,
+            "baseline_metric_value": run.baseline_metric_value,
+            "rounds": run.rounds,
+            "gpu_metrics": run.config.get("gpu_metrics"),
+        }
+        await websocket.send_json(progress)
+
+        if run.status in ("completed", "failed", "cancelled"):
+            break
+
+        await asyncio.sleep(2)

@@ -69,6 +69,7 @@ class ExperimentRunResponse(BaseModel):
     best_metric_name: str | None = None
     best_metric_value: float | None = None
     baseline_metric_value: float | None = None
+    queue_position: float = 0.0
     rounds: list[dict] = []
     config: dict = {}
     started_at: datetime | None = None

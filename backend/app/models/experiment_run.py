@@ -34,6 +34,9 @@ class ExperimentRun(Base):
     status: Mapped[str] = mapped_column(
         String(20), nullable=False, default="pending"
     )
+    queue_position: Mapped[float] = mapped_column(
+        Float, default=0.0, index=True
+    )
 
     # ─── Environment Configuration ─────────────────────────────────────
     workspace_path: Mapped[str | None] = mapped_column(Text, nullable=True)

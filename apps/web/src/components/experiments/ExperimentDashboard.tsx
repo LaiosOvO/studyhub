@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 
 import type { ExperimentRun } from '@/lib/api/experiments';
 
+import IterationTable from './IterationTable';
 import ProgressSummary from './ProgressSummary';
 import TrainingCurveChart from './TrainingCurveChart';
 
@@ -38,6 +39,14 @@ export default function ExperimentDashboard({
           rounds={run.rounds}
           metricName={run.best_metric_name ?? 'metric'}
         />
+      </div>
+
+      {/* Iteration Comparison Table */}
+      <div className="rounded-lg border bg-white p-6 shadow-sm">
+        <h3 className="mb-4 text-lg font-medium">
+          {t('iterationComparison')}
+        </h3>
+        <IterationTable rounds={run.rounds} />
       </div>
     </div>
   );

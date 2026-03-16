@@ -1,14 +1,19 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 
+import QueueManager from '@/components/experiments/QueueManager';
 import { useExperimentStore } from '@/stores/experiment-store';
 
 import type { ExperimentRun } from '@/lib/api/experiments';
-import { fetchExperimentRuns } from '@/lib/api/experiments';
+import {
+  cancelExperimentRun,
+  fetchExperimentRuns,
+  reorderExperimentRun,
+} from '@/lib/api/experiments';
 
 const STATUS_FILTERS = [
   'all',
@@ -48,7 +53,9 @@ export default function ExperimentsPage() {
       const data = await fetchExperimentRuns(undefined, filterStatus);
       setRuns(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to load experiments');
+      setError(
+        err instanceof Error ? err.message : 'Failed to load experiments',
+      );
     } finally {
       setLoading(false);
     }
@@ -58,11 +65,46 @@ export default function ExperimentsPage() {
     void loadRuns();
   }, [loadRuns]);
 
+  // Separate queued (pending) and other runs
+  const { queuedRuns, otherRuns } = useMemo(() => {
+    const queued = runs.filter((r) => r.status === 'pending');
+    const others = runs.filter((r) => r.status !== 'pending');
+    return { queuedRuns: queued, otherRuns: others };
+  }, [runs]);
+
   const handleRunClick = useCallback(
     (runId: string) => {
       router.push(`experiments/${runId}`);
     },
     [router],
+  );
+
+  const handleReorder = useCallback(
+    async (runId: string, afterRunId?: string, beforeRunId?: string) => {
+      try {
+        await reorderExperimentRun(runId, afterRunId, beforeRunId);
+        await loadRuns();
+      } catch (err) {
+        setError(
+          err instanceof Error ? err.message : 'Failed to reorder experiment',
+        );
+      }
+    },
+    [loadRuns],
+  );
+
+  const handleCancel = useCallback(
+    async (runId: string) => {
+      try {
+        await cancelExperimentRun(runId);
+        await loadRuns();
+      } catch (err) {
+        setError(
+          err instanceof Error ? err.message : 'Failed to cancel experiment',
+        );
+      }
+    },
+    [loadRuns],
   );
 
   return (
@@ -92,56 +134,73 @@ export default function ExperimentsPage() {
         <p className="text-center text-gray-500">{t('loading')}</p>
       )}
 
-      {error && (
-        <p className="text-center text-red-600">{error}</p>
-      )}
+      {error && <p className="text-center text-red-600">{error}</p>}
 
       {!loading && !error && runs.length === 0 && (
         <p className="text-center text-gray-400">{t('emptyState')}</p>
       )}
 
       {!loading && !error && runs.length > 0 && (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {runs.map((run) => {
-            const statusColor =
-              STATUS_COLORS[run.status] ?? 'bg-gray-100 text-gray-700';
-            return (
-              <button
-                key={run.id}
-                type="button"
-                onClick={() => handleRunClick(run.id)}
-                className="rounded-lg border bg-white p-4 text-left shadow-sm transition-shadow hover:shadow-md"
-              >
-                <div className="mb-2 flex items-center justify-between">
-                  <span className="text-sm font-mono text-gray-500">
-                    {run.id.slice(0, 8)}
-                  </span>
-                  <span
-                    className={`rounded-full px-2 py-0.5 text-xs font-medium ${statusColor}`}
+        <>
+          {/* Queue Section */}
+          {queuedRuns.length > 0 && (
+            <div className="mb-8">
+              <h2 className="mb-3 text-lg font-semibold">{t('queue')}</h2>
+              <QueueManager
+                runs={queuedRuns}
+                onReorder={handleReorder}
+                onCancel={handleCancel}
+              />
+            </div>
+          )}
+
+          {/* Run Cards Grid */}
+          {otherRuns.length > 0 && (
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {otherRuns.map((run) => {
+                const statusColor =
+                  STATUS_COLORS[run.status] ?? 'bg-gray-100 text-gray-700';
+                return (
+                  <button
+                    key={run.id}
+                    type="button"
+                    onClick={() => handleRunClick(run.id)}
+                    className="rounded-lg border bg-white p-4 text-left shadow-sm transition-shadow hover:shadow-md"
                   >
-                    {t(`status.${run.status}`)}
-                  </span>
-                </div>
+                    <div className="mb-2 flex items-center justify-between">
+                      <span className="font-mono text-sm text-gray-500">
+                        {run.id.slice(0, 8)}
+                      </span>
+                      <span
+                        className={`rounded-full px-2 py-0.5 text-xs font-medium ${statusColor}`}
+                      >
+                        {t(`status.${run.status}`)}
+                      </span>
+                    </div>
 
-                <p className="text-sm text-gray-600">
-                  {t('currentRound')}: {run.current_round} / {run.max_rounds}
-                </p>
+                    <p className="text-sm text-gray-600">
+                      {t('currentRound')}: {run.current_round} /{' '}
+                      {run.max_rounds}
+                    </p>
 
-                {run.best_metric_value !== null && (
-                  <p className="text-sm text-gray-600">
-                    {t('bestMetric')}: {run.best_metric_value.toFixed(4)}
-                  </p>
-                )}
+                    {run.best_metric_value !== null && (
+                      <p className="text-sm text-gray-600">
+                        {t('bestMetric')}:{' '}
+                        {run.best_metric_value.toFixed(4)}
+                      </p>
+                    )}
 
-                {run.created_at && (
-                  <p className="mt-2 text-xs text-gray-400">
-                    {new Date(run.created_at).toLocaleDateString()}
-                  </p>
-                )}
-              </button>
-            );
-          })}
-        </div>
+                    {run.created_at && (
+                      <p className="mt-2 text-xs text-gray-400">
+                        {new Date(run.created_at).toLocaleDateString()}
+                      </p>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </>
       )}
     </div>
   );

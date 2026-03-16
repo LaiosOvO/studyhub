@@ -1,0 +1,94 @@
+/**
+ * Typed wrappers around Tauri invoke for experiment commands.
+ *
+ * Provides type-safe access to all Tauri Rust commands with
+ * matching TypeScript types for the experiment state machine.
+ */
+
+import { invoke } from "@tauri-apps/api/core";
+
+// ─── Type Definitions ────────────────────────────────────────────────────────
+
+/** Matches Rust ExperimentStatus enum (tagged union). */
+export type ExperimentStatus =
+  | { type: "Idle" }
+  | { type: "SettingUp"; data: { plan_id: string } }
+  | { type: "RunningBaseline"; data: { plan_id: string } }
+  | {
+      type: "Running";
+      data: { plan_id: string; round: number; best_metric: number };
+    }
+  | { type: "Paused"; data: { plan_id: string; round: number } }
+  | { type: "Completed"; data: { plan_id: string; rounds: number } }
+  | { type: "Failed"; data: { plan_id: string; error: string } };
+
+/** GPU metrics from pynvml monitoring. */
+export interface GpuMetrics {
+  name: string;
+  gpu_utilization_pct: number;
+  memory_used_mb: number;
+  memory_total_mb: number;
+  temperature_c: number;
+  power_watts: number;
+}
+
+/** GPU device information. */
+export interface GpuInfo {
+  index: number;
+  name: string;
+  memory_total_mb: number;
+  driver_version: string;
+}
+
+/** Sync payload sent from desktop to web backend. */
+export interface ExperimentSyncPayload {
+  run_id: string;
+  status: string;
+  current_round: number;
+  best_metric_value: number | null;
+  gpu_metrics: GpuMetrics | null;
+  latest_round: ExperimentRoundResult | null;
+}
+
+/** A single experiment iteration result. */
+export interface ExperimentRoundResult {
+  round: number;
+  status: string;
+  metric_value: number | null;
+  description: string;
+  git_sha: string | null;
+  duration_seconds: number | null;
+}
+
+// ─── Command Wrappers ────────────────────────────────────────────────────────
+
+/** Get the current experiment status from the Rust state machine. */
+export function getExperimentStatus(): Promise<ExperimentStatus> {
+  return invoke<ExperimentStatus>("get_status");
+}
+
+/** Start a new experiment with the given plan and config. */
+export function startExperiment(
+  planId: string,
+  config: Record<string, unknown>,
+): Promise<string> {
+  return invoke<string>("start_experiment", {
+    planId,
+    config,
+  });
+}
+
+/** Pause the currently running experiment. */
+export function pauseExperiment(): Promise<void> {
+  return invoke<void>("pause_experiment");
+}
+
+/** Resume a paused experiment. */
+export function resumeExperiment(): Promise<void> {
+  return invoke<void>("resume_experiment");
+}
+
+/** Cancel the current experiment and return to Idle. */
+export function cancelExperiment(): Promise<void> {
+  return invoke<void>("cancel_experiment");
+}

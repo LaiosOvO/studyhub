@@ -168,3 +168,63 @@ export async function cancelExperimentRun(
   }
   throw new Error(result.error);
 }
+
+// ─── Report API ─────────────────────────────────────────────────────────
+
+export interface ExperimentReportResponse {
+  readonly run_id: string;
+  readonly has_report: boolean;
+  readonly markdown: string | null;
+  readonly pdf_url: string | null;
+}
+
+export async function fetchExperimentReport(
+  runId: string,
+  format: 'markdown' | 'pdf' = 'markdown',
+): Promise<ExperimentReportResponse> {
+  const result = await apiFetch<ExperimentReportResponse>(
+    `/api/v1/experiments/${runId}/report?format=${format}`,
+  );
+
+  if (result.success) {
+    return result.data;
+  }
+  throw new Error(result.error);
+}
+
+export async function generateExperimentReport(
+  runId: string,
+): Promise<ExperimentReportResponse> {
+  const result = await apiFetch<ExperimentReportResponse>(
+    `/api/v1/experiments/${runId}/report/generate`,
+    { method: 'POST' },
+  );
+
+  if (result.success) {
+    return result.data;
+  }
+  throw new Error(result.error);
+}
+
+export async function downloadExperimentReportPdf(
+  runId: string,
+): Promise<Blob> {
+  const API_BASE_URL =
+    process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+
+  const { getAccessToken } = await import('../auth');
+  const token = getAccessToken();
+
+  const response = await fetch(
+    `${API_BASE_URL}/api/v1/experiments/${runId}/report/pdf`,
+    {
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+    },
+  );
+
+  if (!response.ok) {
+    throw new Error('Failed to download PDF report');
+  }
+
+  return response.blob();
+}

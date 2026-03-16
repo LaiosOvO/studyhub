@@ -108,3 +108,15 @@ class ExperimentQueueReorder(BaseModel):
 
     after_run_id: str | None = None
     before_run_id: str | None = None
+
+
+# ─── Report Schemas ──────────────────────────────────────────────────────────
+
+
+class ExperimentReportResponse(BaseModel):
+    """API response for experiment report."""
+
+    run_id: str
+    has_report: bool
+    markdown: str | None = None
+    pdf_url: str | None = None

@@ -33,6 +33,7 @@ from app.models.user import User
 from app.schemas.common import ApiResponse
 from app.schemas.experiment import (
     ExperimentQueueReorder,
+    ExperimentReportResponse,
     ExperimentRunCreate,
     ExperimentRunResponse,
     ExperimentRunUpdate,
@@ -362,11 +363,69 @@ async def sync_experiment_status(
     except Exception as exc:
         logger.warning("Valkey publish failed for %s: %s", run.id, exc)
 
+    # Auto-trigger report generation on completion
+    if body.status == "completed":
+        asyncio.create_task(
+            _generate_report_background(run.id, run.plan_id, user.id)
+        )
+
     return ApiResponse(
         success=True,
         data=ExperimentRunResponse.model_validate(run),
         message="Experiment state synced",
     )
+
+
+async def _generate_report_background(
+    run_id: str, plan_id: str, user_id: str
+) -> None:
+    """Background task to generate experiment report on completion."""
+    try:
+        from app.database import get_db_session
+        from app.services.experiment.report_generator import (
+            generate_experiment_report,
+        )
+
+        async for session in get_db_session():
+            run_result = await session.execute(
+                select(ExperimentRun).where(ExperimentRun.id == run_id)
+            )
+            run = run_result.scalar_one_or_none()
+            if run is None:
+                logger.warning("Report gen: run %s not found", run_id)
+                return
+
+            plan_result = await session.execute(
+                select(ExperimentPlan).where(ExperimentPlan.id == plan_id)
+            )
+            plan = plan_result.scalar_one_or_none()
+            if plan is None:
+                logger.warning("Report gen: plan %s not found", plan_id)
+                return
+
+            md_content, pdf_bytes = await generate_experiment_report(
+                run, plan, language="zh", session=session, user_id=user_id
+            )
+
+            # Store report in config immutably
+            import base64
+
+            updated_config = {
+                **run.config,
+                "report_markdown": md_content,
+                "report_pdf_base64": base64.b64encode(pdf_bytes).decode("ascii")
+                if pdf_bytes
+                else None,
+                "report_generated_at": datetime.now(timezone.utc).isoformat(),
+            }
+            run.config = updated_config
+            run.updated_at = datetime.now(timezone.utc)
+            await session.commit()
+
+            logger.info("Report generated for experiment %s", run_id)
+            break
+    except Exception as exc:
+        logger.error("Background report generation failed for %s: %s", run_id, exc)
 
 
 # ─── Queue Management & Cancel ───────────────────────────────────────────────
@@ -513,6 +572,156 @@ async def cancel_experiment_run(
         success=True,
         data=ExperimentRunResponse.model_validate(run),
         message="Experiment cancelled",
+    )
+
+
+# ─── Report Endpoints ────────────────────────────────────────────────────────
+
+
+@router.get(
+    "/{run_id}/report",
+    response_model=ApiResponse[ExperimentReportResponse],
+)
+async def get_experiment_report(
+    run_id: str,
+    user: Annotated[User, Depends(get_current_user)],
+    session: Annotated[AsyncSession, Depends(get_db)],
+    format: str = Query(default="markdown", regex="^(markdown|pdf)$"),
+) -> ApiResponse[ExperimentReportResponse]:
+    """Retrieve generated report for a completed experiment."""
+    result = await session.execute(
+        select(ExperimentRun).where(ExperimentRun.id == run_id)
+    )
+    run = result.scalar_one_or_none()
+
+    if run is None:
+        raise HTTPException(status_code=404, detail="Experiment run not found")
+    if run.user_id != user.id:
+        raise HTTPException(status_code=403, detail="Not authorized")
+
+    report_md = run.config.get("report_markdown")
+    has_report = report_md is not None
+
+    if not has_report:
+        raise HTTPException(
+            status_code=404,
+            detail="Report not yet generated",
+        )
+
+    return ApiResponse(
+        success=True,
+        data=ExperimentReportResponse(
+            run_id=run.id,
+            has_report=True,
+            markdown=report_md if format == "markdown" else None,
+            pdf_url=f"/api/v1/experiments/{run.id}/report/pdf"
+            if run.config.get("report_pdf_base64")
+            else None,
+        ),
+    )
+
+
+@router.get("/{run_id}/report/pdf")
+async def download_experiment_report_pdf(
+    run_id: str,
+    user: Annotated[User, Depends(get_current_user)],
+    session: Annotated[AsyncSession, Depends(get_db)],
+):
+    """Download experiment report as PDF."""
+    from fastapi.responses import Response
+
+    result = await session.execute(
+        select(ExperimentRun).where(ExperimentRun.id == run_id)
+    )
+    run = result.scalar_one_or_none()
+
+    if run is None:
+        raise HTTPException(status_code=404, detail="Experiment run not found")
+    if run.user_id != user.id:
+        raise HTTPException(status_code=403, detail="Not authorized")
+
+    pdf_b64 = run.config.get("report_pdf_base64")
+    if not pdf_b64:
+        raise HTTPException(status_code=404, detail="PDF report not available")
+
+    import base64
+
+    pdf_bytes = base64.b64decode(pdf_b64)
+
+    return Response(
+        content=pdf_bytes,
+        media_type="application/pdf",
+        headers={
+            "Content-Disposition": f"attachment; filename=experiment_{run_id[:8]}_report.pdf"
+        },
+    )
+
+
+@router.post(
+    "/{run_id}/report/generate",
+    response_model=ApiResponse[ExperimentReportResponse],
+)
+async def generate_report(
+    run_id: str,
+    user: Annotated[User, Depends(get_current_user)],
+    session: Annotated[AsyncSession, Depends(get_db)],
+) -> ApiResponse[ExperimentReportResponse]:
+    """Manually trigger report generation for a completed experiment."""
+    from app.services.experiment.report_generator import (
+        generate_experiment_report,
+    )
+
+    result = await session.execute(
+        select(ExperimentRun).where(ExperimentRun.id == run_id)
+    )
+    run = result.scalar_one_or_none()
+
+    if run is None:
+        raise HTTPException(status_code=404, detail="Experiment run not found")
+    if run.user_id != user.id:
+        raise HTTPException(status_code=403, detail="Not authorized")
+    if run.status != "completed":
+        raise HTTPException(
+            status_code=409,
+            detail="Report can only be generated for completed experiments",
+        )
+
+    plan_result = await session.execute(
+        select(ExperimentPlan).where(ExperimentPlan.id == run.plan_id)
+    )
+    plan = plan_result.scalar_one_or_none()
+    if plan is None:
+        raise HTTPException(status_code=404, detail="Associated plan not found")
+
+    md_content, pdf_bytes = await generate_experiment_report(
+        run, plan, language="zh", session=session, user_id=user.id
+    )
+
+    import base64
+
+    updated_config = {
+        **run.config,
+        "report_markdown": md_content,
+        "report_pdf_base64": base64.b64encode(pdf_bytes).decode("ascii")
+        if pdf_bytes
+        else None,
+        "report_generated_at": datetime.now(timezone.utc).isoformat(),
+    }
+    run.config = updated_config
+    run.updated_at = datetime.now(timezone.utc)
+    await session.commit()
+
+    return ApiResponse(
+        success=True,
+        data=ExperimentReportResponse(
+            run_id=run.id,
+            has_report=True,
+            markdown=md_content,
+            pdf_url=f"/api/v1/experiments/{run.id}/report/pdf"
+            if pdf_bytes
+            else None,
+        ),
+        message="Report generated successfully",
     )
 
 

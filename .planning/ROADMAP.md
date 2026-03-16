@@ -17,9 +17,9 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 3: Chinese Academic Sources** - CNKI and Wanfang integration with anti-scraping resilience
 - [x] **Phase 4: Citation Network & Quality Scoring** - Recursive citation graph construction and paper quality ranking
 - [x] **Phase 5: Deep Research Engine** - End-to-end research pipeline with AI analysis and literature review generation
-- [ ] **Phase 6: Paper Map Visualization** - Interactive citation graph, topic map, and timeline views
-- [ ] **Phase 7: Plan Generation & SOTA Analysis** - AI-powered experiment plan generation from research gaps
-- [ ] **Phase 8: Experiment Execution Engine** - Tauri desktop agent with autonomous experiment loop and GPU management
+- [x] **Phase 6: Paper Map Visualization** - Interactive citation graph, topic map, and timeline views
+- [x] **Phase 7: Plan Generation & SOTA Analysis** - AI-powered experiment plan generation from research gaps
+- [x] **Phase 8: Experiment Execution Engine** - Tauri desktop agent with autonomous experiment loop and GPU management
 - [ ] **Phase 9: Experiment Dashboard & Reports** - Real-time experiment monitoring and auto-generated publishable reports
 - [ ] **Phase 10: Community & Collaboration** - Researcher profiles, matching, needs marketplace, and messaging
 
@@ -174,10 +174,11 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 08-01-PLAN.md -- ExperimentRun model, experiment REST API, Tauri v2 desktop scaffold with state machine
-- [ ] 08-02-PLAN.md -- GitManager, DockerRunner, environment setup, baseline reproduction, metrics tracking
-- [ ] 08-03-PLAN.md -- GPU monitoring (pynvml), Tauri-to-web WebSocket sync, GPU display components
-- [ ] 08-04-PLAN.md -- Autonomous experiment loop (LLM-driven modify/train/evaluate), iteration control UI
+- [x] 08-01a-PLAN.md -- ExperimentRun model, schemas, migration, and experiment REST API with WebSocket
+- [x] 08-01b-PLAN.md -- Tauri v2 desktop scaffold with Rust state machine and React frontend shell
+- [x] 08-02-PLAN.md -- GitManager, DockerRunner, environment setup, baseline reproduction, metrics tracking
+- [x] 08-03-PLAN.md -- GPU monitoring (pynvml), Tauri-to-web WebSocket sync, GPU display components
+- [x] 08-04-PLAN.md -- Autonomous experiment loop (LLM-driven modify/train/evaluate), iteration control UI
 
 ### Phase 9: Experiment Dashboard & Reports
 **Goal**: Users can monitor experiment progress in real-time on the web and receive auto-generated publishable reports upon completion
@@ -231,6 +232,6 @@ Note: Phase 3 and Phase 4 can execute in parallel (both depend on Phase 2). Phas
 | 5. Deep Research Engine | 4/4 | Complete | 2026-03-16 |
 | 6. Paper Map Visualization | 3/3 | Complete | 2026-03-16 |
 | 7. Plan Generation & SOTA Analysis | 3/3 | Complete | 2026-03-16 |
-| 8. Experiment Execution Engine | 0/4 | Not started | - |
+| 8. Experiment Execution Engine | 5/5 | Complete | 2026-03-16 |
 | 9. Experiment Dashboard & Reports | 0/3 | Not started | - |
 | 10. Community & Collaboration | 0/4 | Not started | - |

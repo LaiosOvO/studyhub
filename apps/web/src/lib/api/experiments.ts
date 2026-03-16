@@ -131,3 +131,40 @@ export async function deleteExperimentRun(
     throw new Error(result.error);
   }
 }
+
+export async function reorderExperimentRun(
+  runId: string,
+  afterRunId?: string,
+  beforeRunId?: string,
+): Promise<ExperimentRun> {
+  const body: Record<string, string | undefined> = {};
+  if (afterRunId !== undefined) body.after_run_id = afterRunId;
+  if (beforeRunId !== undefined) body.before_run_id = beforeRunId;
+
+  const result = await apiFetch<ExperimentRun>(
+    `/api/v1/experiments/${runId}/reorder`,
+    {
+      method: 'PATCH',
+      body: JSON.stringify(body),
+    },
+  );
+
+  if (result.success) {
+    return result.data;
+  }
+  throw new Error(result.error);
+}
+
+export async function cancelExperimentRun(
+  runId: string,
+): Promise<ExperimentRun> {
+  const result = await apiFetch<ExperimentRun>(
+    `/api/v1/experiments/${runId}/cancel`,
+    { method: 'POST' },
+  );
+
+  if (result.success) {
+    return result.data;
+  }
+  throw new Error(result.error);
+}

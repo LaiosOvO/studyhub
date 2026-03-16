@@ -98,3 +98,13 @@ class ExperimentSyncPayload(BaseModel):
     best_metric_value: float | None = None
     gpu_metrics: GpuMetrics | None = None
     latest_round: ExperimentRoundResult | None = None
+
+
+# ─── Queue Management ────────────────────────────────────────────────────────
+
+
+class ExperimentQueueReorder(BaseModel):
+    """Request schema for reordering a queued experiment."""
+
+    after_run_id: str | None = None
+    before_run_id: str | None = None

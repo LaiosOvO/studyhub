@@ -32,6 +32,7 @@ from app.models.experiment_run import ExperimentRun
 from app.models.user import User
 from app.schemas.common import ApiResponse
 from app.schemas.experiment import (
+    ExperimentQueueReorder,
     ExperimentRunCreate,
     ExperimentRunResponse,
     ExperimentRunUpdate,
@@ -365,6 +366,153 @@ async def sync_experiment_status(
         success=True,
         data=ExperimentRunResponse.model_validate(run),
         message="Experiment state synced",
+    )
+
+
+# ─── Queue Management & Cancel ───────────────────────────────────────────────
+
+
+@router.patch(
+    "/{run_id}/reorder",
+    response_model=ApiResponse[ExperimentRunResponse],
+)
+async def reorder_experiment_run(
+    run_id: str,
+    body: ExperimentQueueReorder,
+    user: Annotated[User, Depends(get_current_user)],
+    session: Annotated[AsyncSession, Depends(get_db)],
+) -> ApiResponse[ExperimentRunResponse]:
+    """Reorder a pending experiment in the queue using fractional positioning."""
+    result = await session.execute(
+        select(ExperimentRun).where(ExperimentRun.id == run_id)
+    )
+    run = result.scalar_one_or_none()
+
+    if run is None:
+        raise HTTPException(status_code=404, detail="Experiment run not found")
+    if run.user_id != user.id:
+        raise HTTPException(status_code=403, detail="Not authorized")
+    if run.status != "pending":
+        raise HTTPException(
+            status_code=409,
+            detail="Only pending experiments can be reordered",
+        )
+
+    # Compute new position using fractional positioning
+    after_pos: float | None = None
+    before_pos: float | None = None
+
+    if body.after_run_id is not None:
+        after_result = await session.execute(
+            select(ExperimentRun).where(ExperimentRun.id == body.after_run_id)
+        )
+        after_run = after_result.scalar_one_or_none()
+        if after_run is None:
+            raise HTTPException(status_code=404, detail="after_run_id not found")
+        if after_run.user_id != user.id:
+            raise HTTPException(status_code=403, detail="Not authorized for after_run")
+        after_pos = after_run.queue_position
+
+    if body.before_run_id is not None:
+        before_result = await session.execute(
+            select(ExperimentRun).where(ExperimentRun.id == body.before_run_id)
+        )
+        before_run = before_result.scalar_one_or_none()
+        if before_run is None:
+            raise HTTPException(status_code=404, detail="before_run_id not found")
+        if before_run.user_id != user.id:
+            raise HTTPException(status_code=403, detail="Not authorized for before_run")
+        before_pos = before_run.queue_position
+
+    if after_pos is None and before_pos is None:
+        # Place at end: max position + 1
+        from sqlalchemy import func as sa_func
+
+        max_result = await session.execute(
+            select(sa_func.max(ExperimentRun.queue_position)).where(
+                ExperimentRun.user_id == user.id,
+                ExperimentRun.status == "pending",
+            )
+        )
+        max_pos = max_result.scalar() or 0.0
+        new_pos = max_pos + 1.0
+    elif after_pos is not None and before_pos is not None:
+        new_pos = (after_pos + before_pos) / 2.0
+    elif after_pos is not None:
+        # Find next pending run after the reference
+        next_result = await session.execute(
+            select(ExperimentRun.queue_position)
+            .where(
+                ExperimentRun.user_id == user.id,
+                ExperimentRun.status == "pending",
+                ExperimentRun.queue_position > after_pos,
+                ExperimentRun.id != run_id,
+            )
+            .order_by(ExperimentRun.queue_position.asc())
+            .limit(1)
+        )
+        next_pos = next_result.scalar()
+        new_pos = (after_pos + next_pos) / 2.0 if next_pos is not None else after_pos + 1.0
+    else:
+        # before_pos is not None, after_pos is None
+        prev_result = await session.execute(
+            select(ExperimentRun.queue_position)
+            .where(
+                ExperimentRun.user_id == user.id,
+                ExperimentRun.status == "pending",
+                ExperimentRun.queue_position < before_pos,
+                ExperimentRun.id != run_id,
+            )
+            .order_by(ExperimentRun.queue_position.desc())
+            .limit(1)
+        )
+        prev_pos = prev_result.scalar()
+        new_pos = (prev_pos + before_pos) / 2.0 if prev_pos is not None else before_pos - 1.0
+
+    run.queue_position = new_pos
+    run.updated_at = datetime.now(timezone.utc)
+    await session.commit()
+    await session.refresh(run)
+
+    return ApiResponse(
+        success=True,
+        data=ExperimentRunResponse.model_validate(run),
+        message="Experiment reordered",
+    )
+
+
+@router.post(
+    "/{run_id}/cancel",
+    response_model=ApiResponse[ExperimentRunResponse],
+)
+async def cancel_experiment_run(
+    run_id: str,
+    user: Annotated[User, Depends(get_current_user)],
+    session: Annotated[AsyncSession, Depends(get_db)],
+) -> ApiResponse[ExperimentRunResponse]:
+    """Cancel a pending, running, or paused experiment."""
+    result = await session.execute(
+        select(ExperimentRun).where(ExperimentRun.id == run_id)
+    )
+    run = result.scalar_one_or_none()
+
+    if run is None:
+        raise HTTPException(status_code=404, detail="Experiment run not found")
+    if run.user_id != user.id:
+        raise HTTPException(status_code=403, detail="Not authorized")
+
+    _validate_transition(run.status, "cancelled")
+
+    run.status = "cancelled"
+    run.completed_at = datetime.now(timezone.utc)
+    run.updated_at = datetime.now(timezone.utc)
+    await session.commit()
+    await session.refresh(run)
+
+    return ApiResponse(
+        success=True,
+        data=ExperimentRunResponse.model_validate(run),
+        message="Experiment cancelled",
     )
 
 

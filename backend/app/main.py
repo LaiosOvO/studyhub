@@ -25,6 +25,7 @@ from app.routers.llm import router as llm_router
 from app.routers.papers import router as papers_router
 from app.routers.reading_lists import router as reading_lists_router
 from app.routers.matching import router as matching_router
+from app.routers.needs import router as needs_router
 from app.routers.profiles import router as profiles_router
 from app.routers.scholars import router as scholars_router
 from app.routers.search import router as search_router
@@ -124,6 +125,7 @@ def create_app() -> FastAPI:
     application.include_router(experiments_router, prefix="/api/v1/experiments", tags=["experiments"])
     application.include_router(profiles_router, prefix="/api/v1/profiles", tags=["profiles"])
     application.include_router(matching_router, prefix="/api/v1/matching", tags=["matching"])
+    application.include_router(needs_router, prefix="/api/v1/needs", tags=["needs"])
 
     return application
 

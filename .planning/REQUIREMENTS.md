@@ -137,32 +137,32 @@
 
 ### Researcher Profiles (PROF)
 
-- [ ] **PROF-01**: User can register with name, institution, title, email, and research directions
-- [ ] **PROF-02**: System auto-enriches profile by matching name+institution against OpenAlex/CNKI/Wanfang
-- [ ] **PROF-03**: Auto-enrichment pulls: publication list, citation counts, H-index, co-author network, research keywords
-- [ ] **PROF-04**: User can edit and curate auto-generated profile information
-- [ ] **PROF-05**: User can specify current research needs (what help they're looking for)
-- [ ] **PROF-06**: Other users can view researcher profiles with publications and expertise tags
+- [x] **PROF-01**: User can register with name, institution, title, email, and research directions
+- [x] **PROF-02**: System auto-enriches profile by matching name+institution against OpenAlex/CNKI/Wanfang
+- [x] **PROF-03**: Auto-enrichment pulls: publication list, citation counts, H-index, co-author network, research keywords
+- [x] **PROF-04**: User can edit and curate auto-generated profile information
+- [x] **PROF-05**: User can specify current research needs (what help they're looking for)
+- [x] **PROF-06**: Other users can view researcher profiles with publications and expertise tags
 
 ### Researcher Matching (MTCH)
 
-- [ ] **MTCH-01**: System recommends potential collaborators based on skill complementarity (not similarity)
-- [ ] **MTCH-02**: Matching algorithm combines: research vector similarity, skill complementarity, co-citation analysis, institutional proximity
-- [ ] **MTCH-03**: Each match includes LLM-generated explanation of why the match makes sense
-- [ ] **MTCH-04**: User can view match score and complementarity breakdown
+- [x] **MTCH-01**: System recommends potential collaborators based on skill complementarity (not similarity)
+- [x] **MTCH-02**: Matching algorithm combines: research vector similarity, skill complementarity, co-citation analysis, institutional proximity
+- [x] **MTCH-03**: Each match includes LLM-generated explanation of why the match makes sense
+- [x] **MTCH-04**: User can view match score and complementarity breakdown
 
 ### Research Needs Marketplace (NEED)
 
-- [ ] **NEED-01**: User can publish structured research needs (what they need, required skills, research direction)
-- [ ] **NEED-02**: User can browse needs filtered by tags, research direction, and match relevance
-- [ ] **NEED-03**: System shows match score between user profile and each listed need
-- [ ] **NEED-04**: User can contact need publisher via in-app message
+- [x] **NEED-01**: User can publish structured research needs (what they need, required skills, research direction)
+- [x] **NEED-02**: User can browse needs filtered by tags, research direction, and match relevance
+- [x] **NEED-03**: System shows match score between user profile and each listed need
+- [x] **NEED-04**: User can contact need publisher via in-app message
 
 ### Messaging (MESG)
 
-- [ ] **MESG-01**: User can send direct messages to other researchers
-- [ ] **MESG-02**: User can view conversation history
-- [ ] **MESG-03**: User receives notification indicator for new messages
+- [x] **MESG-01**: User can send direct messages to other researchers
+- [x] **MESG-02**: User can view conversation history
+- [x] **MESG-03**: User receives notification indicator for new messages
 
 ### Authentication (AUTH)
 
@@ -315,23 +315,23 @@ Updated during roadmap creation.
 | REPT-02 | Phase 9 | Complete |
 | REPT-03 | Phase 9 | Complete |
 | REPT-04 | Phase 9 | Complete |
-| PROF-01 | Phase 10 | Pending |
-| PROF-02 | Phase 10 | Pending |
-| PROF-03 | Phase 10 | Pending |
-| PROF-04 | Phase 10 | Pending |
-| PROF-05 | Phase 10 | Pending |
-| PROF-06 | Phase 10 | Pending |
-| MTCH-01 | Phase 10 | Pending |
-| MTCH-02 | Phase 10 | Pending |
-| MTCH-03 | Phase 10 | Pending |
-| MTCH-04 | Phase 10 | Pending |
-| NEED-01 | Phase 10 | Pending |
-| NEED-02 | Phase 10 | Pending |
-| NEED-03 | Phase 10 | Pending |
-| NEED-04 | Phase 10 | Pending |
-| MESG-01 | Phase 10 | Pending |
-| MESG-02 | Phase 10 | Pending |
-| MESG-03 | Phase 10 | Pending |
+| PROF-01 | Phase 10 | Complete |
+| PROF-02 | Phase 10 | Complete |
+| PROF-03 | Phase 10 | Complete |
+| PROF-04 | Phase 10 | Complete |
+| PROF-05 | Phase 10 | Complete |
+| PROF-06 | Phase 10 | Complete |
+| MTCH-01 | Phase 10 | Complete |
+| MTCH-02 | Phase 10 | Complete |
+| MTCH-03 | Phase 10 | Complete |
+| MTCH-04 | Phase 10 | Complete |
+| NEED-01 | Phase 10 | Complete |
+| NEED-02 | Phase 10 | Complete |
+| NEED-03 | Phase 10 | Complete |
+| NEED-04 | Phase 10 | Complete |
+| MESG-01 | Phase 10 | Complete |
+| MESG-02 | Phase 10 | Complete |
+| MESG-03 | Phase 10 | Complete |
 
 **Coverage:**
 - v1 requirements: 108 total

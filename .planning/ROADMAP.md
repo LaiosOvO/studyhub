@@ -20,7 +20,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 6: Paper Map Visualization** - Interactive citation graph, topic map, and timeline views
 - [x] **Phase 7: Plan Generation & SOTA Analysis** - AI-powered experiment plan generation from research gaps
 - [x] **Phase 8: Experiment Execution Engine** - Tauri desktop agent with autonomous experiment loop and GPU management
-- [ ] **Phase 9: Experiment Dashboard & Reports** - Real-time experiment monitoring and auto-generated publishable reports
+- [x] **Phase 9: Experiment Dashboard & Reports** - Real-time experiment monitoring and auto-generated publishable reports
 - [x] **Phase 10: Community & Collaboration** - Researcher profiles, matching, needs marketplace, and messaging (completed 2026-03-16)
 
 ## Phase Details
@@ -193,9 +193,9 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 09-01: Real-time experiment dashboard with training curves
-- [ ] 09-02: Iteration comparison, queue management, and desktop sync
-- [ ] 09-03: Auto-generated experiment reports (Markdown + PDF)
+- [x] 09-01: Real-time experiment dashboard with training curves
+- [x] 09-02: Iteration comparison, queue management, and desktop sync
+- [x] 09-03: Auto-generated experiment reports (Markdown + PDF)
 
 ### Phase 10: Community & Collaboration
 **Goal**: Researchers can discover and connect with complementary collaborators through enriched profiles, intelligent matching, a needs marketplace, and direct messaging
@@ -210,10 +210,10 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 10-01: Researcher profiles with academic database auto-enrichment
-- [ ] 10-02: Researcher matching algorithm and match explanation UI
-- [ ] 10-03: Research needs marketplace
-- [ ] 10-04: Direct messaging and notifications
+- [x] 10-01: Researcher profiles with academic database auto-enrichment
+- [x] 10-02: Researcher matching algorithm and match explanation UI
+- [x] 10-03: Research needs marketplace
+- [x] 10-04: Direct messaging and notifications
 
 ## Progress
 
@@ -234,4 +234,4 @@ Note: Phase 3 and Phase 4 can execute in parallel (both depend on Phase 2). Phas
 | 7. Plan Generation & SOTA Analysis | 3/3 | Complete | 2026-03-16 |
 | 8. Experiment Execution Engine | 5/5 | Complete | 2026-03-16 |
 | 9. Experiment Dashboard & Reports | 0/3 | Not started | - |
-| 10. Community & Collaboration | 4/4 | Complete   | 2026-03-16 |
+| 10. Community & Collaboration | 4/4 | Complete    | 2026-03-16 |

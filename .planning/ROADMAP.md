@@ -171,13 +171,13 @@ Plans:
   3. Autonomous loop runs: LLM analyzes, generates improvement, modifies code, trains, evaluates, keeps/discards -- with each iteration tracked via git commit
   4. User can set stopping conditions, manually guide iterations, and pause/resume/skip experiments
   5. Experiment code runs sandboxed in Docker containers with real-time GPU utilization, memory, and temperature display
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 08-01: Tauri desktop agent with web platform sync
-- [ ] 08-02: Experiment environment setup and baseline reproduction
-- [ ] 08-03: Autonomous experiment loop (LLM-driven modify/train/evaluate)
-- [ ] 08-04: Sandboxing, GPU monitoring, and iteration control
+- [ ] 08-01-PLAN.md -- ExperimentRun model, experiment REST API, Tauri v2 desktop scaffold with state machine
+- [ ] 08-02-PLAN.md -- GitManager, DockerRunner, environment setup, baseline reproduction, metrics tracking
+- [ ] 08-03-PLAN.md -- GPU monitoring (pynvml), Tauri-to-web WebSocket sync, GPU display components
+- [ ] 08-04-PLAN.md -- Autonomous experiment loop (LLM-driven modify/train/evaluate), iteration control UI
 
 ### Phase 9: Experiment Dashboard & Reports
 **Goal**: Users can monitor experiment progress in real-time on the web and receive auto-generated publishable reports upon completion

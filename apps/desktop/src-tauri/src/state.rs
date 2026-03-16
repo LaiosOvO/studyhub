@@ -1,10 +1,10 @@
 //! Experiment state machine for the desktop agent.
 //!
 //! Tracks experiment lifecycle from Idle through execution to completion.
-//! Uses Mutex for thread-safe access from Tauri commands.
+//! Uses Arc<Mutex<>> for thread-safe, cloneable access from Tauri commands.
 
 use serde::{Deserialize, Serialize};
-use std::sync::Mutex;
+use std::sync::{Arc, Mutex};
 
 /// All possible experiment lifecycle states.
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -42,15 +42,16 @@ impl Default for ExperimentStatus {
     }
 }
 
-/// Thread-safe experiment state managed by Tauri.
+/// Thread-safe, cloneable experiment state managed by Tauri.
+#[derive(Clone)]
 pub struct ExperimentState {
-    pub status: Mutex<ExperimentStatus>,
+    pub status: Arc<Mutex<ExperimentStatus>>,
 }
 
 impl Default for ExperimentState {
     fn default() -> Self {
         Self {
-            status: Mutex::new(ExperimentStatus::default()),
+            status: Arc::new(Mutex::new(ExperimentStatus::default())),
         }
     }
 }

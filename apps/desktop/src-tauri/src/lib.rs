@@ -6,6 +6,7 @@
 mod commands;
 mod state;
 
+use commands::experiment::ProcessState;
 use commands::gpu::GpuMonitorState;
 use commands::sync::SyncState;
 use state::ExperimentState;
@@ -17,6 +18,7 @@ pub fn run() {
         .plugin(tauri_plugin_websocket::init())
         .plugin(tauri_plugin_store::Builder::default().build())
         .manage(ExperimentState::default())
+        .manage(ProcessState::default())
         .manage(GpuMonitorState::default())
         .manage(SyncState::default())
         .invoke_handler(tauri::generate_handler![
@@ -26,6 +28,8 @@ pub fn run() {
             commands::experiment::pause_experiment,
             commands::experiment::resume_experiment,
             commands::experiment::cancel_experiment,
+            commands::experiment::skip_iteration,
+            commands::experiment::send_guidance,
             // GPU monitoring
             commands::gpu::get_gpu_info,
             commands::gpu::start_gpu_monitoring,

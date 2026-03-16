@@ -1,60 +1,31 @@
 /**
- * StudyHub Experiment Agent - Main application shell.
+ * StudyHub Experiment Agent - Main application layout.
  *
- * Displays connection status, experiment state, and placeholder
- * sections for experiment control and GPU monitoring.
+ * Left panel: ExperimentControl + GpuMonitor (stacked)
+ * Right panel: IterationLog
+ * Bottom: StatusBar
  */
 
 import { useCallback, useEffect, useState } from "react";
+import { ExperimentControl } from "./components/ExperimentControl";
+import { GpuMonitor } from "./components/GpuMonitor";
+import { IterationLog } from "./components/IterationLog";
+import { StatusBar } from "./components/StatusBar";
+import { useExperimentSync } from "./hooks/useExperimentSync";
+import { useGpuMetrics } from "./hooks/useGpuMetrics";
 import {
   type ExperimentStatus,
   getExperimentStatus,
 } from "./lib/invoke";
 
-/** Format experiment status for display. */
-function formatStatus(status: ExperimentStatus): string {
-  switch (status.type) {
-    case "Idle":
-      return "Idle - Ready to start";
-    case "SettingUp":
-      return `Setting up experiment for plan ${status.data.plan_id}`;
-    case "RunningBaseline":
-      return `Running baseline for plan ${status.data.plan_id}`;
-    case "Running":
-      return `Running round ${status.data.round} (best: ${status.data.best_metric.toFixed(4)})`;
-    case "Paused":
-      return `Paused at round ${status.data.round}`;
-    case "Completed":
-      return `Completed after ${status.data.rounds} rounds`;
-    case "Failed":
-      return `Failed: ${status.data.error}`;
-  }
-}
-
-/** Status color based on experiment state. */
-function statusColor(status: ExperimentStatus): string {
-  switch (status.type) {
-    case "Idle":
-      return "#888";
-    case "SettingUp":
-    case "RunningBaseline":
-      return "#f0ad4e";
-    case "Running":
-      return "#5cb85c";
-    case "Paused":
-      return "#f0ad4e";
-    case "Completed":
-      return "#5cb85c";
-    case "Failed":
-      return "#d9534f";
-  }
-}
-
 export default function App() {
   const [status, setStatus] = useState<ExperimentStatus>({ type: "Idle" });
   const [backendUrl, setBackendUrl] = useState("http://localhost:8000");
-  const [connected, setConnected] = useState(false);
+  const [token, setToken] = useState("");
   const [error, setError] = useState<string | null>(null);
+
+  const { metrics: gpuMetrics } = useGpuMetrics(0);
+  const { isConnected, connect, disconnect } = useExperimentSync();
 
   // Poll experiment status every 2 seconds
   useEffect(() => {
@@ -71,69 +42,62 @@ export default function App() {
     return () => clearInterval(poll);
   }, []);
 
-  const handleConnect = useCallback(() => {
-    // Connection logic will be wired in Plan 08-03
-    setConnected(true);
-  }, []);
+  const handleConnect = useCallback(async () => {
+    if (isConnected) {
+      await disconnect();
+    } else {
+      await connect(backendUrl, token);
+    }
+  }, [isConnected, backendUrl, token, connect, disconnect]);
 
   return (
     <div style={styles.container}>
       {/* Header */}
       <header style={styles.header}>
         <h1 style={styles.title}>StudyHub Experiment Agent</h1>
-        <div style={styles.statusBadge}>
-          <span
-            style={{
-              ...styles.statusDot,
-              backgroundColor: statusColor(status),
-            }}
+        <div style={styles.connectionRow}>
+          <input
+            type="text"
+            value={backendUrl}
+            onChange={(e) => setBackendUrl(e.target.value)}
+            style={styles.urlInput}
+            placeholder="http://localhost:8000"
           />
-          <span>{formatStatus(status)}</span>
+          <input
+            type="password"
+            value={token}
+            onChange={(e) => setToken(e.target.value)}
+            style={styles.tokenInput}
+            placeholder="JWT token"
+          />
+          <button onClick={handleConnect} style={styles.connectButton}>
+            {isConnected ? "Disconnect" : "Connect"}
+          </button>
         </div>
       </header>
 
-      {/* Main content */}
+      {/* Main content: split layout */}
       <main style={styles.main}>
-        {/* Connection Section */}
-        <section style={styles.section}>
-          <h2 style={styles.sectionTitle}>Backend Connection</h2>
-          <div style={styles.connectionRow}>
-            <input
-              type="text"
-              value={backendUrl}
-              onChange={(e) => setBackendUrl(e.target.value)}
-              style={styles.input}
-              placeholder="http://localhost:8000"
-            />
-            <button onClick={handleConnect} style={styles.button}>
-              {connected ? "Connected" : "Connect"}
-            </button>
-            <span
-              style={{
-                ...styles.connectionDot,
-                backgroundColor: connected ? "#5cb85c" : "#d9534f",
-              }}
-            />
-          </div>
-        </section>
+        {/* Left panel: Control + GPU */}
+        <div style={styles.leftPanel}>
+          <section style={styles.section}>
+            <h2 style={styles.sectionTitle}>Experiment Control</h2>
+            <ExperimentControl status={status} />
+          </section>
 
-        {/* Experiment Control Placeholder */}
-        <section style={styles.section}>
-          <h2 style={styles.sectionTitle}>Experiment Control</h2>
-          <p style={styles.placeholder}>
-            Experiment control panel will be added in Plan 08-04.
-            Start, pause, resume, and configure experiments here.
-          </p>
-        </section>
+          <section style={styles.section}>
+            <h2 style={styles.sectionTitle}>GPU Monitor</h2>
+            <GpuMonitor deviceId={0} />
+          </section>
+        </div>
 
-        {/* GPU Monitor Placeholder */}
-        <section style={styles.section}>
-          <h2 style={styles.sectionTitle}>GPU Monitor</h2>
-          <p style={styles.placeholder}>
-            Real-time GPU utilization, memory, and temperature
-            display will be added in Plan 08-03.
-          </p>
-        </section>
+        {/* Right panel: Iteration Log */}
+        <div style={styles.rightPanel}>
+          <section style={styles.section}>
+            <h2 style={styles.sectionTitle}>Iteration Log</h2>
+            <IterationLog />
+          </section>
+        </div>
       </main>
 
       {/* Error display */}
@@ -142,6 +106,13 @@ export default function App() {
           <strong>Error:</strong> {error}
         </div>
       )}
+
+      {/* Status bar */}
+      <StatusBar
+        isConnected={isConnected}
+        experimentStatus={status}
+        gpuMetrics={gpuMetrics}
+      />
     </div>
   );
 }
@@ -152,97 +123,98 @@ const styles: Record<string, React.CSSProperties> = {
   container: {
     fontFamily:
       '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    maxWidth: 1000,
-    margin: "0 auto",
-    padding: 20,
     color: "#e0e0e0",
     backgroundColor: "#1a1a2e",
     minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
   },
   header: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    padding: "12px 20px",
     borderBottom: "1px solid #333",
-    paddingBottom: 16,
-    marginBottom: 24,
+    flexShrink: 0,
   },
   title: {
-    fontSize: 22,
+    fontSize: 18,
     fontWeight: 600,
     margin: 0,
-  },
-  statusBadge: {
-    display: "flex",
-    alignItems: "center",
-    gap: 8,
-    fontSize: 14,
-  },
-  statusDot: {
-    width: 10,
-    height: 10,
-    borderRadius: "50%",
-    display: "inline-block",
-  },
-  main: {
-    display: "flex",
-    flexDirection: "column",
-    gap: 20,
-  },
-  section: {
-    backgroundColor: "#16213e",
-    borderRadius: 8,
-    padding: 20,
-    border: "1px solid #333",
-  },
-  sectionTitle: {
-    fontSize: 16,
-    fontWeight: 600,
-    margin: "0 0 12px 0",
-    color: "#7ec8e3",
+    whiteSpace: "nowrap",
   },
   connectionRow: {
     display: "flex",
     alignItems: "center",
-    gap: 12,
+    gap: 8,
   },
-  input: {
-    flex: 1,
-    padding: "8px 12px",
+  urlInput: {
+    padding: "6px 10px",
     backgroundColor: "#0f3460",
     border: "1px solid #444",
     borderRadius: 4,
     color: "#e0e0e0",
-    fontSize: 14,
+    fontSize: 12,
+    width: 200,
   },
-  button: {
-    padding: "8px 20px",
+  tokenInput: {
+    padding: "6px 10px",
+    backgroundColor: "#0f3460",
+    border: "1px solid #444",
+    borderRadius: 4,
+    color: "#e0e0e0",
+    fontSize: 12,
+    width: 120,
+  },
+  connectButton: {
+    padding: "6px 14px",
     backgroundColor: "#533483",
     border: "none",
     borderRadius: 4,
     color: "#fff",
     cursor: "pointer",
-    fontSize: 14,
-    fontWeight: 500,
+    fontSize: 12,
   },
-  connectionDot: {
-    width: 12,
-    height: 12,
-    borderRadius: "50%",
-    display: "inline-block",
+  main: {
+    display: "flex",
+    flex: 1,
+    gap: 16,
+    padding: 16,
+    overflow: "hidden",
   },
-  placeholder: {
-    color: "#888",
+  leftPanel: {
+    width: 340,
+    flexShrink: 0,
+    display: "flex",
+    flexDirection: "column",
+    gap: 16,
+    overflowY: "auto",
+  },
+  rightPanel: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    minWidth: 0,
+  },
+  section: {
+    backgroundColor: "#16213e",
+    borderRadius: 8,
+    padding: 16,
+    border: "1px solid #333",
+  },
+  sectionTitle: {
     fontSize: 14,
-    fontStyle: "italic",
+    fontWeight: 600,
+    margin: "0 0 12px 0",
+    color: "#7ec8e3",
   },
   error: {
-    marginTop: 16,
-    padding: 12,
+    margin: "0 16px",
+    padding: 8,
     backgroundColor: "#4a1a2e",
     border: "1px solid #d9534f",
     borderRadius: 4,
-    fontSize: 13,
+    fontSize: 12,
     color: "#ff8888",
   },
 };

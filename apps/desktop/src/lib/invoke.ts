@@ -93,6 +93,16 @@ export function cancelExperiment(): Promise<void> {
   return invoke<void>("cancel_experiment");
 }
 
+/** Skip the current iteration. */
+export function skipIteration(): Promise<void> {
+  return invoke<void>("skip_iteration");
+}
+
+/** Send manual guidance for the next iteration. */
+export function sendGuidance(guidance: string): Promise<void> {
+  return invoke<void>("send_guidance", { guidance });
+}
+
 // ─── GPU Monitoring Commands ─────────────────────────────────────────────────
 
 /** Get available GPU information. */

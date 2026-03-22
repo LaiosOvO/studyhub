@@ -4,13 +4,15 @@
 
 import Navbar from "../../components/feature/Navbar";
 
+const BASE_URL = "http://101.126.141.165/studyhub/downloads";
+
 const RELEASES = [
   {
     platform: "macOS",
     icon: "ri-apple-fill",
     arch: "Apple Silicon (M1/M2/M3/M4)",
     filename: "StudyHub_0.2.0_aarch64.dmg",
-    url: "https://github.com/LaiosOvO/studyhub/releases/download/v0.2.0/StudyHub_0.2.0_aarch64.dmg",
+    url: `${BASE_URL}/StudyHub_0.2.0_aarch64.dmg`,
     size: "~10 MB",
   },
   {
@@ -18,15 +20,15 @@ const RELEASES = [
     icon: "ri-apple-fill",
     arch: "Intel",
     filename: "StudyHub_0.2.0_x64.dmg",
-    url: "https://github.com/LaiosOvO/studyhub/releases/download/v0.2.0/StudyHub_0.2.0_x64.dmg",
-    size: "~12 MB",
+    url: `${BASE_URL}/StudyHub_0.2.0_x64.dmg`,
+    size: "~10 MB",
   },
   {
     platform: "Windows",
     icon: "ri-windows-fill",
     arch: "64-bit",
     filename: "StudyHub_0.2.0_x64-setup.exe",
-    url: "https://github.com/LaiosOvO/studyhub/releases/download/v0.2.0/StudyHub_0.2.0_x64-setup.exe",
+    url: `${BASE_URL}/StudyHub_0.2.0_x64-setup.exe`,
     size: "~8 MB",
   },
 ];
@@ -92,8 +94,25 @@ export default function DownloadPage() {
             ))}
           </div>
 
+          {/* macOS Install Note */}
+          <div className="mt-12 p-6 rounded-2xl bg-amber-500/[0.08] border border-amber-500/20">
+            <h3 className="text-sm font-semibold text-amber-400 mb-3">
+              <i className="ri-error-warning-line mr-1" />
+              macOS 安装提示
+            </h3>
+            <p className="text-xs text-text-secondary mb-2">
+              由于应用未签名，macOS 可能提示"已损坏"或"无法验证开发者"。请在终端执行以下命令后重新打开：
+            </p>
+            <code className="block p-3 rounded-lg bg-black/30 text-xs text-accent-cyan font-mono">
+              xattr -cr /Applications/StudyHub.app
+            </code>
+            <p className="text-[10px] text-text-muted mt-2">
+              或者：系统设置 → 隐私与安全性 → 点击"仍然打开"
+            </p>
+          </div>
+
           {/* System Requirements */}
-          <div className="mt-12 p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+          <div className="mt-6 p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
             <h3 className="text-sm font-semibold text-text-primary mb-3">系统要求</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-text-secondary">
               <div>

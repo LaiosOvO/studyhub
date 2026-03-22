@@ -410,11 +410,21 @@ export default function AutoResearchPage() {
     // ── Step 1: Generate program.md (experiment goal document) ──
     addLog("info", "═══ Step 1: 生成 program.md ═══");
     try {
+      const hypothesisBlock = planContext?.hypothesis
+        ? `\n## 实验假设\n${planContext.hypothesis}\n`
+        : "";
+      const methodBlock = planContext?.method
+        ? `\n## 实验方法\n${planContext.method}\n`
+        : "";
+      const expectedBlock = planContext?.expectedImprovement
+        ? `\n## 预期效果\n${planContext.expectedImprovement}\n`
+        : "";
+
       const programMd = `# autoresearch
 
 ## 实验目标
 ${goal || "优化 " + metricName}
-
+${hypothesisBlock}${methodBlock}${expectedBlock}
 ## Setup
 1. 工作区已初始化: ~/studyhub-workspaces/${localRunId}
 2. 核心文件: \`train.py\` — LLM 每轮修改的唯一文件
@@ -480,10 +490,16 @@ LOOP FOREVER:
     if (!initialCode.trim()) {
       addLog("info", "═══ Step 2: LLM 生成 train.py ═══");
       try {
+        const hypothesisCtx = [
+          planContext?.hypothesis ? `Hypothesis: ${planContext.hypothesis}` : "",
+          planContext?.method ? `Method: ${planContext.method}` : "",
+          planContext?.expectedImprovement ? `Expected: ${planContext.expectedImprovement}` : "",
+        ].filter(Boolean).join("\n");
+
         const genResp = await chatCompletion(llm, [{ role: "user", content: `You are an ML engineer. Generate a complete, runnable train.py for this experiment goal:
 
 ${goal}
-
+${hypothesisCtx ? `\nExperiment Context:\n${hypothesisCtx}\n` : ""}
 Requirements:
 - Single file, complete and runnable with "python train.py"
 - Include all imports, model definition, training loop, evaluation
@@ -849,7 +865,7 @@ OUTPUT FORMAT — use EXACTLY this format:
         // Ask LLM to modify train.py (with program.md as context)
         const prompt = `You are an autonomous ML researcher following the program.md rules.
 
-${programMd ? `=== program.md ===\n${programMd.slice(0, 2000)}\n=== end ===\n` : `Goal: ${goal || "get the lowest " + metricName}`}
+${programMd ? `=== program.md ===\n${programMd.slice(0, 3000)}\n=== end ===\n` : `Goal: ${goal || "get the lowest " + metricName}\n${planContext?.hypothesis ? `Hypothesis: ${planContext.hypothesis}` : ""}\n${planContext?.method ? `Method: ${planContext.method}` : ""}`}
 
 Current train.py:
 \`\`\`python

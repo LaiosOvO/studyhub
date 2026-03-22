@@ -511,35 +511,63 @@ Return ONLY Python code, no markdown fences, no explanation.` }], { maxTokens: d
 
     // (program.md already written in Step 1 above)
 
-    // ── Step 2.5: Create conda environment ──
-    addLog("info", "═══ Step 2.5: 创建 conda 虚拟环境 ═══");
-    const envName = `ar_${wsId}`;
-    let condaPython = "python";
-    let condaPip = "python -m pip";
+    // ── Step 2.5: Create virtual environment ──
+    addLog("info", "═══ Step 2.5: 创建 Python 虚拟环境 ═══");
+    let envPython = "python";
+    let envPip = "python -m pip";
+    let envCreated = false;
     {
-      addLog("info", `[Step 2.5] conda create -n ${envName} python=3.11 -y`);
-      const condaCreate = await localExec.executeCode(localRunId, {
-        command: `conda create -n ${envName} python=3.11 -y`,
-        timeout_seconds: 300,
+      // Try conda first, then fall back to python -m venv
+      addLog("info", "[Step 2.5] 尝试 conda...");
+      const condaCheck = await localExec.executeCode(localRunId, {
+        command: "conda --version",
+        timeout_seconds: 10,
       });
-      if (condaCreate.exit_code === 0) {
-        condaPython = `conda run --no-banner -n ${envName} python`;
-        condaPip = `conda run --no-banner -n ${envName} python -m pip`;
-        actualRunCmd = actualRunCmd.replace(/^python\b/, condaPython);
-        setRunCommand(actualRunCmd);
-        addLog("success", `[Step 2.5] conda 环境 ${envName} 创建完成`);
-        addLog("info", `[Step 2.5] 运行命令: ${actualRunCmd}`);
-      } else {
-        addLog("warn", "[Step 2.5] conda 创建失败，使用系统 Python");
-        if (condaCreate.stderr) {
-          addLog("warn", condaCreate.stderr.split("\n").slice(-3).join("\n"));
+
+      if (condaCheck.exit_code === 0) {
+        const envName = `ar_${wsId}`;
+        addLog("info", `[Step 2.5] conda create -n ${envName} python=3.11 -y`);
+        const condaCreate = await localExec.executeCode(localRunId, {
+          command: `conda create -n ${envName} python=3.11 -y`,
+          timeout_seconds: 300,
+        });
+        if (condaCreate.exit_code === 0) {
+          envPython = `conda run --no-banner -n ${envName} python`;
+          envPip = `conda run --no-banner -n ${envName} python -m pip`;
+          envCreated = true;
+          addLog("success", `[Step 2.5] conda 环境 ${envName} 创建完成`);
         }
+      }
+
+      if (!envCreated) {
+        // Fall back to python -m venv
+        addLog("info", "[Step 2.5] conda 不可用，使用 python -m venv...");
+        const venvCreate = await localExec.executeCode(localRunId, {
+          command: "python -m venv .venv",
+          timeout_seconds: 60,
+        });
+        if (venvCreate.exit_code === 0) {
+          envPython = ".venv/bin/python";
+          envPip = ".venv/bin/python -m pip";
+          envCreated = true;
+          addLog("success", "[Step 2.5] venv 环境创建完成 (.venv/)");
+        } else {
+          addLog("warn", "[Step 2.5] venv 创建也失败，使用系统 Python + --break-system-packages");
+          envPip = "python -m pip install --break-system-packages";
+        }
+      }
+
+      // Update run command to use env python
+      if (envCreated) {
+        actualRunCmd = actualRunCmd.replace(/^python\b/, envPython);
+        setRunCommand(actualRunCmd);
+        addLog("info", `[Step 2.5] 运行命令: ${actualRunCmd}`);
       }
 
       // Set pip mirror to Tsinghua (China)
       addLog("info", "[Step 2.5] 设置 pip 清华镜像源...");
       await localExec.executeCode(localRunId, {
-        command: `${condaPip} config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple`,
+        command: `${envPip} config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple`,
         timeout_seconds: 30,
       });
     }
@@ -631,9 +659,9 @@ OUTPUT FORMAT — use EXACTLY this format:
             addLog("success", `[Step 3] 已生成 requirements.txt`);
 
             // Install dependencies using conda env pip
-            addLog("info", `[Step 3] 安装依赖: ${condaPip} install -r requirements.txt ...`);
+            addLog("info", `[Step 3] 安装依赖: ${envPip} install -r requirements.txt ...`);
             const pipExec = await localExec.executeCode(localRunId, {
-              command: `${condaPip} install -r requirements.txt`,
+              command: `${envPip} install -r requirements.txt`,
               timeout_seconds: 300,
             });
             if (pipExec.exit_code === 0) {
@@ -647,9 +675,9 @@ OUTPUT FORMAT — use EXACTLY this format:
           }
 
           // Run prepare.py to download data
-          addLog("info", `[Step 3] 执行: ${condaPython} prepare.py`);
+          addLog("info", `[Step 3] 执行: ${envPython} prepare.py`);
           const prepExec = await localExec.executeCode(localRunId, {
-            command: `${condaPython} prepare.py`,
+            command: `${envPython} prepare.py`,
             timeout_seconds: 300,
           });
 
@@ -702,7 +730,7 @@ OUTPUT FORMAT — use EXACTLY this format:
       const toInstall = [...knownPkgs].filter(p => !stdlib.has(p.split(" ")[0]));
 
       if (toInstall.length > 0) {
-        const installCmd = `${condaPip} install ${toInstall.join(" ")}`;
+        const installCmd = `${envPip} install ${toInstall.join(" ")}`;
         addLog("info", `[Step 3.5] 安装: ${toInstall.join(", ")}`);
         const depExec = await localExec.executeCode(localRunId, {
           command: installCmd,
@@ -1140,7 +1168,7 @@ Return JSON (no markdown fences):
 
         // Auto-run analysis scripts to generate figures
         addLog("info", "  运行 analysis.py ...");
-        const analysisExec = await localExec.executeCode(localRunId, { command: `${condaPython} analysis.py`, timeout_seconds: 120 });
+        const analysisExec = await localExec.executeCode(localRunId, { command: `${envPython} analysis.py`, timeout_seconds: 120 });
         if (analysisExec.exit_code === 0) {
           addLog("success", "  ✓ analysis.py 执行完成");
         } else {
@@ -1148,7 +1176,7 @@ Return JSON (no markdown fences):
         }
 
         addLog("info", "  运行 generate_figures.py ...");
-        const figExec = await localExec.executeCode(localRunId, { command: `${condaPython} generate_figures.py`, timeout_seconds: 120 });
+        const figExec = await localExec.executeCode(localRunId, { command: `${envPython} generate_figures.py`, timeout_seconds: 120 });
         if (figExec.exit_code === 0) {
           addLog("success", "  ✓ 图表已生成到 figures/");
         } else {

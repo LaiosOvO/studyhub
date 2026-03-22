@@ -6,7 +6,7 @@
     "devUrl": "http://localhost:3001",
     "frontendDist": "../../../project-7411174/out",
     "beforeDevCommand": "cd ../../project-7411174 && VITE_API_URL=http://101.126.141.165/api npx vite --port 3001",
-    "beforeBuildCommand": "cd ../../project-7411174 && BASE_PATH=./ VITE_API_URL=http://101.126.141.165/api npx vite build"
+    "beforeBuildCommand": "cd ../../project-7411174 && npx cross-env BASE_PATH=./ VITE_API_URL=http://101.126.141.165/api npx vite build"
   },
   "app": {
     "windows": [

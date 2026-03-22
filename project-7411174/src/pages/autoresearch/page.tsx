@@ -617,18 +617,22 @@ Generate prepare.py that ONLY does these 3 things:
 CRITICAL RULES:
 - DO NOT hardcode file paths or data formats — just download, extract, and list what's there
 - DO NOT try to load/parse/process the data — that's train.py's job
-- Check if files already exist before downloading (avoid re-downloading 1GB+ files)
-- The dataset MUST match the experiment domain (ECG goal → ECG dataset like PTB-XL, NLP goal → text dataset, etc.)
-- Try multiple sources with fallback: PhysioNet, HuggingFace, Kaggle, UCI, sklearn, direct URL
+- Check if files already exist before downloading (avoid re-downloading large files)
+- The dataset MUST match the experiment domain (ECG goal → ECG dataset, NLP goal → text dataset, etc.)
+- For PhysioNet datasets (ECG, EEG, etc.): use \`wfdb.dl_database('ptb-xl', './data/ptb-xl')\` — this is the ONLY reliable way. Do NOT use requests/urllib for PhysioNet (they require agreement headers).
+- For HuggingFace: use \`datasets.load_dataset()\` and save to ./data/
+- For Kaggle: use \`kagglehub.dataset_download()\`
+- For general: use requests or urllib with proper error handling
+- No timeout limits on downloads — large datasets (1GB+) are expected
 - Print clear error messages if download fails
-- MUST be under 60 lines
+- MUST be under 80 lines
 - At the end, print a tree of ./data/ showing all files and directories so the next step knows what's available
 
 Also list pip dependencies (one per line).
 
 OUTPUT FORMAT — use EXACTLY this format:
 ===PREPARE_PY===
-<python code, under 60 lines>
+<python code, under 80 lines>
 ===REQUIREMENTS_TXT===
 <one package per line>
 ===END===`;

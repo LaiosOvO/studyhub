@@ -635,10 +635,11 @@ Return ONLY Python code, no markdown fences, no explanation.` }], { maxTokens: d
     addLog("info", "═══ Step 3: 数据准备 (prepare.py) ═══");
     addLog("info", "[Step 3] 向 LLM 请求生成数据下载脚本...");
 
-    // Try up to 2 times to generate prepare.py
-    // NOTE: We ask for plain code (NOT JSON) to avoid JSON parse failures with embedded Python
+    // Try up to 3 times to generate prepare.py, feeding errors back to LLM each time
     let prepareOk = false;
-    for (let attempt = 1; attempt <= 2 && !prepareOk; attempt++) {
+    let lastPrepareError = "";
+    let lastPrepareCode = "";
+    for (let attempt = 1; attempt <= 3 && !prepareOk; attempt++) {
       try {
         addLog("info", `[Step 3] 生成 prepare.py — 第${attempt}次尝试`);
 
@@ -647,6 +648,10 @@ Return ONLY Python code, no markdown fences, no explanation.` }], { maxTokens: d
           planContext?.method ? `Method: ${planContext.method}` : "",
           planContext?.expectedImprovement ? `Expected outcome: ${planContext.expectedImprovement}` : "",
         ].filter(Boolean).join("\n");
+
+        const errorFeedback = lastPrepareError
+          ? `\n\nPREVIOUS ATTEMPT FAILED. Here is the error — you MUST fix it:\n\`\`\`\n${lastPrepareError.slice(0, 1000)}\n\`\`\`\n${lastPrepareCode ? `Previous code that failed:\n\`\`\`python\n${lastPrepareCode.slice(0, 1500)}\n\`\`\`\nAnalyze the error and generate a FIXED version. Common issues: wrong URL (use SDK instead), wrong file paths, missing imports, PhysioNet requires wfdb SDK not HTTP download.` : ""}\n`
+          : "";
 
         const setupPrompt = `You are a machine learning data engineer. Generate a data preparation script for this experiment.
 
@@ -672,7 +677,7 @@ CRITICAL RULES:
 - At the end, print a tree of ./data/ showing all files and directories so the next step knows what's available
 
 Also list pip dependencies (one per line).
-
+${errorFeedback}
 OUTPUT FORMAT — use EXACTLY this format:
 ===PREPARE_PY===
 <python code, under 80 lines>
@@ -764,18 +769,29 @@ OUTPUT FORMAT — use EXACTLY this format:
             }
             prepareOk = true;
           } else {
+            const errOutput = [
+              prepExec.stderr ? prepExec.stderr.split("\n").slice(-10).join("\n") : "",
+              prepExec.stdout ? prepExec.stdout.split("\n").slice(-5).join("\n") : "",
+            ].filter(Boolean).join("\n");
             addLog("warn", `[Step 3] prepare.py 执行失败 (exit ${prepExec.exit_code})`);
-            if (prepExec.stderr) {
-              addLog("warn", `[Step 3] 错误:\n${prepExec.stderr.split("\n").slice(-5).join("\n")}`);
+            if (errOutput) {
+              addLog("warn", `[Step 3] 错误:\n${errOutput.split("\n").slice(-5).join("\n")}`);
             }
+            lastPrepareError = errOutput || `exit code ${prepExec.exit_code}`;
+            lastPrepareCode = prepareCode;
+            addLog("info", `[Step 3] 将错误反馈给 LLM 进行自动修复...`);
           }
         } else {
           addLog("warn", `[Step 3] 第${attempt}次: 无法从 LLM 响应中提取 Python 代码`);
           addLog("warn", `[Step 3] 响应前 200 字符: ${resp.slice(0, 200)}`);
+          lastPrepareError = "Failed to extract Python code from LLM response";
+          lastPrepareCode = "";
         }
       } catch (err) {
         const errMsg = err instanceof Error ? err.message : String(err);
         addLog("warn", `[Step 3] 第${attempt}次失败: ${errMsg}`);
+        lastPrepareError = errMsg;
+        lastPrepareCode = "";
       }
     }
 
@@ -943,12 +959,80 @@ Return ONLY Python code, no markdown fences, no explanation.`;
           `${baselineExp.commit}\t${baselineMetric.toFixed(6)}\t${memGb?.toFixed(1) || "0.0"}\tkeep\tbaseline\n`
         );
       } else {
-        addLog("error", `Baseline crash — 无法提取 ${metricName}。请检查 train.py 是否可以正常运行。`);
-        if (execResp.stderr) {
-          addLog("error", execResp.stderr.split("\n").slice(-10).join("\n"));
+        // Auto-fix: feed error back to LLM to fix train.py
+        addLog("warn", `Baseline crash — 无法提取 ${metricName}，尝试自动修复...`);
+        const crashErr = [execResp.stderr || "", execResp.stdout || ""].join("\n").slice(-1500);
+        const currentTrainCode = await localExec.readFile(localRunId, "train.py").catch(() => "");
+        const fixPrompt = `The train.py script crashed. Fix it.
+
+Error output:
+\`\`\`
+${crashErr}
+\`\`\`
+
+Current train.py:
+\`\`\`python
+${currentTrainCode}
+\`\`\`
+
+Goal: ${goal}
+Metric: must print "${metricName}: <value>" after "---"
+
+Fix the error and return the COMPLETE fixed train.py. Return ONLY Python code, no markdown fences.`;
+        try {
+          const fixResp = await chatCompletion(llm, [
+            { role: "system", content: "You are an expert ML debugger. Fix the code and return ONLY the complete fixed Python file." },
+            { role: "user", content: fixPrompt },
+          ], { maxTokens: dynamicMaxTokens, temperature: 0.2 });
+          const fixedCode = fixResp.replace(/^```(?:python)?\s*\n?/i, "").replace(/\n?```\s*$/i, "").trim();
+          if (fixedCode && fixedCode.includes("import")) {
+            await localExec.writeCode(localRunId, "train.py", fixedCode, "Auto-fix train.py after baseline crash");
+            setCurrentCode(fixedCode);
+            addLog("info", "[Step 4] 已自动修复 train.py，重新安装依赖...");
+            // Re-install deps for fixed code
+            const fixImports = fixedCode.match(/^(?:import |from )\S+/gm) || [];
+            const fixPkgs = new Set<string>();
+            for (const line of fixImports) {
+              const m = line.match(/(?:import|from)\s+(\w+)/);
+              if (m) {
+                const pkgMap: Record<string, string> = { torch: "torch torchvision", sklearn: "scikit-learn", cv2: "opencv-python", PIL: "Pillow", yaml: "pyyaml", np: "numpy", pd: "pandas", wfdb: "wfdb" };
+                const stdlib = new Set(["os", "sys", "time", "math", "json", "re", "pathlib", "collections", "functools", "itertools", "typing", "abc", "io", "copy", "random", "datetime", "argparse", "logging", "warnings", "csv", "hashlib", "shutil", "glob", "subprocess"]);
+                if (!stdlib.has(m[1])) fixPkgs.add(pkgMap[m[1]] || m[1]);
+              }
+            }
+            if (fixPkgs.size > 0) {
+              await localExec.executeCode(localRunId, { command: `${envPip} install ${[...fixPkgs].join(" ")}`, timeout_seconds: 300 });
+            }
+            addLog("info", "[Step 4] 重新运行 baseline...");
+            const retryExec = await localExec.executeCode(localRunId, { command: actualRunCmd, timeout_seconds: timeoutSec });
+            if (retryExec.stdout) {
+              const lastLines = retryExec.stdout.split("\n").slice(-15).join("\n");
+              addLog("info", `stdout:\n${lastLines}`);
+            }
+            baselineMetric = extractMetric(retryExec.stdout, metricName);
+            if (baselineMetric !== null) {
+              setBestMetric(baselineMetric);
+              const memGb2 = extractPeakVram(retryExec.stdout);
+              addLog("success", `[Step 4] 修复成功! Baseline ${metricName}: ${baselineMetric} | ${retryExec.duration_seconds.toFixed(1)}s`);
+              setExperiments([{ round: 0, commit: "fixed", metric: baselineMetric, memoryGb: memGb2, status: "keep", description: "baseline (auto-fixed)", duration: retryExec.duration_seconds }]);
+              await localExec.writeFile(localRunId, "results.tsv",
+                `commit\t${metricName}\tmemory_gb\tstatus\tdescription\nfixed\t${baselineMetric.toFixed(6)}\t${memGb2?.toFixed(1) || "0.0"}\tkeep\tbaseline (auto-fixed)\n`
+              );
+            } else {
+              addLog("error", `[Step 4] 修复后仍然 crash，请手动检查 train.py`);
+            }
+          }
+        } catch (fixErr) {
+          addLog("error", `[Step 4] 自动修复失败: ${fixErr instanceof Error ? fixErr.message : String(fixErr)}`);
         }
-        setPhase("completed");
-        return;
+        if (baselineMetric === null) {
+          addLog("error", `Baseline crash — 无法提取 ${metricName}。请检查 train.py。`);
+          if (execResp.stderr) {
+            addLog("error", execResp.stderr.split("\n").slice(-10).join("\n"));
+          }
+          setPhase("completed");
+          return;
+        }
       }
     } catch (err) {
       addLog("error", `Baseline 执行失败: ${err instanceof Error ? err.message : String(err)}`);
@@ -1669,18 +1753,21 @@ ${resultsTsv}
             planContext={planContext}
             generatingCode={generatingCode}
             onGenerateFromPlan={async () => {
-              const llm = getLLMConfig();
-              if (!llm) {
-                alert("请先在设置中配置 LLM API");
-                return;
-              }
-              if (!goal.trim()) {
-                alert("请先填写实验目标");
-                return;
-              }
-              setGeneratingCode(true);
               try {
-                const { chatCompletion } = await import("../../lib/deep-research/llm-client");
+                const llm = getLLMConfig();
+                if (!llm) {
+                  alert("请先在设置中配置 LLM (API Key + API Base + Model)");
+                  return;
+                }
+                if (!goal.trim()) {
+                  alert("请先填写实验目标");
+                  return;
+                }
+                setGeneratingCode(true);
+                const { chatCompletion, fetchModelMaxTokens } = await import("../../lib/deep-research/llm-client");
+                const modelMax = await fetchModelMaxTokens(llm);
+                const maxTokens = Math.min(16384, Math.max(8192, Math.floor(modelMax * 0.25)));
+
                 const prompt = `Generate a complete, runnable train.py for this research experiment.
 
 Goal: ${goal}
@@ -1704,7 +1791,7 @@ Requirements:
 - Keep it focused and functional (under 150 lines)
 
 Return ONLY the Python code, no markdown fences, no explanation.`;
-                const code = await chatCompletion(llm, [{ role: "user", content: prompt }], { maxTokens: dynamicMaxTokens, temperature: 0.3 });
+                const code = await chatCompletion(llm, [{ role: "user", content: prompt }], { maxTokens, temperature: 0.3 });
                 const cleaned = code.replace(/^```(?:python)?\s*\n?/i, "").replace(/\n?```\s*$/i, "").trim();
                 if (cleaned) {
                   setInitialCode(cleaned);
@@ -1714,8 +1801,9 @@ Return ONLY the Python code, no markdown fences, no explanation.`;
               } catch (err) {
                 console.error("Generate failed:", err);
                 alert(`生成失败: ${err instanceof Error ? err.message : String(err)}`);
+              } finally {
+                setGeneratingCode(false);
               }
-              setGeneratingCode(false);
             }}
             onStart={handleStart}
           />

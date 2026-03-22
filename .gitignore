@@ -38,11 +38,9 @@ htmlcov/
 # Tauri / Rust
 apps/desktop/src-tauri/target/
 apps/desktop/src-tauri/gen/
-apps/desktop/src-tauri/icons/
 
-# Lock files (regenerated)
+# Lock files
 apps/desktop/package-lock.json
-apps/desktop/src-tauri/Cargo.lock
 
 # Frontend build output
 project-7411174/out/

@@ -598,25 +598,35 @@ Return ONLY Python code, no markdown fences, no explanation.` }], { maxTokens: d
     for (let attempt = 1; attempt <= 2 && !prepareOk; attempt++) {
       try {
         addLog("info", `[Step 3] 生成 prepare.py — 第${attempt}次尝试`);
-        const setupPrompt = `You are a machine learning engineer. Generate a SHORT data preparation script.
 
-Goal: ${goal}
-Train script first 300 chars: ${initialCode.slice(0, 300)}
+        const hypothesisCtx = [
+          planContext?.hypothesis ? `Hypothesis: ${planContext.hypothesis}` : "",
+          planContext?.method ? `Method: ${planContext.method}` : "",
+          planContext?.expectedImprovement ? `Expected outcome: ${planContext.expectedImprovement}` : "",
+        ].filter(Boolean).join("\n");
 
+        const setupPrompt = `You are a machine learning data engineer. Generate a data preparation script for this experiment.
+
+Experiment Goal: ${goal}
+${hypothesisCtx ? `\nExperiment Context:\n${hypothesisCtx}\n` : ""}
 Generate prepare.py that:
-1. Downloads a REAL dataset appropriate for this goal
-2. Saves to ./data/ directory
-3. Prints basic stats (size, shape)
-4. MUST be under 60 lines of code. Keep it minimal!
-5. Use the simplest approach: torchvision.datasets, sklearn.datasets, urllib, or requests
+1. Searches and downloads a REAL, publicly available dataset that matches the experiment goal
+2. Try multiple data sources in order: HuggingFace datasets, Kaggle (kagglehub), PhysioNet, UCI ML Repository, sklearn.datasets, torchvision.datasets, direct URL download
+3. If one source fails, automatically try the next (fallback chain)
+4. Saves processed data to ./data/ directory (CSV or numpy format preferred)
+5. Prints dataset stats: filename, rows, columns, value ranges, class distribution if applicable
+6. MUST be under 80 lines of code
 
-CRITICAL: Keep it SHORT. Under 60 lines. No elaborate error handling, no retries, no progress bars. Just download + save + print stats.
+IMPORTANT:
+- The dataset MUST match the experiment domain. If the goal is about ECG, download ECG data. If about NLP, download text data. Do NOT use generic datasets like MNIST/CIFAR unless the goal is specifically about image classification.
+- Include clear error messages if download fails so we know what went wrong
+- Use the simplest working approach for each source
 
 Also list pip dependencies (one per line).
 
 OUTPUT FORMAT — use EXACTLY this format:
 ===PREPARE_PY===
-<python code, under 60 lines>
+<python code, under 80 lines>
 ===REQUIREMENTS_TXT===
 <one package per line>
 ===END===`;
@@ -724,11 +734,69 @@ OUTPUT FORMAT — use EXACTLY this format:
       addLog("warn", "[Step 3] 数据准备失败，将使用 train.py 自带的数据（如有）");
     }
 
+    // ── Step 3.8: Regenerate train.py based on actual data + hypothesis ──
+    if (prepareOk) {
+      addLog("info", "═══ Step 3.8: 根据数据集 + 实验假设生成 train.py ═══");
+      try {
+        // List data files to understand what prepare.py produced
+        const lsData = await localExec.executeCode(localRunId, {
+          command: "ls -la data/ 2>/dev/null && head -5 data/*.csv 2>/dev/null || echo 'no csv files'",
+          timeout_seconds: 10,
+        });
+        const dataInfo = (lsData.stdout || "").slice(0, 1500);
+
+        const hypothesisCtx = [
+          planContext?.hypothesis ? `Hypothesis: ${planContext.hypothesis}` : "",
+          planContext?.method ? `Method: ${planContext.method}` : "",
+          planContext?.expectedImprovement ? `Expected outcome: ${planContext.expectedImprovement}` : "",
+        ].filter(Boolean).join("\n");
+
+        const trainPrompt = `You are an ML researcher. Generate a complete, runnable train.py for this experiment.
+
+Experiment Goal: ${goal}
+${hypothesisCtx ? `\nExperiment Context:\n${hypothesisCtx}\n` : ""}
+Available data in ./data/ directory:
+${dataInfo}
+
+Requirements:
+- Single file, complete and runnable with "python train.py"
+- MUST load data from ./data/ directory (the files shown above)
+- Include all imports, data loading, model definition, training loop, evaluation
+- The model and approach MUST match the experiment hypothesis and method described above
+- Must print metrics at the end in this EXACT format:
+  ---
+  ${metricName}:     0.850000
+  training_seconds: 45.2
+- Print epoch-level metrics during training: Epoch N/Total — ${metricName}: value
+- Keep it focused and functional (under 150 lines)
+
+Return ONLY Python code, no markdown fences, no explanation.`;
+
+        addLog("info", `[Step 3.8] 向 LLM 请求根据实际数据生成 train.py...`);
+        const trainResp = await chatCompletion(llm, [
+          { role: "system", content: "You are an expert ML engineer. Output ONLY runnable Python code. No markdown, no explanation." },
+          { role: "user", content: trainPrompt },
+        ], { maxTokens: dynamicMaxTokens, temperature: 0.3 });
+
+        const trainCode = trainResp.replace(/^```(?:python)?\s*\n?/i, "").replace(/\n?```\s*$/i, "").trim();
+        if (trainCode && trainCode.includes("import")) {
+          await localExec.writeCode(localRunId, "train.py", trainCode, "LLM-generated train.py based on data + hypothesis");
+          setCurrentCode(trainCode);
+          addLog("success", `[Step 3.8] 已生成 train.py (${trainCode.split("\n").length} 行) — 基于实际数据集 + 实验假设`);
+        } else {
+          addLog("warn", "[Step 3.8] train.py 生成失败，使用原始模板");
+        }
+      } catch (err) {
+        addLog("warn", `[Step 3.8] train.py 再生成失败: ${err instanceof Error ? err.message : String(err)}，使用原始模板`);
+      }
+    }
+
     // 3.5 Install train.py dependencies into conda env
     addLog("info", "═══ Step 3.5: 安装训练脚本依赖 ═══");
     {
-      // Extract imports from train.py to determine needed packages
-      const codeToScan = initialCode || "";
+      // Extract imports from the current train.py (may have been regenerated in Step 3.8)
+      const currentTrainCode = await localExec.readFile(localRunId, "train.py").catch(() => initialCode || "");
+      const codeToScan = currentTrainCode;
       const importLines = codeToScan.match(/^(?:import |from )\S+/gm) || [];
       const knownPkgs = new Set<string>();
       for (const line of importLines) {

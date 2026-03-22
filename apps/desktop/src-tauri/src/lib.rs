@@ -10,6 +10,7 @@ use commands::experiment::ProcessState;
 use commands::gpu::GpuMonitorState;
 use commands::sync::SyncState;
 use state::ExperimentState;
+use tauri::Manager;
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
@@ -17,6 +18,7 @@ pub fn run() {
         .plugin(tauri_plugin_shell::init())
         .plugin(tauri_plugin_websocket::init())
         .plugin(tauri_plugin_store::Builder::default().build())
+        .plugin(tauri_plugin_http::init())
         .manage(ExperimentState::default())
         .manage(ProcessState::default())
         .manage(GpuMonitorState::default())
@@ -38,7 +40,26 @@ pub fn run() {
             commands::sync::connect_backend,
             commands::sync::disconnect_backend,
             commands::sync::send_sync,
+            // AutoResearch local execution
+            commands::autoresearch::local_ar_init,
+            commands::autoresearch::local_ar_write_code,
+            commands::autoresearch::local_ar_execute,
+            commands::autoresearch::local_ar_decide,
+            commands::autoresearch::local_ar_read_file,
+            commands::autoresearch::local_ar_write_file,
+            commands::autoresearch::local_ar_list_files,
+            commands::autoresearch::local_ar_git_log,
+            commands::autoresearch::read_skill_file,
         ])
+        .setup(|app| {
+            // Only open devtools in debug builds
+            #[cfg(debug_assertions)]
+            {
+                let window = app.get_webview_window("main").unwrap();
+                window.open_devtools();
+            }
+            Ok(())
+        })
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

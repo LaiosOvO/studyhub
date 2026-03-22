@@ -30,6 +30,9 @@ from app.routers.needs import router as needs_router
 from app.routers.profiles import router as profiles_router
 from app.routers.scholars import router as scholars_router
 from app.routers.search import router as search_router
+from app.routers.workspace import router as workspace_router
+from app.routers.agent import router as agent_router
+from app.routers.autoresearch import router as autoresearch_router
 from app.services.temporal_service import get_temporal_client, reset_client
 
 logger = logging.getLogger(__name__)
@@ -120,14 +123,17 @@ def create_app() -> FastAPI:
     application.include_router(papers_router, prefix="/papers", tags=["papers"])
     application.include_router(citations_router, prefix="/citations", tags=["citations"])
     application.include_router(scholars_router, prefix="/scholars", tags=["scholars"])
-    application.include_router(reading_lists_router, prefix="/api", tags=["reading-lists"])
-    application.include_router(deep_research_router, prefix="/api/v1", tags=["deep-research"])
-    application.include_router(plans_router, prefix="/api/v1/plans", tags=["plans"])
-    application.include_router(experiments_router, prefix="/api/v1/experiments", tags=["experiments"])
-    application.include_router(profiles_router, prefix="/api/v1/profiles", tags=["profiles"])
-    application.include_router(matching_router, prefix="/api/v1/matching", tags=["matching"])
-    application.include_router(needs_router, prefix="/api/v1/needs", tags=["needs"])
-    application.include_router(messages_router, prefix="/api/v1/messages", tags=["messages"])
+    application.include_router(reading_lists_router, tags=["reading-lists"])
+    application.include_router(deep_research_router, prefix="/v1", tags=["deep-research"])
+    application.include_router(plans_router, prefix="/v1/plans", tags=["plans"])
+    application.include_router(experiments_router, prefix="/v1/experiments", tags=["experiments"])
+    application.include_router(profiles_router, prefix="/v1/profiles", tags=["profiles"])
+    application.include_router(matching_router, prefix="/v1/matching", tags=["matching"])
+    application.include_router(needs_router, prefix="/v1/needs", tags=["needs"])
+    application.include_router(messages_router, prefix="/v1/messages", tags=["messages"])
+    application.include_router(workspace_router, prefix="/v1", tags=["workspaces"])
+    application.include_router(agent_router, tags=["agent"])
+    application.include_router(autoresearch_router, prefix="/v1", tags=["autoresearch"])
 
     return application
 

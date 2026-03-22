@@ -311,7 +311,7 @@ async def _llm_generate(
                 session=session,
                 user_id=user_id,
                 messages=[{"role": "user", "content": prompt}],
-                model="claude-haiku-4-20250514",
+                model=None,  # Use default model from config
                 max_tokens=1024,
                 request_type="experiment_report",
             )

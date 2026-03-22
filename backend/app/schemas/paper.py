@@ -61,3 +61,27 @@ class PaperCreate(PaperResult):
 
     parsed_content: dict | None = None
     pdf_storage_key: str | None = None
+
+
+class PaperSyncRequest(BaseModel):
+    """Batch paper sync request from client to server."""
+
+    papers: list[PaperResult] = Field(..., max_length=200)
+    research_task_id: str | None = None
+
+
+class PaperSyncResult(BaseModel):
+    """Result of a single paper sync operation."""
+
+    title: str
+    server_id: str
+    created: bool
+
+
+class PaperSyncResponse(BaseModel):
+    """Response for batch paper sync."""
+
+    synced: int = 0
+    created: int = 0
+    updated: int = 0
+    results: list[PaperSyncResult] = Field(default_factory=list)

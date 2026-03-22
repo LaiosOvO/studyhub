@@ -31,6 +31,7 @@ from app.models.experiment_plan import ExperimentPlan
 from app.models.experiment_run import ExperimentRun
 from app.models.user import User
 from app.schemas.common import ApiResponse
+from app.models.experiment_metric import ExperimentMetric
 from app.schemas.experiment import (
     ExperimentQueueReorder,
     ExperimentReportResponse,
@@ -38,6 +39,8 @@ from app.schemas.experiment import (
     ExperimentRunResponse,
     ExperimentRunUpdate,
     ExperimentSyncPayload,
+    MetricSeriesResponse,
+    MetricsBatchPayload,
 )
 
 logger = logging.getLogger(__name__)
@@ -722,6 +725,209 @@ async def generate_report(
             else None,
         ),
         message="Report generated successfully",
+    )
+
+
+# ─── Metrics Endpoints (normalized storage) ───────────────────────────────────
+
+
+@router.post("/{run_id}/metrics/batch", response_model=ApiResponse)
+async def log_metrics_batch(
+    run_id: str,
+    payload: MetricsBatchPayload,
+    db: Annotated[AsyncSession, Depends(get_db)],
+    current_user: Annotated[User, Depends(get_current_user)],
+):
+    """Batch-log metrics for an experiment run.
+
+    Accepts up to 1000 metric data points in a single request.
+    Reference: MLflow LogBatch pattern.
+    """
+    # Verify run ownership
+    result = await db.execute(
+        select(ExperimentRun).where(
+            ExperimentRun.id == run_id,
+            ExperimentRun.user_id == current_user.id,
+        )
+    )
+    run = result.scalar_one_or_none()
+    if not run:
+        raise HTTPException(status_code=404, detail="Experiment run not found")
+
+    if not payload.metrics:
+        return ApiResponse(data={"logged": 0}, message="No metrics to log")
+
+    import uuid
+
+    metrics = [
+        ExperimentMetric(
+            id=uuid.uuid4().hex,
+            run_id=run_id,
+            key=m.key,
+            value=m.value,
+            step=m.step,
+            context=m.context,
+            timestamp=m.timestamp or datetime.now(timezone.utc),
+        )
+        for m in payload.metrics
+    ]
+    db.add_all(metrics)
+    await db.commit()
+
+    logger.info("Logged %d metrics for run %s", len(metrics), run_id)
+    return ApiResponse(data={"logged": len(metrics)}, message="Metrics logged")
+
+
+@router.get("/{run_id}/metrics/{metric_key}", response_model=ApiResponse[MetricSeriesResponse])
+async def get_metric_history(
+    run_id: str,
+    metric_key: str,
+    db: Annotated[AsyncSession, Depends(get_db)],
+    current_user: Annotated[User, Depends(get_current_user)],
+    start_step: int = Query(0, ge=0),
+    end_step: int | None = Query(None),
+    max_results: int = Query(500, ge=1, le=5000),
+):
+    """Get time-series data for a single metric within a run.
+
+    Returns steps, values, and timestamps for rendering training curves.
+    """
+    # Verify run ownership
+    result = await db.execute(
+        select(ExperimentRun).where(
+            ExperimentRun.id == run_id,
+            ExperimentRun.user_id == current_user.id,
+        )
+    )
+    if not result.scalar_one_or_none():
+        raise HTTPException(status_code=404, detail="Experiment run not found")
+
+    query = (
+        select(ExperimentMetric)
+        .where(
+            ExperimentMetric.run_id == run_id,
+            ExperimentMetric.key == metric_key,
+            ExperimentMetric.step >= start_step,
+        )
+        .order_by(ExperimentMetric.step)
+        .limit(max_results)
+    )
+    if end_step is not None:
+        query = query.where(ExperimentMetric.step <= end_step)
+
+    result = await db.execute(query)
+    rows = list(result.scalars().all())
+
+    return ApiResponse(
+        data=MetricSeriesResponse(
+            run_id=run_id,
+            key=metric_key,
+            steps=[r.step for r in rows],
+            values=[r.value for r in rows],
+            timestamps=[r.timestamp for r in rows],
+        ),
+        message=f"Found {len(rows)} data points",
+    )
+
+
+@router.get("/{run_id}/metrics", response_model=ApiResponse)
+async def list_metric_keys(
+    run_id: str,
+    db: Annotated[AsyncSession, Depends(get_db)],
+    current_user: Annotated[User, Depends(get_current_user)],
+):
+    """List all metric keys logged for a run."""
+    from sqlalchemy import distinct
+
+    result = await db.execute(
+        select(ExperimentRun).where(
+            ExperimentRun.id == run_id,
+            ExperimentRun.user_id == current_user.id,
+        )
+    )
+    if not result.scalar_one_or_none():
+        raise HTTPException(status_code=404, detail="Experiment run not found")
+
+    keys_result = await db.execute(
+        select(distinct(ExperimentMetric.key)).where(
+            ExperimentMetric.run_id == run_id
+        )
+    )
+    keys = [row[0] for row in keys_result.all()]
+
+    return ApiResponse(data={"keys": keys}, message=f"Found {len(keys)} metric keys")
+
+
+# ─── Cross-Run Comparison ─────────────────────────────────────────────────────
+
+
+@router.get("/metrics/compare", response_model=ApiResponse)
+async def compare_metrics(
+    db: Annotated[AsyncSession, Depends(get_db)],
+    current_user: Annotated[User, Depends(get_current_user)],
+    run_ids: list[str] = Query(..., min_length=1, max_length=10),
+    metric_key: str = Query(...),
+    start_step: int = Query(0, ge=0),
+    end_step: int | None = Query(None),
+    max_results: int = Query(200, ge=1, le=2000),
+):
+    """Compare a metric across multiple runs for overlay charts.
+
+    Returns per-run series with optional downsampling.
+    Reference: MLflow GetMetricHistoryBulkInterval.
+    """
+    # Verify all runs belong to user
+    result = await db.execute(
+        select(ExperimentRun.id).where(
+            ExperimentRun.id.in_(run_ids),
+            ExperimentRun.user_id == current_user.id,
+        )
+    )
+    owned_ids = {row[0] for row in result.all()}
+    missing = set(run_ids) - owned_ids
+    if missing:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Runs not found or not owned: {', '.join(missing)}",
+        )
+
+    # Query metrics for all runs
+    query = (
+        select(ExperimentMetric)
+        .where(
+            ExperimentMetric.run_id.in_(run_ids),
+            ExperimentMetric.key == metric_key,
+            ExperimentMetric.step >= start_step,
+        )
+        .order_by(ExperimentMetric.run_id, ExperimentMetric.step)
+    )
+    if end_step is not None:
+        query = query.where(ExperimentMetric.step <= end_step)
+
+    result = await db.execute(query)
+    rows = list(result.scalars().all())
+
+    # Group by run_id and downsample
+    from collections import defaultdict
+    per_run: dict[str, list] = defaultdict(list)
+    for row in rows:
+        per_run[row.run_id].append({
+            "step": row.step,
+            "value": row.value,
+            "timestamp": row.timestamp.isoformat() if row.timestamp else None,
+        })
+
+    # Downsample each run to max_results points
+    series = {}
+    for rid, points in per_run.items():
+        if len(points) > max_results:
+            stride = len(points) // max_results
+            points = points[::stride][:max_results]
+        series[rid] = points
+
+    return ApiResponse(
+        data={"metric_key": metric_key, "series": series},
+        message=f"Compared {len(series)} runs",
     )
 
 

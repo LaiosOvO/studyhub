@@ -79,24 +79,30 @@ async def get_recommendations(
     my_public = ResearcherProfilePublic.model_validate(profile)
     match_results: list[MatchResult] = []
 
-    # Generate explanations for top 5 in parallel
+    # Generate explanations for top 5 — only if score > 0.3 (worth explaining)
+    top_worthy = [m for m in raw_matches[:5] if m["overall_score"] > 0.3]
     explanation_tasks = []
-    for match_data in raw_matches[:5]:
+    for match_data in top_worthy:
         cand_public = ResearcherProfilePublic.model_validate(match_data["profile"])
         breakdown = MatchSignalBreakdown(**match_data["breakdown"])
         explanation_tasks.append(
             generate_explanation(db, user.id, my_public, cand_public, breakdown)
         )
 
-    explanations = await asyncio.gather(*explanation_tasks, return_exceptions=True)
+    explanations = await asyncio.gather(*explanation_tasks, return_exceptions=True) if explanation_tasks else []
 
     for i, match_data in enumerate(raw_matches):
         cand_public = ResearcherProfilePublic.model_validate(match_data["profile"])
         breakdown = MatchSignalBreakdown(**match_data["breakdown"])
 
         explanation = None
-        if i < 5 and not isinstance(explanations[i], Exception):
-            explanation = explanations[i]
+        # Map explanation index: only top_worthy matches have explanations
+        worthy_idx = next(
+            (j for j, m in enumerate(top_worthy) if m["profile"].id == match_data["profile"].id),
+            None,
+        )
+        if worthy_idx is not None and worthy_idx < len(explanations) and not isinstance(explanations[worthy_idx], Exception):
+            explanation = explanations[worthy_idx]
 
         match_results.append(
             MatchResult(

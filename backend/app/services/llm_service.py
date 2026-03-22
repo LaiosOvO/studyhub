@@ -75,7 +75,10 @@ async def llm_completion(
             max_tokens=max_tokens,
         )
 
-    cost = litellm.completion_cost(completion_response=response)
+    try:
+        cost = litellm.completion_cost(completion_response=response)
+    except Exception:
+        cost = 0.0  # Unknown model pricing, skip cost tracking
     usage = response.usage
 
     usage_record = LLMUsage(

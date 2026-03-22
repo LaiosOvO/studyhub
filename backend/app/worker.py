@@ -12,8 +12,20 @@ from temporalio.worker import Worker
 
 from app.config import get_settings
 from app.services.temporal_service import TASK_QUEUE
-from app.workflows.activities import placeholder_search
+from app.workflows.activities import (
+    analyze_papers_activity,
+    classify_relationships_activity,
+    detect_gaps_activity,
+    expand_citations_activity,
+    fail_task_activity,
+    generate_plans_activity,
+    generate_report_activity,
+    placeholder_search,
+    score_papers_activity,
+    search_papers_activity,
+)
 from app.workflows.deep_research import DeepResearchWorkflow
+from app.workflows.plan_generation import PlanGenerationWorkflow
 from app.workflows.scholar_refresh import (
     ScholarRefreshWorkflow,
     enrich_scholar_activity,
@@ -45,9 +57,18 @@ async def run_worker() -> None:
     worker = Worker(
         client,
         task_queue=TASK_QUEUE,
-        workflows=[DeepResearchWorkflow, ScholarRefreshWorkflow],
+        workflows=[DeepResearchWorkflow, PlanGenerationWorkflow, ScholarRefreshWorkflow],
         activities=[
             placeholder_search,
+            search_papers_activity,
+            expand_citations_activity,
+            score_papers_activity,
+            analyze_papers_activity,
+            classify_relationships_activity,
+            detect_gaps_activity,
+            generate_report_activity,
+            generate_plans_activity,
+            fail_task_activity,
             enrich_scholar_activity,
             link_scholar_papers_activity,
             get_all_scholar_ids,

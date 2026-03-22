@@ -183,7 +183,10 @@ async def score_papers_batch(
 ) -> list[PaperWithQuality]:
     """Score multiple papers and optionally persist scores to Neo4j.
 
-    Processes sequentially to respect OpenAlex rate limits.
+    Uses fast local scoring (citation count + year) for the batch,
+    skipping per-paper OpenAlex lookups to avoid rate limiting.
+    Individual paper lookups via score_paper() are still available
+    for single-paper detail views.
 
     Args:
         papers: Papers to score.
@@ -195,7 +198,13 @@ async def score_papers_batch(
     results: list[PaperWithQuality] = []
 
     for paper in papers:
-        breakdown = await score_paper(paper)
+        # Fast scoring without external API calls
+        breakdown = compute_quality_score(
+            citation_count=paper.citation_count,
+            year=paper.year,
+            impact_factor=None,
+            h_index=None,
+        )
         paper_with_quality = PaperWithQuality(
             **paper.model_dump(),
             quality=breakdown,

@@ -158,3 +158,15 @@ class ExperimentPlanUpdate(BaseModel):
     code_skeleton: str | None = None
     data_strategy: DataStrategy | None = None
     status: Literal["draft", "approved"] | None = None
+
+
+class ExperimentPlanCreate(BaseModel):
+    """Direct creation of a plan (e.g. from client-side generation)."""
+
+    title: str
+    hypothesis: str
+    method_description: str
+    datasets: list[str] = []
+    difficulty: str | None = None
+    estimated_time: str | None = None
+    direction: str | None = None

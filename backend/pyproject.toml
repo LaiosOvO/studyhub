@@ -41,6 +41,7 @@ dependencies = [
     "markdown>=3.10.2",
     "matplotlib>=3.10.8",
     "pillow>=12.1.1",
+    "pymupdf>=1.25.0",
 ]
 
 [project.optional-dependencies]
@@ -57,3 +58,9 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["app"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-asyncio>=1.3.0",
+]

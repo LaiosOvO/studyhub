@@ -21,6 +21,7 @@ from app.models.experiment_plan import ExperimentPlan
 from app.models.user import User
 from app.schemas.common import ApiResponse
 from app.schemas.plan import (
+    ExperimentPlanCreate,
     ExperimentPlanResponse,
     ExperimentPlanUpdate,
     PlanGenerationInput,
@@ -101,6 +102,39 @@ async def generate_plans(
             "num_plans": body.num_plans,
         },
         message="Plan generation started",
+    )
+
+
+@router.post(
+    "/",
+    response_model=ApiResponse[ExperimentPlanResponse],
+    status_code=status.HTTP_201_CREATED,
+)
+async def create_plan(
+    body: ExperimentPlanCreate,
+    user: Annotated[User, Depends(get_current_user)],
+    session: Annotated[AsyncSession, Depends(get_db)],
+) -> ApiResponse[ExperimentPlanResponse]:
+    """Directly create a plan (e.g. from client-side LLM generation)."""
+    plan = ExperimentPlan(
+        id=uuid.uuid4().hex,
+        user_id=user.id,
+        task_id="client",
+        entry_type="direction",
+        title=body.title,
+        hypothesis=body.hypothesis,
+        method_description=body.method_description,
+        datasets=[{"name": d} for d in body.datasets] if body.datasets else [],
+        status="draft",
+    )
+    session.add(plan)
+    await session.commit()
+    await session.refresh(plan)
+
+    return ApiResponse(
+        success=True,
+        data=ExperimentPlanResponse.model_validate(plan),
+        message="Plan created",
     )
 
 

@@ -6,14 +6,14 @@ and list responses with pagination support.
 
 from datetime import datetime
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 
 class ScholarBase(BaseModel):
     """Base scholar fields shared across create and response schemas."""
 
     name: str = Field(..., min_length=1, max_length=100)
-    institution: str = Field(..., min_length=1, max_length=300)
+    institution: str = Field(default="", max_length=300)
     title: list[str] = Field(default_factory=list)
     rank: str | None = None
     birth_year: int | None = None
@@ -21,6 +21,16 @@ class ScholarBase(BaseModel):
     honors: list[str] = Field(default_factory=list)
     education: dict | None = None
     note: str | None = None
+
+    @field_validator("title", "research_fields", "honors", mode="before")
+    @classmethod
+    def none_to_list(cls, v: object) -> list:
+        return v if v is not None else []
+
+    @field_validator("institution", mode="before")
+    @classmethod
+    def none_to_empty_str(cls, v: object) -> str:
+        return v if v is not None else ""
 
 
 class ScholarCreate(ScholarBase):
@@ -60,6 +70,11 @@ class ScholarResponse(ScholarBase):
     updated_at: datetime
 
     model_config = {"from_attributes": True}
+
+    @field_validator("source_urls", "linked_paper_ids", mode="before")
+    @classmethod
+    def none_to_list_resp(cls, v: object) -> list:
+        return v if v is not None else []
 
 
 class ScholarListResponse(BaseModel):

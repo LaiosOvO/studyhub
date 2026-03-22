@@ -430,15 +430,16 @@ async def get_deep_research_report(
     )
 
 
-@router.websocket("/ws/{workflow_id}")
+@router.websocket("/tasks/{task_id}/ws")
 async def deep_research_progress(
     websocket: WebSocket,
-    workflow_id: str,
+    task_id: str,
     token: str = Query(default=""),
 ) -> None:
     """Stream real-time progress for a Deep Research workflow via WebSocket.
 
     Authenticates via `token` query parameter (JWT access token).
+    Accepts task_id (UUID) and derives workflow_id as ``deep-research-{task_id}``.
     Polls Temporal workflow query every 3 seconds and sends JSON progress.
     Closes automatically when workflow reaches 'completed' or 'failed'.
     """
@@ -461,6 +462,7 @@ async def deep_research_progress(
 
     await websocket.accept()
 
+    workflow_id = f"deep-research-{task_id}"
     try:
         client = await get_temporal_client()
         handle = client.get_workflow_handle(workflow_id)
@@ -482,9 +484,9 @@ async def deep_research_progress(
             await asyncio.sleep(3)
 
     except WebSocketDisconnect:
-        logger.info("WebSocket disconnected for workflow %s", workflow_id)
+        logger.info("WebSocket disconnected for task %s (workflow %s)", task_id, workflow_id)
     except Exception as exc:
-        logger.error("WebSocket error for workflow %s: %s", workflow_id, exc)
+        logger.error("WebSocket error for task %s (workflow %s): %s", task_id, workflow_id, exc)
     finally:
         try:
             await websocket.close()

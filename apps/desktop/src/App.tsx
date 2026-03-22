@@ -20,7 +20,7 @@ import {
 
 export default function App() {
   const [status, setStatus] = useState<ExperimentStatus>({ type: "Idle" });
-  const [backendUrl, setBackendUrl] = useState("http://localhost:8000");
+  const [backendUrl, setBackendUrl] = useState("http://101.126.141.165:8000");
   const [token, setToken] = useState("");
   const [error, setError] = useState<string | null>(null);
 

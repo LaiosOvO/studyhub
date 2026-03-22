@@ -14,7 +14,7 @@ class ApiResponse(BaseModel, Generic[T]):
     client-side handling of success and error states.
     """
 
-    success: bool
+    success: bool = True
     data: Optional[T] = None
     error: Optional[str] = None
     message: Optional[str] = None

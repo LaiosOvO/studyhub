@@ -1,19 +1,23 @@
 {
-  "productName": "StudyHub Agent",
-  "version": "0.1.0",
+  "productName": "StudyHub",
+  "version": "0.2.0",
   "identifier": "com.studyhub.desktop",
   "build": {
-    "devUrl": "http://localhost:1420",
-    "frontendDist": "../dist"
+    "devUrl": "http://localhost:3001",
+    "frontendDist": "../../../project-7411174/out",
+    "beforeDevCommand": "cd ../../project-7411174 && VITE_API_URL=http://101.126.141.165/api npx vite --port 3001",
+    "beforeBuildCommand": "cd ../../project-7411174 && BASE_PATH=./ VITE_API_URL=http://101.126.141.165/api npx vite build"
   },
   "app": {
     "windows": [
       {
-        "title": "StudyHub Experiment Agent",
-        "width": 1200,
-        "height": 800,
+        "title": "StudyHub",
+        "width": 1440,
+        "height": 900,
         "resizable": true,
-        "fullscreen": false
+        "fullscreen": false,
+        "minWidth": 1024,
+        "minHeight": 700
       }
     ],
     "security": {
@@ -23,6 +27,9 @@
   "bundle": {
     "active": true,
     "targets": "all",
+    "macOS": {
+      "exceptionDomain": "101.126.141.165"
+    },
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",

@@ -1,0 +1,469 @@
+[
+  {
+    "id": "literature/academic-literature-search",
+    "name": "academic-literature-search",
+    "category": "literature",
+    "description": "",
+    "path": "skills/literature/academic-literature-search/SKILL.md"
+  },
+  {
+    "id": "literature/article-writing",
+    "name": "article-writing",
+    "category": "literature",
+    "description": "Write articles, guides, blog posts, tutorials, newsletter issues, and other long-form content in a distinctive voice derived from supplied examples or brand guidance. Use when the user wants polished written content longer than a paragraph, especially when voice consistency, structure, and credibility matter.",
+    "path": "skills/literature/article-writing/SKILL.md"
+  },
+  {
+    "id": "literature/arxiv-search",
+    "name": "arxiv-search",
+    "category": "literature",
+    "description": "Search arXiv physics, math, and computer science preprints using natural language queries. Powered by Valyu semantic search.",
+    "path": "skills/literature/arxiv-search/SKILL.md"
+  },
+  {
+    "id": "literature/biomedical-search",
+    "name": "biomedical-search",
+    "category": "literature",
+    "description": "Complete biomedical information search combining PubMed, preprints, clinical trials, and FDA drug labels. Powered by Valyu semantic search.",
+    "path": "skills/literature/biomedical-search/SKILL.md"
+  },
+  {
+    "id": "literature/biorxiv-database",
+    "name": "biorxiv-database",
+    "category": "literature",
+    "description": "Efficient database search tool for bioRxiv preprint server. Use this skill when searching for life sciences preprints by keywords, authors, date ranges, or categories, retrieving paper metadata, downloading PDFs, or conducting literature reviews.",
+    "path": "skills/literature/biorxiv-database/SKILL.md"
+  },
+  {
+    "id": "literature/biorxiv-search",
+    "name": "biorxiv-search",
+    "category": "literature",
+    "description": "Search bioRxiv biology preprints with natural language queries. Semantic search powered by Valyu.",
+    "path": "skills/literature/biorxiv-search/SKILL.md"
+  },
+  {
+    "id": "literature/bioservices",
+    "name": "bioservices",
+    "category": "literature",
+    "description": "Unified Python interface to 40+ bioinformatics services. Use when querying multiple databases (UniProt, KEGG, ChEMBL, Reactome) in a single workflow with consistent API. Best for cross-database analysis, ID mapping across services. For quick single-database lookups use gget; for sequence/file manipulation use biopython.",
+    "path": "skills/literature/bioservices/SKILL.md"
+  },
+  {
+    "id": "literature/citation-management",
+    "name": "citation-management",
+    "category": "literature",
+    "description": "Comprehensive citation management for academic research. Search Google Scholar and PubMed for papers, extract accurate metadata, validate citations, and generate properly formatted BibTeX entries. This skill should be used when you need to find papers, verify citation information, convert DOIs to BibTeX, or ensure reference accuracy in scientific writing.",
+    "path": "skills/literature/citation-management/SKILL.md",
+    "allowedTools": [
+      "Read",
+      "Write",
+      "Edit",
+      "Bash"
+    ]
+  },
+  {
+    "id": "literature/clinical-trials-search",
+    "name": "clinical-trials-search",
+    "category": "literature",
+    "description": "Search ClinicalTrials.gov with natural language queries. Find clinical trials, enrollment, and outcomes using Valyu semantic search.",
+    "path": "skills/literature/clinical-trials-search/SKILL.md"
+  },
+  {
+    "id": "literature/clinicaltrials-database",
+    "name": "clinicaltrials-database",
+    "category": "literature",
+    "description": "Query ClinicalTrials.gov via API v2. Search trials by condition, drug, location, status, or phase. Retrieve trial details by NCT ID, export data, for clinical research and patient matching.",
+    "path": "skills/literature/clinicaltrials-database/SKILL.md"
+  },
+  {
+    "id": "literature/clinvar-database",
+    "name": "clinvar-database",
+    "category": "literature",
+    "description": "Query NCBI ClinVar for variant clinical significance. Search by gene/position, interpret pathogenicity classifications, access via E-utilities API or FTP, annotate VCFs, for genomic medicine.",
+    "path": "skills/literature/clinvar-database/SKILL.md"
+  },
+  {
+    "id": "literature/gene-database",
+    "name": "gene-database",
+    "category": "literature",
+    "description": "Query NCBI Gene via E-utilities/Datasets API. Search by symbol/ID, retrieve gene info (RefSeqs, GO, locations, phenotypes), batch lookups, for gene annotation and functional analysis.",
+    "path": "skills/literature/gene-database/SKILL.md"
+  },
+  {
+    "id": "literature/geo-database",
+    "name": "geo-database",
+    "category": "literature",
+    "description": "Access NCBI GEO for gene expression/genomics data. Search/download microarray and RNA-seq datasets (GSE, GSM, GPL), retrieve SOFT/Matrix files, for transcriptomics and expression analysis.",
+    "path": "skills/literature/geo-database/SKILL.md"
+  },
+  {
+    "id": "literature/gwas-database",
+    "name": "gwas-database",
+    "category": "literature",
+    "description": "Query NHGRI-EBI GWAS Catalog for SNP-trait associations. Search variants by rs ID, disease/trait, gene, retrieve p-values and summary statistics, for genetic epidemiology and polygenic risk scores.",
+    "path": "skills/literature/gwas-database/SKILL.md"
+  },
+  {
+    "id": "literature/hmdb-database",
+    "name": "hmdb-database",
+    "category": "literature",
+    "description": "Access Human Metabolome Database (220K+ metabolites). Search by name/ID/structure, retrieve chemical properties, biomarker data, NMR/MS spectra, pathways, for metabolomics and identification.",
+    "path": "skills/literature/hmdb-database/SKILL.md"
+  },
+  {
+    "id": "literature/literature",
+    "name": "literature",
+    "category": "literature",
+    "description": "",
+    "path": "skills/literature/literature/SKILL.md"
+  },
+  {
+    "id": "literature/literature-review",
+    "name": "literature-review",
+    "category": "literature",
+    "description": "Conduct comprehensive, systematic literature reviews using multiple academic databases (PubMed, arXiv, bioRxiv, Semantic Scholar, etc.). This skill should be used when conducting systematic literature reviews, meta-analyses, research synthesis, or comprehensive literature searches across biomedical, scientific, and technical domains. Creates professionally formatted markdown documents and PDFs with verified citations in multiple citation styles (APA, Nature, Vancouver, etc.).",
+    "path": "skills/literature/literature-review/SKILL.md",
+    "allowedTools": [
+      "Read",
+      "Write",
+      "Edit",
+      "Bash"
+    ]
+  },
+  {
+    "id": "literature/literature-search",
+    "name": "literature-search",
+    "category": "literature",
+    "description": "Comprehensive scientific literature search across PubMed, arXiv, bioRxiv, medRxiv. Natural language queries powered by Valyu semantic search.",
+    "path": "skills/literature/literature-search/SKILL.md"
+  },
+  {
+    "id": "literature/literature_to_hypothesis",
+    "name": "literature_to_hypothesis",
+    "category": "literature",
+    "description": "Extracts falsifiable scientific hypotheses (if-then form) from multiple PubMed articles, abstracts, or full texts. Synthesizes supporting evidence, contradictions, and experimental validation suggestions into a structured Markdown report for hypothesis-driven research planning.",
+    "path": "skills/literature/literature_to_hypothesis/SKILL.md"
+  },
+  {
+    "id": "literature/medrxiv-search",
+    "name": "medrxiv-search",
+    "category": "literature",
+    "description": "Search medRxiv medical preprints with natural language queries. Powered by Valyu semantic search.",
+    "path": "skills/literature/medrxiv-search/SKILL.md"
+  },
+  {
+    "id": "literature/openalex-database",
+    "name": "openalex-database",
+    "category": "literature",
+    "description": "Query and analyze scholarly literature using the OpenAlex database. This skill should be used when searching for academic papers, analyzing research trends, finding works by authors or institutions, tracking citations, discovering open access publications, or conducting bibliometric analysis across 240M+ scholarly works. Use for literature searches, research output analysis, citation analysis, and academic database queries.",
+    "path": "skills/literature/openalex-database/SKILL.md"
+  },
+  {
+    "id": "literature/patents-search",
+    "name": "patents-search",
+    "category": "literature",
+    "description": "Search global patents with natural language queries. Prior art, patent landscapes, and innovation tracking via Valyu.",
+    "path": "skills/literature/patents-search/SKILL.md"
+  },
+  {
+    "id": "literature/pdb-database",
+    "name": "pdb-database",
+    "category": "literature",
+    "description": "Access RCSB PDB for 3D protein/nucleic acid structures. Search by text/sequence/structure, download coordinates (PDB/mmCIF), retrieve metadata, for structural biology and drug discovery.",
+    "path": "skills/literature/pdb-database/SKILL.md"
+  },
+  {
+    "id": "literature/perplexity-search",
+    "name": "perplexity-search",
+    "category": "literature",
+    "description": "Perform AI-powered web searches with real-time information using Perplexity models via LiteLLM and OpenRouter. This skill should be used when conducting web searches for current information, finding recent scientific literature, getting grounded answers with source citations, or accessing information beyond the model knowledge cutoff. Provides access to multiple Perplexity models including Sonar Pro, Sonar Pro Search (advanced agentic search), and Sonar Reasoning Pro through a single OpenRouter API key.",
+    "path": "skills/literature/perplexity-search/SKILL.md"
+  },
+  {
+    "id": "literature/protocol-writing",
+    "name": "protocol-writing",
+    "category": "literature",
+    "description": "",
+    "path": "skills/literature/protocol-writing/SKILL.md"
+  },
+  {
+    "id": "literature/pubmed-database",
+    "name": "pubmed-database",
+    "category": "literature",
+    "description": "Direct REST API access to PubMed. Advanced Boolean/MeSH queries, E-utilities API, batch processing, citation management. For Python workflows, prefer biopython (Bio.Entrez). Use this for direct HTTP/REST work or custom API implementations.",
+    "path": "skills/literature/pubmed-database/SKILL.md"
+  },
+  {
+    "id": "literature/pubmed-search",
+    "name": "pubmed-search",
+    "category": "literature",
+    "description": "Search PubMed biomedical literature with natural language queries powered by Valyu semantic search. Full-text access, integrate into your AI projects.",
+    "path": "skills/literature/pubmed-search/SKILL.md"
+  },
+  {
+    "id": "literature/research-grants",
+    "name": "research-grants",
+    "category": "literature",
+    "description": "Write competitive research proposals for NSF, NIH, DOE, DARPA, and Taiwan NSTC. Agency-specific formatting, review criteria, budget preparation, broader impacts, significance statements, innovation narratives, and compliance with submission requirements.",
+    "path": "skills/literature/research-grants/SKILL.md",
+    "allowedTools": [
+      "Read",
+      "Write",
+      "Edit",
+      "Bash"
+    ]
+  },
+  {
+    "id": "literature/research-lookup",
+    "name": "research-lookup",
+    "category": "literature",
+    "description": "Look up current research information using Perplexity Sonar Pro Search or Sonar Reasoning Pro models through OpenRouter. Automatically selects the best model based on query complexity. Search academic papers, recent studies, technical documentation, and general research information with citations.",
+    "path": "skills/literature/research-lookup/SKILL.md",
+    "allowedTools": [
+      "Read",
+      "Write",
+      "Edit",
+      "Bash"
+    ]
+  },
+  {
+    "id": "literature/review-writing",
+    "name": "review-writing",
+    "category": "literature",
+    "description": "",
+    "path": "skills/literature/review-writing/SKILL.md"
+  },
+  {
+    "id": "literature/scientific-writing",
+    "name": "scientific-writing",
+    "category": "literature",
+    "description": "Core skill for the deep research and writing tool. Write scientific manuscripts in full paragraphs (never bullet points). Use two-stage process with (1) section outlines with key points using research-lookup then (2) convert to flowing prose. IMRAD structure, citations (APA/AMA/Vancouver), figures/tables, reporting guidelines (CONSORT/STROBE/PRISMA), for research papers and journal submissions.",
+    "path": "skills/literature/scientific-writing/SKILL.md",
+    "allowedTools": [
+      "Read",
+      "Write",
+      "Edit",
+      "Bash"
+    ]
+  },
+  {
+    "id": "literature/tooluniverse-literature-deep-research",
+    "name": "tooluniverse-literature-deep-research",
+    "category": "literature",
+    "description": "Conduct comprehensive literature research with target disambiguation, evidence grading, and structured theme extraction. Creates a detailed report with mandatory completeness checklist, biological model synthesis, and testable hypotheses. For biological targets, resolves official IDs (Ensembl/UniProt), synonyms, naming collisions, and gathers expression/pathway context before literature search. Default deliverable is a report file; for single factoid questions, uses a fast verification mode and may include an inline answer. Use when users need thorough literature reviews, target profiles, or to verify specific claims from the literature.",
+    "path": "skills/literature/tooluniverse-literature-deep-research/SKILL.md"
+  },
+  {
+    "id": "literature/uspto-database",
+    "name": "uspto-database",
+    "category": "literature",
+    "description": "Access USPTO APIs for patent/trademark searches, examination history (PEDS), assignments, citations, office actions, TSDR, for IP analysis and prior art searches.",
+    "path": "skills/literature/uspto-database/SKILL.md"
+  },
+  {
+    "id": "general/article-writing",
+    "name": "article-writing",
+    "category": "general",
+    "description": "Write articles, guides, blog posts, tutorials, newsletter issues, and other long-form content in a distinctive voice derived from supplied examples or brand guidance. Use when the user wants polished written content longer than a paragraph, especially when voice consistency, structure, and credibility matter.",
+    "path": "skills/general/article-writing/SKILL.md"
+  },
+  {
+    "id": "general/exploratory-data-analysis",
+    "name": "exploratory-data-analysis",
+    "category": "general",
+    "description": "Perform comprehensive exploratory data analysis on scientific data files across 200+ file formats. This skill should be used when analyzing any scientific data file to understand its structure, content, quality, and characteristics. Automatically detects file type and generates detailed markdown reports with format-specific analysis, quality metrics, and downstream analysis recommendations. Covers chemistry, bioinformatics, microscopy, spectroscopy, proteomics, metabolomics, and general scientific data formats.",
+    "path": "skills/general/exploratory-data-analysis/SKILL.md"
+  },
+  {
+    "id": "general/hypothesis-generation",
+    "name": "hypothesis-generation",
+    "category": "general",
+    "description": "Structured hypothesis formulation from observations. Use when you have experimental observations or data and need to formulate testable hypotheses with predictions, propose mechanisms, and design experiments to test them. Follows scientific method framework. For open-ended ideation use scientific-brainstorming; for automated LLM-driven hypothesis testing on datasets use hypogenic.",
+    "path": "skills/general/hypothesis-generation/SKILL.md",
+    "allowedTools": [
+      "Read",
+      "Write",
+      "Edit",
+      "Bash"
+    ]
+  },
+  {
+    "id": "general/matplotlib",
+    "name": "matplotlib",
+    "category": "general",
+    "description": "Low-level plotting library for full customization. Use when you need fine-grained control over every plot element, creating novel plot types, or integrating with specific scientific workflows. Export to PNG/PDF/SVG for publication. For quick statistical plots use seaborn; for interactive plots use plotly; for publication-ready multi-panel figures with journal styling, use scientific-visualization.",
+    "path": "skills/general/matplotlib/SKILL.md"
+  },
+  {
+    "id": "general/peer-review",
+    "name": "peer-review",
+    "category": "general",
+    "description": "Structured manuscript/grant review with checklist-based evaluation. Use when writing formal peer reviews with specific criteria methodology assessment, statistical validity, reporting standards compliance (CONSORT/STROBE), and constructive feedback. Best for actual review writing, manuscript revision. For evaluating claims/evidence quality use scientific-critical-thinking; for quantitative scoring frameworks use scholar-evaluation.",
+    "path": "skills/general/peer-review/SKILL.md",
+    "allowedTools": [
+      "Read",
+      "Write",
+      "Edit",
+      "Bash"
+    ]
+  },
+  {
+    "id": "general/plotly",
+    "name": "plotly",
+    "category": "general",
+    "description": "Interactive visualization library. Use when you need hover info, zoom, pan, or web-embeddable charts. Best for dashboards, exploratory analysis, and presentations. For static publication figures use matplotlib or scientific-visualization.",
+    "path": "skills/general/plotly/SKILL.md"
+  },
+  {
+    "id": "general/pytorch-lightning",
+    "name": "pytorch-lightning",
+    "category": "general",
+    "description": "Deep learning framework (PyTorch Lightning). Organize PyTorch code into LightningModules, configure Trainers for multi-GPU/TPU, implement data pipelines, callbacks, logging (W&B, TensorBoard), distributed training (DDP, FSDP, DeepSpeed), for scalable neural network training.",
+    "path": "skills/general/pytorch-lightning/SKILL.md"
+  },
+  {
+    "id": "general/reproducibility-checklist",
+    "name": "reproducibility-checklist",
+    "category": "general",
+    "description": "",
+    "path": "skills/general/reproducibility-checklist/SKILL.md"
+  },
+  {
+    "id": "general/scientific-brainstorming",
+    "name": "scientific-brainstorming",
+    "category": "general",
+    "description": "Creative research ideation and exploration. Use for open-ended brainstorming sessions, exploring interdisciplinary connections, challenging assumptions, or identifying research gaps. Best for early-stage research planning when you do not have specific observations yet. For formulating testable hypotheses from data use hypothesis-generation.",
+    "path": "skills/general/scientific-brainstorming/SKILL.md"
+  },
+  {
+    "id": "general/scientific-critical-thinking",
+    "name": "scientific-critical-thinking",
+    "category": "general",
+    "description": "Evaluate scientific claims and evidence quality. Use for assessing experimental design validity, identifying biases and confounders, applying evidence grading frameworks (GRADE, Cochrane Risk of Bias), or teaching critical analysis. Best for understanding evidence quality, identifying flaws. For formal peer review writing use peer-review.",
+    "path": "skills/general/scientific-critical-thinking/SKILL.md",
+    "allowedTools": [
+      "Read",
+      "Write",
+      "Edit",
+      "Bash"
+    ]
+  },
+  {
+    "id": "general/scientific-visualization",
+    "name": "scientific-visualization",
+    "category": "general",
+    "description": "Meta-skill for publication-ready figures. Use when creating journal submission figures requiring multi-panel layouts, significance annotations, error bars, colorblind-safe palettes, and specific journal formatting (Nature, Science, Cell). Orchestrates matplotlib/seaborn/plotly with publication styles. For quick exploration use seaborn or plotly directly.",
+    "path": "skills/general/scientific-visualization/SKILL.md"
+  },
+  {
+    "id": "general/scientific-writing",
+    "name": "scientific-writing",
+    "category": "general",
+    "description": "Core skill for the deep research and writing tool. Write scientific manuscripts in full paragraphs (never bullet points). Use two-stage process with (1) section outlines with key points using research-lookup then (2) convert to flowing prose. IMRAD structure, citations (APA/AMA/Vancouver), figures/tables, reporting guidelines (CONSORT/STROBE/PRISMA), for research papers and journal submissions.",
+    "path": "skills/general/scientific-writing/SKILL.md",
+    "allowedTools": [
+      "Read",
+      "Write",
+      "Edit",
+      "Bash"
+    ]
+  },
+  {
+    "id": "general/scikit-learn",
+    "name": "scikit-learn",
+    "category": "general",
+    "description": "Machine learning in Python with scikit-learn. Use when working with supervised learning (classification, regression), unsupervised learning (clustering, dimensionality reduction), model evaluation, hyperparameter tuning, preprocessing, or building ML pipelines. Provides comprehensive reference documentation for algorithms, preprocessing techniques, pipelines, and best practices.",
+    "path": "skills/general/scikit-learn/SKILL.md"
+  },
+  {
+    "id": "general/seaborn",
+    "name": "seaborn",
+    "category": "general",
+    "description": "Statistical visualization with pandas integration. Use for quick exploration of distributions, relationships, and categorical comparisons with attractive defaults. Best for box plots, violin plots, pair plots, heatmaps. Built on matplotlib. For interactive plots use plotly; for publication styling use scientific-visualization.",
+    "path": "skills/general/seaborn/SKILL.md"
+  },
+  {
+    "id": "general/shap",
+    "name": "shap",
+    "category": "general",
+    "description": "Model interpretability and explainability using SHAP (SHapley Additive exPlanations). Use this skill when explaining machine learning model predictions, computing feature importance, generating SHAP plots (waterfall, beeswarm, bar, scatter, force, heatmap), debugging models, analyzing model bias or fairness, comparing models, or implementing explainable AI. Works with tree-based models (XGBoost, LightGBM, Random Forest), deep learning (TensorFlow, PyTorch), linear models, and any black-box model.",
+    "path": "skills/general/shap/SKILL.md"
+  },
+  {
+    "id": "general/statistics",
+    "name": "statistics",
+    "category": "general",
+    "description": "",
+    "path": "skills/general/statistics/SKILL.md"
+  },
+  {
+    "id": "general/statsmodels",
+    "name": "statsmodels",
+    "category": "general",
+    "description": "Statistical models library for Python. Use when you need specific model classes (OLS, GLM, mixed models, ARIMA) with detailed diagnostics, residuals, and inference. Best for econometrics, time series, rigorous inference with coefficient tables. For guided statistical test selection with APA reporting use statistical-analysis.",
+    "path": "skills/general/statsmodels/SKILL.md"
+  },
+  {
+    "id": "general/transformers",
+    "name": "transformers",
+    "category": "general",
+    "description": "This skill should be used when working with pre-trained transformer models for natural language processing, computer vision, audio, or multimodal tasks. Use for text generation, classification, question answering, translation, summarization, image classification, object detection, speech recognition, and fine-tuning models on custom datasets.",
+    "path": "skills/general/transformers/SKILL.md"
+  },
+  {
+    "id": "med/clinical",
+    "name": "clinical",
+    "category": "med",
+    "description": "",
+    "path": "skills/med/clinical/SKILL.md"
+  },
+  {
+    "id": "med/neurokit2",
+    "name": "neurokit2",
+    "category": "med",
+    "description": "Comprehensive biosignal processing toolkit for analyzing physiological data including ECG, EEG, EDA, RSP, PPG, EMG, and EOG signals. Use this skill when processing cardiovascular signals, brain activity, electrodermal responses, respiratory patterns, muscle activity, or eye movements. Applicable for heart rate variability analysis, event-related potentials, complexity measures, autonomic nervous system assessment, psychophysiology research, and multi-modal physiological signal integration.",
+    "path": "skills/med/neurokit2/SKILL.md"
+  },
+  {
+    "id": "med/pydicom",
+    "name": "pydicom",
+    "category": "med",
+    "description": "Python library for working with DICOM (Digital Imaging and Communications in Medicine) files. Use this skill when reading, writing, or modifying medical imaging data in DICOM format, extracting pixel data from medical images (CT, MRI, X-ray, ultrasound), anonymizing DICOM files, working with DICOM metadata and tags, converting DICOM images to other formats, handling compressed DICOM data, or processing medical imaging datasets. Applies to tasks involving medical image analysis, PACS systems, radiology workflows, and healthcare imaging applications.",
+    "path": "skills/med/pydicom/SKILL.md"
+  },
+  {
+    "id": "med/pyhealth",
+    "name": "pyhealth",
+    "category": "med",
+    "description": "Comprehensive healthcare AI toolkit for developing, testing, and deploying machine learning models with clinical data. This skill should be used when working with electronic health records (EHR), clinical prediction tasks (mortality, readmission, drug recommendation), medical coding systems (ICD, NDC, ATC), physiological signals (EEG, ECG), healthcare datasets (MIMIC-III/IV, eICU, OMOP), or implementing deep learning models for healthcare applications (RETAIN, SafeDrug, Transformer, GNN).",
+    "path": "skills/med/pyhealth/SKILL.md"
+  },
+  {
+    "id": "visualization/matplotlib",
+    "name": "matplotlib",
+    "category": "visualization",
+    "description": "Low-level plotting library for full customization. Use when you need fine-grained control over every plot element, creating novel plot types, or integrating with specific scientific workflows. Export to PNG/PDF/SVG for publication. For quick statistical plots use seaborn; for interactive plots use plotly; for publication-ready multi-panel figures with journal styling, use scientific-visualization.",
+    "path": "skills/visualization/matplotlib/SKILL.md"
+  },
+  {
+    "id": "visualization/plotly",
+    "name": "plotly",
+    "category": "visualization",
+    "description": "Interactive visualization library. Use when you need hover info, zoom, pan, or web-embeddable charts. Best for dashboards, exploratory analysis, and presentations. For static publication figures use matplotlib or scientific-visualization.",
+    "path": "skills/visualization/plotly/SKILL.md"
+  },
+  {
+    "id": "visualization/scientific-visualization",
+    "name": "scientific-visualization",
+    "category": "visualization",
+    "description": "Meta-skill for publication-ready figures. Use when creating journal submission figures requiring multi-panel layouts, significance annotations, error bars, colorblind-safe palettes, and specific journal formatting (Nature, Science, Cell). Orchestrates matplotlib/seaborn/plotly with publication styles. For quick exploration use seaborn or plotly directly.",
+    "path": "skills/visualization/scientific-visualization/SKILL.md"
+  },
+  {
+    "id": "visualization/seaborn",
+    "name": "seaborn",
+    "category": "visualization",
+    "description": "Statistical visualization with pandas integration. Use for quick exploration of distributions, relationships, and categorical comparisons with attractive defaults. Best for box plots, violin plots, pair plots, heatmaps. Built on matplotlib. For interactive plots use plotly; for publication styling use scientific-visualization.",
+    "path": "skills/visualization/seaborn/SKILL.md"
+  }
+]

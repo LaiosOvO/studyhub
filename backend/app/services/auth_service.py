@@ -15,7 +15,11 @@ from pwdlib import PasswordHash
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from sqlalchemy import update as sql_update
+
 from app.config import get_settings
+from app.models.invite_code import InviteCode
+from app.models.researcher_profile import ResearcherProfile
 from app.models.user import User
 from app.schemas.auth import TokenResponse
 
@@ -80,27 +84,78 @@ def decode_token(token: str) -> dict:
     )
 
 
+async def validate_invite_code(session: AsyncSession, code: str) -> InviteCode:
+    """Validate an invite code. Raises ValueError if invalid."""
+    result = await session.execute(
+        select(InviteCode).where(InviteCode.code == code)
+    )
+    invite = result.scalar_one_or_none()
+    if invite is None:
+        raise ValueError("无效的内测码")
+    if not invite.is_valid():
+        raise ValueError("内测码已失效或已用完")
+    return invite
+
+
 async def register_user(
     session: AsyncSession,
     email: str,
     password: str,
     full_name: str,
+    invite_code: str = "",
+    institution: str | None = None,
+    major: str | None = None,
+    advisor: str | None = None,
+    role: str | None = None,
+    research_directions: list[str] | None = None,
 ) -> User:
-    """Register a new user.
+    """Register a new user with invite code validation.
 
-    Raises ValueError if email already exists.
+    Creates User + ResearcherProfile in one transaction.
+    Raises ValueError if email exists or invite code is invalid.
     """
+    # Validate invite code
+    invite = await validate_invite_code(session, invite_code)
+
+    # Check email uniqueness
     result = await session.execute(select(User).where(User.email == email))
     existing = result.scalar_one_or_none()
     if existing is not None:
-        raise ValueError("Email already registered")
+        raise ValueError("该邮箱已被注册")
 
+    # Create user
     user = User(
         email=email,
         hashed_password=hash_password(password),
         full_name=full_name,
     )
     session.add(user)
+    await session.flush()  # Get user.id before creating profile
+
+    # Create researcher profile with academic info
+    expertise = []
+    if major:
+        expertise.append(major)
+    if advisor:
+        expertise.append(f"导师: {advisor}")
+
+    profile = ResearcherProfile(
+        user_id=user.id,
+        display_name=full_name,
+        institution=institution,
+        title=role,
+        research_directions=research_directions or [],
+        expertise_tags=expertise,
+    )
+    session.add(profile)
+
+    # Atomic increment of invite code usage (prevents race condition)
+    await session.execute(
+        sql_update(InviteCode)
+        .where(InviteCode.id == invite.id)
+        .values(current_uses=InviteCode.current_uses + 1)
+    )
+
     await session.commit()
     await session.refresh(user)
     return user

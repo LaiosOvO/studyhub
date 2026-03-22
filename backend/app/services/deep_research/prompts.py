@@ -172,6 +172,77 @@ Return ONLY valid JSON, no additional text."""
     return [{"role": "user", "content": content}]
 
 
+# ─── Section-Level Report Generation (Sonnet) ───────────────────────────────
+
+
+def build_section_prompt(
+    section_title: str,
+    direction: str,
+    numbered_sources: str,
+    language: str = "zh",
+    extra_context: str = "",
+) -> list[dict]:
+    """Build a section-generation prompt with inline citation instructions.
+
+    The LLM writes analytical prose citing sources with [1], [2], etc.
+    Reference: STORM (Stanford) inline citation pattern.
+    """
+    lang_instruction = (
+        "Write in Chinese (中文)." if language == "zh" else "Write in English."
+    )
+
+    content = f"""Write the "{section_title}" section for a literature review on "{direction}".
+
+{extra_context}
+
+The collected information (numbered sources):
+{numbered_sources}
+
+Rules:
+- Use [1], [2], ..., [n] inline to cite sources (e.g., 'Transformer架构由Vaswani等人提出[1]，后被改进为BERT[3]。')
+- You may cite multiple sources at once, e.g. [1][3] or [2, 5]
+- Every factual claim MUST have at least one citation
+- Do NOT include a References section (it will be added separately)
+- Do NOT repeat the section title as a heading
+- Write 2-4 paragraphs of analytical prose, NOT bullet points
+- {lang_instruction}
+
+Return ONLY the section text with inline citations, no additional metadata."""
+
+    return [{"role": "user", "content": content}]
+
+
+def build_overview_prompt(
+    direction: str,
+    paper_count: int,
+    method_count: int,
+    numbered_sources: str,
+    language: str = "zh",
+) -> list[dict]:
+    """Build an overview/introduction section prompt."""
+    lang_instruction = (
+        "Write in Chinese (中文)." if language == "zh" else "Write in English."
+    )
+
+    content = f"""Write an overview section for a literature review on "{direction}".
+
+This review covers {paper_count} papers spanning {method_count} methods.
+
+Key papers (numbered sources):
+{numbered_sources}
+
+Rules:
+- Use [1], [2], ..., [n] inline to cite sources
+- Summarize the field, key developments, and major contributions in 2-3 paragraphs
+- Do NOT include a References section
+- Do NOT include section headings
+- {lang_instruction}
+
+Return ONLY the overview text with inline citations."""
+
+    return [{"role": "user", "content": content}]
+
+
 # ─── Trend Interpretation (Haiku) ─────────────────────────────────────────
 
 

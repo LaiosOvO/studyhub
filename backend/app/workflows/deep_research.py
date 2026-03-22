@@ -7,6 +7,7 @@ Temporal workflow queries for real-time WebSocket streaming.
 Reference: gpt-researcher async pipeline, AI-Scientist research flow.
 """
 
+import json
 from dataclasses import dataclass, field
 from datetime import timedelta
 
@@ -138,6 +139,7 @@ class DeepResearchWorkflow:
                 "depth": input.depth,
                 "budget_per_level": 50,
                 "total_budget": min(input.max_papers, 200),
+                "task_id": input.task_id,
             })
 
             expand_result_json = await workflow.execute_activity(
@@ -272,6 +274,23 @@ class DeepResearchWorkflow:
                 current_activity="Pipeline error",
                 error=str(exc),
             )
+            # Mark task as failed in the database
+            try:
+                fail_input = json.dumps({
+                    "task_id": input.task_id,
+                    "error": str(exc),
+                })
+                await workflow.execute_activity(
+                    "fail_task_activity",
+                    fail_input,
+                    start_to_close_timeout=timedelta(seconds=30),
+                )
+            except Exception as fail_exc:
+                workflow.logger.error(
+                    "Failed to mark task %s as failed: %s",
+                    input.task_id,
+                    fail_exc,
+                )
             return DeepResearchWorkflowResult(
                 task_id=input.task_id,
                 status="failed",

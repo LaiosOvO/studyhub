@@ -14,6 +14,8 @@
 | **AI-Scientist** | `/Users/admin/ai/ref/AI-Scientist` | 全自动科学发现流水线 | `ai_scientist/`, `launch_scientist.py` |
 | **MLE-agent** | `/Users/admin/ai/ref/MLE-agent` | AI 工程助手、arXiv 集成 | `mle/` |
 | **khoj** | `/Users/admin/ai/ref/khoj` | 自托管 AI 平台、Docker Compose、多 LLM | `src/khoj/`, `docker-compose.yml` |
+| **LabClaw** | `/Users/admin/ai/ref/LabClaw` | 240+ AI agent skills（引用管理、实验训练、统计分析、科学可视化） | `skills/literature/citation-management/`, `skills/general/pytorch-lightning/`, `skills/general/statistics/`, `skills/visualization/scientific-visualization/` |
+| **Kuse Cowork** | (GitHub: kuse-ai/kuse_cowork) | **Agent Runtime 架构参考** — Plan→Step→Execute 模式，AgentEvent 流式推送，bundled-skills markdown 技能文件 | 桌面 agent 核心逻辑 |
 
 ### 参考项目索引（GitNexus）
 
@@ -53,15 +55,17 @@ gitnexus cypher <repo-name> "<Cypher 查询>"
 | Phase 4: 引用网络 | AI-Scientist, deep-research | 图谱构建、引用分析 |
 | Phase 5: Deep Research | gpt-researcher, deep-research, AI-Scientist | 研究流水线、LLM 分析 |
 | Phase 6: 论文地图 | khoj (前端), MLE-agent (可视化) | React 组件、图谱可视化 |
-| Phase 7: 方案生成 | AI-Scientist, MLE-agent | SOTA 分析、方案设计 |
-| Phase 8: 实验执行 | autoresearch, AI-Scientist | 实验循环、代码修改、评估 |
-| Phase 9: 实验仪表盘 | khoj (前端), MLE-agent | 实时监控、报告生成 |
+| Phase 7: 方案生成 | AI-Scientist, MLE-agent, LabClaw (statistics) | SOTA 分析、方案设计、统计方法选择 |
+| Phase 8: 实验执行 | autoresearch, AI-Scientist, LabClaw (pytorch-lightning) | 实验循环、训练模式、多后端日志 |
+| Phase 9: 实验仪表盘 | khoj (前端), MLE-agent, LabClaw (scientific-visualization) | 实时监控、报告生成、期刊级图表 |
 | Phase 10: 社区协作 | khoj (用户系统) | 用户画像、匹配算法 |
+| Agent Runtime | Kuse Cowork, LabClaw (skills) | Plan→Execute agent 架构, markdown 技能定义 |
+| 跨阶段: 引用管理 | LabClaw (citation-management) | 5 阶段引用工作流（发现→提取→格式化→验证→去重） |
 
 ## 技术栈
 
 - **后端**: FastAPI + Python 3.12+ (uv 管理)
-- **前端**: Next.js 16 + React + Tailwind CSS + next-intl
+- **前端**: React 19 + Vite 7 + Tailwind CSS 3 + React Router 7 + i18next (SPA)
 - **桌面**: Tauri (Phase 8)
 - **数据库**: PostgreSQL 17 + Neo4j + Meilisearch
 - **缓存**: Valkey 8.1+ (不是 Redis)
@@ -77,6 +81,21 @@ gitnexus cypher <repo-name> "<Cypher 查询>"
 - 路线图: `.planning/ROADMAP.md` (10 个 phase)
 - 需求: `.planning/REQUIREMENTS.md` (108 个 v1 需求)
 - 状态: `.planning/STATE.md`
+
+## 前端项目
+
+- 路径: `project-7411174/` (React 19 + Vite 7 + Tailwind + React Flow + react-force-graph-3d + i18next)
+- 开发: `cd project-7411174 && npm run dev` (默认 localhost:3001)
+- 构建: `npm run build` → 输出到 `project-7411174/out/`
+
+## 部署
+
+- 服务器: 101.126.141.165 (root)
+- 部署路径: /opt/studyhub/
+- 后端: /opt/studyhub/backend/ + /opt/studyhub/infra/docker-compose.yml
+- 前端: /opt/studyhub/frontend/ (Nginx 静态文件)
+- 命令: `docker-compose` (旧版，不是 `docker compose`)
+- 重建后端: `cd /opt/studyhub/infra && docker-compose up -d --build api`
 
 ## node 路径
 

@@ -7,14 +7,18 @@ for researcher profiles. All responses use the ApiResponse envelope.
 
 import logging
 
-from fastapi import APIRouter, Depends, Query, Request
+from typing import Annotated
+
+from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from sqlalchemy import func, select, update
 from sqlalchemy.dialects.postgresql import insert as pg_insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.dependencies import get_db
+from app.dependencies import get_current_user, get_db
 from app.middleware.rate_limit import limiter
 from app.models.scholar import Scholar
+from app.models.scholar_follow import ScholarFollow
+from app.models.user import User
 from app.schemas.common import ApiResponse
 from app.schemas.scholar import (
     ScholarListResponse,
@@ -49,9 +53,10 @@ async def list_scholars(
     if institution:
         query = query.where(Scholar.institution.ilike(f"%{institution}%"))
     if research_field:
-        # JSON array contains check -- cast to text for LIKE
+        # JSON array → cast to PostgreSQL TEXT for ILIKE search
+        from sqlalchemy import Text
         query = query.where(
-            Scholar.research_fields.cast(str).ilike(f"%{research_field}%")
+            Scholar.research_fields.cast(Text).ilike(f"%{research_field}%")
         )
 
     # Count total matching records
@@ -364,3 +369,112 @@ async def start_refresh_workflow(
             success=False,
             error="Workflow service unavailable. Use POST /scholars/enrich-all as fallback.",
         )
+
+
+# ─── Follow / Unfollow ───────────────────────────────────────────────────────
+
+
+@router.post("/{scholar_id}/follow", response_model=ApiResponse)
+async def follow_scholar(
+    scholar_id: str,
+    db: Annotated[AsyncSession, Depends(get_db)],
+    current_user: Annotated[User, Depends(get_current_user)],
+):
+    """Follow a scholar. Idempotent — re-following is a no-op."""
+    # Verify scholar exists
+    result = await db.execute(select(Scholar).where(Scholar.id == scholar_id))
+    if not result.scalar_one_or_none():
+        raise HTTPException(status_code=404, detail="Scholar not found")
+
+    # Upsert follow
+    import uuid
+    stmt = pg_insert(ScholarFollow).values(
+        id=uuid.uuid4().hex,
+        user_id=current_user.id,
+        scholar_id=scholar_id,
+    ).on_conflict_do_nothing(constraint="uq_scholar_follow")
+    await db.execute(stmt)
+    await db.commit()
+
+    return ApiResponse(data={"following": True}, message="Scholar followed")
+
+
+@router.delete("/{scholar_id}/follow", response_model=ApiResponse)
+async def unfollow_scholar(
+    scholar_id: str,
+    db: Annotated[AsyncSession, Depends(get_db)],
+    current_user: Annotated[User, Depends(get_current_user)],
+):
+    """Unfollow a scholar."""
+    from sqlalchemy import delete
+
+    result = await db.execute(
+        delete(ScholarFollow).where(
+            ScholarFollow.user_id == current_user.id,
+            ScholarFollow.scholar_id == scholar_id,
+        )
+    )
+    await db.commit()
+
+    return ApiResponse(
+        data={"following": False},
+        message="Scholar unfollowed" if result.rowcount > 0 else "Not following",
+    )
+
+
+@router.get("/following/list", response_model=ApiResponse[ScholarListResponse])
+async def list_followed_scholars(
+    db: Annotated[AsyncSession, Depends(get_db)],
+    current_user: Annotated[User, Depends(get_current_user)],
+    page: int = Query(1, ge=1),
+    limit: int = Query(50, ge=1, le=200),
+):
+    """List scholars the current user follows."""
+    offset = (page - 1) * limit
+
+    # Count
+    count_result = await db.execute(
+        select(func.count()).select_from(ScholarFollow).where(
+            ScholarFollow.user_id == current_user.id,
+        )
+    )
+    total = count_result.scalar() or 0
+
+    # Fetch scholar details via join
+    result = await db.execute(
+        select(Scholar)
+        .join(ScholarFollow, Scholar.id == ScholarFollow.scholar_id)
+        .where(ScholarFollow.user_id == current_user.id)
+        .order_by(ScholarFollow.created_at.desc())
+        .offset(offset)
+        .limit(limit)
+    )
+    scholars = list(result.scalars().all())
+
+    return ApiResponse(
+        data=ScholarListResponse(
+            scholars=[ScholarResponse.model_validate(s) for s in scholars],
+            total=total,
+            page=page,
+            limit=limit,
+        ),
+        message=f"Found {total} followed scholars",
+    )
+
+
+@router.get("/{scholar_id}/is-following", response_model=ApiResponse)
+async def is_following_scholar(
+    scholar_id: str,
+    db: Annotated[AsyncSession, Depends(get_db)],
+    current_user: Annotated[User, Depends(get_current_user)],
+):
+    """Check if current user follows a scholar."""
+    result = await db.execute(
+        select(ScholarFollow).where(
+            ScholarFollow.user_id == current_user.id,
+            ScholarFollow.scholar_id == scholar_id,
+        )
+    )
+    following = result.scalar_one_or_none() is not None
+
+    return ApiResponse(data={"following": following})

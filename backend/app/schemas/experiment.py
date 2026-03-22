@@ -120,3 +120,35 @@ class ExperimentReportResponse(BaseModel):
     has_report: bool
     markdown: str | None = None
     pdf_url: str | None = None
+
+
+# ─── Metrics Schemas (normalized storage) ────────────────────────────────────
+
+
+class MetricItem(BaseModel):
+    """A single metric data point for batch logging."""
+
+    key: str
+    value: float
+    step: int
+    timestamp: datetime | None = None
+    context: dict = Field(default_factory=dict)
+
+
+class MetricsBatchPayload(BaseModel):
+    """Batch payload for logging multiple metrics at once.
+
+    Reference: MLflow LogBatch pattern.
+    """
+
+    metrics: list[MetricItem] = Field(default_factory=list, max_length=1000)
+
+
+class MetricSeriesResponse(BaseModel):
+    """Response for a single metric's time series within a run."""
+
+    run_id: str
+    key: str
+    steps: list[int]
+    values: list[float]
+    timestamps: list[datetime]

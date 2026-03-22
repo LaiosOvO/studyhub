@@ -4,7 +4,7 @@
 //! as Tauri events to the frontend.
 
 use std::sync::Mutex;
-use tauri::{AppHandle, Emitter, Manager, State};
+use tauri::{AppHandle, Emitter, State};
 use tokio::task::JoinHandle;
 
 /// State tracking the GPU monitoring background task.

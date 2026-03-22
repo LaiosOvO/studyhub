@@ -54,8 +54,11 @@ class Settings(BaseSettings):
     # ─── GROBID (PDF Parsing) ─────────────────────────────────────────
     grobid_url: str = "http://localhost:8070"
 
+    # ─── Workspaces (Git-backed file storage) ──────────────────────
+    workspace_root: str = "/data/workspaces"
+
     # ─── Server ──────────────────────────────────────────────────────
-    cors_origins: list[str] = ["http://localhost:3000"]
+    cors_origins: list[str] = ["*"]
     debug: bool = True
 
     model_config = {

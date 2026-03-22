@@ -115,6 +115,52 @@ async def search_papers_activity(input_json: str) -> str:
         len(paper_ids),
     )
 
+    # Write search results to workspace Git repo
+    try:
+        from app.services.workspace_service import init_workspace, write_and_commit
+
+        task_id = params.get("task_id")
+        if task_id:
+            await init_workspace(task_id)
+
+            # Build CSV: id,title,authors,year,venue,citations,quality_score
+            csv_lines = ["id,title,authors,year,venue,citations,quality_score"]
+            papers_json_list = []
+            for pr in response.papers:
+                authors_str = "; ".join(pr.authors) if pr.authors else ""
+                # Escape commas in CSV fields
+                title_safe = pr.title.replace('"', '""') if pr.title else ""
+                authors_safe = authors_str.replace('"', '""')
+                venue_safe = (pr.venue or "").replace('"', '""')
+                csv_lines.append(
+                    f'"{pr.doi or ""}","{title_safe}","{authors_safe}",'
+                    f'{pr.year or ""},"{venue_safe}",{pr.citation_count or 0},'
+                )
+                papers_json_list.append({
+                    "doi": pr.doi,
+                    "title": pr.title,
+                    "authors": pr.authors,
+                    "year": pr.year,
+                    "venue": pr.venue,
+                    "citation_count": pr.citation_count,
+                    "abstract": pr.abstract,
+                    "sources": [s.value for s in pr.sources] if pr.sources else [],
+                })
+
+            csv_content = "\n".join(csv_lines)
+            json_content = json.dumps(papers_json_list, ensure_ascii=False, indent=2)
+
+            await write_and_commit(
+                task_id, "papers.csv", csv_content,
+                f"stage: search — found {len(paper_ids)} papers",
+            )
+            await write_and_commit(
+                task_id, "papers.json", json_content,
+                f"stage: search — paper metadata JSON ({len(paper_ids)} papers)",
+            )
+    except Exception as ws_exc:
+        logger.warning("Workspace write failed in search_papers_activity (non-fatal): %s", ws_exc)
+
     return json.dumps({"paper_ids": paper_ids, "count": len(paper_ids)})
 
 
@@ -147,6 +193,7 @@ async def expand_citations_activity(input_json: str) -> str:
             settings.neo4j_uri, settings.neo4j_user, settings.neo4j_password
         )
 
+        graph = None
         try:
             from app.services.citation_network.expansion_engine import expand_citations
 
@@ -173,6 +220,32 @@ async def expand_citations_activity(input_json: str) -> str:
         node_count,
         edge_count,
     )
+
+    # Write citation network to workspace Git repo
+    try:
+        from app.services.workspace_service import write_and_commit
+
+        task_id = params.get("task_id")
+        if task_id and node_count > 0 and graph is not None:
+            citations_data = {
+                "node_count": node_count,
+                "edge_count": edge_count,
+                "nodes": [
+                    {"paper_id": p.paper_id, "title": p.title}
+                    for p in graph.papers
+                ],
+                "edges": [
+                    {"citing": e.citing_id, "cited": e.cited_id}
+                    for e in graph.edges
+                ],
+            }
+            citations_json = json.dumps(citations_data, ensure_ascii=False, indent=2)
+            await write_and_commit(
+                task_id, "network/citations.json", citations_json,
+                f"stage: citations — {node_count} nodes, {edge_count} edges",
+            )
+    except Exception as ws_exc:
+        logger.warning("Workspace write failed in expand_citations_activity (non-fatal): %s", ws_exc)
 
     return json.dumps({"node_count": node_count, "edge_count": edge_count})
 
@@ -247,7 +320,7 @@ async def score_papers_activity(input_json: str) -> str:
         for scored_paper in scored:
             key = scored_paper.doi or scored_paper.s2_id or scored_paper.title
             if scored_paper.quality:
-                score_map[key] = scored_paper.quality.composite
+                score_map[key] = scored_paper.quality.score
 
         for db_paper in db_papers:
             key = db_paper.doi or db_paper.s2_id or db_paper.title
@@ -335,6 +408,50 @@ async def analyze_papers_activity(input_json: str) -> str:
         analyzed_count,
         total_cost,
     )
+
+    # Write per-paper analysis markdown to workspace Git repo
+    try:
+        from app.services.workspace_service import write_and_commit
+
+        if task_id and analyses:
+            for analysis in analyses:
+                methods_str = ", ".join(analysis.methods) if analysis.methods else "N/A"
+                contributions_str = ""
+                if analysis.key_contributions:
+                    contributions_str = "\n".join(
+                        f"- {c}" for c in analysis.key_contributions
+                    )
+                else:
+                    contributions_str = "N/A"
+
+                limitations_str = ""
+                if analysis.limitations:
+                    limitations_str = "\n".join(
+                        f"- {lim}" for lim in analysis.limitations
+                    )
+                else:
+                    limitations_str = "N/A"
+
+                md_content = (
+                    f"# Paper Analysis: {analysis.paper_id}\n\n"
+                    f"## TL;DR (EN)\n{analysis.tldr_en or 'N/A'}\n\n"
+                    f"## TL;DR (ZH)\n{analysis.tldr_zh or 'N/A'}\n\n"
+                    f"## Methods\n{methods_str}\n\n"
+                    f"## Datasets\n{', '.join(analysis.datasets) if analysis.datasets else 'N/A'}\n\n"
+                    f"## Paper Type\n{analysis.paper_type}\n\n"
+                    f"## Key Contributions\n{contributions_str}\n\n"
+                    f"## Limitations\n{limitations_str}\n\n"
+                    f"## Detailed Methodology\n{analysis.detailed_methodology or 'N/A'}\n"
+                )
+                await write_and_commit(
+                    task_id,
+                    f"analysis/{analysis.paper_id}.md",
+                    md_content,
+                    f"stage: analysis — {analysis.paper_id}",
+                )
+    except Exception as ws_exc:
+        logger.warning("Workspace write failed in analyze_papers_activity (non-fatal): %s", ws_exc)
+
     return json.dumps({
         "analyzed_count": analyzed_count,
         "total_cost": total_cost,
@@ -463,6 +580,36 @@ async def classify_relationships_activity(input_json: str) -> str:
     await engine.dispose()
 
     logger.info("classify_relationships_activity: classified %d pairs", classified_count)
+
+    # Update papers.csv with relationship/cluster info in workspace
+    try:
+        from app.services.workspace_service import read_file, write_and_commit
+
+        if task_id and classified_count > 0:
+            # Try to read existing CSV and append cluster column
+            try:
+                existing_csv = await read_file(task_id, "papers.csv")
+                lines = existing_csv.splitlines()
+                if lines:
+                    # Add cluster_info column to header
+                    header = lines[0]
+                    if "cluster_info" not in header:
+                        lines[0] = header + ",cluster_info"
+                    # Append cluster_info to existing rows
+                    updated_lines = [lines[0]]
+                    for line in lines[1:]:
+                        if line.strip():
+                            updated_lines.append(line + f",classified ({classified_count} pairs)")
+                    updated_csv = "\n".join(updated_lines)
+                    await write_and_commit(
+                        task_id, "papers.csv", updated_csv,
+                        f"stage: classify — {classified_count} relationship pairs classified",
+                    )
+            except FileNotFoundError:
+                logger.debug("papers.csv not found for classify update, skipping")
+    except Exception as ws_exc:
+        logger.warning("Workspace write failed in classify_relationships_activity (non-fatal): %s", ws_exc)
+
     return json.dumps({"classified_count": classified_count})
 
 
@@ -545,6 +692,67 @@ async def detect_gaps_activity(input_json: str) -> str:
         gap_count,
         trend_summary,
     )
+
+    # Write gaps.md and trends.md to workspace Git repo
+    try:
+        from app.services.workspace_service import write_and_commit
+
+        if task_id:
+            # Build gaps.md
+            gaps_lines = ["# Research Gaps\n"]
+            if gap_result.gaps:
+                gaps_lines.append("## Identified Gaps\n")
+                for i, gap in enumerate(gap_result.gaps, 1):
+                    gaps_lines.append(f"### Gap {i}: {gap.description}")
+                    gaps_lines.append(f"- **Evidence**: {gap.evidence}")
+                    gaps_lines.append(f"- **Potential Impact**: {gap.potential_impact}\n")
+
+            if gap_result.underexplored:
+                gaps_lines.append("## Underexplored Combinations\n")
+                for item in gap_result.underexplored:
+                    gaps_lines.append(f"- **{item.combination}**: {item.why_promising}")
+
+            if gap_result.missing_evaluations:
+                gaps_lines.append("\n## Missing Evaluations\n")
+                for item in gap_result.missing_evaluations:
+                    gaps_lines.append(f"- **{item.method}**: missing {item.missing}")
+
+            gaps_md = "\n".join(gaps_lines)
+            await write_and_commit(
+                task_id, "gaps.md", gaps_md,
+                f"stage: gaps — {gap_count} research gaps identified",
+            )
+
+            # Build trends.md
+            trends_lines = ["# Method Trends\n"]
+            if trend_result.ascending_methods:
+                trends_lines.append("## Ascending Methods\n")
+                for t in trend_result.ascending_methods:
+                    trends_lines.append(f"- **{t.method}**: {t.evidence}")
+
+            if trend_result.declining_methods:
+                trends_lines.append("\n## Declining Methods\n")
+                for t in trend_result.declining_methods:
+                    trends_lines.append(f"- **{t.method}**: {t.evidence}")
+
+            if trend_result.emerging_topics:
+                trends_lines.append("\n## Emerging Topics\n")
+                for t in trend_result.emerging_topics:
+                    trends_lines.append(f"- **{t.topic}**: {t.evidence}")
+
+            if trend_result.stable_methods:
+                trends_lines.append("\n## Stable Methods\n")
+                for t in trend_result.stable_methods:
+                    trends_lines.append(f"- **{t.method}**: {t.evidence}")
+
+            trends_md = "\n".join(trends_lines)
+            await write_and_commit(
+                task_id, "trends.md", trends_md,
+                f"stage: trends — {trend_summary}",
+            )
+    except Exception as ws_exc:
+        logger.warning("Workspace write failed in detect_gaps_activity (non-fatal): %s", ws_exc)
+
     return json.dumps({"gap_count": gap_count, "trend_summary": trend_summary})
 
 
@@ -611,7 +819,8 @@ async def generate_report_activity(input_json: str) -> str:
         else:
             papers = []
 
-        # Generate report
+        # Generate report with inline citations (LLM-powered)
+        user_id = params.get("user_id", "system")
         markdown = await generate_literature_review(
             task=task,
             analyses=analyses,
@@ -619,6 +828,8 @@ async def generate_report_activity(input_json: str) -> str:
             trends=trends,
             papers=papers,
             language=language,
+            session=session,
+            user_id=user_id,
         )
 
         # Store report and mark completed
@@ -635,7 +846,58 @@ async def generate_report_activity(input_json: str) -> str:
         "generate_report_activity: report %d chars, status=completed",
         report_length,
     )
+
+    # Write report.md to workspace Git repo
+    try:
+        from app.services.workspace_service import write_and_commit
+
+        if task_id and report_length > 0:
+            await write_and_commit(
+                task_id, "report.md", markdown,
+                f"stage: report — literature review ({report_length} chars)",
+            )
+    except Exception as ws_exc:
+        logger.warning("Workspace write failed in generate_report_activity (non-fatal): %s", ws_exc)
+
     return json.dumps({"report_length": report_length, "status": "completed"})
+
+
+@activity.defn
+async def fail_task_activity(input_json: str) -> str:
+    """Mark a deep research task as failed in the database.
+
+    Input JSON: {task_id, error}
+    """
+    from datetime import datetime, timezone
+
+    from sqlalchemy import select
+    from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
+
+    from app.database import get_db_engine
+    from app.models.deep_research import DeepResearchTask
+
+    params = json.loads(input_json)
+    task_id = params["task_id"]
+    error_msg = params.get("error", "Unknown error")
+
+    engine = get_db_engine()
+    session_factory = async_sessionmaker(
+        engine, class_=AsyncSession, expire_on_commit=False
+    )
+
+    async with session_factory() as session:
+        result = await session.execute(
+            select(DeepResearchTask).where(DeepResearchTask.id == task_id)
+        )
+        task = result.scalar_one_or_none()
+        if task and task.status != "completed":
+            task.status = "failed"
+            task.completed_at = datetime.now(timezone.utc)
+            await session.commit()
+            logger.info("fail_task_activity: marked task %s as failed: %s", task_id, error_msg)
+
+    await engine.dispose()
+    return json.dumps({"status": "failed", "task_id": task_id})
 
 
 @activity.defn

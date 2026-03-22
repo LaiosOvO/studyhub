@@ -219,7 +219,7 @@ async def detect_trends(
             session=session,
             user_id=user_id,
             messages=messages,
-            model="claude-haiku-4-20250514",
+            model=None,  # Use default model from config
             max_tokens=1024,
             request_type="deep_research_trends",
         )

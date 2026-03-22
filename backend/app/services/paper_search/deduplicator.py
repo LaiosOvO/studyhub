@@ -1,10 +1,12 @@
-"""Three-tier paper deduplication across multiple sources.
+"""Four-tier paper deduplication across multiple sources.
 
 Tier 1: Exact DOI match (normalized lowercase, stripped)
 Tier 2: Normalized title + year exact match
-Tier 3: Fuzzy title match using rapidfuzz (ratio > 90)
+Tier 3: Author + year + title prefix combo key (LabClaw pattern)
+Tier 4: Fuzzy title match using rapidfuzz (ratio > 85)
 
 Handles both English and Chinese (CJK) titles appropriately.
+Reference: LabClaw citation-management 3-layer dedup strategy.
 """
 
 import re
@@ -95,13 +97,42 @@ def _merge_papers(existing: PaperResult, new: PaperResult) -> PaperResult:
     )
 
 
+def _normalize_authors(authors: list[str]) -> str:
+    """Normalize author list to a stable comparison key.
+
+    Takes first author's surname (last token), lowercased.
+    """
+    if not authors:
+        return ""
+    first = authors[0].strip()
+    # For "Last, First" format
+    if "," in first:
+        return first.split(",")[0].strip().lower()
+    # For "First Last" format, take last token
+    parts = first.split()
+    return parts[-1].lower() if parts else ""
+
+
+def _author_combo_key(paper: PaperResult) -> str:
+    """Build author+year+title_prefix combo key (LabClaw pattern).
+
+    O(1) lookup that catches near-duplicates from different sources
+    with slightly different metadata.
+    """
+    author = _normalize_authors(paper.authors)
+    year = str(paper.year or "")
+    title_prefix = _normalize_title(paper.title)[:50]
+    return f"{author}:{year}:{title_prefix}"
+
+
 def deduplicate(papers: list[PaperResult]) -> list[PaperResult]:
-    """Deduplicate papers using three-tier matching.
+    """Deduplicate papers using four-tier matching.
 
     Returns a new list of unique papers with merged source information.
     """
     seen_dois: dict[str, int] = {}  # normalized DOI -> index in unique
     seen_titles: dict[str, int] = {}  # normalized title+year -> index in unique
+    seen_combos: dict[str, int] = {}  # author+year+title_prefix -> index
     unique: list[PaperResult] = []
 
     for paper in papers:
@@ -119,19 +150,27 @@ def deduplicate(papers: list[PaperResult]) -> list[PaperResult]:
         if title_key in seen_titles:
             idx = seen_titles[title_key]
             unique[idx] = _merge_papers(unique[idx], paper)
-            # Also register DOI if available
             if paper.doi:
                 seen_dois[paper.doi.lower().strip()] = idx
             continue
 
-        # Tier 3: Fuzzy title match against existing papers
+        # Tier 3: Author + year + title prefix combo (LabClaw pattern)
+        combo_key = _author_combo_key(paper)
+        if combo_key and combo_key in seen_combos:
+            idx = seen_combos[combo_key]
+            unique[idx] = _merge_papers(unique[idx], paper)
+            if paper.doi:
+                seen_dois[paper.doi.lower().strip()] = idx
+            continue
+
+        # Tier 4: Fuzzy title match against existing papers (threshold 85)
         matched = False
         for i, existing in enumerate(unique):
-            if _fuzzy_match(paper.title, existing.title) > 90:
+            if _fuzzy_match(paper.title, existing.title) > 85:
                 unique[i] = _merge_papers(existing, paper)
-                # Register identifiers for the merged paper
                 if paper.doi:
                     seen_dois[paper.doi.lower().strip()] = i
+                seen_combos[combo_key] = i
                 matched = True
                 break
 
@@ -139,6 +178,8 @@ def deduplicate(papers: list[PaperResult]) -> list[PaperResult]:
             idx = len(unique)
             unique.append(paper)
             seen_titles[title_key] = idx
+            if combo_key:
+                seen_combos[combo_key] = idx
             if paper.doi:
                 seen_dois[paper.doi.lower().strip()] = idx
 

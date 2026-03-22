@@ -384,28 +384,67 @@ export default function AutoResearchPage() {
     addLog("info", "╔══════════════════════════════════════════════════════╗");
     addLog("info", "║         AutoResearch 全自动实验流水线                ║");
     addLog("info", "╠══════════════════════════════════════════════════════╣");
-    addLog("info", "║ Phase A: 实验准备                                   ║");
+    addLog("info", "║ Phase A: 调研 + 准备                                ║");
+    addLog("info", "║   0. 文献调研 — 搜索领域 SOTA、方法、数据集          ║");
     addLog("info", "║   1. 生成 program.md — 实验目标、规则、约束          ║");
-    addLog("info", "║   2. 生成 train.py — 核心训练脚本（如未提供）        ║");
-    addLog("info", "║   3. 生成 prepare.py — 数据下载 → 自动执行           ║");
+    addLog("info", "║   2. 生成 prepare.py — 数据下载 → 自动执行           ║");
+    addLog("info", "║   3. 生成 train.py — 基于调研+数据+假设              ║");
     addLog("info", "║   4. 运行 baseline → 提取初始指标                    ║");
     addLog("info", "║                                                      ║");
     addLog("info", "║ Phase B: 实验循环 (LOOP FOREVER)                    ║");
-    addLog("info", "║   5. LLM 读 train.py + results.tsv                  ║");
+    addLog("info", "║   5. LLM 读 train.py + results.tsv + 调研摘要       ║");
     addLog("info", "║   6. LLM 修改 train.py → git commit                 ║");
     addLog("info", "║   7. 执行 → 提取指标 → keep/discard → 记录 results  ║");
     addLog("info", "║   8. 重复直到手动停止                                ║");
     addLog("info", "║                                                      ║");
     addLog("info", "║ Phase C: 论文写作 (停止后自动进入)                   ║");
-    addLog("info", "║   9.  文献调研 → paper/related_work.md [LabClaw]     ║");
-    addLog("info", "║   10. 方法设计 → paper/method.md [LabClaw]           ║");
-    addLog("info", "║   11. 实验分析 → analysis.py + figures/ [LabClaw]    ║");
-    addLog("info", "║   12. 结果撰写 → paper/results.md [LabClaw]         ║");
-    addLog("info", "║   13. 引言摘要 → paper/abstract.md [LabClaw]        ║");
-    addLog("info", "║   14. 讨论结论 → paper/discussion.md [LabClaw]      ║");
-    addLog("info", "║   15. 补充材料 → supplementary/ [LabClaw]            ║");
-    addLog("info", "║   16. LaTeX 整合 → paper/main.tex + Makefile        ║");
+    addLog("info", "║   9.  方法设计 → paper/method.md [LabClaw]           ║");
+    addLog("info", "║   10. 实验分析 → analysis.py + figures/ [LabClaw]    ║");
+    addLog("info", "║   11. 结果撰写 → paper/results.md [LabClaw]         ║");
+    addLog("info", "║   12. 引言摘要 → paper/abstract.md [LabClaw]        ║");
+    addLog("info", "║   13. 讨论结论 → paper/discussion.md [LabClaw]      ║");
+    addLog("info", "║   14. 文献综述 → paper/related_work.md (基于调研)    ║");
+    addLog("info", "║   15. LaTeX 整合 → paper/main.tex + Makefile        ║");
     addLog("info", "╚══════════════════════════════════════════════════════╝\n");
+
+    // ── Step 0: Literature Research ──
+    addLog("info", "═══ Step 0: 文献调研 ═══");
+    addLog("info", "[Step 0] 搜索领域 SOTA 方法、关键论文、常用数据集...");
+    let researchSummary = "";
+    try {
+      const researchPrompt = `You are a research scientist. Conduct a brief literature review for this experiment.
+
+Experiment Goal: ${goal}
+${planContext?.hypothesis ? `Hypothesis: ${planContext.hypothesis}` : ""}
+${planContext?.method ? `Method: ${planContext.method}` : ""}
+
+Provide a concise research summary covering:
+1. **SOTA Methods**: What are the current state-of-the-art approaches for this task? List top 3-5 methods with brief descriptions and their reported performance.
+2. **Key Datasets**: What public datasets are commonly used? Include names, sizes, where to download (PhysioNet, HuggingFace, Kaggle, etc.), and the correct SDK/API to use.
+3. **Evaluation Metrics**: What metrics are standard in this domain?
+4. **Implementation Tips**: Common pitfalls, recommended architectures, preprocessing steps.
+5. **Recommended Approach**: Based on the hypothesis, what specific model architecture and training strategy would you recommend?
+
+Keep it focused and actionable (under 800 words). This will guide the experiment design.`;
+
+      const researchResp = await chatCompletion(llm, [
+        { role: "system", content: "You are an expert research scientist. Provide accurate, actionable literature review summaries. Be specific about methods, datasets, and performance numbers." },
+        { role: "user", content: researchPrompt },
+      ], { maxTokens: dynamicMaxTokens, temperature: 0.3 });
+
+      researchSummary = researchResp.trim();
+      if (researchSummary) {
+        await localExec.writeFile(localRunId, "research_summary.md", researchSummary);
+        addLog("success", `[Step 0] 文献调研完成 (${researchSummary.length} 字符)`);
+        // Log key findings
+        const firstLines = researchSummary.split("\n").slice(0, 5).join("\n");
+        addLog("info", `[Step 0] 摘要:\n${firstLines}\n...`);
+      } else {
+        addLog("warn", "[Step 0] 调研返回为空，跳过");
+      }
+    } catch (err) {
+      addLog("warn", `[Step 0] 文献调研失败: ${err instanceof Error ? err.message : String(err)}，继续执行`);
+    }
 
     // ── Step 1: Generate program.md (experiment goal document) ──
     addLog("info", "═══ Step 1: 生成 program.md ═══");
@@ -420,11 +459,15 @@ export default function AutoResearchPage() {
         ? `\n## 预期效果\n${planContext.expectedImprovement}\n`
         : "";
 
+      const researchBlock = researchSummary
+        ? `\n## 文献调研摘要\n${researchSummary.slice(0, 2000)}\n`
+        : "";
+
       const programMd = `# autoresearch
 
 ## 实验目标
 ${goal || "优化 " + metricName}
-${hypothesisBlock}${methodBlock}${expectedBlock}
+${hypothesisBlock}${methodBlock}${expectedBlock}${researchBlock}
 ## Setup
 1. 工作区已初始化: ~/studyhub-workspaces/${localRunId}
 2. 核心文件: \`train.py\` — LLM 每轮修改的唯一文件
@@ -762,10 +805,14 @@ OUTPUT FORMAT — use EXACTLY this format:
           ? `Available data in ./data/ directory:\n${dataInfo}\n\nYou MUST load data from ./data/ (the files shown above).`
           : `No pre-downloaded data available. You MUST download the dataset yourself inside train.py.\nDownload a REAL dataset matching the experiment goal. For ECG → use PTB-XL from PhysioNet or wfdb. For NLP → use HuggingFace datasets. Do NOT use MNIST/CIFAR unless the goal is specifically about image classification.`;
 
+        const researchCtx = researchSummary
+          ? `\nLiterature Review (use this to guide your model design):\n${researchSummary.slice(0, 1500)}\n`
+          : "";
+
         const trainPrompt = `You are an ML researcher. Generate a complete, runnable train.py for this experiment.
 
 Experiment Goal: ${goal}
-${hypothesisCtx ? `\nExperiment Context:\n${hypothesisCtx}\n` : ""}
+${hypothesisCtx ? `\nExperiment Context:\n${hypothesisCtx}\n` : ""}${researchCtx}
 ${dataSection}
 
 Requirements:
@@ -937,10 +984,11 @@ Return ONLY Python code, no markdown fences, no explanation.`;
         // Read results.tsv for context
         const resultsTsv = await localExec.readFile(localRunId, "results.tsv").catch(() => "");
 
-        // Read program.md for experiment rules
+        // Read program.md and research summary for experiment context
         const programMd = await localExec.readFile(localRunId, "program.md").catch(() => "");
+        const researchCtx = await localExec.readFile(localRunId, "research_summary.md").catch(() => "");
 
-        // Ask LLM to modify train.py (with program.md as context)
+        // Ask LLM to modify train.py (with program.md + research as context)
         const prompt = `You are an autonomous ML researcher following the program.md rules.
 
 ${programMd ? `=== program.md ===\n${programMd.slice(0, 3000)}\n=== end ===\n` : `Goal: ${goal || "get the lowest " + metricName}\n${planContext?.hypothesis ? `Hypothesis: ${planContext.hypothesis}` : ""}\n${planContext?.method ? `Method: ${planContext.method}` : ""}`}
@@ -954,7 +1002,7 @@ Results so far:
 ${resultsTsv}
 
 Current best ${metricName}: ${best}
-
+${researchCtx ? `\n=== Literature Review ===\n${researchCtx.slice(0, 1500)}\n=== end ===\nUse insights from the literature review to guide your modifications.\n` : ""}
 Rules:
 - You can ONLY modify train.py. No new files, no new dependencies.
 - The goal is to get the ${metricDirection === "lower" ? "lowest" : "highest"} ${metricName}.
@@ -1622,35 +1670,50 @@ ${resultsTsv}
             generatingCode={generatingCode}
             onGenerateFromPlan={async () => {
               const llm = getLLMConfig();
-              if (!llm) return;
-              if (!goal.trim()) return;
+              if (!llm) {
+                alert("请先在设置中配置 LLM API");
+                return;
+              }
+              if (!goal.trim()) {
+                alert("请先填写实验目标");
+                return;
+              }
               setGeneratingCode(true);
               try {
                 const { chatCompletion } = await import("../../lib/deep-research/llm-client");
-                const prompt = `Generate a complete, runnable train.py for this research experiment:
+                const prompt = `Generate a complete, runnable train.py for this research experiment.
 
 Goal: ${goal}
+${planContext?.hypothesis ? `Hypothesis: ${planContext.hypothesis}` : ""}
 ${planContext?.method ? `Method: ${planContext.method}` : ""}
+${planContext?.expectedImprovement ? `Expected outcome: ${planContext.expectedImprovement}` : ""}
 ${planContext?.datasets ? `Datasets: ${JSON.stringify(planContext.datasets).slice(0, 500)}` : ""}
 ${planContext?.codeSketch ? `Code sketch:\n${planContext.codeSketch}` : ""}
 
 Requirements:
-- Single file, no external dependencies beyond standard ML libraries (torch, sklearn, numpy, etc.)
+- Single file, complete and runnable with "python train.py"
+- The model and approach MUST match the experiment hypothesis and method above
+- The dataset MUST match the experiment domain — NEVER use MNIST/CIFAR for domain-specific goals (ECG, NLP, etc.)
+- If data needs downloading, include download code using appropriate SDK (wfdb for PhysioNet, datasets for HuggingFace, etc.)
 - Must print metrics at the end in this format:
   ---
-  val_accuracy:     0.850000
+  ${metricName}:     0.850000
   training_seconds: 45.2
-- Use synthetic data if real data is not available (with clear comments on where to plug in real data)
+- Print epoch-level metrics: Epoch N/Total — ${metricName}: value
 - Include all imports, model definition, training loop, evaluation
-- Keep it simple and runnable
+- Keep it focused and functional (under 150 lines)
 
 Return ONLY the Python code, no markdown fences, no explanation.`;
                 const code = await chatCompletion(llm, [{ role: "user", content: prompt }], { maxTokens: dynamicMaxTokens, temperature: 0.3 });
-                // Strip any markdown fences
                 const cleaned = code.replace(/^```(?:python)?\s*\n?/i, "").replace(/\n?```\s*$/i, "").trim();
-                setInitialCode(cleaned);
+                if (cleaned) {
+                  setInitialCode(cleaned);
+                } else {
+                  alert("生成失败：LLM 返回为空");
+                }
               } catch (err) {
                 console.error("Generate failed:", err);
+                alert(`生成失败: ${err instanceof Error ? err.message : String(err)}`);
               }
               setGeneratingCode(false);
             }}

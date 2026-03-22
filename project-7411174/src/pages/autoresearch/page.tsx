@@ -672,6 +672,9 @@ CRITICAL RULES:
 - For Kaggle: use \`kagglehub.dataset_download()\`
 - For general: use requests or urllib with proper error handling
 - No timeout limits on downloads — large datasets (1GB+) are expected
+- MUST print download progress — use tqdm, print percentage, or print file count during download. The user needs to see the script is working, not stuck.
+- If using wfdb.dl_database, wrap it to print progress (e.g. count files in target dir periodically, or use alternative download method with visible progress)
+- If using requests for large files, use stream=True with tqdm or manual percentage printing
 - Print clear error messages if download fails
 - MUST be under 80 lines
 - At the end, print a tree of ./data/ showing all files and directories so the next step knows what's available
@@ -754,12 +757,38 @@ OUTPUT FORMAT — use EXACTLY this format:
             }
           }
 
-          // Run prepare.py to download data
+          // Run prepare.py with progress monitoring
           addLog("info", `[Step 3] 执行: ${envPython} prepare.py`);
+          addLog("info", `[Step 3] 大数据集下载可能需要 10-30 分钟，请耐心等待...`);
+
+          // Start a background size monitor that polls every 15s
+          let monitorActive = true;
+          const monitorProgress = async () => {
+            while (monitorActive) {
+              await new Promise(r => setTimeout(r, 15000));
+              if (!monitorActive) break;
+              try {
+                const sizeCheck = await localExec.executeCode(localRunId, {
+                  command: "du -sh data/ 2>/dev/null && find data/ -type f 2>/dev/null | wc -l",
+                  timeout_seconds: 5,
+                });
+                if (sizeCheck.stdout) {
+                  const lines = sizeCheck.stdout.trim().split("\n");
+                  const size = lines[0]?.split("\t")[0] || "0";
+                  const fileCount = lines[1]?.trim() || "0";
+                  addLog("info", `[Step 3] 📦 下载进度: ${size} | ${fileCount} 个文件`);
+                }
+              } catch { /* ignore */ }
+            }
+          };
+          const monitorPromise = monitorProgress();
+
           const prepExec = await localExec.executeCode(localRunId, {
             command: `${envPython} prepare.py`,
-            timeout_seconds: 1800, // 30 min for large datasets like PTB-XL (1.6GB)
+            timeout_seconds: 1800, // 30 min for large datasets
           });
+          monitorActive = false;
+          await monitorPromise.catch(() => {});
 
           if (prepExec.exit_code === 0) {
             addLog("success", "[Step 3] 数据下载完成 ✓");

@@ -609,24 +609,26 @@ Return ONLY Python code, no markdown fences, no explanation.` }], { maxTokens: d
 
 Experiment Goal: ${goal}
 ${hypothesisCtx ? `\nExperiment Context:\n${hypothesisCtx}\n` : ""}
-Generate prepare.py that:
-1. Searches and downloads a REAL, publicly available dataset that matches the experiment goal
-2. Try multiple data sources in order: HuggingFace datasets, Kaggle (kagglehub), PhysioNet, UCI ML Repository, sklearn.datasets, torchvision.datasets, direct URL download
-3. If one source fails, automatically try the next (fallback chain)
-4. Saves processed data to ./data/ directory (CSV or numpy format preferred)
-5. Prints dataset stats: filename, rows, columns, value ranges, class distribution if applicable
-6. MUST be under 80 lines of code
+Generate prepare.py that ONLY does these 3 things:
+1. Download the dataset (skip if already downloaded)
+2. Extract/decompress if needed (skip if already extracted)
+3. Print the actual directory tree of ./data/ after extraction (use os.walk or os.listdir recursively)
 
-IMPORTANT:
-- The dataset MUST match the experiment domain. If the goal is about ECG, download ECG data. If about NLP, download text data. Do NOT use generic datasets like MNIST/CIFAR unless the goal is specifically about image classification.
-- Include clear error messages if download fails so we know what went wrong
-- Use the simplest working approach for each source
+CRITICAL RULES:
+- DO NOT hardcode file paths or data formats — just download, extract, and list what's there
+- DO NOT try to load/parse/process the data — that's train.py's job
+- Check if files already exist before downloading (avoid re-downloading 1GB+ files)
+- The dataset MUST match the experiment domain (ECG goal → ECG dataset like PTB-XL, NLP goal → text dataset, etc.)
+- Try multiple sources with fallback: PhysioNet, HuggingFace, Kaggle, UCI, sklearn, direct URL
+- Print clear error messages if download fails
+- MUST be under 60 lines
+- At the end, print a tree of ./data/ showing all files and directories so the next step knows what's available
 
 Also list pip dependencies (one per line).
 
 OUTPUT FORMAT — use EXACTLY this format:
 ===PREPARE_PY===
-<python code, under 80 lines>
+<python code, under 60 lines>
 ===REQUIREMENTS_TXT===
 <one package per line>
 ===END===`;
@@ -704,7 +706,7 @@ OUTPUT FORMAT — use EXACTLY this format:
           addLog("info", `[Step 3] 执行: ${envPython} prepare.py`);
           const prepExec = await localExec.executeCode(localRunId, {
             command: `${envPython} prepare.py`,
-            timeout_seconds: 300,
+            timeout_seconds: 1800, // 30 min for large datasets like PTB-XL (1.6GB)
           });
 
           if (prepExec.exit_code === 0) {
@@ -734,8 +736,8 @@ OUTPUT FORMAT — use EXACTLY this format:
       addLog("warn", "[Step 3] 数据准备失败，将使用 train.py 自带的数据（如有）");
     }
 
-    // ── Step 3.8: Regenerate train.py based on actual data + hypothesis ──
-    if (prepareOk) {
+    // ── Step 3.8: ALWAYS regenerate train.py based on goal + hypothesis ──
+    {
       addLog("info", "═══ Step 3.8: 根据数据集 + 实验假设生成 train.py ═══");
       try {
         // List data files to understand what prepare.py produced
@@ -751,18 +753,22 @@ OUTPUT FORMAT — use EXACTLY this format:
           planContext?.expectedImprovement ? `Expected outcome: ${planContext.expectedImprovement}` : "",
         ].filter(Boolean).join("\n");
 
+        const hasData = prepareOk && dataInfo && !dataInfo.includes("no csv files");
+        const dataSection = hasData
+          ? `Available data in ./data/ directory:\n${dataInfo}\n\nYou MUST load data from ./data/ (the files shown above).`
+          : `No pre-downloaded data available. You MUST download the dataset yourself inside train.py.\nDownload a REAL dataset matching the experiment goal. For ECG → use PTB-XL from PhysioNet or wfdb. For NLP → use HuggingFace datasets. Do NOT use MNIST/CIFAR unless the goal is specifically about image classification.`;
+
         const trainPrompt = `You are an ML researcher. Generate a complete, runnable train.py for this experiment.
 
 Experiment Goal: ${goal}
 ${hypothesisCtx ? `\nExperiment Context:\n${hypothesisCtx}\n` : ""}
-Available data in ./data/ directory:
-${dataInfo}
+${dataSection}
 
 Requirements:
 - Single file, complete and runnable with "python train.py"
-- MUST load data from ./data/ directory (the files shown above)
 - Include all imports, data loading, model definition, training loop, evaluation
 - The model and approach MUST match the experiment hypothesis and method described above
+- The dataset MUST match the experiment domain — NEVER use a generic dataset (MNIST, CIFAR) when the goal is domain-specific (ECG, NLP, etc.)
 - Must print metrics at the end in this EXACT format:
   ---
   ${metricName}:     0.850000

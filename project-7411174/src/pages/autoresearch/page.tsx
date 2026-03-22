@@ -667,16 +667,35 @@ CRITICAL RULES:
 - DO NOT try to load/parse/process the data — that's train.py's job
 - Check if files already exist before downloading (avoid re-downloading large files)
 - The dataset MUST match the experiment domain (ECG goal → ECG dataset, NLP goal → text dataset, etc.)
-- For PhysioNet datasets (ECG, EEG, etc.): use \`wfdb.dl_database('ptb-xl', './data/ptb-xl')\` — this is the ONLY reliable way. Do NOT use requests/urllib for PhysioNet (they require agreement headers).
-- For HuggingFace: use \`datasets.load_dataset()\` and save to ./data/
-- For Kaggle: use \`kagglehub.dataset_download()\`
-- For general: use requests or urllib with proper error handling
+
+DOWNLOAD METHOD (in order of preference):
+1. For PhysioNet datasets (ECG/EEG): Download the ZIP file directly using requests with stream=True. Example for PTB-XL:
+   \`\`\`
+   url = "https://physionet.org/static/published-projects/ptb-xl/ptb-xl-a-large-publicly-available-electrocardiography-dataset-1.0.3.zip"
+   response = requests.get(url, stream=True, timeout=30)
+   total = int(response.headers.get('content-length', 0))
+   with open(zippath, 'wb') as f:
+       downloaded = 0
+       for chunk in response.iter_content(8192):
+           f.write(chunk); downloaded += len(chunk)
+           print(f"\\rDownloading: {downloaded*100//total}% ({downloaded//1048576}MB/{total//1048576}MB)", end="", flush=True)
+   \`\`\`
+   DO NOT use wfdb.dl_database() — it downloads 21000+ files individually and takes hours with zero progress output.
+2. For HuggingFace: use \`datasets.load_dataset()\` and save to ./data/
+3. For Kaggle: use \`kagglehub.dataset_download()\`
+4. For general: use requests with stream=True and progress
+
+- MUST write download progress to a file called "download_progress.txt" in the working directory, updating it every 8192 bytes or every 1MB whichever is less frequent. Format: single line like "45% 675MB/1500MB downloading" or "100% 1500MB/1500MB done" or "extracting..." — this file is read by an external monitor.
+  Example inside the download loop:
+  \`\`\`
+  if downloaded % (1024*1024) < 8192:  # roughly every 1MB
+      with open("download_progress.txt", "w") as pf:
+          pf.write(f"{downloaded*100//total}% {downloaded//1048576}MB/{total//1048576}MB downloading")
+  \`\`\`
+- Also print progress to stdout with flush=True
 - No timeout limits on downloads — large datasets (1GB+) are expected
-- MUST print download progress — use tqdm, print percentage, or print file count during download. The user needs to see the script is working, not stuck.
-- If using wfdb.dl_database, wrap it to print progress (e.g. count files in target dir periodically, or use alternative download method with visible progress)
-- If using requests for large files, use stream=True with tqdm or manual percentage printing
 - Print clear error messages if download fails
-- MUST be under 80 lines
+- MUST be under 100 lines
 - At the end, print a tree of ./data/ showing all files and directories so the next step knows what's available
 
 Also list pip dependencies (one per line).
@@ -761,22 +780,28 @@ OUTPUT FORMAT — use EXACTLY this format:
           addLog("info", `[Step 3] 执行: ${envPython} prepare.py`);
           addLog("info", `[Step 3] 大数据集下载可能需要 10-30 分钟，请耐心等待...`);
 
-          // Start a background size monitor that polls every 15s
+          // Start a background progress monitor that polls every 10s
           let monitorActive = true;
           const monitorProgress = async () => {
             while (monitorActive) {
-              await new Promise(r => setTimeout(r, 15000));
+              await new Promise(r => setTimeout(r, 10000));
               if (!monitorActive) break;
               try {
-                const sizeCheck = await localExec.executeCode(localRunId, {
-                  command: "du -sh data/ 2>/dev/null && find data/ -type f 2>/dev/null | wc -l",
+                // Read progress file written by prepare.py, fallback to du -sh
+                const progressCheck = await localExec.executeCode(localRunId, {
+                  command: "cat download_progress.txt 2>/dev/null || echo 'no_progress_file'; du -sh data/ 2>/dev/null | cut -f1; find data/ -type f 2>/dev/null | wc -l",
                   timeout_seconds: 5,
                 });
-                if (sizeCheck.stdout) {
-                  const lines = sizeCheck.stdout.trim().split("\n");
-                  const size = lines[0]?.split("\t")[0] || "0";
-                  const fileCount = lines[1]?.trim() || "0";
-                  addLog("info", `[Step 3] 📦 下载进度: ${size} | ${fileCount} 个文件`);
+                if (progressCheck.stdout) {
+                  const lines = progressCheck.stdout.trim().split("\n");
+                  const progressLine = lines[0] || "";
+                  const size = lines[1]?.trim() || "0";
+                  const fileCount = lines[2]?.trim() || "0";
+                  if (progressLine && progressLine !== "no_progress_file") {
+                    addLog("info", `[Step 3] 📦 ${progressLine} | 磁盘: ${size} | ${fileCount} 个文件`);
+                  } else {
+                    addLog("info", `[Step 3] 📦 下载中... | 磁盘: ${size} | ${fileCount} 个文件`);
+                  }
                 }
               } catch { /* ignore */ }
             }
@@ -848,7 +873,7 @@ OUTPUT FORMAT — use EXACTLY this format:
         const hasData = prepareOk && dataInfo && !dataInfo.includes("no csv files");
         const dataSection = hasData
           ? `Available data in ./data/ directory:\n${dataInfo}\n\nYou MUST load data from ./data/ (the files shown above).`
-          : `No pre-downloaded data available. You MUST download the dataset yourself inside train.py.\nDownload a REAL dataset matching the experiment goal. For ECG → use PTB-XL from PhysioNet or wfdb. For NLP → use HuggingFace datasets. Do NOT use MNIST/CIFAR unless the goal is specifically about image classification.`;
+          : `No pre-downloaded data available. You MUST download the dataset yourself inside train.py.\nDownload a REAL dataset matching the experiment goal. For ECG → download PTB-XL zip from https://physionet.org/static/published-projects/ptb-xl/ptb-xl-a-large-publicly-available-electrocardiography-dataset-1.0.3.zip using requests with stream=True. For NLP → use HuggingFace datasets. Do NOT use MNIST/CIFAR unless the goal is specifically about image classification. Do NOT use wfdb.dl_database (too slow).`;
 
         const researchCtx = researchSummary
           ? `\nLiterature Review (use this to guide your model design):\n${researchSummary.slice(0, 1500)}\n`

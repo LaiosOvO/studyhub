@@ -122,6 +122,21 @@ async def create_experiment_run(
             detail="Plan must be approved before creating an experiment run",
         )
 
+    # Build config with plan context for the experiment engine
+    config: dict = {}
+    if body.goal:
+        config["goal"] = body.goal
+    if body.hypothesis:
+        config["hypothesis"] = body.hypothesis
+    if body.method:
+        config["method"] = body.method
+    if body.expected_improvement:
+        config["expected_improvement"] = body.expected_improvement
+    if body.baseline_method:
+        config["baseline_method"] = body.baseline_method
+    if body.datasets:
+        config["datasets"] = body.datasets
+
     # Create experiment run
     run = ExperimentRun(
         user_id=user.id,
@@ -131,6 +146,7 @@ async def create_experiment_run(
         consecutive_no_improve_limit=body.consecutive_no_improve_limit,
         time_budget_minutes=body.time_budget_minutes,
         docker_image=body.docker_image,
+        config=config,
     )
     session.add(run)
 

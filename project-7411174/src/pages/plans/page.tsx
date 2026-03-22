@@ -146,12 +146,23 @@ export default function PlansPage() {
       plan.expectedImprovement ? `预期: ${plan.expectedImprovement}` : "",
     ].filter(Boolean).join("\n");
 
+    // Local plans don't exist in backend DB — go straight to AutoResearch
+    if (planId.startsWith("local_")) {
+      navigate(`/autoresearch?goal=${encodeURIComponent(goal)}`);
+      return;
+    }
+
     try {
-      // Try API first
+      // Server plan — create experiment via API with full context
       await experimentsApi.create({
         plan_id: planId,
         max_rounds: 50,
-        metrics: { name: plan.name, metric_name: "F1" },
+        goal,
+        hypothesis: plan.hypothesis,
+        method: plan.method,
+        expected_improvement: plan.expectedImprovement,
+        baseline_method: plan.baselineMethod,
+        datasets: plan.datasets?.map((d) => d.name) ?? [],
       });
       setPlans((prev) => prev.map((p) =>
         p.id === planId ? { ...p, status: "running" as const } : p

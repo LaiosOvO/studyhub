@@ -49,6 +49,14 @@ class ExperimentRunCreate(BaseModel):
     time_budget_minutes: int | None = Field(default=None, ge=1)
     docker_image: str | None = None
 
+    # Optional plan context — passed from frontend for richer experiment setup
+    goal: str | None = None
+    hypothesis: str | None = None
+    method: str | None = None
+    expected_improvement: str | None = None
+    baseline_method: str | None = None
+    datasets: list[str] = Field(default_factory=list)
+
 
 class ExperimentRunResponse(BaseModel):
     """API response schema for an experiment run."""

@@ -10,7 +10,7 @@ const RELEASES = [
     icon: "ri-apple-fill",
     arch: "Apple Silicon (M1/M2/M3/M4)",
     filename: "StudyHub_0.2.0_aarch64.dmg",
-    url: "/studyhub/downloads/StudyHub_0.2.0_aarch64.dmg",
+    url: "https://github.com/LaiosOvO/studyhub/releases/download/v0.2.0/StudyHub_0.2.0_aarch64.dmg",
     size: "~10 MB",
   },
   {
@@ -18,16 +18,16 @@ const RELEASES = [
     icon: "ri-apple-fill",
     arch: "Intel",
     filename: "StudyHub_0.2.0_x64.dmg",
-    url: "#",
-    size: "即将推出",
+    url: "https://github.com/LaiosOvO/studyhub/releases/download/v0.2.0/StudyHub_0.2.0_x64.dmg",
+    size: "~12 MB",
   },
   {
     platform: "Windows",
     icon: "ri-windows-fill",
     arch: "64-bit",
     filename: "StudyHub_0.2.0_x64-setup.exe",
-    url: "#",
-    size: "即将推出",
+    url: "https://github.com/LaiosOvO/studyhub/releases/download/v0.2.0/StudyHub_0.2.0_x64-setup.exe",
+    size: "~8 MB",
   },
 ];
 
